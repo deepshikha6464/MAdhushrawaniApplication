@@ -17,6 +17,7 @@ import java.util.List;
 public  class MyDataAdapter extends CarouselView.Adapter<MyDataAdapter.ViewHolder> {
     private static final String TAG = "MyDataAdapter";
     List<Integer> mdaysNumber ;
+    private static ItemClickListener mClickListener;
     public MyDataAdapter(List<Integer> daysNumber) {
         mdaysNumber = daysNumber;
     }
@@ -27,7 +28,7 @@ public  class MyDataAdapter extends CarouselView.Adapter<MyDataAdapter.ViewHolde
 //        return new ViewHolder(view);
         Log.d(TAG, "onCreateViewHolder: ");
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.days_cards, parent, false);
-        return new ViewHolder(view);
+        return new ViewHolder(view,mClickListener);
     }
 
     @Override
@@ -41,11 +42,26 @@ public  class MyDataAdapter extends CarouselView.Adapter<MyDataAdapter.ViewHolde
         return mdaysNumber.size();
     }
 
-    public  static class ViewHolder extends RecyclerView.ViewHolder {
+    public  static class ViewHolder extends RecyclerView.ViewHolder implements  View.OnClickListener{
         TextView day;
-        public ViewHolder(@NonNull View itemView) {
+        ItemClickListener itemClickListener;
+
+        public ViewHolder(@NonNull View itemView,  ItemClickListener mClickListener) {
             super(itemView);
             day = itemView.findViewById(R.id.day);
+            itemClickListener = mClickListener;
+
         }
+
+        @Override
+        public void onClick(View view) {
+            if (mClickListener != null) {
+                mClickListener.onItemClick(view, getAdapterPosition());
+            }
+        }
+    }
+
+    public interface ItemClickListener {
+        void onItemClick(View view, int position);
     }
 }

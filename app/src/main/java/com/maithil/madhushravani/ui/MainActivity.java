@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ActivityOptions;
 import android.app.Fragment.*;
@@ -12,9 +13,11 @@ import android.app.Fragment.*;
 import android.content.Intent;
 import android.os.Bundle;
 import android.transition.Explode;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -28,7 +31,7 @@ import com.maithil.madhushravani.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity /*implements MyDataAdapter.ItemClickListener, View.OnClickListener */{
     private static final String TAG = "MainActivity";
 
     //ui
@@ -50,19 +53,37 @@ public class MainActivity extends AppCompatActivity {
         ListOfDays();
         findViewbyid();
         CarouselSettings();
+        carousel.setOnItemSelectedListener(new CarouselView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(CarouselView carouselView, int position, int adapterPosition, RecyclerView.Adapter adapter) {
+//                lblSelectedIndex.setText("Selected Position " + position);
+//                daysClicked();
+                Log.d(TAG, "onItemSelected: "+position);
+                carouselView.setOnItemClickListener( new CarouselView.OnItemClickListener(){
+                    @Override
+                    public void onItemClick(RecyclerView.Adapter adapter, View view, int i, int i1) {
+                        daysClicked();
+                    }
+
+                });
+            }
+
+            @Override
+            public void onItemDeselected(CarouselView carouselView, int position, int adapterPosition, RecyclerView.Adapter adapter) {
+                Log.d(TAG, "onItemDeselected: ");
+            }
+
+        });
 
 
-//        carousel.setOnItemSelectedListener(new CarouselView.OnItemSelectedListener() {
+//        carousel.setOnScrollListener(new CarouselView.OnScrollListener() {
 //            @Override
-//            public void onItemSelected(CarouselView carouselView, int position, int adapterPosition, RecyclerView.Adapter adapter) {
-//                //lblSelectedIndex.setText("Selected Position " + position);
-//            }
-//
-//            @Override
-//            public void onItemDeselected(CarouselView carouselView, int position, int adapterPosition, RecyclerView.Adapter adapter) {
-//
+//            public void onScrollEnd(CarouselView carouselView) {
+//                super.onScrollEnd(carouselView);
 //            }
 //        });
+
+
     }
     public  void ListOfDays(){
         daysNumber.add(1);
@@ -86,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
         carousel = findViewById(R.id.carousel);
        carousel.setInfinite(true);
         carousel.setExtraVisibleChilds(6);
+//        carousel.smoothScrollToPosition(carousel.getAdapter().getItemCount() - 1);
        carousel.setHorizontalScrollBarEnabled(true);
         carousel.setScrollingAlignToViews(true);
         carousel.setElevation(20);
@@ -141,4 +163,22 @@ public class MainActivity extends AppCompatActivity {
       startActivity(i,  ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
 
     }
+
+    private void daysClicked(){
+        Intent i = new Intent(this,DaysActivity.class);
+        startActivity(i,  ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+
+    }
+
+//    @Override
+//    public void onClick(View view) {
+//        Log.d(TAG, "onClick: "+view);
+//        daysClicked();
+//    }
+//
+//    @Override
+//    public void onItemClick(View view, int position) {
+//        Log.d(TAG, "onItemClick: "+position);
+//        daysClicked();
+//    }
 }
