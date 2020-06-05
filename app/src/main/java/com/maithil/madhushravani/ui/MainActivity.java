@@ -18,8 +18,10 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
@@ -31,14 +33,15 @@ import com.maithil.madhushravani.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity /*implements MyDataAdapter.ItemClickListener, View.OnClickListener */{
+public class MainActivity extends AppCompatActivity implements  View.OnClickListener {
     private static final String TAG = "MainActivity";
 
     //ui
     public CarouselView carousel;
-    TextView pooja, history;
+    TextView pooja, history,step1des;
     RelativeLayout relativeLayout;
-    LinearLayout fragContainer;
+    LinearLayout fragContainer , step2dec,step3dec;
+    ImageView d1,u1,d2,u2,d3,u3,d4,u4, aripan;
     //vars
     List<Integer> daysNumber = new ArrayList<>();
     @Override
@@ -148,6 +151,21 @@ public class MainActivity extends AppCompatActivity /*implements MyDataAdapter.I
                 poojaClicked();
             }
         });
+
+        d1=findViewById(R.id.down);  d1.setOnClickListener(this);
+        d2=findViewById(R.id.down2);d2.setOnClickListener(this);
+        d3=findViewById(R.id.down3);d3.setOnClickListener(this);
+        d4=findViewById(R.id.down4);d4.setOnClickListener(this);
+
+        u1 = findViewById(R.id.up_arrow); u1.setOnClickListener(this);
+        u2 = findViewById(R.id.up_arrow2);u2.setOnClickListener(this);
+        u3 = findViewById(R.id.up_arrow3);u3.setOnClickListener(this);
+        u4 = findViewById(R.id.up_arrow4);u4.setOnClickListener(this);
+
+        step1des = findViewById(R.id.step1dec);
+        step2dec = findViewById(R.id.step2dec);
+        step3dec = findViewById(R.id.step3dec);
+        aripan = findViewById(R.id.aripan);
         }
     private void historyClicked(){
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(MainActivity.this);
@@ -167,6 +185,63 @@ public class MainActivity extends AppCompatActivity /*implements MyDataAdapter.I
     private void daysClicked(){
         Intent i = new Intent(this,DaysActivity.class);
         startActivity(i,  ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+
+    }
+
+    @Override
+    public void onClick(View view) {
+              int id = view.getId();
+        switch(id){
+            case R.id.down:
+                u1.setVisibility(View.VISIBLE);
+                step1des.setVisibility(View.VISIBLE);
+                d1.setVisibility(View.GONE);
+                break;
+
+            case R.id.up_arrow:
+                u1.setVisibility(View.GONE);
+                step1des.setVisibility(View.GONE);
+                d1.setVisibility(View.VISIBLE);
+                break;
+
+            case R.id.down2:
+                d2.setVisibility(View.GONE);
+                u2.setVisibility(View.VISIBLE);
+                step2dec.setVisibility(View.VISIBLE);
+                break;
+
+            case R.id.up_arrow2:
+                d2.setVisibility(View.VISIBLE);
+                u2.setVisibility(View.GONE);
+                step2dec.setVisibility(View.GONE);
+                break;
+
+            case R.id.down3:
+                d3.setVisibility(View.GONE);
+                u3.setVisibility(View.VISIBLE);
+                step3dec.setVisibility(View.VISIBLE);
+                break;
+
+            case R.id.up_arrow3:
+                d3.setVisibility(View.VISIBLE);
+                u3.setVisibility(View.GONE);
+                step3dec.setVisibility(View.GONE);
+                break;
+
+            case R.id.down4:
+                d4.setVisibility(View.GONE);
+                u4.setVisibility(View.VISIBLE);
+                aripan.setVisibility(View.VISIBLE);
+                break;
+
+            case R.id.up_arrow4:
+                d4.setVisibility(View.VISIBLE);
+                u4.setVisibility(View.GONE);
+                aripan.setVisibility(View.GONE);
+                break;
+
+        }
+
 
     }
 }

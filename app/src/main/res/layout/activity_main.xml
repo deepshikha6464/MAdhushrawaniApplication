@@ -76,10 +76,9 @@
             android:id="@+id/poojaStepsCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/materialCardView"
+            android:layout_below="@+id/carousel"
             android:clickable="true"
             android:padding="8dp"
-
             app:cardElevation="8dp">
 <LinearLayout
     android:layout_width="match_parent"
@@ -93,21 +92,50 @@
                 android:text="@string/Steps"
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 android:textSize="20sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:fontFamily="@font/poppins"
-                android:padding="8dp"
-                android:text="@string/Step1"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                android:textSize="18sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="100">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:fontFamily="@font/poppins"
+            android:padding="8dp"
+            android:layout_weight="80"
+            android:text="@string/Step1"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textSize="18sp" />
+        <ImageView
+            android:layout_width="33dp"
+            android:layout_marginTop="8dp"
+            android:paddingTop="8dp"
+            android:id="@+id/down"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="false"
+            android:background="@drawable/down_arrow" />
+        <ImageView
+            android:layout_width="33dp"
+            android:layout_marginTop="8dp"
+            android:paddingTop="8dp"
+            android:id="@+id/up_arrow"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="false"
+            android:background="@drawable/ic_keyboard_arrow_up_black_24dp" />
+
+
+    </LinearLayout>
+
     <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
                 android:fontFamily="@font/poppins"
                 android:padding="8dp"
+        android:id="@+id/step1dec"
+        android:visibility="gone"
                 android:text="@string/step1des"
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 android:textSize="14sp" />
@@ -130,7 +158,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="100">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -140,7 +172,32 @@
                     android:text="@string/Step2"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:textSize="18sp" />
-                <TextView
+                <ImageView
+                    android:layout_width="33dp"
+                    android:layout_marginTop="8dp"
+                    android:paddingTop="8dp"
+                    android:id="@+id/down2"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="false"
+                    android:background="@drawable/down_arrow" />
+                <ImageView
+                    android:layout_width="33dp"
+                    android:layout_marginTop="8dp"
+                    android:paddingTop="8dp"
+                    android:id="@+id/up_arrow2"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="false"
+                    android:background="@drawable/ic_keyboard_arrow_up_black_24dp" />
+
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/step2dec"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+                    <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
@@ -167,7 +224,7 @@
                     android:text="@string/step2_1des"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:textSize="14sp" />
-
+                </LinearLayout>
             </LinearLayout>
 
 
@@ -186,16 +243,47 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="100">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
                     android:fontFamily="@font/poppins"
                     android:padding="8dp"
+                    android:layout_weight="80"
                     android:text="@string/Step3"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:textSize="18sp" />
+                <ImageView
+                    android:layout_width="33dp"
+                    android:layout_marginTop="8dp"
+                    android:paddingTop="8dp"
+                    android:id="@+id/down3"
+                    android:layout_weight="20"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="false"
+                    android:background="@drawable/down_arrow" />
+                <ImageView
+                    android:layout_width="33dp"
+                    android:layout_marginTop="8dp"
+                    android:paddingTop="8dp"
+                    android:id="@+id/up_arrow3"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="false"
+                    android:background="@drawable/ic_keyboard_arrow_up_black_24dp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/step3dec"
+                android:visibility="gone"
+                android:orientation="vertical">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -205,8 +293,6 @@
                     android:text="@string/step3_1des"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:textSize="14sp" />
-
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -224,7 +310,8 @@
                     android:padding="8dp"
                     android:text="@string/step2_4des"
                     android:textAppearance="?attr/textAppearanceHeadline6"
-                    android:textSize="14sp" /><TextView
+                    android:textSize="14sp" />
+                <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
@@ -233,7 +320,7 @@
                 android:text="@string/step2_5des"
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 android:textSize="14sp" />
-
+            </LinearLayout>
 
 
             </LinearLayout>
@@ -254,6 +341,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="100">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -262,11 +354,31 @@
                     android:text="@string/Step4_1"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:textSize="20sp" />
+                <ImageView
+                    android:layout_width="33dp"
+                    android:layout_marginTop="8dp"
+                    android:paddingTop="8dp"
+                    android:id="@+id/down4"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="false"
+                    android:background="@drawable/down_arrow" />
+                <ImageView
+                    android:layout_width="33dp"
+                    android:layout_marginTop="8dp"
+                    android:paddingTop="8dp"
+                    android:id="@+id/up_arrow4"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="false"
+                    android:background="@drawable/ic_keyboard_arrow_up_black_24dp" />
 
+            </LinearLayout>
                <ImageView
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:padding="2dp"
+                   android:id="@+id/aripan"
+                   android:visibility="gone"
                    android:src="@drawable/aripan"/>
 
 
@@ -274,6 +386,8 @@
 
 
         </com.google.android.material.card.MaterialCardView>
+
+<!--        days wheel-->
 
         <TextView
             android:layout_width="201dp"
@@ -283,8 +397,9 @@
             android:fontFamily="@font/gravitas"
             android:padding="8dp"
             android:paddingTop="18dp"
+
             android:text="Day"
-            android:visibility="gone"
+            android:visibility="visible"
             android:textColor="@color/cardBackground"
             android:textSize="45sp" />
 
@@ -292,11 +407,12 @@
             android:id="@+id/carousel"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:visibility="gone"
+            android:visibility="visible"
             android:layout_centerInParent="true"
             android:layout_marginStart="10dp"
             android:layout_marginTop="50dp"
             android:layout_marginEnd="9dp"
+            android:layout_marginBottom="20dp"
             android:scaleX="1" />
 
 
