@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextView;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.gtomato.android.ui.transformer.CoverFlowViewTransformer;
 import com.gtomato.android.ui.transformer.FlatMerryGoRoundTransformer;
 import com.gtomato.android.ui.widget.CarouselView;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     //ui
     public CarouselView carousel;
+    TextView pooja, history;
     //vars
     List<Integer> daysNumber = new ArrayList<>();
     @Override
@@ -30,9 +33,8 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         ListOfDays();
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-            CarouselSettings();
-//        }
+        findViewbyid();
+        CarouselSettings();
 
 
 //        carousel.setOnItemSelectedListener(new CarouselView.OnItemSelectedListener() {
@@ -67,15 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void CarouselSettings(){
         carousel = findViewById(R.id.carousel);
-
-//        FlatMerryGoRoundTransformer transformer = new FlatMerryGoRoundTransformer();
-//        transformer.setNumPies(6);
-//        transformer.getViewPerspective();
-//        transformer.getHorizontalViewPort();
-//
-//        carousel.setTransformer(transformer);
-
-        carousel.setInfinite(true);
+       carousel.setInfinite(true);
         carousel.setExtraVisibleChilds(6);
        carousel.setHorizontalScrollBarEnabled(true);
         carousel.setScrollingAlignToViews(true);
@@ -99,5 +93,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         carousel.setAdapter(new MyDataAdapter(daysNumber));
+    }
+    private void findViewbyid(){
+        history = findViewById(R.id.history);
+        pooja = findViewById(R.id.pooja);
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                historyClicked();
+            }
+        });
+        }
+    private void historyClicked(){
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(MainActivity.this);
+
+        View view1 = getLayoutInflater().inflate(R.layout.history, null);
+
+        bottomSheetDialog.setContentView(view1);
+
+        bottomSheetDialog.show();
     }
 }
