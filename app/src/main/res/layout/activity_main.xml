@@ -19,12 +19,15 @@
         app:fabAttached="true"
        />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/fab"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/edit"-->
+<!--        app:layout_anchor="@id/bottom_app_bar" />-->
+    <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/edit"
-        app:layout_anchor="@id/bottom_app_bar" />
+        android:layout_height="wrap_content">
     <RelativeLayout
         android:id="@+id/relative_layout"
         android:layout_width="match_parent"
@@ -32,7 +35,7 @@
 
         android:padding="10dp"
         android:visibility="visible">
-
+<!--history & samagri-->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/materialCardView"
             android:layout_width="match_parent"
@@ -41,7 +44,7 @@
             android:clickable="true"
             android:padding="8dp"
 
-            app:cardElevation="4dp">
+            app:cardElevation="8dp">
 
             <TextView
                 android:id="@+id/history"
@@ -68,6 +71,209 @@
 
 
         </com.google.android.material.card.MaterialCardView>
+<!--        step 1 making gauri -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/poojaStepsCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/materialCardView"
+            android:clickable="true"
+            android:padding="8dp"
+
+            app:cardElevation="8dp">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/Steps"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:fontFamily="@font/poppins"
+                android:padding="8dp"
+                android:text="@string/Step1"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="18sp" />
+    <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:fontFamily="@font/poppins"
+                android:padding="8dp"
+                android:text="@string/step1des"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="14sp" />
+
+</LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+<!--step 2 making bishar -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/poojaStep2Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/poojaStepsCard"
+            android:clickable="true"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            app:cardElevation="8dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:fontFamily="@font/poppins"
+                    android:padding="8dp"
+                    android:text="@string/Step2"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="18sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:fontFamily="@font/poppins"
+                    android:padding="8dp"
+                    android:text="@string/step2des"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="14sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:fontFamily="@font/poppins"
+                    android:padding="8dp"
+                    android:text="@string/step2_2des"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="14sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:fontFamily="@font/poppins"
+                    android:padding="8dp"
+                    android:text="@string/step2_1des"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+<!-- step 3-->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/poojaStep3Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/poojaStep2Card"
+            android:clickable="true"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            app:cardElevation="8dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:fontFamily="@font/poppins"
+                    android:padding="8dp"
+                    android:text="@string/Step3"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="18sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:fontFamily="@font/poppins"
+                    android:padding="8dp"
+                    android:text="@string/step3_1des"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:fontFamily="@font/poppins"
+                    android:padding="8dp"
+                    android:text="@string/step2_3des"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="14sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:fontFamily="@font/poppins"
+                    android:padding="8dp"
+                    android:text="@string/step2_4des"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="14sp" /><TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:fontFamily="@font/poppins"
+                android:padding="8dp"
+                android:text="@string/step2_5des"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="14sp" />
+
+
+
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+<!--step 4 aripan-->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/poojastep4Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/poojaStep3Card"
+            android:clickable="true"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            app:cardElevation="8dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/Step4_1"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="20sp" />
+
+               <ImageView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:padding="2dp"
+                   android:src="@drawable/aripan"/>
+
+
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:layout_width="201dp"
@@ -78,6 +284,7 @@
             android:padding="8dp"
             android:paddingTop="18dp"
             android:text="Day"
+            android:visibility="gone"
             android:textColor="@color/cardBackground"
             android:textSize="45sp" />
 
@@ -85,13 +292,21 @@
             android:id="@+id/carousel"
             android:layout_width="match_parent"
             android:layout_height="300dp"
+            android:visibility="gone"
             android:layout_centerInParent="true"
             android:layout_marginStart="10dp"
             android:layout_marginTop="50dp"
             android:layout_marginEnd="9dp"
             android:scaleX="1" />
 
+
+
+
+
     </RelativeLayout>
+    </ScrollView>
+
+<!--    fragment-->
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"

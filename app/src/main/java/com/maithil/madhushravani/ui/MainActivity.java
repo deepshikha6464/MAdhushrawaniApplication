@@ -169,16 +169,4 @@ public class MainActivity extends AppCompatActivity /*implements MyDataAdapter.I
         startActivity(i,  ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
 
     }
-
-//    @Override
-//    public void onClick(View view) {
-//        Log.d(TAG, "onClick: "+view);
-//        daysClicked();
-//    }
-//
-//    @Override
-//    public void onItemClick(View view, int position) {
-//        Log.d(TAG, "onItemClick: "+position);
-//        daysClicked();
-//    }
 }
