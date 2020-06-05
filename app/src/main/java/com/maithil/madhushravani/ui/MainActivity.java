@@ -1,19 +1,29 @@
-package com.maithil.madhushravani;
+package com.maithil.madhushravani.ui;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
-import android.os.Build;
+import android.app.ActivityOptions;
+import android.app.Fragment.*;
+
+
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
+import android.transition.Explode;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.gtomato.android.ui.transformer.CoverFlowViewTransformer;
 import com.gtomato.android.ui.transformer.FlatMerryGoRoundTransformer;
 import com.gtomato.android.ui.widget.CarouselView;
+import com.maithil.madhushravani.utils.MyDataAdapter;
+import com.maithil.madhushravani.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,14 +34,19 @@ public class MainActivity extends AppCompatActivity {
     //ui
     public CarouselView carousel;
     TextView pooja, history;
+    RelativeLayout relativeLayout;
+    LinearLayout fragContainer;
     //vars
     List<Integer> daysNumber = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         setContentView(R.layout.activity_main);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+// set an exit transition
+        getWindow().setExitTransition(new Explode());
         ListOfDays();
         findViewbyid();
         CarouselSettings();
@@ -97,10 +112,18 @@ public class MainActivity extends AppCompatActivity {
     private void findViewbyid(){
         history = findViewById(R.id.history);
         pooja = findViewById(R.id.pooja);
+        relativeLayout = findViewById(R.id.relative_layout);
+        fragContainer = findViewById(R.id.fragContainer);
         history.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 historyClicked();
+            }
+        });
+        pooja.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                poojaClicked();
             }
         });
         }
@@ -112,5 +135,10 @@ public class MainActivity extends AppCompatActivity {
         bottomSheetDialog.setContentView(view1);
 
         bottomSheetDialog.show();
+    }
+    private void poojaClicked(){
+      Intent i = new Intent(this,PoojaActivity.class);
+      startActivity(i,  ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+
     }
 }

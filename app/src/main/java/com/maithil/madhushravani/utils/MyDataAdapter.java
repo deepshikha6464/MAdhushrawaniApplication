@@ -1,4 +1,4 @@
-package com.maithil.madhushravani;
+package com.maithil.madhushravani.utils;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -7,10 +7,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.gtomato.android.ui.widget.CarouselView;
+import com.maithil.madhushravani.R;
 
 import java.util.List;
 
