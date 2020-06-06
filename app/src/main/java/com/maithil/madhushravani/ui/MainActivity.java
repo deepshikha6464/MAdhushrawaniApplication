@@ -1,29 +1,25 @@
 package com.maithil.madhushravani.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.ActivityOptions;
-import android.app.Fragment.*;
-
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.transition.Explode;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.AdapterView;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.Switch;
 import android.widget.TextView;
-
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.gtomato.android.ui.transformer.FlatMerryGoRoundTransformer;
 import com.gtomato.android.ui.widget.CarouselView;
@@ -33,17 +29,16 @@ import com.maithil.madhushravani.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements  View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements  View.OnClickListener ,BottomNavigationView.OnNavigationItemSelectedListener {
     private static final String TAG = "MainActivity";
 
     //ui
-    public CarouselView carousel;
-    TextView pooja, history,step1des;
-    RelativeLayout relativeLayout;
-    LinearLayout fragContainer , step2dec,step3dec;
-    ImageView d1,u1,d2,u2,d3,u3,d4,u4, aripan;
-    //vars
-    List<Integer> daysNumber = new ArrayList<>();
+
+    FrameLayout fragContainer;
+
+    BottomNavigationView bottomNavigationView;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,195 +48,58 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 // set an exit transition
         getWindow().setExitTransition(new Explode());
-        ListOfDays();
+
         findViewbyid();
-        CarouselSettings();
-        carousel.setOnItemSelectedListener(new CarouselView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(CarouselView carouselView, int position, int adapterPosition, RecyclerView.Adapter adapter) {
-//                lblSelectedIndex.setText("Selected Position " + position);
-//                daysClicked();
-                Log.d(TAG, "onItemSelected: "+position);
-                carouselView.setOnItemClickListener( new CarouselView.OnItemClickListener(){
-                    @Override
-                    public void onItemClick(RecyclerView.Adapter adapter, View view, int i, int i1) {
-                        daysClicked();
-                    }
 
-                });
-            }
+        loadFragment(new HomeFragment());
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
-            @Override
-            public void onItemDeselected(CarouselView carouselView, int position, int adapterPosition, RecyclerView.Adapter adapter) {
-                Log.d(TAG, "onItemDeselected: ");
-            }
-
-        });
-
-
-//        carousel.setOnScrollListener(new CarouselView.OnScrollListener() {
-//            @Override
-//            public void onScrollEnd(CarouselView carouselView) {
-//                super.onScrollEnd(carouselView);
-//            }
-//        });
 
 
     }
-    public  void ListOfDays(){
-        daysNumber.add(1);
-        daysNumber.add(2);
-        daysNumber.add(3);
-        daysNumber.add(4);
-        daysNumber.add(5);
-        daysNumber.add(6);
-        daysNumber.add(7);
-        daysNumber.add(8);
-        daysNumber.add(9);
-        daysNumber.add(10);
-        daysNumber.add(11);
-        daysNumber.add(12);
-        daysNumber.add(13);
-        daysNumber.add(14);
-        daysNumber.add(15);
-    }
 
-    private void CarouselSettings(){
-        carousel = findViewById(R.id.carousel);
-       carousel.setInfinite(true);
-        carousel.setExtraVisibleChilds(6);
-//        carousel.smoothScrollToPosition(carousel.getAdapter().getItemCount() - 1);
-       carousel.setHorizontalScrollBarEnabled(true);
-        carousel.setScrollingAlignToViews(true);
-        carousel.setElevation(20);
-      carousel.bringToFront();
 
-      carousel.setTransformer(new FlatMerryGoRoundTransformer() {
-
-            @Override
-            public void transform(View view, float position) {
-                super.transform(view, position);
-                float alpha;
-                if (-2 <= position && position <= 0) {
-                    alpha = (float) ((2 + position) / 2.0);
-                } else if (0 < position && position <= 2) {
-                    alpha = (float) ((2 - position) / 2.0);
-                } else {
-                    alpha = 0;
-                }
-                view.setAlpha(alpha);
-            }
-        });
-        carousel.setAdapter(new MyDataAdapter(daysNumber));
-    }
     private void findViewbyid(){
-        history = findViewById(R.id.history);
-        pooja = findViewById(R.id.pooja);
-        relativeLayout = findViewById(R.id.relative_layout);
-        fragContainer = findViewById(R.id.fragContainer);
-        history.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                historyClicked();
-            }
-        });
-        pooja.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                poojaClicked();
-            }
-        });
+         fragContainer = findViewById(R.id.fragment_container);
+          bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        d1=findViewById(R.id.down);  d1.setOnClickListener(this);
-        d2=findViewById(R.id.down2);d2.setOnClickListener(this);
-        d3=findViewById(R.id.down3);d3.setOnClickListener(this);
-        d4=findViewById(R.id.down4);d4.setOnClickListener(this);
+    }
 
-        u1 = findViewById(R.id.up_arrow); u1.setOnClickListener(this);
-        u2 = findViewById(R.id.up_arrow2);u2.setOnClickListener(this);
-        u3 = findViewById(R.id.up_arrow3);u3.setOnClickListener(this);
-        u4 = findViewById(R.id.up_arrow4);u4.setOnClickListener(this);
-
-        step1des = findViewById(R.id.step1dec);
-        step2dec = findViewById(R.id.step2dec);
-        step3dec = findViewById(R.id.step3dec);
-        aripan = findViewById(R.id.aripan);
+    private boolean loadFragment(Fragment fragment) {
+        //switching fragment
+        if (fragment != null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .commit();
+            return true;
         }
-    private void historyClicked(){
-        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(MainActivity.this);
-
-        View view1 = getLayoutInflater().inflate(R.layout.history, null);
-
-        bottomSheetDialog.setContentView(view1);
-
-        bottomSheetDialog.show();
+        return false;
     }
-    private void poojaClicked(){
-      Intent i = new Intent(this,PoojaActivity.class);
-      startActivity(i,  ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+  @Override
+    public void onClick(View view) {
 
-    }
-
-    private void daysClicked(){
-        Intent i = new Intent(this,DaysActivity.class);
-        startActivity(i,  ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
 
     }
 
     @Override
-    public void onClick(View view) {
-              int id = view.getId();
-        switch(id){
-            case R.id.down:
-                u1.setVisibility(View.VISIBLE);
-                step1des.setVisibility(View.VISIBLE);
-                d1.setVisibility(View.GONE);
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        Fragment fragment = null;
+        switch (menuItem.getItemId()) {
+            case R.id.navigation_home:
+                fragment = new HomeFragment();
                 break;
 
-            case R.id.up_arrow:
-                u1.setVisibility(View.GONE);
-                step1des.setVisibility(View.GONE);
-                d1.setVisibility(View.VISIBLE);
+            case R.id.navigation_explore:
+                fragment = new ExploreFragment();
                 break;
 
-            case R.id.down2:
-                d2.setVisibility(View.GONE);
-                u2.setVisibility(View.VISIBLE);
-                step2dec.setVisibility(View.VISIBLE);
+            case R.id.navigation_profile:
+                fragment = new ProfileFragment();
                 break;
-
-            case R.id.up_arrow2:
-                d2.setVisibility(View.VISIBLE);
-                u2.setVisibility(View.GONE);
-                step2dec.setVisibility(View.GONE);
-                break;
-
-            case R.id.down3:
-                d3.setVisibility(View.GONE);
-                u3.setVisibility(View.VISIBLE);
-                step3dec.setVisibility(View.VISIBLE);
-                break;
-
-            case R.id.up_arrow3:
-                d3.setVisibility(View.VISIBLE);
-                u3.setVisibility(View.GONE);
-                step3dec.setVisibility(View.GONE);
-                break;
-
-            case R.id.down4:
-                d4.setVisibility(View.GONE);
-                u4.setVisibility(View.VISIBLE);
-                aripan.setVisibility(View.VISIBLE);
-                break;
-
-            case R.id.up_arrow4:
-                d4.setVisibility(View.VISIBLE);
-                u4.setVisibility(View.GONE);
-                aripan.setVisibility(View.GONE);
-                break;
-
         }
-
-
+        return loadFragment(fragment);
     }
+
+
 }

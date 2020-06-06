@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="2dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cardView"
+            app:cardElevation="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="10dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="100"
+                android:id="@+id/imageControl"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/userName"
+                        android:text="Anonymous User"
+                        android:fontFamily="@font/poppins"
+                        android:textSize="16dp"
+                        android:textColor="#000000"
+                        android:padding="5dp"
+                        android:paddingBottom="0dp"
+                        android:layout_margin="4dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/date"
+                        android:text="5-May-2019"
+                        android:fontFamily="@font/poppins"
+                        android:textSize="10dp"
+                        android:padding="5dp"
+                        android:paddingTop="0dp"
+                        android:layout_margin="4dp"/>
+
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:src="@drawable/tst_img"
+                    android:layout_weight="70"
+                    android:id="@+id/imageView"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="30"
+                    android:weightSum="100"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="60"
+                        android:orientation="horizontal"
+                        >
+
+                        <TextView
+                            android:id="@+id/headline"
+                            android:layout_width="313dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:padding="5dp"
+                            android:text="Culprit Will Not Be Spared Home Minister Amit Shah On Jamia Firing"
+                            android:textSize="16sp" />
+                        <!--    expandable layout-->
+                        <TextView
+                            android:layout_width="313dp"
+                            android:id="@+id/content"
+                            android:text="qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"
+                            android:maxLines="50"
+                            android:textSize="16sp"
+                            android:singleLine="false"
+                            android:visibility="gone"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:layout_width="33dp"
+                            android:layout_marginTop="8dp"
+                            android:paddingTop="8dp"
+                            android:id="@+id/down"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="false"
+                            android:background="@drawable/down_arrow" />
+                        <ImageView
+                            android:layout_width="33dp"
+                            android:layout_marginTop="8dp"
+                            android:paddingTop="8dp"
+                            android:id="@+id/up_arrow"
+                            android:visibility="gone"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="false"
+                            android:background="@drawable/ic_keyboard_arrow_up_black_24dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="100"
+                        android:id="@+id/buttonContol"
+                        android:layout_weight="40"
+
+                        >
+                        <!-- bookmark Button-->
+                        <ImageView
+                            android:id="@+id/save"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_weight="20"
+                            android:src="@drawable/like"
+                           />
+                        <!-- view Button -->
+                        <ImageView
+                            android:id="@+id/view"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:src="@drawable/ic_comment_black_24dp"
+                            android:layout_weight="60"
+                             />
+                        <!-- view Button -->
+                        <ImageView
+                            android:id="@+id/share"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_weight="20"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_share_black_24dp"
+                            />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+
+
+
+</FrameLayout>
