@@ -1,7 +1,9 @@
 package com.maithil.madhushravani.ui;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,6 +12,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.transition.Explode;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -50,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
         getWindow().setExitTransition(new Explode());
 
         findViewbyid();
-
+        setToolBar();
         loadFragment(new HomeFragment());
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
@@ -100,6 +104,39 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
         }
         return loadFragment(fragment);
     }
+
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater inflater = getMenuInflater();
+//        inflater.inflate(R.menu.toolbar_contextual, menu);
+//        return true;
+//    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+        String btnName = null;
+//        switch(itemId) {
+//            case R.id.menu_settings:
+//                btnName = "Settings";
+//                break;
+//            case R.id.menu_compass:
+//                btnName = "Compass";
+//                break;
+//            case R.id.menu_help:
+//                btnName = "Help";
+//                break;
+//        }
+//        Snackbar.make(layout, "Button " + btnName, Snackbar.LENGTH_SHORT).show();
+        return true;
+    }
+    private void setToolBar() {
+        Toolbar tb = findViewById(R.id.toolbar);
+        setSupportActionBar(tb);
+        ActionBar ab = getSupportActionBar();
+//        ab.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
+//        ab.setDisplayHomeAsUpEnabled(true);
+    }
+
 
 
 }

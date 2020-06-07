@@ -4,6 +4,9 @@ package com.maithil.madhushravani.ui;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
+import androidx.annotation.MenuRes;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -16,6 +19,8 @@ import android.widget.TextView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.card.MaterialCardView;
 import com.maithil.madhushravani.R;
+
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -39,10 +44,16 @@ ImageView play,pause,read;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_day1, container, false);
+        Toolbar tb = view.findViewById(R.id.toolbar);
         findViewByid(view);
+        createMenus(tb,R.menu.toolbar_contextual);
         return view;
     }
-
+    private void createMenus(Toolbar actionBarToolBar, @MenuRes int menu){
+        ((MainActivity) Objects.requireNonNull(getActivity())).setSupportActionBar(actionBarToolBar);
+        actionBarToolBar.setTitle("");
+        actionBarToolBar.inflateMenu(menu);
+    }
     @Override
     public void onClick(View view) {
         int id = view.getId();
@@ -211,6 +222,9 @@ ImageView play,pause,read;
 
     }
 
+
+
+
     private void findViewByid(View view){
         day1 = view.findViewById(R.id.card1); day1.setOnClickListener(this);
         day2 = view.findViewById(R.id.card2); day2.setOnClickListener(this);
@@ -243,4 +257,5 @@ ImageView play,pause,read;
 
         bottomSheetDialog.show();
     }
+
 }

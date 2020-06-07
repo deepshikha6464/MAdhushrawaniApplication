@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Day2_14">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/nonframe"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:text="@string/binii"
+                android:fontFamily="@font/poppins"
+                android:textColor="#000000"
+                />
+            <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/grid2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="1"
+                android:orientation="horizontal"
+                tools:context=".GridXMLActivity" >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:id="@+id/audioCard"
+                        android:padding="8dp"
+                        android:layout_margin="20dp"
+                        android:src="@drawable/play"
+                        android:layout_height="80dp"
+                        />
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:id="@+id/audioCardPause"
+                        android:padding="8dp"
+                        android:layout_margin="20dp"
+                        android:src="@drawable/pause"
+                        android:visibility="gone"
+                        android:layout_height="80dp"
+                        />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:id="@+id/pictureCard"
+                    android:src="@drawable/book"
+                    android:padding="8dp"
+                    android:layout_margin="20dp"
+                    android:layout_height="80dp"
+                    />
+            </GridLayout >
+            <View style="@style/Divider"
+                android:layout_margin="4dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:id="@+id/noteheading"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:text="@string/note11"
+                android:fontFamily="@font/poppins"
+                android:textColor="#000000"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:id="@+id/note"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:text="@string/note"
+                android:fontFamily="@font/poppins"
+                android:textColor="#000000"
+                />
+            <View style="@style/Divider"
+                android:layout_margin="4dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:text="@string/katha"
+                android:fontFamily="@font/poppins"
+                android:textColor="#000000"
+                />
+
+
+<!--main katha-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:id="@+id/mainKatha"
+                android:layout_gravity="center"
+                android:text="@string/kathaday2"
+                android:fontFamily="@font/poppins"
+                android:textColor="#000000"
+                />
+<!--next title-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:id="@+id/nextTitle"
+                android:layout_gravity="center"
+                android:text="@string/nexttitle"
+                android:fontFamily="@font/poppins"
+                android:textColor="#000000"
+                />
+<!--            next katha-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:id="@+id/nextKatha"
+                android:layout_gravity="center"
+                android:text="@string/nextKatha"
+                android:fontFamily="@font/poppins"
+                android:textColor="#000000"
+                />
+            <View style="@style/Divider"
+                android:layout_margin="4dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_gravity="center"
+                    android:text="@string/vacho"
+                    android:fontFamily="@font/poppins"
+                    android:textColor="#000000"
+                    />
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:id="@+id/audioCardKatha"
+                    android:padding="8dp"
+                    android:layout_margin="20dp"
+                    android:src="@drawable/play"
+                    android:layout_height="80dp"
+                    />
+                <ImageView
+                    android:layout_width="120dp"
+                    android:id="@+id/audioCardPauseKatha"
+                    android:padding="8dp"
+                    android:layout_margin="20dp"
+                    android:src="@drawable/pause"
+                    android:visibility="gone"
+                    android:layout_height="80dp"
+                    />
+            </LinearLayout>
+            <View style="@style/Divider"
+                android:layout_margin="4dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_gravity="center"
+                android:text="@string/endKatha"
+                android:fontFamily="@font/poppins"
+                android:textColor="#000000"
+                />
+
+
+            <View style="@style/Divider"
+                android:layout_margin="4dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:id="@+id/temiheading"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:text="@string/temi11"
+                android:fontFamily="@font/poppins"
+                android:textColor="#000000"
+                />
+<TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:id="@+id/temi"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:text="@string/note"
+                android:fontFamily="@font/poppins"
+                android:textColor="#000000"
+                />
+
+
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+    <FrameLayout
+        android:id="@+id/biniFragCont2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</RelativeLayout>

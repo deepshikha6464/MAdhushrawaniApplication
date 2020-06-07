@@ -5,6 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.PoojaActivity">
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="?attr/actionBarSize"-->
+         >
+        <include layout="@layout/toolbar"/>
+<!--    </androidx.appcompat.widget.Toolbar>-->
     <androidx.core.widget.NestedScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -348,6 +355,94 @@
             android:layout_height="80dp"
             />
         </GridLayout >
+        <View style="@style/Divider"
+            android:layout_margin="4dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:text="@string/katha"
+            android:fontFamily="@font/poppins"
+            android:textColor="#000000"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_gravity="center"
+            android:text="@string/kathaday1"
+            android:fontFamily="@font/poppins"
+            android:textColor="#000000"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_gravity="center"
+            android:text="बिसहारा क जन्म"
+            android:fontFamily="@font/poppins"
+            android:textColor="#000000"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_gravity="center"
+            android:text="@string/kathaday1_1"
+            android:fontFamily="@font/poppins"
+            android:textColor="#000000"
+            />
+        <View style="@style/Divider"
+            android:layout_margin="4dp"/>
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:text="@string/vacho"
+                android:fontFamily="@font/poppins"
+                android:textColor="#000000"
+                />
+
+            <ImageView
+                    android:layout_width="120dp"
+                    android:id="@+id/audioCardKatha"
+                    android:padding="8dp"
+                    android:layout_margin="20dp"
+                    android:src="@drawable/play"
+                    android:layout_height="80dp"
+                    />
+                <ImageView
+                    android:layout_width="120dp"
+                    android:id="@+id/audioCardPauseKatha"
+                    android:padding="8dp"
+                    android:layout_margin="20dp"
+                    android:src="@drawable/pause"
+                    android:visibility="gone"
+                    android:layout_height="80dp"
+                    />
+            </LinearLayout>
+        <View style="@style/Divider"
+            android:layout_margin="4dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_gravity="center"
+            android:text="@string/endKatha"
+            android:fontFamily="@font/poppins"
+            android:textColor="#000000"
+            />
+
+
+
 
     </LinearLayout>
 
@@ -358,6 +453,5 @@
 android:id="@+id/fragContainer"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-
  />
 </RelativeLayout>

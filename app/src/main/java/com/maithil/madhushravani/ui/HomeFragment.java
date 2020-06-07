@@ -3,7 +3,11 @@ package com.maithil.madhushravani.ui;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
@@ -21,6 +25,8 @@ import com.gtomato.android.ui.widget.CarouselView;
 import com.maithil.madhushravani.R;
 import com.maithil.madhushravani.utils.MyDataAdapter;
 
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,9 +41,10 @@ public class HomeFragment extends Fragment implements  View.OnClickListener {
     LinearLayout step2dec,step3dec;
     ImageView d1,u1,d2,u2,d3,u3,d4,u4, aripan;
     MaterialCardView day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13;
-
     //vars
     List<Integer> daysNumber = new ArrayList<>();
+    Bundle b;
+    Day2_14 f = new Day2_14();
 
     public HomeFragment() {
         // Required empty public constructor
@@ -172,7 +179,124 @@ public class HomeFragment extends Fragment implements  View.OnClickListener {
                         .beginTransaction()
                         .replace(R.id.fragment_container, new Day1Fragment())
                         .commit();
-
+                break;
+            case R.id.day2:
+               b = new Bundle();
+                b.putString("UNIQUE_KEY","2");
+                f.setArguments(b);
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container,f)
+                        .commit();
+            break;
+            case R.id.day3:
+               b = new Bundle();
+                b.putString("UNIQUE_KEY","3");
+                f.setArguments(b);
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container,f)
+                        .commit();
+            break;
+            case R.id.day4:
+               b = new Bundle();
+                b.putString("UNIQUE_KEY","4");
+                f.setArguments(b);
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container,f)
+                        .commit();
+            break;
+            case R.id.day5:
+               b = new Bundle();
+                b.putString("UNIQUE_KEY","5");
+                f.setArguments(b);
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container,f)
+                        .commit();
+            break;
+            case R.id.day6:
+               b = new Bundle();
+                b.putString("UNIQUE_KEY","6");
+                f.setArguments(b);
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container,f)
+                        .commit();
+            break;
+            case R.id.day7:
+               b = new Bundle();
+                b.putString("UNIQUE_KEY","7");
+                f.setArguments(b);
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container,f)
+                        .commit();
+            break;
+            case R.id.day8:
+               b = new Bundle();
+                b.putString("UNIQUE_KEY","8");
+                f.setArguments(b);
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container,f)
+                        .commit();
+            break;
+            case R.id.day9:
+               b = new Bundle();
+                b.putString("UNIQUE_KEY","9");
+                f.setArguments(b);
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container,f)
+                        .commit();
+            break;
+            case R.id.day10:
+               b = new Bundle();
+                b.putString("UNIQUE_KEY","10");
+                f.setArguments(b);
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container,f)
+                        .commit();
+            break;
+            case R.id.day11:
+               b = new Bundle();
+                b.putString("UNIQUE_KEY","11");
+                f.setArguments(b);
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container,f)
+                        .commit();
+            break;
+            case R.id.day12:
+               b = new Bundle();
+                b.putString("UNIQUE_KEY","12");
+                f.setArguments(b);
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container,f)
+                        .commit();
+            break;
+            case R.id.day13:
+               b = new Bundle();
+                b.putString("UNIQUE_KEY","13");
+                f.setArguments(b);
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container,f)
+                        .commit();
+            break;
+            case R.id.day14:
+               b = new Bundle();
+                b.putString("UNIQUE_KEY","14");
+                f.setArguments(b);
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container,f)
+                        .commit();
+            break;
         }
 
     }
