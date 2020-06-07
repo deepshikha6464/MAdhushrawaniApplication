@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.card.MaterialCardView;
 import com.gtomato.android.ui.transformer.FlatMerryGoRoundTransformer;
 import com.gtomato.android.ui.widget.CarouselView;
 import com.maithil.madhushravani.R;
@@ -33,6 +34,7 @@ public class HomeFragment extends Fragment implements  View.OnClickListener {
     TextView pooja, history,step1des;
     LinearLayout step2dec,step3dec;
     ImageView d1,u1,d2,u2,d3,u3,d4,u4, aripan;
+    MaterialCardView day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13;
 
     //vars
     List<Integer> daysNumber = new ArrayList<>();
@@ -49,25 +51,8 @@ public class HomeFragment extends Fragment implements  View.OnClickListener {
         View view =  inflater.inflate(R.layout.fragment_home, container, false);
         findViewbyid(view);
         ListOfDays();
-        CarouselSettings(view);
-        carousel.setOnItemSelectedListener(new CarouselView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(CarouselView carouselView, int position, int adapterPosition, RecyclerView.Adapter adapter) {
-                Log.d(TAG, "onItemSelected: "+position);
-                carouselView.setOnItemClickListener( new CarouselView.OnItemClickListener(){
-                    @Override
-                    public void onItemClick(RecyclerView.Adapter adapter, View view, int i, int i1) {
-                    }
+//        CarouselSettings(view);
 
-                });
-            }
-
-            @Override
-            public void onItemDeselected(CarouselView carouselView, int position, int adapterPosition, RecyclerView.Adapter adapter) {
-                Log.d(TAG, "onItemDeselected: ");
-            }
-
-        });
 
 
 //        carousel.setOnScrollListener(new CarouselView.OnScrollListener() {
@@ -114,6 +99,19 @@ public class HomeFragment extends Fragment implements  View.OnClickListener {
         step3dec = view.findViewById(R.id.step3dec);
         aripan = view.findViewById(R.id.aripan);
 
+        day1 = view.findViewById(R.id.day1); day1.setOnClickListener(this);
+        day2 = view.findViewById(R.id.day2); day2.setOnClickListener(this);
+        day3 = view.findViewById(R.id.day3); day3.setOnClickListener(this);
+        day4 = view.findViewById(R.id.day4); day4.setOnClickListener(this);
+        day5 = view.findViewById(R.id.day5); day5.setOnClickListener(this);
+        day6 = view.findViewById(R.id.day6); day6.setOnClickListener(this);
+        day7 = view.findViewById(R.id.day7); day7.setOnClickListener(this);
+        day8 = view.findViewById(R.id.day8); day8.setOnClickListener(this);
+        day9 = view.findViewById(R.id.day9); day9.setOnClickListener(this);
+        day10 = view.findViewById(R.id.day10); day10.setOnClickListener(this);
+        day11 = view.findViewById(R.id.day11); day11.setOnClickListener(this);
+        day12 = view.findViewById(R.id.day12); day12.setOnClickListener(this);
+        day13 = view.findViewById(R.id.day13); day13.setOnClickListener(this);
 
     }
 
@@ -169,6 +167,12 @@ public class HomeFragment extends Fragment implements  View.OnClickListener {
                 aripan.setVisibility(View.GONE);
                 break;
 
+            case R.id.day1:
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, new Day1Fragment())
+                        .commit();
+
         }
 
     }
@@ -183,34 +187,34 @@ public class HomeFragment extends Fragment implements  View.OnClickListener {
         bottomSheetDialog.show();
     }
 
-    private void CarouselSettings(View v){
-        carousel = v.findViewById(R.id.carousel);
-        carousel.setInfinite(true);
-        carousel.setExtraVisibleChilds(6);
-//        carousel.smoothScrollToPosition(carousel.getAdapter().getItemCount() - 1);
-        carousel.setHorizontalScrollBarEnabled(true);
-        carousel.setScrollingAlignToViews(true);
-        carousel.setElevation(20);
-        carousel.bringToFront();
-
-        carousel.setTransformer(new FlatMerryGoRoundTransformer() {
-
-            @Override
-            public void transform(View view, float position) {
-                super.transform(view, position);
-                float alpha;
-                if (-2 <= position && position <= 0) {
-                    alpha = (float) ((2 + position) / 2.0);
-                } else if (0 < position && position <= 2) {
-                    alpha = (float) ((2 - position) / 2.0);
-                } else {
-                    alpha = 0;
-                }
-                view.setAlpha(alpha);
-            }
-        });
-        carousel.setAdapter(new MyDataAdapter(daysNumber));
-    }
+//    private void CarouselSettings(View v){
+//        carousel = v.findViewById(R.id.carousel);
+//        carousel.setInfinite(true);
+//        carousel.setExtraVisibleChilds(6);
+////        carousel.smoothScrollToPosition(carousel.getAdapter().getItemCount() - 1);
+//        carousel.setHorizontalScrollBarEnabled(true);
+//        carousel.setScrollingAlignToViews(true);
+//        carousel.setElevation(20);
+//        carousel.bringToFront();
+//
+//        carousel.setTransformer(new FlatMerryGoRoundTransformer() {
+//
+//            @Override
+//            public void transform(View view, float position) {
+//                super.transform(view, position);
+//                float alpha;
+//                if (-2 <= position && position <= 0) {
+//                    alpha = (float) ((2 + position) / 2.0);
+//                } else if (0 < position && position <= 2) {
+//                    alpha = (float) ((2 - position) / 2.0);
+//                } else {
+//                    alpha = 0;
+//                }
+//                view.setAlpha(alpha);
+//            }
+//        });
+//        carousel.setAdapter(new MyDataAdapter(daysNumber));
+//    }
     public  void ListOfDays(){
         daysNumber.add(1);
         daysNumber.add(2);
