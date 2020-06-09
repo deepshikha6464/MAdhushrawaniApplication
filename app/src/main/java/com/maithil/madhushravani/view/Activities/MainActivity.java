@@ -1,37 +1,23 @@
-package com.maithil.madhushravani.ui;
+package com.maithil.madhushravani.view.Activities;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.recyclerview.widget.RecyclerView;
-import android.app.ActivityOptions;
-import android.content.Intent;
+
 import android.os.Bundle;
 import android.transition.Explode;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.gtomato.android.ui.transformer.FlatMerryGoRoundTransformer;
-import com.gtomato.android.ui.widget.CarouselView;
-import com.maithil.madhushravani.utils.MyDataAdapter;
-import com.maithil.madhushravani.R;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.maithil.madhushravani.R;
+import com.maithil.madhushravani.view.explore.ExploreFragment;
+import com.maithil.madhushravani.view.home.HomeFragment;
+import com.maithil.madhushravani.view.profile.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity implements  View.OnClickListener ,BottomNavigationView.OnNavigationItemSelectedListener {
     private static final String TAG = "MainActivity";
@@ -74,10 +60,12 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
         if (fragment != null) {
             getSupportFragmentManager()
                     .beginTransaction()
+                    .setCustomAnimations(R.animator.slide_in_bottom,R.animator.slide_out_bottom,R.animator.slide_in_top,R.animator.slide_out_top)
                     .replace(R.id.fragment_container, fragment)
                     .commit();
             return true;
         }
+
         return false;
     }
   @Override
@@ -132,11 +120,11 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
     private void setToolBar() {
         Toolbar tb = findViewById(R.id.toolbar);
         setSupportActionBar(tb);
-        ActionBar ab = getSupportActionBar();
+        tb.setLogo(R.drawable.logo_text);
+//                ActionBar ab = getSupportActionBar();
 //        ab.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
 //        ab.setDisplayHomeAsUpEnabled(true);
     }
-
 
 
 }

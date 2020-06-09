@@ -1,13 +1,11 @@
-package com.maithil.madhushravani.ui;
+package com.maithil.madhushravani.view.home;
 
 
 import android.annotation.SuppressLint;
-import android.content.res.TypedArray;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -16,9 +14,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.maithil.madhushravani.R;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.

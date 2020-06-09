@@ -1,16 +1,11 @@
-package com.maithil.madhushravani.ui;
+package com.maithil.madhushravani.view.home;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,13 +15,10 @@ import android.widget.TextView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.card.MaterialCardView;
-import com.gtomato.android.ui.transformer.FlatMerryGoRoundTransformer;
 import com.gtomato.android.ui.widget.CarouselView;
 import com.maithil.madhushravani.R;
-import com.maithil.madhushravani.utils.MyDataAdapter;
+import com.maithil.madhushravani.view.Activities.LoginActivity;
 
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,16 +50,6 @@ public class HomeFragment extends Fragment implements  View.OnClickListener {
         View view =  inflater.inflate(R.layout.fragment_home, container, false);
         findViewbyid(view);
         ListOfDays();
-//        CarouselSettings(view);
-
-
-
-//        carousel.setOnScrollListener(new CarouselView.OnScrollListener() {
-//            @Override
-//            public void onScrollEnd(CarouselView carouselView) {
-//                super.onScrollEnd(carouselView);
-//            }
-//        });
 
         return view;
     }
@@ -84,10 +66,12 @@ public class HomeFragment extends Fragment implements  View.OnClickListener {
         pooja.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container, new poojaFragment())
-                        .commit();
+                Intent i = new Intent(getContext(), LoginActivity.class);
+                startActivity(i);
+//                getActivity().getSupportFragmentManager()
+//                        .beginTransaction()
+//                        .replace(R.id.fragment_container, new poojaFragment())
+//                        .commit();
             }
         });
 
@@ -177,6 +161,7 @@ public class HomeFragment extends Fragment implements  View.OnClickListener {
             case R.id.day1:
                 getActivity().getSupportFragmentManager()
                         .beginTransaction()
+//                        .setCustomAnimations(R.animator.slide_in_bottom,R.animator.slide_out_bottom,R.animator.slide_in_top,R.animator.slide_out_top)
                         .replace(R.id.fragment_container, new Day1Fragment())
                         .commit();
                 break;
@@ -184,120 +169,89 @@ public class HomeFragment extends Fragment implements  View.OnClickListener {
                b = new Bundle();
                 b.putString("UNIQUE_KEY","2");
                 f.setArguments(b);
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container,f)
-                        .commit();
+                loadFragment(f);
             break;
             case R.id.day3:
                b = new Bundle();
                 b.putString("UNIQUE_KEY","3");
                 f.setArguments(b);
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container,f)
-                        .commit();
+                loadFragment(f);
             break;
             case R.id.day4:
                b = new Bundle();
                 b.putString("UNIQUE_KEY","4");
                 f.setArguments(b);
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container,f)
-                        .commit();
+                loadFragment(f);
             break;
             case R.id.day5:
                b = new Bundle();
                 b.putString("UNIQUE_KEY","5");
                 f.setArguments(b);
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container,f)
-                        .commit();
+                loadFragment(f);
             break;
             case R.id.day6:
                b = new Bundle();
                 b.putString("UNIQUE_KEY","6");
                 f.setArguments(b);
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container,f)
-                        .commit();
+                loadFragment(f);
             break;
             case R.id.day7:
                b = new Bundle();
                 b.putString("UNIQUE_KEY","7");
                 f.setArguments(b);
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container,f)
-                        .commit();
+                loadFragment(f);
             break;
             case R.id.day8:
                b = new Bundle();
                 b.putString("UNIQUE_KEY","8");
                 f.setArguments(b);
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container,f)
-                        .commit();
+                loadFragment(f);
             break;
             case R.id.day9:
                b = new Bundle();
                 b.putString("UNIQUE_KEY","9");
                 f.setArguments(b);
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container,f)
-                        .commit();
+                loadFragment(f);
             break;
             case R.id.day10:
                b = new Bundle();
                 b.putString("UNIQUE_KEY","10");
                 f.setArguments(b);
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container,f)
-                        .commit();
+                loadFragment(f);
             break;
             case R.id.day11:
                b = new Bundle();
                 b.putString("UNIQUE_KEY","11");
                 f.setArguments(b);
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container,f)
-                        .commit();
+                loadFragment(f);
             break;
             case R.id.day12:
                b = new Bundle();
                 b.putString("UNIQUE_KEY","12");
                 f.setArguments(b);
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container,f)
-                        .commit();
+                loadFragment(f);
             break;
             case R.id.day13:
                b = new Bundle();
                 b.putString("UNIQUE_KEY","13");
                 f.setArguments(b);
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container,f)
-                        .commit();
+                loadFragment(f);
             break;
             case R.id.day14:
                b = new Bundle();
                 b.putString("UNIQUE_KEY","14");
                 f.setArguments(b);
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container,f)
-                        .commit();
+               loadFragment(f);
             break;
         }
+
+    }
+    public void loadFragment(Fragment frag){
+        getActivity().getSupportFragmentManager()
+                .beginTransaction()
+//                .setCustomAnimations(R.animator.slide_in_bottom,R.animator.slide_out_bottom,R.animator.slide_in_top,R.animator.slide_out_top)
+                .replace(R.id.fragment_container,frag)
+                .commit();
 
     }
 

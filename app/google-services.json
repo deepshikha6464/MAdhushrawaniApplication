@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "387474445732",
+    "firebase_url": "https://madhushrawani.firebaseio.com",
+    "project_id": "madhushrawani",
+    "storage_bucket": "madhushrawani.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:387474445732:android:3b6bd4f07dab9bef69dd31",
+        "android_client_info": {
+          "package_name": "com.maithil.madhushravani"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "387474445732-95bjpceo0gp5kbee40u5dmlcdgkhcse9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.maithil.madhushravani",
+            "certificate_hash": "751a6cfde56f1948d01c2fb883c011c40143a4c7"
+          }
+        },
+        {
+          "client_id": "387474445732-gholii541sejjldcjm194cum4le8pnj2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWCWBGAx9vHOnz0SueVlDCTyuD5NuHXLU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "387474445732-gholii541sejjldcjm194cum4le8pnj2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

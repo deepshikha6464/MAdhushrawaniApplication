@@ -11,13 +11,10 @@
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior">
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:background="#FCE4EC"
             android:layout_height="match_parent"
-            tools:context=".ui.MainActivity">
+            tools:context=".view.Activities.MainActivity">
             <!--            <com.google.android.material.bottomappbar.BottomAppBar-->
             <!--                android:id="@+id/bottom_app_bar"-->
             <!--                app:hideOnScroll="true"-->
@@ -381,6 +378,7 @@
                         android:orientation="vertical">
 
                         <LinearLayout
+                            android:id="@+id/aripan_card"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="100"
@@ -743,7 +741,11 @@
 <!--                    android:scaleX="1"-->
 <!--                    android:visibility="visible" />-->
 
-
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_below="@+id/poojastep4Card"
+                    android:layout_margin="4dp"/>
             </RelativeLayout>
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
     </androidx.core.widget.NestedScrollView>

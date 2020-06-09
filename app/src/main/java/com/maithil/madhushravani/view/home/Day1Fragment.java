@@ -1,11 +1,10 @@
-package com.maithil.madhushravani.ui;
+package com.maithil.madhushravani.view.home;
 
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.annotation.MenuRes;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
@@ -19,6 +18,7 @@ import android.widget.TextView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.card.MaterialCardView;
 import com.maithil.madhushravani.R;
+import com.maithil.madhushravani.view.Activities.MainActivity;
 
 import java.util.Objects;
 
@@ -51,8 +51,8 @@ ImageView play,pause,read;
     }
     private void createMenus(Toolbar actionBarToolBar, @MenuRes int menu){
         ((MainActivity) Objects.requireNonNull(getActivity())).setSupportActionBar(actionBarToolBar);
-        actionBarToolBar.setTitle("");
-        actionBarToolBar.inflateMenu(menu);
+//        actionBarToolBar.setTitle("");
+//        actionBarToolBar.inflateMenu(menu);
     }
     @Override
     public void onClick(View view) {

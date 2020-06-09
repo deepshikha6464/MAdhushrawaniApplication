@@ -1,4 +1,4 @@
-package com.maithil.madhushravani.ui;
+package com.maithil.madhushravani.view.profile;
 
 
 import android.os.Bundle;
@@ -14,10 +14,10 @@ import com.maithil.madhushravani.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ExploreFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
 
-    public ExploreFragment() {
+    public ProfileFragment() {
         // Required empty public constructor
     }
 
@@ -26,7 +26,7 @@ public class ExploreFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_explore2, container, false);
+        return inflater.inflate(R.layout.fragment_profile2, container, false);
     }
 
     public interface OnFragmentInteractionListener {

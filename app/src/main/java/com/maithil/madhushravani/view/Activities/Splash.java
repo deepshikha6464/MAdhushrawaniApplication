@@ -1,4 +1,4 @@
-package com.maithil.madhushravani.ui;
+package com.maithil.madhushravani.view.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 

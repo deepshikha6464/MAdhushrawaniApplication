@@ -1,4 +1,4 @@
-package com.maithil.madhushravani.ui;
+package com.maithil.madhushravani.view.home;
 
 
 import android.os.Bundle;

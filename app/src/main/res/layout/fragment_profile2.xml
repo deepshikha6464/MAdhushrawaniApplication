@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:background="#76FF03"
     android:layout_height="match_parent"
-    tools:context=".ui.ProfileFragment">
+    tools:context=".view.profile.ProfileFragment">
 
 
 </FrameLayout>
