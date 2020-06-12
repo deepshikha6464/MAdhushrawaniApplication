@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:id="@+id/mediaLayout"
+    android:background="@color/bottomNavColor">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:id="@+id/mediaCard"
+        android:layout_marginLeft="20dp"
+        android:text="Katha of day 1"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/colorPrimary"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+       >
+    <SeekBar
+        android:layout_width="250dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        />
+    <ImageView
+        android:layout_width="120dp"
+        android:id="@+id/ack"
+        android:padding="8dp"
+
+        android:src="@drawable/play"
+        android:layout_height="40dp"
+        />
+    <ImageView
+        android:layout_width="120dp"
+        android:id="@+id/apck"
+        android:padding="8dp"
+        android:src="@drawable/pause"
+        android:visibility="gone"
+        android:layout_height="40dp"
+        />
+    </LinearLayout>
+</LinearLayout>

@@ -5,6 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+<!--    write exp card-->
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,17 +19,29 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/imageViewHeader"
-                android:layout_width="66dp"
-                android:layout_height="41dp"
-                app:srcCompat="@drawable/account_circle" />
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/happyGirlCard"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:lottie_autoPlay="true"
+                android:layout_margin="5dp"
+                app:lottie_fileName="happy_girl.json"
+                app:lottie_loop="true"
+                app:lottie_speed="1.25" />
 
-            <ImageView
-                android:id="@+id/imageViewHeader2"
-                android:layout_width="304dp"
-                android:layout_height="55dp"
-                app:srcCompat="@drawable/postbox" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ss"
+                android:textSize="12dp"
+                android:drawableTintMode="add"
+                android:backgroundTint="@color/greyColor"
+                android:textColor="@color/greyColor"
+                android:layout_marginTop="20dp"
+
+                android:fontFamily="@font/poppins"/>
+
+
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>

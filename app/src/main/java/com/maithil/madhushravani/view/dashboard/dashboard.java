@@ -1,9 +1,12 @@
-package com.maithil.madhushravani.view.explore;
+package com.maithil.madhushravani.view.dashboard;
 
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
+import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -21,6 +24,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -42,6 +46,7 @@ import com.maithil.madhushravani.R;
 import com.maithil.madhushravani.model.SharedPref;
 import com.maithil.madhushravani.model.UserData;
 
+import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -55,8 +60,8 @@ import static com.maithil.madhushravani.model.SharedPref.KEY_NAME;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ExploreFragment extends Fragment implements View.OnClickListener {
-    private static final String TAG = "ExploreFragment";
+public class dashboard extends Fragment implements View.OnClickListener {
+    private static final String TAG = "dashboard";
           MaterialCardView shareCard;
     //Firebase
     FirebaseStorage storage;
@@ -66,9 +71,10 @@ public class ExploreFragment extends Fragment implements View.OnClickListener {
     private final int PICK_IMAGE_REQUEST = 22;
     private static final int REQUEST_CODE = 101;
     EditText editText;
-    Button upload , select;
-    ImageView seletedImg,userImage=null;
-    TextView userText;
+    LottieAnimationView  select ,cross;
+
+      ImageView seletedImg,userImage=null;
+    TextView userText,upload;
     String formattedDate;
 
     FirebaseAuth auth;
@@ -78,7 +84,8 @@ public class ExploreFragment extends Fragment implements View.OnClickListener {
 
     SharedPref sp;
     UserData userData;
-    public ExploreFragment() {
+    Bitmap bitmap;
+    public dashboard() {
         // Required empty public constructor
     }
 
@@ -112,6 +119,10 @@ public class ExploreFragment extends Fragment implements View.OnClickListener {
             case R.id.upload:
                 uploadImage();
                 break;
+            case R.id.cross:
+                 deleteImage();
+
+                 break;
         }
     }
 
@@ -131,6 +142,7 @@ public class ExploreFragment extends Fragment implements View.OnClickListener {
         editText = view1.findViewById(R.id.editText);
         select = view1.findViewById(R.id.selectImg); select.setOnClickListener(this);
         upload = view1.findViewById(R.id.upload); upload.setOnClickListener(this);
+        cross = view1.findViewById(R.id.cross); cross.setOnClickListener(this);
         seletedImg = view1.findViewById(R.id.selectedImg);
         userImage = view1.findViewById(R.id.userImg);
         userText = view1.findViewById(R.id.userNamedisplay);
@@ -223,6 +235,11 @@ public class ExploreFragment extends Fragment implements View.OnClickListener {
                         intent,
                         "Select Image from here..."),
                 PICK_IMAGE_REQUEST);
+        cross.setVisibility(View.VISIBLE);
+    }
+    private void deleteImage(){
+                   seletedImg.setImageDrawable(null);
+                   cross.setVisibility(View.GONE);
     }
     private void uploadImage() {
 
@@ -283,21 +300,25 @@ public class ExploreFragment extends Fragment implements View.OnClickListener {
             // Get the Uri of data
             filePath = data.getData();
             try {
+                Glide.with(this).load(filePath).into(seletedImg);
+            }
+            catch (Exception e) {
 
-                // Setting image on image view using Bitmap
-                Bitmap bitmap = MediaStore
-                        .Images
-                        .Media
-                        .getBitmap(
-                                getActivity().getContentResolver(),
-                                filePath);
-                seletedImg.setImageBitmap(bitmap);
             }
 
-            catch (IOException e) {
-                // Log the exception
-                e.printStackTrace();
-            }
         }
     }
+    private static int exifToDegrees(int exifOrientation) {
+        if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_90) { return 90; }
+        else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_180) {  return 180; }
+        else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_270) {  return 270; }
+        return 0;
+    }
 }
+// bitmap = MediaStore
+//         .Images
+//         .Media
+//         .getBitmap(
+//         getActivity().getContentResolver(),
+//         filePath);
+//         seletedImg.setImageBitmap(bitmap);

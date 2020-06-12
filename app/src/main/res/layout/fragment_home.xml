@@ -12,7 +12,7 @@
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
-            android:background="#FCE4EC"
+
             android:layout_height="match_parent"
             tools:context=".view.Activities.MainActivity">
             <!--            <com.google.android.material.bottomappbar.BottomAppBar-->

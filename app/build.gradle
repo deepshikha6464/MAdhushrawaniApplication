@@ -44,4 +44,7 @@ dependencies {
     // Glide v4 uses this new annotation processor -- see https://bumptech.github.io/glide/doc/generatedapi.html
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
 
+
+    //lottie
+    implementation 'com.airbnb.android:lottie:3.3.1'
 }

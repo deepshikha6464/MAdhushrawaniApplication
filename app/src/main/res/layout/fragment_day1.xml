@@ -256,6 +256,7 @@
             android:fontFamily="@font/poppins"
             android:textColor="#000000"
             />
+<!--        grid of bini-->
         <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/grid2"
@@ -265,40 +266,36 @@
             android:rowCount="1"
             android:orientation="horizontal"
             tools:context=".GridXMLActivity" >
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <ImageView
-                    android:layout_width="120dp"
-                    android:id="@+id/audioCard"
-                    android:padding="8dp"
-                    android:layout_margin="20dp"
-                    android:src="@drawable/play"
-                    android:layout_height="80dp"
-                    />
-                <ImageView
-                    android:layout_width="120dp"
-                    android:id="@+id/audioCardPause"
-                    android:padding="8dp"
-                    android:layout_margin="20dp"
-                    android:src="@drawable/pause"
-                    android:visibility="gone"
-                    android:layout_height="80dp"
-                    />
-            </LinearLayout>
 
-        <ImageView
-            android:layout_width="120dp"
-            android:id="@+id/pictureCard"
-            android:src="@drawable/book"
-            android:padding="8dp"
-            android:layout_margin="20dp"
-            android:layout_height="80dp"
-            />
+<!--play pause-->
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/audioCard"
+                    android:layout_width="120dp"
+                    android:layout_height="80dp"
+                    app:lottie_autoPlay="false"
+                    android:padding="8dp"
+                    android:layout_margin="20dp"
+                    app:lottie_fileName="pause_play.json"
+                    app:lottie_loop="false"
+                    app:lottie_speed="1.25" />
+<!--            bini  book-->
+            <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/pictureCard"
+                    android:layout_width="120dp"
+                    android:layout_height="80dp"
+                    app:lottie_autoPlay="true"
+                    android:padding="8dp"
+                    android:layout_margin="20dp"
+                    app:lottie_fileName="book.json"
+                    app:lottie_loop="false"
+                    app:lottie_speed="1.25"
+                />
+
+
         </GridLayout >
         <View style="@style/Divider"
             android:layout_margin="4dp"/>
+<!--        Katha of oday-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -308,7 +305,7 @@
             android:fontFamily="@font/poppins"
             android:textColor="#000000"
             />
-
+<!--katha-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -318,7 +315,7 @@
             android:fontFamily="@font/poppins"
             android:textColor="#000000"
             />
-
+<!--katha title 2-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -328,6 +325,7 @@
             android:fontFamily="@font/poppins"
             android:textColor="#000000"
             />
+<!--        katha 2-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -343,6 +341,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+<!--            vacho bini text-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -352,7 +351,7 @@
                 android:fontFamily="@font/poppins"
                 android:textColor="#000000"
                 />
-
+<!--vacho bini song-->
             <ImageView
                     android:layout_width="120dp"
                     android:id="@+id/audioCardKatha"
@@ -373,6 +372,7 @@
             </LinearLayout>
         <View style="@style/Divider"
             android:layout_margin="4dp"/>
+<!--        end text-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -389,7 +389,11 @@
     </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
-
+<!--media -->
+<!--    <include layout="@layout/media_layout"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_width="match_parent" />-->
     <!--    frag-->
 <FrameLayout
 android:id="@+id/fragContainer"

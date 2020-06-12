@@ -1,4 +1,4 @@
-package com.maithil.madhushravani.view.home;
+package com.maithil.madhushravani.view.explore;
 
 
 import android.media.MediaPlayer;
@@ -11,12 +11,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.google.android.material.card.MaterialCardView;
 import com.maithil.madhushravani.R;
 import com.maithil.madhushravani.view.Activities.MainActivity;
 
@@ -30,7 +29,8 @@ public class Day1Fragment extends Fragment implements View.OnClickListener {
     TextView day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13;
 String poojaVidhi ="";
 TextView poojavidhi;
-ImageView play,pause,read;
+LottieAnimationView play,read;
+
     MediaPlayer mp;
     LinearLayout nonframe;
 
@@ -198,19 +198,12 @@ ImageView play,pause,read;
                 cardClicked(poojaVidhi);
               break;
             case R.id.audioCard:
+                play.playAnimation();
                 mp= MediaPlayer.create(getActivity().getApplicationContext(),R.raw.tum_kehti_ho);
                 mp.start();
-                play.setVisibility(View.GONE);
-                pause.setVisibility(View.VISIBLE);
                 break;
 
-            case R.id.audioCardPause:
-                play.setVisibility(View.VISIBLE);
-                pause.setVisibility(View.GONE);
-                mp.stop();
-                break;
-
-            case R.id.pictureCard:
+           case R.id.pictureCard:
                 nonframe.setVisibility(View.GONE);
                 getActivity().getSupportFragmentManager()
                         .beginTransaction()
@@ -241,7 +234,6 @@ ImageView play,pause,read;
 
 
         play = view.findViewById(R.id.audioCard); play.setOnClickListener(this);
-        pause = view.findViewById(R.id.audioCardPause); pause.setOnClickListener(this);
         read = view.findViewById(R.id.pictureCard); read.setOnClickListener(this);
         nonframe = view.findViewById(R.id.nonframe);
 

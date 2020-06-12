@@ -1,4 +1,4 @@
-package com.maithil.madhushravani.view.home;
+package com.maithil.madhushravani.view.explore;
 
 
 import android.annotation.SuppressLint;

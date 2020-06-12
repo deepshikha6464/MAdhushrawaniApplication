@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.text.Layout;
 import android.transition.Explode;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,14 +14,12 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.maithil.madhushravani.R;
-import com.maithil.madhushravani.view.PostFragment;
-import com.maithil.madhushravani.view.explore.ExploreFragment;
-import com.maithil.madhushravani.view.home.HomeFragment;
+import com.maithil.madhushravani.view.dashboard.dashboard;
+import com.maithil.madhushravani.view.explore.Explore;
+import com.maithil.madhushravani.view.post.PostFragment;
 import com.maithil.madhushravani.view.profile.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity implements  View.OnClickListener ,BottomNavigationView.OnNavigationItemSelectedListener {
@@ -29,7 +28,6 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
     //ui
 
     FrameLayout fragContainer;
-
     BottomNavigationView bottomNavigationView;
 GoogleSignInClient mGoogleSignInClient;
 
@@ -45,7 +43,7 @@ GoogleSignInClient mGoogleSignInClient;
 
         findViewbyid();
         setToolBar();
-        loadFragment(new HomeFragment());
+        loadFragment(new dashboard());
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
 //
@@ -84,11 +82,11 @@ GoogleSignInClient mGoogleSignInClient;
         Fragment fragment = null;
         switch (menuItem.getItemId()) {
             case R.id.navigation_home:
-                fragment = new HomeFragment();
+                fragment = new dashboard();
                 break;
 
             case R.id.navigation_explore:
-                fragment = new ExploreFragment();
+                fragment = new Explore();
                 break;
 
             case R.id.navigation_profile:

@@ -1,4 +1,4 @@
-package com.maithil.madhushravani.view.home;
+package com.maithil.madhushravani.view.explore;
 
 
 import android.content.Intent;
@@ -25,8 +25,8 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment implements  View.OnClickListener {
-    private static final String TAG = "HomeFragment";
+public class Explore extends Fragment implements  View.OnClickListener {
+    private static final String TAG = "Explore";
 
     public CarouselView carousel;
     TextView pooja, history,step1des;
@@ -38,7 +38,7 @@ public class HomeFragment extends Fragment implements  View.OnClickListener {
     Bundle b;
     Day2_14 f = new Day2_14();
 
-    public HomeFragment() {
+    public Explore() {
         // Required empty public constructor
     }
 
