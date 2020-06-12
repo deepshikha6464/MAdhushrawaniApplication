@@ -9,12 +9,29 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:id="@+id/logo"
+        android:src="@drawable/logo_img"
         />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="35dp"
+        android:layout_toRightOf="@+id/logo"
+        android:fontFamily="@font/poppins"
+        android:text="Register"
+        android:textColor="#000000"
+        android:textSize="25sp" />
+
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_centerInParent="true"
+        android:layout_margin="20dp"
+        android:padding="10dp"
         android:layout_alignParentBottom="true"
         android:layout_height="wrap_content" />
 <!--    <TextView-->

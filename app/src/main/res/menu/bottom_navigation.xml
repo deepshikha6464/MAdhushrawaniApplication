@@ -18,6 +18,11 @@
         android:title="Explore"
         app:showAsAction="always"/>
     <item
+        android:id="@+id/navigation_write"
+        android:icon="@drawable/edit"
+        android:title="Post"
+        app:showAsAction="always"/>
+    <item
         android:id="@+id/navigation_profile"
         android:icon="@drawable/profile"
         android:title="Profile"

@@ -13,8 +13,12 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.maithil.madhushravani.R;
+import com.maithil.madhushravani.view.PostFragment;
 import com.maithil.madhushravani.view.explore.ExploreFragment;
 import com.maithil.madhushravani.view.home.HomeFragment;
 import com.maithil.madhushravani.view.profile.ProfileFragment;
@@ -27,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
     FrameLayout fragContainer;
 
     BottomNavigationView bottomNavigationView;
-
+GoogleSignInClient mGoogleSignInClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
         loadFragment(new HomeFragment());
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
+//
 
 
     }
@@ -89,6 +94,9 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
             case R.id.navigation_profile:
                 fragment = new ProfileFragment();
                 break;
+            case R.id.navigation_write:
+                fragment = new PostFragment();
+                break;
         }
         return loadFragment(fragment);
     }
@@ -126,5 +134,8 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
 //        ab.setDisplayHomeAsUpEnabled(true);
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }
