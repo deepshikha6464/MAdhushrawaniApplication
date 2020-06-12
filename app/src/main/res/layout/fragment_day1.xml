@@ -5,15 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
    >
-<!--    <androidx.appcompat.widget.Toolbar-->
-<!--        android:id="@+id/toolbar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="?attr/actionBarSize"-->
-         >
-<!--    </androidx.appcompat.widget.Toolbar>-->
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+<!--        main layout-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,286 +17,233 @@
         android:id="@+id/nonframe"
         android:layout_margin="5dp"
         android:layout_marginBottom="8dp">
-    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/GridLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:columnCount="3"
-        android:rowCount="4"
-        android:orientation="horizontal"
-        tools:context=".GridXMLActivity" >
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card1"
+        <!-- start todays pooja ....-->
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_margin="4dp"
+            android:layout_gravity="center"
+            android:text="@string/startPooja"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/greyColor"
+            />
+        <!--vertical grid layout-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/gridPoojaLayout"
             android:layout_margin="5dp"
-            android:clickable="true"
-            app:cardElevation="4dp"
-            android:padding="8dp"
-            >
-            <androidx.appcompat.widget.AppCompatImageView
+            android:layout_marginBottom="4dp">
+            <!--        row  1 of grids-->
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-               />
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:padding="20dp"
-                android:fontFamily="@font/poppins"
-                android:id="@+id/history"
-                android:text="पूजा आरम्भ"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                android:textSize="20sp" />
+                android:orientation="horizontal"
+                android:id="@+id/gridPoojaLayoutRow1"
+                android:layout_margin="5dp"
+                android:layout_marginLeft="5dp"
+                >
+                <!--  pooja arambh -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:text="आरम्भ"
+                    android:id="@+id/card1"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="20sp" />
+                <!--            vertical divider-->
+                <View style="@style/VerticalDivider"
+                    android:layout_margin="10dp"/>
+                <!--            kalsh-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:layout_marginTop="20dp"
+                    android:text="कलश"
+                    android:id="@+id/card2"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="20sp" />
+                <!--            vertical divider-->
+                <View style="@style/VerticalDivider"
+                    android:layout_margin="10dp"/>
+                <!--            suryaa-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="20dp"
+                    android:text="सूर्य"
+                    android:id="@+id/card3"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="20sp" />
+                <!--            vertical divider-->
+                <View style="@style/VerticalDivider"
+                    android:layout_margin="10dp"/>
+                <!--            chandrama-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:layout_marginTop="20dp"
+                    android:text="चन्द्रमा"
+                    android:id="@+id/card4"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="20sp" />
 
-
-
-        </com.google.android.material.card.MaterialCardView>
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/card2"
-            android:layout_margin="5dp"
-            android:clickable="true"
-            app:cardElevation="4dp"
-            android:padding="8dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
+            </LinearLayout>
+            <!--        row  2 of grids-->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:padding="20dp"
-                android:fontFamily="@font/poppins"
-                android:text="कलश"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                android:textSize="20sp" />
+                android:orientation="horizontal"
+                android:weightSum="100"
+                android:id="@+id/gridPoojaLayoutRow2"
+                android:layout_margin="5dp"
+                android:layout_marginLeft="5dp"
+                >
+                <!--  navgrah arambh -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:text="नवग्रह"
+                    android:id="@+id/card5"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="20sp" />
+                <!--            vertical divider-->
+                <View style="@style/VerticalDivider"
+                    android:layout_margin="10dp"/>
+                <!--     Vishhara       -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:layout_marginTop="20dp"
+                    android:text="विषहरा"
+                    android:id="@+id/card6"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="20sp" />
+                <!--            vertical divider-->
+                <View style="@style/VerticalDivider"
+                    android:layout_margin="10dp"/>
+                <!--            bersi-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="बैरसी"
+                    android:id="@+id/card11"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="20sp" />
+                <!--            vertical divider-->
+                <View style="@style/VerticalDivider"
+                    android:layout_margin="10dp"/>
+                <!--            kumuwati-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:layout_marginTop="20dp"
+                    android:text="कुसुमावती"
+                    android:id="@+id/card7"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="18sp" />
 
-
-
-        </com.google.android.material.card.MaterialCardView>
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/card3"
-            android:layout_margin="5dp"
-            android:clickable="true"
-            app:cardElevation="4dp"
-            android:padding="8dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
+            </LinearLayout>
+            <!--        row  3 of grids-->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:padding="20dp"
-                android:fontFamily="@font/poppins"
-                android:text="सूर्य"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                android:textSize="20sp" />
+                android:orientation="horizontal"
+                android:weightSum="100"
+                android:id="@+id/gridPoojaLayoutRow3"
+                android:layout_margin="5dp"
+                android:layout_marginLeft="5dp"
+                >
+                <!-- chenaai -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:text="चनाइ"
+                    android:id="@+id/card8"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="20sp" />
+                <!--            vertical divider-->
+                <View style="@style/VerticalDivider"
+                    android:layout_margin="10dp"/>
+                <!--            pingalik-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:layout_marginTop="20dp"
+                    android:text="पिंगलाक"
+                    android:id="@+id/card10"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="3dp"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="20sp" />
+                <!--            vertical divider-->
+                <View style="@style/VerticalDivider"
+                    android:layout_margin="10dp"/>
+                <!--            lili-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="लीली"
+                    android:id="@+id/card9"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="20sp" />
+                <!--            vertical divider-->
+                <View style="@style/VerticalDivider"
+                    android:layout_margin="10dp"/>
+                <!--            satik-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:layout_marginTop="20dp"
+                    android:text="साठिक"
+                    android:id="@+id/card12"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="20sp" />
 
-
-
-        </com.google.android.material.card.MaterialCardView>
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/card4"
-            android:layout_margin="5dp"
-            android:clickable="true"
-            app:cardElevation="4dp"
-            android:padding="8dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:padding="20dp"
-                android:fontFamily="@font/poppins"
-                android:text="चन्द्रमा"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                android:textSize="20sp" />
-
-
-
-        </com.google.android.material.card.MaterialCardView>
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/card5"
-            android:layout_margin="8dp"
-            android:clickable="true"
-            app:cardElevation="4dp"
-            android:padding="8dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:padding="20dp"
-                android:fontFamily="@font/poppins"
-                android:text="नवग्रह"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                android:textSize="20sp" />
-
-
-
-        </com.google.android.material.card.MaterialCardView>
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/card6"
-            android:layout_margin="8dp"
-            android:clickable="true"
-            app:cardElevation="4dp"
-            android:padding="8dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:padding="20dp"
-                android:fontFamily="@font/poppins"
-                android:text="विषहरा"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                android:textSize="20sp" />
-
-
-
-        </com.google.android.material.card.MaterialCardView>
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/card7"
-            android:layout_margin="8dp"
-            android:clickable="true"
-            app:cardElevation="4dp"
-            android:padding="8dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:padding="20dp"
-                android:fontFamily="@font/poppins"
-                android:text="कुसुमावती"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                android:textSize="20sp" />
-
-
-
-        </com.google.android.material.card.MaterialCardView>
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/card8"
-            android:layout_margin="8dp"
-            android:clickable="true"
-            app:cardElevation="4dp"
-            android:padding="8dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:padding="20dp"
-                android:fontFamily="@font/poppins"
-                android:text="चनाइ"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                android:textSize="20sp" />
-
-
-
-        </com.google.android.material.card.MaterialCardView>
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/card9"
-            android:layout_margin="8dp"
-            android:clickable="true"
-            app:cardElevation="4dp"
-            android:padding="8dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:padding="20dp"
-                android:fontFamily="@font/poppins"
-                android:text="लीली"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                android:textSize="20sp" />
-
-
-
-        </com.google.android.material.card.MaterialCardView>
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/card10"
-            android:layout_margin="8dp"
-            android:clickable="true"
-            app:cardElevation="4dp"
-            android:padding="8dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:padding="20dp"
-                android:fontFamily="@font/poppins"
-                android:text="पिंगलाक"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                android:textSize="20sp" />
-
-
-
-        </com.google.android.material.card.MaterialCardView>
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/card11"
-            android:layout_margin="8dp"
-            android:clickable="true"
-            app:cardElevation="4dp"
-            android:padding="8dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:padding="20dp"
-                android:fontFamily="@font/poppins"
-                android:text="बैरसी"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                android:textSize="20sp" />
-
-
-
-        </com.google.android.material.card.MaterialCardView>
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/card12"
-            android:layout_margin="8dp"
-            android:clickable="true"
-            app:cardElevation="4dp"
-            android:padding="8dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:padding="20dp"
-                android:fontFamily="@font/poppins"
-                android:text="साठिक"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                android:textSize="20sp" />
-
-
-
-        </com.google.android.material.card.MaterialCardView>
-    </GridLayout>
+            </LinearLayout>
+        </LinearLayout>
+<!--horizontal divider-->
         <View style="@style/Divider"
             android:layout_margin="4dp"/>
 

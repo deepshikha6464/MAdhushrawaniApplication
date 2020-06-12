@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.PostFragment">
-
+<!--main layout-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -12,7 +12,233 @@
         android:id="@+id/nonframe"
         android:layout_margin="5dp"
         android:layout_marginBottom="8dp">
+<!-- start todays pooja ....-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_margin="4dp"
+            android:layout_gravity="center"
+            android:text="@string/startPooja"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/greyColor"
+            />
+<!--vertical grid layout-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/gridPoojaLayout"
+        android:layout_margin="5dp"
+        android:layout_marginBottom="8dp">
+<!--        row  1 of grids-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            android:id="@+id/gridPoojaLayoutRow1"
+            android:layout_margin="5dp"
+            android:layout_marginLeft="10dp"
+           >
+<!--  pooja arambh -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="5dp"
+                android:text="आरम्भ"
+                android:id="@+id/card1"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+<!--            vertical divider-->
+            <View style="@style/VerticalDivider"
+                android:layout_margin="10dp"/>
+<!--            kalsh-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:layout_marginTop="20dp"
+                android:text="कलश"
+                android:id="@+id/card2"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+            <!--            vertical divider-->
+            <View style="@style/VerticalDivider"
+                android:layout_margin="10dp"/>
+<!--            suryaa-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="सूर्य"
+                android:id="@+id/card3"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+            <!--            vertical divider-->
+            <View style="@style/VerticalDivider"
+                android:layout_margin="10dp"/>
+<!--            chandrama-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:layout_marginTop="20dp"
+                android:text="चन्द्रमा"
+                android:id="@+id/card4"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
 
+        </LinearLayout>
+        <!--        row  2 of grids-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            android:id="@+id/gridPoojaLayoutRow2"
+            android:layout_margin="5dp"
+            android:layout_marginLeft="8dp"
+           >
+<!--  navgrah arambh -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="5dp"
+                android:text="नवग्रह"
+                android:id="@+id/card5"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+<!--            vertical divider-->
+            <View style="@style/VerticalDivider"
+                android:layout_margin="10dp"/>
+<!--     Vishhara       -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:layout_marginTop="20dp"
+                android:text="विषहरा"
+                android:id="@+id/card6"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+            <!--            vertical divider-->
+            <View style="@style/VerticalDivider"
+                android:layout_margin="10dp"/>
+<!--            bersi-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="बैरसी"
+                android:id="@+id/card11"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+            <!--            vertical divider-->
+            <View style="@style/VerticalDivider"
+                android:layout_margin="10dp"/>
+<!--            kumuwati-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:layout_marginTop="20dp"
+                android:text="कुसुमावती"
+                android:id="@+id/card7"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+        <!--        row  3 of grids-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            android:id="@+id/gridPoojaLayoutRow3"
+            android:layout_margin="5dp"
+            android:layout_marginLeft="10dp"
+           >
+<!-- chenaai -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="5dp"
+                android:text="चनाइ"
+                android:id="@+id/card8"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+<!--            vertical divider-->
+            <View style="@style/VerticalDivider"
+                android:layout_margin="10dp"/>
+<!--            pingalik-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:layout_marginTop="20dp"
+                android:text="पिंगलाक"
+                android:id="@+id/card10"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+            <!--            vertical divider-->
+            <View style="@style/VerticalDivider"
+                android:layout_margin="10dp"/>
+<!--            lili-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="लीली"
+                android:id="@+id/card9"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+            <!--            vertical divider-->
+            <View style="@style/VerticalDivider"
+                android:layout_margin="10dp"/>
+<!--            satik-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:layout_marginTop="20dp"
+                android:text="साठिक"
+                android:id="@+id/card12"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

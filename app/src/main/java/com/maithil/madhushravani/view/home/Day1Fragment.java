@@ -27,7 +27,7 @@ import java.util.Objects;
  */
 public class Day1Fragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "Day1Fragment";
-    MaterialCardView day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13;
+    TextView day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13;
 String poojaVidhi ="";
 TextView poojavidhi;
 ImageView play,pause,read;

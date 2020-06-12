@@ -7,5 +7,6 @@
 <!--    <color name="colorPrimaryDark">#00574B</color>-->
     <color name="colorAccent">#ffffff</color>
     <color name="cardBackground">#F48FB1</color>
+    <color name="greyColor">#9E9E9E</color>
 
 </resources>
