@@ -4,6 +4,7 @@ package com.maithil.madhushravani.view.explore;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -13,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.card.MaterialCardView;
 import com.gtomato.android.ui.widget.CarouselView;
@@ -22,6 +25,8 @@ import com.maithil.madhushravani.view.Activities.LoginActivity;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.maithil.madhushravani.model.SharedPref.IMAGE_URL;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -29,10 +34,10 @@ public class Explore extends Fragment implements  View.OnClickListener {
     private static final String TAG = "Explore";
 
     public CarouselView carousel;
-    TextView pooja, history,step1des;
-    LinearLayout step2dec,step3dec;
-    ImageView d1,u1,d2,u2,d3,u3,d4,u4, aripan;
-    MaterialCardView day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13;
+    TextView history, step1des;
+    LinearLayout step2dec, step3dec;
+    ImageView d1, u1, d2, u2, d3, u3, d4, u4, aripan, pooja;
+    MaterialCardView day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11, day12, day13;
     //vars
     List<Integer> daysNumber = new ArrayList<>();
     Bundle b;
@@ -47,13 +52,15 @@ public class Explore extends Fragment implements  View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.explore, container, false);
         findViewbyid(view);
-        ListOfDays();
-
+        Glide.with(this)
+                .load(R.drawable.aripan)
+                .into(aripan);
         return view;
     }
-    private void findViewbyid(View view){
+
+    private void findViewbyid(View view) {
         history = view.findViewById(R.id.history);
         pooja = view.findViewById(R.id.pooja);
         history.setOnClickListener(new View.OnClickListener() {
@@ -66,50 +73,71 @@ public class Explore extends Fragment implements  View.OnClickListener {
         pooja.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getContext(), LoginActivity.class);
-                startActivity(i);
-//                getActivity().getSupportFragmentManager()
-//                        .beginTransaction()
-//                        .replace(R.id.fragment_container, new poojaFragment())
-//                        .commit();
+//                Intent i = new Intent(getContext(), poojaFragment.class);
+//                startActivity(i);
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, new poojaFragment())
+                        .commit();
             }
         });
 
-        d1=view.findViewById(R.id.down);  d1.setOnClickListener(this);
-        d2=view.findViewById(R.id.down2);d2.setOnClickListener(this);
-        d3=view.findViewById(R.id.down3);d3.setOnClickListener(this);
-        d4=view.findViewById(R.id.down4);d4.setOnClickListener(this);
+        d1 = view.findViewById(R.id.down);
+        d1.setOnClickListener(this);
+        d2 = view.findViewById(R.id.down2);
+        d2.setOnClickListener(this);
+        d3 = view.findViewById(R.id.down3);
+        d3.setOnClickListener(this);
+        d4 = view.findViewById(R.id.down4);
+        d4.setOnClickListener(this);
 
-        u1 = view.findViewById(R.id.up_arrow); u1.setOnClickListener(this);
-        u2 = view.findViewById(R.id.up_arrow2);u2.setOnClickListener(this);
-        u3 = view.findViewById(R.id.up_arrow3);u3.setOnClickListener(this);
-        u4 = view.findViewById(R.id.up_arrow4);u4.setOnClickListener(this);
+        u1 = view.findViewById(R.id.up_arrow);
+        u1.setOnClickListener(this);
+        u2 = view.findViewById(R.id.up_arrow2);
+        u2.setOnClickListener(this);
+        u3 = view.findViewById(R.id.up_arrow3);
+        u3.setOnClickListener(this);
+        u4 = view.findViewById(R.id.up_arrow4);
+        u4.setOnClickListener(this);
 
         step1des = view.findViewById(R.id.step1dec);
         step2dec = view.findViewById(R.id.step2dec);
         step3dec = view.findViewById(R.id.step3dec);
         aripan = view.findViewById(R.id.aripan);
 
-        day1 = view.findViewById(R.id.day1); day1.setOnClickListener(this);
-        day2 = view.findViewById(R.id.day2); day2.setOnClickListener(this);
-        day3 = view.findViewById(R.id.day3); day3.setOnClickListener(this);
-        day4 = view.findViewById(R.id.day4); day4.setOnClickListener(this);
-        day5 = view.findViewById(R.id.day5); day5.setOnClickListener(this);
-        day6 = view.findViewById(R.id.day6); day6.setOnClickListener(this);
-        day7 = view.findViewById(R.id.day7); day7.setOnClickListener(this);
-        day8 = view.findViewById(R.id.day8); day8.setOnClickListener(this);
-        day9 = view.findViewById(R.id.day9); day9.setOnClickListener(this);
-        day10 = view.findViewById(R.id.day10); day10.setOnClickListener(this);
-        day11 = view.findViewById(R.id.day11); day11.setOnClickListener(this);
-        day12 = view.findViewById(R.id.day12); day12.setOnClickListener(this);
-        day13 = view.findViewById(R.id.day13); day13.setOnClickListener(this);
+        day1 = view.findViewById(R.id.day1);
+        day1.setOnClickListener(this);
+        day2 = view.findViewById(R.id.day2);
+        day2.setOnClickListener(this);
+        day3 = view.findViewById(R.id.day3);
+        day3.setOnClickListener(this);
+        day4 = view.findViewById(R.id.day4);
+        day4.setOnClickListener(this);
+        day5 = view.findViewById(R.id.day5);
+        day5.setOnClickListener(this);
+        day6 = view.findViewById(R.id.day6);
+        day6.setOnClickListener(this);
+        day7 = view.findViewById(R.id.day7);
+        day7.setOnClickListener(this);
+        day8 = view.findViewById(R.id.day8);
+        day8.setOnClickListener(this);
+        day9 = view.findViewById(R.id.day9);
+        day9.setOnClickListener(this);
+        day10 = view.findViewById(R.id.day10);
+        day10.setOnClickListener(this);
+        day11 = view.findViewById(R.id.day11);
+        day11.setOnClickListener(this);
+        day12 = view.findViewById(R.id.day12);
+        day12.setOnClickListener(this);
+        day13 = view.findViewById(R.id.day13);
+        day13.setOnClickListener(this);
 
     }
 
     @Override  //card expand clicks
     public void onClick(View view) {
         int id = view.getId();
-        switch(id){
+        switch (id) {
             case R.id.down:
                 u1.setVisibility(View.VISIBLE);
                 step1des.setVisibility(View.VISIBLE);
@@ -166,96 +194,97 @@ public class Explore extends Fragment implements  View.OnClickListener {
                         .commit();
                 break;
             case R.id.day2:
-               b = new Bundle();
-                b.putString("UNIQUE_KEY","2");
+                b = new Bundle();
+                b.putString("UNIQUE_KEY", "2");
                 f.setArguments(b);
                 loadFragment(f);
-            break;
+                break;
             case R.id.day3:
-               b = new Bundle();
-                b.putString("UNIQUE_KEY","3");
+                b = new Bundle();
+                b.putString("UNIQUE_KEY", "3");
                 f.setArguments(b);
                 loadFragment(f);
-            break;
+                break;
             case R.id.day4:
-               b = new Bundle();
-                b.putString("UNIQUE_KEY","4");
+                b = new Bundle();
+                b.putString("UNIQUE_KEY", "4");
                 f.setArguments(b);
                 loadFragment(f);
-            break;
+                break;
             case R.id.day5:
-               b = new Bundle();
-                b.putString("UNIQUE_KEY","5");
+                b = new Bundle();
+                b.putString("UNIQUE_KEY", "5");
                 f.setArguments(b);
                 loadFragment(f);
-            break;
+                break;
             case R.id.day6:
-               b = new Bundle();
-                b.putString("UNIQUE_KEY","6");
+                b = new Bundle();
+                b.putString("UNIQUE_KEY", "6");
                 f.setArguments(b);
                 loadFragment(f);
-            break;
+                break;
             case R.id.day7:
-               b = new Bundle();
-                b.putString("UNIQUE_KEY","7");
+                b = new Bundle();
+                b.putString("UNIQUE_KEY", "7");
                 f.setArguments(b);
                 loadFragment(f);
-            break;
+                break;
             case R.id.day8:
-               b = new Bundle();
-                b.putString("UNIQUE_KEY","8");
+                b = new Bundle();
+                b.putString("UNIQUE_KEY", "8");
                 f.setArguments(b);
                 loadFragment(f);
-            break;
+                break;
             case R.id.day9:
-               b = new Bundle();
-                b.putString("UNIQUE_KEY","9");
+                b = new Bundle();
+                b.putString("UNIQUE_KEY", "9");
                 f.setArguments(b);
                 loadFragment(f);
-            break;
+                break;
             case R.id.day10:
-               b = new Bundle();
-                b.putString("UNIQUE_KEY","10");
+                b = new Bundle();
+                b.putString("UNIQUE_KEY", "10");
                 f.setArguments(b);
                 loadFragment(f);
-            break;
+                break;
             case R.id.day11:
-               b = new Bundle();
-                b.putString("UNIQUE_KEY","11");
+                b = new Bundle();
+                b.putString("UNIQUE_KEY", "11");
                 f.setArguments(b);
                 loadFragment(f);
-            break;
+                break;
             case R.id.day12:
-               b = new Bundle();
-                b.putString("UNIQUE_KEY","12");
+                b = new Bundle();
+                b.putString("UNIQUE_KEY", "12");
                 f.setArguments(b);
                 loadFragment(f);
-            break;
+                break;
             case R.id.day13:
-               b = new Bundle();
-                b.putString("UNIQUE_KEY","13");
+                b = new Bundle();
+                b.putString("UNIQUE_KEY", "13");
                 f.setArguments(b);
                 loadFragment(f);
-            break;
+                break;
             case R.id.day14:
-               b = new Bundle();
-                b.putString("UNIQUE_KEY","14");
+                b = new Bundle();
+                b.putString("UNIQUE_KEY", "14");
                 f.setArguments(b);
-               loadFragment(f);
-            break;
+                loadFragment(f);
+                break;
         }
 
     }
-    public void loadFragment(Fragment frag){
+
+    public void loadFragment(Fragment frag) {
         getActivity().getSupportFragmentManager()
                 .beginTransaction()
 //                .setCustomAnimations(R.animator.slide_in_bottom,R.animator.slide_out_bottom,R.animator.slide_in_top,R.animator.slide_out_top)
-                .replace(R.id.fragment_container,frag)
+                .replace(R.id.fragment_container, frag)
                 .commit();
 
     }
 
-    private void historyClicked(){
+    private void historyClicked() {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getContext());
 
         View view1 = getLayoutInflater().inflate(R.layout.history, null);
@@ -264,50 +293,4 @@ public class Explore extends Fragment implements  View.OnClickListener {
 
         bottomSheetDialog.show();
     }
-
-//    private void CarouselSettings(View v){
-//        carousel = v.findViewById(R.id.carousel);
-//        carousel.setInfinite(true);
-//        carousel.setExtraVisibleChilds(6);
-////        carousel.smoothScrollToPosition(carousel.getAdapter().getItemCount() - 1);
-//        carousel.setHorizontalScrollBarEnabled(true);
-//        carousel.setScrollingAlignToViews(true);
-//        carousel.setElevation(20);
-//        carousel.bringToFront();
-//
-//        carousel.setTransformer(new FlatMerryGoRoundTransformer() {
-//
-//            @Override
-//            public void transform(View view, float position) {
-//                super.transform(view, position);
-//                float alpha;
-//                if (-2 <= position && position <= 0) {
-//                    alpha = (float) ((2 + position) / 2.0);
-//                } else if (0 < position && position <= 2) {
-//                    alpha = (float) ((2 - position) / 2.0);
-//                } else {
-//                    alpha = 0;
-//                }
-//                view.setAlpha(alpha);
-//            }
-//        });
-//        carousel.setAdapter(new MyDataAdapter(daysNumber));
-//    }
-    public  void ListOfDays(){
-        daysNumber.add(1);
-        daysNumber.add(2);
-        daysNumber.add(3);
-        daysNumber.add(4);
-        daysNumber.add(5);
-        daysNumber.add(6);
-        daysNumber.add(7);
-        daysNumber.add(8);
-        daysNumber.add(9);
-        daysNumber.add(10);
-        daysNumber.add(11);
-        daysNumber.add(12);
-        daysNumber.add(13);
-        daysNumber.add(14);
-        daysNumber.add(15);
-    }
-    }
+}

@@ -45,7 +45,7 @@ GoogleSignInClient mGoogleSignInClient;
         setToolBar();
         loadFragment(new dashboard());
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
-
+        bottomNavigationView.setScrollbarFadingEnabled(true);
 //
 
 

@@ -4,8 +4,6 @@ package com.maithil.madhushravani.view.dashboard;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
 import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,12 +11,10 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -46,8 +42,6 @@ import com.maithil.madhushravani.R;
 import com.maithil.madhushravani.model.SharedPref;
 import com.maithil.madhushravani.model.UserData;
 
-import java.io.File;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -73,7 +67,7 @@ public class dashboard extends Fragment implements View.OnClickListener {
     EditText editText;
     LottieAnimationView  select ,cross;
 
-      ImageView seletedImg,userImage=null;
+      ImageView seletedImg,userImage=null, imageView;
     TextView userText,upload;
     String formattedDate;
 
@@ -94,12 +88,13 @@ public class dashboard extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_explore2, container, false);
+        View view =  inflater.inflate(R.layout.dashboard, container, false);
         findViewById(view);
         sp = new SharedPref(getContext());
         userData = new UserData();
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
         firebaseStorageReference();
+        displaycards();
         return view;
     }
 
@@ -131,6 +126,8 @@ public class dashboard extends Fragment implements View.OnClickListener {
 
     public void findViewById(View view){
         shareCard = view.findViewById(R.id.shareExp); shareCard.setOnClickListener(this);
+        imageView = view.findViewById(R.id.imageView);
+
 
     }
     public void openShareViewFragment(){
@@ -313,6 +310,10 @@ public class dashboard extends Fragment implements View.OnClickListener {
         else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_180) {  return 180; }
         else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_270) {  return 270; }
         return 0;
+    }
+
+    private void displaycards(){
+        Glide.with(this).load(R.drawable.tst_img).into(imageView);
     }
 }
 // bitmap = MediaStore

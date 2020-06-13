@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Madhushravani</string>
-    <string name="PoojaSamagri">Pooja Samagri</string>
+    <string name="PoojaSamagri">Collecting Pooja Samagri </string>
     <string name="History">History of Madhushravani</string>
     <!--    <string name="msh">मधुश्रावणी पूजा  मधुश्रावणी  पूजा सैं पहिने लड़का बाला ओहिठाम लड़की बला क ओतय सं नोत जाइत अछि. नोत में पांच टा रांगल सुपारी आ पीरा कागज़ पर लाल कलम सं लिखल लड़का क पिता क नाम सं पता जाइत अछि . मधुश्रावणी पूजा क ओरिआओन जाहि कन्या के नव विवाह भेल छनि ओ सावन क चौठ क संध्या काल  भिन्न प्रकारक फूल आ पात तोरि रखैत छैथ जाहि घर में पूजा होयत टकरा बढियां सैं साफ़ कय निचा देल चित्र क अनुसार अरिपन पडत </string>-->
     <string name="msh">This is a festival of serpent worship performed by newly married couples.
@@ -9,14 +9,14 @@ Girls on each of the 12 days move in the gardens in bridal clothes and collect s
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="Steps">Steps To Start Pooja</string>
-    <string name="Step1">Step 1 - Making of Gauri Ji Statue</string>
+    <string name="Steps">Get Started with Prepration</string>
+    <string name="Step1">Making of <b>Gauri Ji</b> Statue</string>
     <string name="step1des">This step is done a day before festival starts,So in evening various songs(Geet) of "Bhagwati" , "Mahadev" , "Bhramin", "Hanuman" ,"Gauri" are sung. Meanwhile the  Gauri ji Statue is prepared by mixing and grinding "Dhoobh",raw turmeric(kachcha haldi) and coriender seeds(dhaniya).After that take a mud plate or cap of earthern pot and place red cloth and put gauri ji over a coin,cover her with Pan leaf,put sindur over that leaf and cover whole setup with red cloth. Keep this near into your mandir(near "Bhagwati") </string>
-    <string name="Step2">Step 2 - Making of Bishar  </string>
+    <string name="Step2">Making of Bishar  </string>
     <string name="step2des">For this step ,we will create all instantiate all the god goddess we will be worshiping in these 13 days in natural form</string>
     <string name="step2_1des">Take 5 leaves of Maina and banana each two times assuming each set from Parents Home and from In-Laws.Now draw 5-5 times Bishar(snake) from sinduur, kajal, Pithar. Now write SHREE from chandan </string>
-    <string name="step2_2des">Create 10 Bishar(snakes) 5 each from Parents and In-Laws respectively</string>
-    <string name="Step3">Step 3 - Making Different Creatures</string>
+    <string name="step2_2des">Create 10 Bishar(serpents) five each from Parents and In-Laws respectively</string>
+    <string name="Step3">Making Different Creatures</string>
     <string name="step3_1des">This is for the worship of Kusumwati,Pingala,Chenaai and Lili ..create  4 pooda.????</string>
     <string name="step2_3des"><b>Chenaai</b> - Take some Rice(arwa) in basket , money and curd</string>
     <string name="step2_4des"><b>Binni Motri</b> - Take long square red Piece of cloth and put धनी,धान,दुब ,हरिद ,सुपारी ,बड़ी इलाइची,लौंग  ,छोटकी इलाइची with 11 rupees and make a knot</string>
@@ -43,6 +43,12 @@ Girls on each of the 12 days move in the gardens in bridal clothes and collect s
     <string name="km" />
     <string name="ss">Write your Vrat Experience or Views with our Maithil Community 😊</string>
     <string name="post"><b>POST</b></string>
+    <string name="saree_step">Preapre Three new saree for:\nOne will be used for making Gauri ji and plucking flowers and leaves\nSecond will be used during the Thirteen Days of Pooja and Katha \nThird one will be used at last day\nAnd New bangels of Lah as well and Sindur</string>
+    <string name="daybefore" >This step is performed a day before Madhushrawani Fast starts</string>
+    <string name="daysStart" >Start Pooja by selecting the respective Day</string>
+    <string name="Steps1">Getting ready for Pooja</string>
+    <string name="nhayikhayi"><b>Doing "Nahayi Khaayi"</b>\nGirl needs to wash her hairs,cut her nails\nGet the Mehendi and Mahavar done</string>
+    <string name="foollodhi"><b>The Fool Lodhi </b>\nGirl will wear new saree and take khoichcha along with her \nThen she will go to pluck flowers and green leaves specially  "Lemon","Bamboo" in a bamboo bowl\nThen decorate those leaves and flowers beauitfully in that Bamboo basket("Dali")\nFoolLodhi Geet will be sung during this time </string>
 
 
 </resources>

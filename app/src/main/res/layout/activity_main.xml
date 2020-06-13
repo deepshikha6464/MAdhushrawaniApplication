@@ -50,7 +50,8 @@
         android:elevation="8dp"
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentBottom="true"
-         app:menu="@menu/bottom_navigation" />
+         app:menu="@menu/bottom_navigation"
+        app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"/>
     </LinearLayout>
 </RelativeLayout>
 
