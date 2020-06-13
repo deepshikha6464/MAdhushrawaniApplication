@@ -3,45 +3,91 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:background="@color/bottomNavColor"
+    android:layout_height="wrap_content"
     android:id="@+id/mediaLayout">
 
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="14sp"-->
-<!--        android:id="@+id/mediaCard"-->
-<!--        android:layout_marginLeft="20dp"-->
-<!--        android:text="Katha of day 1"-->
-<!--        android:fontFamily="@font/poppins"-->
-<!--        android:textColor="@color/colorPrimary"-->
-<!--        />-->
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:orientation="horizontal"-->
-<!--       >-->
-<!--    <SeekBar-->
-<!--        android:layout_width="250dp"-->
-<!--        android:layout_height="2dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:layout_marginLeft="20dp"-->
-<!--        />-->
-<!--    <ImageView-->
-<!--        android:layout_width="120dp"-->
-<!--        android:id="@+id/ack"-->
-<!--        android:padding="8dp"-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:id="@+id/mediaCard"
+        android:layout_marginLeft="20dp"
+        android:text="Katha of day 1"
 
-<!--        android:src="@drawable/play"-->
-<!--        android:layout_height="40dp"-->
-<!--        />-->
-<!--    <ImageView-->
-<!--        android:layout_width="120dp"-->
-<!--        android:id="@+id/apck"-->
-<!--        android:padding="8dp"-->
-<!--        android:src="@drawable/pause"-->
-<!--        android:visibility="gone"-->
-<!--        android:layout_height="40dp"-->
-<!--        />-->
-<!--    </LinearLayout>-->
+     android:padding="5dp"        android:fontFamily="@font/poppins"
+        android:textColor="@color/colorPrimary"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+       >
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/audioCardVachoBini"
+            android:layout_width="45dp"
+            android:layout_height="64dp"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="music.json"
+            app:lottie_loop="true"
+            app:lottie_speed="1.25" />
+
+        <SeekBar
+            android:layout_width="250dp"
+            android:layout_height="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="25dp" />
+
+        <ImageView
+        android:layout_width="80dp"
+        android:id="@+id/ack"
+        android:padding="8dp"
+        android:src="@drawable/play"
+        android:layout_height="40dp"
+        />
+    <ImageView
+        android:layout_width="80dp"
+        android:id="@+id/apck"
+        android:padding="8dp"
+        android:src="@drawable/pause"
+        android:visibility="gone"
+        android:layout_height="40dp"
+        />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+       >
+        <com.airbnb.lottie.LottieAnimationView
+
+            android:layout_width="45dp"
+            android:layout_height="64dp"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="music.json"
+            app:lottie_loop="true"
+            app:lottie_speed="1.25" />
+
+        <SeekBar
+            android:layout_width="250dp"
+            android:layout_height="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="25dp" />
+
+        <ImageView
+        android:layout_width="80dp"
+
+        android:padding="8dp"
+        android:src="@drawable/play"
+        android:layout_height="40dp"
+        />
+    <ImageView
+        android:layout_width="80dp"
+
+        android:padding="8dp"
+        android:src="@drawable/pause"
+        android:visibility="gone"
+        android:layout_height="40dp"
+        />
+    </LinearLayout>
 </LinearLayout>

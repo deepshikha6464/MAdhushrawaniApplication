@@ -6,8 +6,10 @@ import android.os.Bundle;
 
 import androidx.annotation.MenuRes;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,10 +28,12 @@ import java.util.Objects;
  */
 public class Day1Fragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "Day1Fragment";
-    TextView day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13;
+    TextView day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,miniText;
 String poojaVidhi ="";
 TextView poojavidhi;
-LottieAnimationView play,read;
+NestedScrollView naviday1;
+LottieAnimationView play,read,audioCardKatha1;
+    LinearLayout mediaLayout;
 
     MediaPlayer mp;
     LinearLayout nonframe;
@@ -63,7 +67,7 @@ LottieAnimationView play,read;
                       "नव कनिया नहा धो सासुर सं आयल कपड़ा छुरी पहिर श्रृंगार कय भगवती आ कुल देवता क प्रणाम क पूजा स्थान पर आइ बैसथीन\n" +
                       "पाटिल पुरहर आ कलश बाला जगह पर बालु ध क जल सं सींच ,वही पर किछु धान राखी टीनू के यथास्थान राखि,कलश के जल सं भरि ऊपर सं आम क पल्लव रखवाक छै ,टकरा बाद पाटिल में दीप लेश देवक छै\n" +
                       "सब दिन पूजै बाला गौरी उत्तर फूल पर ,सासुर सं आयल गौरी बीच में आ नहीअर बला गौरी दक्षिण फूल पर राखि कनिया गौरी पूजा करथिन";
-                cardClicked(poojaVidhi);
+                cardClicked(poojaVidhi,"Aarambh");
               break;
  case R.id.card2:
               poojaVidhi = "अक्षत लय -“नमः शांति कलश इहागच्छ यह तिष्ट “\n" +
@@ -75,7 +79,7 @@ LottieAnimationView play,read;
                       "जल लय – “इदमाचमनीयम् नमः शान्तिकालशयाय नमः “\n" +
                       "“नमः शान्तिकुम्भ महाभाग सर्व काम फल प्रदः”\n" +
                       "फूल लय -” पुष्पम ग्रहण सुबह यच्छ पुज्याधार नमोस्तुते ” ऐश पुष्पांजलिः नमः शांतिकलशयाय नमः “";
-                cardClicked(poojaVidhi);
+                cardClicked(poojaVidhi,"Kalash");
               break;
  case R.id.card3:
               poojaVidhi ="अक्षत लय -“नमः सूर्य इहागच्छ यह तिष्ट “\n" +
@@ -87,7 +91,7 @@ LottieAnimationView play,read;
                       "जल लय – “इदमाचमनीयम् नमः सूर्याय नमः “\n" +
                       "“नमः सूर्याय महाभाग सर्व काम फल प्रदः”\n" +
                       "फूल लय -” पुष्पम ग्रहण सुबह यच्छ पुज्याधार नमोस्तुते ” ऐश पुष्पांजलिः नमः सूर्याय नमः “";
-                      cardClicked(poojaVidhi);
+                      cardClicked(poojaVidhi,"Suurya");
               break;
  case R.id.card4:
               poojaVidhi = "अक्षत लय -“नमः चन्द्र इहागच्छ यह तिष्ट”\n" +
@@ -99,7 +103,7 @@ LottieAnimationView play,read;
                       "जल लय – “इदमाचमनीयम् नमः चद्राय नमः “\n" +
                       "“नमः चन्द्राय महाभाग सर्व काम फल प्रदः”\n" +
                       "फूल लय -” पुष्पम ग्रहण सुबह यच्छ पुज्याधार नमोस्तुते ” ऐश पुष्पांजलिः नमः चन्द्राय नमः “";
-                cardClicked(poojaVidhi);
+                cardClicked(poojaVidhi,"Chandrama");
               break;
  case R.id.card5:
               poojaVidhi = "अक्षत लय -“नमः नवग्रहा:इहागच्छ यह तिष्ट “\n" +
@@ -111,7 +115,7 @@ LottieAnimationView play,read;
                       "जल लय – “इदमाचमनीयम् नमः नवग्रहेभ्यो नमः “\n" +
                       "“नमः नवग्रहेभ्यो महाभाग सर्व काम फल प्रदः”\n" +
                       "फूल लय -” पुष्पम ग्रहण सुबह यच्छ पुज्याधार नमोस्तुते ” ऐश पुष्पांजलिः नमः नवग्रहेभ्यो नमः “";
-                cardClicked(poojaVidhi);
+                cardClicked(poojaVidhi,"Navgrah");
               break;
  case R.id.card6:
               poojaVidhi ="अक्षत लय -“नमःनाग-दांपत्य इहागच्छ यह तिष्ट “\n" +
@@ -123,7 +127,7 @@ LottieAnimationView play,read;
                       "जल लय – “इदमाचमनीयम् नमः नागदंपतिभ्याम् नमः “\n" +
                       "“नमः नागदंपतिभ्याम् महाभाग सर्व काम फल प्रदः”\n" +
                       "फूल लय -” पुष्पम ग्रहण सुबह यच्छ पुज्याधार नमोस्तुते ” ऐश पुष्पांजलिः नमः नागदंपतिभ्याम् नमः “";
-                      cardClicked(poojaVidhi);
+                      cardClicked(poojaVidhi,"Vishara");
               break;
  case R.id.card7:
               poojaVidhi ="अक्षत लय -“नमःकुसुमावती इहागच्छ इह तिष्ठ “\n" +
@@ -135,7 +139,7 @@ LottieAnimationView play,read;
                       "जल लय – “इदमाचमनीयम् नमः कुसुमावती नमः “\n" +
                       "“नमः कुसुमावती महाभाग सर्व काम फल प्रदः”\n" +
                       "फूल लय -” पुष्पम ग्रहण सुबह यच्छ पुज्याधार नमोस्तुते ” ऐश पुष्पांजलिः नमः कुसुमावती नमः “";
-                      cardClicked(poojaVidhi);
+                      cardClicked(poojaVidhi,"Berasi");
               break;
  case R.id.card8:
               poojaVidhi ="अक्षत लय -“नमःचनाइ नाग इहागच्छ इह तिष्ठ “\n" +
@@ -147,7 +151,7 @@ LottieAnimationView play,read;
                       "जल लय – “इदमाचमनीयम् नमः चनाइ नागाय नमः “\n" +
                       "“नमः चनाइ नागाय महाभाग सर्व काम फल प्रदः”\n" +
                       "फूल लय -” पुष्पम ग्रहण सुबह यच्छ पुज्याधार नमोस्तुते ” ऐश पुष्पांजलिः नमः चनाइ नागाय नमः “";
-                      cardClicked(poojaVidhi);
+                      cardClicked(poojaVidhi,"Kusumavati");
               break;
  case R.id.card9:
               poojaVidhi = "अक्षत लय -“नमः लीली नागे इहागच्छ इह तिष्ठ “\n" +
@@ -159,7 +163,7 @@ LottieAnimationView play,read;
                       "जल लय – “इदमाचमनीयम् नमः लीली नागाये नमः “\n" +
                       "“नमः लीली नागाये महाभाग सर्व काम फल प्रदः”\n" +
                       "फूल लय -” पुष्पम ग्रहण सुबह यच्छ पुज्याधार नमोस्तुते ” ऐश पुष्पांजलिः नमः लीली नागाये नमः “";
-                cardClicked(poojaVidhi);
+                cardClicked(poojaVidhi,"Chenaai");
               break;
  case R.id.card10:
               poojaVidhi ="अक्षत लय -“नमः पिंगले इहागच्छ इह तिष्ठ “\n" +
@@ -171,7 +175,7 @@ LottieAnimationView play,read;
                       "जल लय – “इदमाचमनीयम् नमः पिंगले नमः “\n" +
                       "“नमः पिंगले महाभाग सर्व काम फल प्रदः”\n" +
                       "फूल लय -” पुष्पम ग्रहण सुबह यच्छ पुज्याधार नमोस्तुते ” ऐश पुष्पांजलिः नमः पिंगले नमः “";
-                cardClicked(poojaVidhi);
+                cardClicked(poojaVidhi,"Pinglaak");
               break;
  case R.id.card11:
               poojaVidhi = "अक्षत लय -“नमःशतानुजसाहित बैरस्ये नमः “\n" +
@@ -183,7 +187,7 @@ LottieAnimationView play,read;
                       "जल लय – “इदमाचमनीयम् नमः शतानुजसाहित बैर स्ये नमः “\n" +
                       "“नमः शतानुजसाहित बैर स्ये महाभाग सर्व काम फल प्रदः”\n" +
                       "फूल लय -” पुष्पम ग्रहण सुबह यच्छ पुज्याधार नमोस्तुते ” ऐश पुष्पांजलिः नमः शतानुजसाहित बैर स्ये नमः “";
-                cardClicked(poojaVidhi);
+                cardClicked(poojaVidhi,"Lili");
               break;
  case R.id.card12:
               poojaVidhi ="अक्षत लय -“नमः षष्ठी देवी  इहागच्छ इह तिष्ठ “\n" +
@@ -195,12 +199,14 @@ LottieAnimationView play,read;
                       "जल लय – “इदमाचमनीयम् नमः षष्टदेव्यै नमः “\n" +
                       "“नमः षष्टदेव्यै महाभाग सर्व काम फल प्रदः”\n" +
                       "फूल लय -” पुष्पम ग्रहण सुबह यच्छ पुज्याधार नमोस्तुते ” ऐश पुष्पांजलिः नमः षष्टदेव्यै नमः “";
-                cardClicked(poojaVidhi);
+                cardClicked(poojaVidhi,"Saatik");
               break;
             case R.id.audioCard:
                 play.playAnimation();
-                mp= MediaPlayer.create(getActivity().getApplicationContext(),R.raw.tum_kehti_ho);
+                mp= MediaPlayer.create(getActivity().getApplicationContext(),R.raw.bini);
                 mp.start();
+                  mediaLayout.setVisibility(View.VISIBLE);
+                naviday1.setPadding(0,0,0,150);
                 break;
 
            case R.id.pictureCard:
@@ -209,7 +215,13 @@ LottieAnimationView play,read;
                         .beginTransaction()
                         .replace(R.id.fragContainer, new PictureRead())
                         .commit();
+                break;
 
+            case R.id.audioCardKatha1:
+                play.playAnimation();
+                mp= MediaPlayer.create(getActivity().getApplicationContext(),R.raw.katha_one);
+                mp.start();
+                break;
 
         }
 
@@ -235,18 +247,22 @@ LottieAnimationView play,read;
 
         play = view.findViewById(R.id.audioCard); play.setOnClickListener(this);
         read = view.findViewById(R.id.pictureCard); read.setOnClickListener(this);
+        audioCardKatha1 = view.findViewById(R.id.audioCardKatha1); audioCardKatha1.setOnClickListener(this);
         nonframe = view.findViewById(R.id.nonframe);
+        naviday1 = view.findViewById(R.id.naviday1);
+        mediaLayout = view.findViewById(R.id.media_ayout);
 
     }
-    private void cardClicked(String pp){
+    private void cardClicked(String pp,String name){
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getContext());
 
         View view1 = getLayoutInflater().inflate(R.layout.mini_pooja, null);
 
         bottomSheetDialog.setContentView(view1);
         poojavidhi = view1.findViewById(R.id.poojaText);
+        miniText = view1.findViewById(R.id.miniPoojaText);
         poojavidhi.setText(pp);
-
+        miniText.setText(" Worship of "+name);
         bottomSheetDialog.show();
     }
 

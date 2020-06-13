@@ -1,10 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#76FF03"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context=".view.profile.ProfileFragment">
 
 
-</FrameLayout>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/happyGirlCard"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:lottie_autoPlay="true"
+                android:background="@color/bottomNavColor"
+                app:lottie_fileName="profileBird.json"
+                app:lottie_loop="true"
+                app:lottie_speed="1.25" />
+            <ImageView
+                android:id="@+id/userImg"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="50dp"
+                android:elevation="50dp"
+                app:srcCompat="@drawable/account_circle" />
+            <TextView
+                android:id="@+id/userNamedisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="140dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/poppins"
+                android:layout_marginTop="110dp"
+                android:text="Hello User!" />
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+</RelativeLayout>

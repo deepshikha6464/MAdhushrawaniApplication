@@ -3,9 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.explore.Day2_14">
     <androidx.core.widget.NestedScrollView
         android:layout_width="wrap_content"
+        android:paddingBottom="50dp"
         android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
@@ -14,59 +16,143 @@
             android:id="@+id/nonframe"
             android:layout_margin="5dp"
             android:layout_marginBottom="8dp">
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:layout_gravity="center"
-                android:text="@string/binii"
+                android:textSize="20sp"
+                android:layout_margin="8dp"
+                android:id="@+id/starPooojaDay"
                 android:fontFamily="@font/poppins"
                 android:textColor="#000000"
                 />
-            <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:id="@+id/grid2"
+
+            <!--        bini -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:columnCount="2"
-                android:rowCount="1"
-                android:orientation="horizontal"
-                tools:context=".GridXMLActivity" >
+                android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
                     <ImageView
-                        android:layout_width="120dp"
-                        android:id="@+id/audioCard"
-                        android:padding="8dp"
-                        android:layout_margin="20dp"
-                        android:src="@drawable/play"
-                        android:layout_height="80dp"
-                        />
-                    <ImageView
-                        android:layout_width="120dp"
-                        android:id="@+id/audioCardPause"
-                        android:padding="8dp"
-                        android:layout_margin="20dp"
-                        android:src="@drawable/pause"
-                        android:visibility="gone"
-                        android:layout_height="80dp"
-                        />
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/icon"
+                        android:layout_margin="5dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="@string/bininote"
+                        android:textColor="#000000"
+                        android:layout_marginTop="15dp"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textSize="16sp" />
+
+
+                </LinearLayout>
+                <View
+                    style="@style/Divider"
+                    android:layout_margin="2dp" />
+                <!--        grid of bini listen-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="267dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:padding="10dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="@string/biniListen"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+                    <!--play pause-->
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/audioCardBinis"
+                        android:layout_width="45dp"
+                        android:layout_height="74dp"
+                        app:lottie_autoPlay="false"
+                        app:lottie_fileName="pause_play.json"
+                        app:lottie_loop="false"
+                        app:lottie_speed="1.25" />
+
+                </LinearLayout>
+                <View
+                    style="@style/Divider"
+                    android:layout_margin="2dp" />
+                <!--            bini read-->
+                <LinearLayout
+                    android:id="@+id/grid3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="225dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:padding="10dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="@string/biniread"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/pictureCardread"
+                        android:layout_width="95dp"
+                        android:layout_height="74dp"
+                        android:layout_margin="10dp"
+                        android:padding="5dp"
+                        app:lottie_autoPlay="true"
+                        app:lottie_fileName="book.json"
+                        app:lottie_loop="true"
+                        app:lottie_speed="1.25" />
+
+
                 </LinearLayout>
 
-                <ImageView
-                    android:layout_width="120dp"
-                    android:id="@+id/pictureCard"
-                    android:src="@drawable/book"
-                    android:padding="8dp"
-                    android:layout_margin="20dp"
-                    android:layout_height="80dp"
-                    />
-            </GridLayout >
+            </LinearLayout>
             <View style="@style/Divider"
                 android:layout_margin="4dp"/>
+            <!--        Katha of oday-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/icon" />
+
+                <TextView
+                    android:layout_width="219dp"
+                    android:layout_height="41dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/katha"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/audioCardKatha1"
+                    android:layout_width="45dp"
+                    android:layout_height="74dp"
+                    app:lottie_autoPlay="false"
+                    app:lottie_fileName="pause_play.json"
+                    app:lottie_loop="false"
+                    app:lottie_speed="1.25" />
+
+            </LinearLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -74,6 +160,8 @@
                 android:id="@+id/noteheading"
                 android:layout_gravity="center"
                 android:visibility="gone"
+                android:layout_margin="10dp"
+                android:padding="5dp"
                 android:text="@string/note11"
                 android:fontFamily="@font/poppins"
                 android:textColor="#000000"
@@ -83,6 +171,8 @@
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:id="@+id/note"
+                android:layout_margin="10dp"
+                android:padding="5dp"
                 android:visibility="gone"
                 android:layout_gravity="center"
                 android:text="@string/note"
@@ -91,23 +181,16 @@
                 />
             <View style="@style/Divider"
                 android:layout_margin="4dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:layout_gravity="center"
-                android:text="@string/katha"
-                android:fontFamily="@font/poppins"
-                android:textColor="#000000"
-                />
 
 
-<!--main katha-->
+            <!--main katha-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:id="@+id/mainKatha"
+                android:layout_margin="10dp"
+                android:padding="5dp"
                 android:layout_gravity="center"
                 android:text="@string/kathaday2"
                 android:fontFamily="@font/poppins"
@@ -119,6 +202,8 @@
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:id="@+id/nextTitle"
+                android:layout_margin="10dp"
+                android:padding="5dp"
                 android:layout_gravity="center"
                 android:text="@string/nexttitle"
                 android:fontFamily="@font/poppins"
@@ -130,6 +215,8 @@
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:id="@+id/nextKatha"
+                android:layout_margin="10dp"
+                android:padding="5dp"
                 android:layout_gravity="center"
                 android:text="@string/nextKatha"
                 android:fontFamily="@font/poppins"
@@ -137,52 +224,43 @@
                 />
             <View style="@style/Divider"
                 android:layout_margin="4dp"/>
+<!--katha-->
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="25dp"
+                    android:src="@drawable/icon"
+                    android:layout_margin="5dp"/>
+
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:layout_gravity="center"
-                    android:text="@string/vacho"
+                    android:layout_width="245dp"
+                    android:layout_height="44dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="20dp"
                     android:fontFamily="@font/poppins"
+                    android:text="@string/vacho"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
                     android:textColor="#000000"
-                    />
+                    android:textSize="16sp" />
+                <!--play pause-->
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/audioCardVachoBini"
+                    android:layout_width="45dp"
+                    android:layout_height="64dp"
+                    app:lottie_autoPlay="false"
+                    app:lottie_fileName="pause_play.json"
+                    app:lottie_loop="false"
+                    app:lottie_speed="1.25" />
 
-                <ImageView
-                    android:layout_width="120dp"
-                    android:id="@+id/audioCardKatha"
-                    android:padding="8dp"
-                    android:layout_margin="20dp"
-                    android:src="@drawable/play"
-                    android:layout_height="80dp"
-                    />
-                <ImageView
-                    android:layout_width="120dp"
-                    android:id="@+id/audioCardPauseKatha"
-                    android:padding="8dp"
-                    android:layout_margin="20dp"
-                    android:src="@drawable/pause"
-                    android:visibility="gone"
-                    android:layout_height="80dp"
-                    />
+
+
             </LinearLayout>
-            <View style="@style/Divider"
-                android:layout_margin="4dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:layout_gravity="center"
-                android:text="@string/endKatha"
-                android:fontFamily="@font/poppins"
-                android:textColor="#000000"
-                />
 
-
-            <View style="@style/Divider"
+           <View style="@style/Divider"
                 android:layout_margin="4dp"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -207,6 +285,40 @@
                 android:textColor="#000000"
                 />
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/icon"
+                    android:layout_margin="5dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/wrapUpNote"
+                    android:textColor="#000000"
+                    android:layout_marginTop="15dp"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+            <!--        end text-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:layout_gravity="center"
+                android:text="@string/endtext"
+                android:fontFamily="@font/poppins"
+                android:textColor="#000000"
+                />
 
 
 

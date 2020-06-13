@@ -92,9 +92,9 @@ GoogleSignInClient mGoogleSignInClient;
             case R.id.navigation_profile:
                 fragment = new ProfileFragment();
                 break;
-            case R.id.navigation_write:
-                fragment = new PostFragment();
-                break;
+//            case R.id.navigation_write:
+//                fragment = new PostFragment();
+//                break;
         }
         return loadFragment(fragment);
     }
