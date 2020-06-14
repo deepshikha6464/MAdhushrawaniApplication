@@ -533,7 +533,7 @@
                     android:layout_marginTop="20dp"
                     android:text="@string/daysStart"
                     android:textSize="16sp" />
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/qq"
@@ -545,8 +545,8 @@
                         android:layout_width="77dp"
                         android:layout_height="120dp"
                         app:lottie_autoPlay="true"
-                        android:elevation="8dp"
-                        app:lottie_fileName="days.json"
+                        android:elevation="20dp"
+                        app:lottie_fileName="finger.json"
                         app:lottie_loop="true"
                         app:lottie_speed="1.25" />
                     <HorizontalScrollView
@@ -554,6 +554,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:elevation="8dp"
+                        android:layout_alignParentLeft="true"
                         android:scrollbars="none" >
 
                         <LinearLayout
@@ -836,7 +837,7 @@
                         </LinearLayout>
 
                     </HorizontalScrollView>
-                </LinearLayout>
+                </RelativeLayout>
                 <View
                     style="@style/Divider"
                     android:layout_below="@+id/qq"

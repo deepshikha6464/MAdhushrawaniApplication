@@ -124,9 +124,9 @@ GoogleSignInClient mGoogleSignInClient;
         return true;
     }
     private void setToolBar() {
-        Toolbar tb = findViewById(R.id.toolbar);
-        setSupportActionBar(tb);
-        tb.setLogo(R.drawable.logo_text);
+//        Toolbar tb = findViewById(R.id.toolbar);
+//        setSupportActionBar(tb);
+//        tb.setLogo(R.drawable.logo_text);
 //                ActionBar ab = getSupportActionBar();
 //        ab.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
 //        ab.setDisplayHomeAsUpEnabled(true);
