@@ -98,7 +98,7 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/userNamedisplay"
+                                android:id="@+id/cloudUND"
                                 android:layout_width="150dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"

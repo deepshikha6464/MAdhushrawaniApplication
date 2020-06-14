@@ -142,7 +142,7 @@ public class dashboard extends Fragment implements View.OnClickListener {
         cross = view1.findViewById(R.id.cross); cross.setOnClickListener(this);
         seletedImg = view1.findViewById(R.id.selectedImg);
         userImage = view1.findViewById(R.id.userImg);
-        userText = view1.findViewById(R.id.userNamedisplay);
+        userText = view1.findViewById(R.id.postUND);
         updateUserDetail();
 
 
