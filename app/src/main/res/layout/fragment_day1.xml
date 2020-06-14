@@ -370,10 +370,9 @@
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/audioCardKatha1"
                 android:layout_width="45dp"
-                android:layout_height="74dp"
                 app:lottie_autoPlay="false"
+                android:layout_height="74dp"
                 app:lottie_fileName="pause_play.json"
-                app:lottie_loop="false"
                 app:lottie_speed="1.25" />
 
         </LinearLayout>
@@ -446,7 +445,6 @@
                 android:layout_width="45dp"
                 android:layout_height="64dp"
                 app:lottie_autoPlay="false"
-
                 app:lottie_fileName="pause_play.json"
                 app:lottie_loop="false"
                 app:lottie_speed="1.25" />

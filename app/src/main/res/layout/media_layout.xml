@@ -35,19 +35,22 @@
         <SeekBar
             android:layout_width="250dp"
             android:layout_height="2dp"
+            android:id="@+id/SeekBar"
+            android:progress="0"
             android:layout_marginLeft="2dp"
             android:layout_marginTop="25dp" />
 
         <ImageView
         android:layout_width="80dp"
-        android:id="@+id/ack"
+        android:id="@+id/play"
         android:padding="8dp"
+            android:visibility="gone"
         android:src="@drawable/play"
         android:layout_height="40dp"
         />
     <ImageView
         android:layout_width="80dp"
-        android:id="@+id/apck"
+        android:id="@+id/pause"
         android:padding="8dp"
         android:src="@drawable/pause"
         android:visibility="gone"
@@ -89,5 +92,7 @@
         android:visibility="gone"
         android:layout_height="40dp"
         />
+
+
     </LinearLayout>
 </LinearLayout>
