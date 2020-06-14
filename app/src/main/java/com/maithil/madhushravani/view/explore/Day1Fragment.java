@@ -40,8 +40,8 @@ public class Day1Fragment extends Fragment implements View.OnClickListener {
     LinearLayout mediaLayout;
     SeekBar seekBar;
     static MediaPlayer mp;
-    LinearLayout nonframe;
-    ImageView playmini, pause;
+    LinearLayout nonframe,fragToolbar,toolbar;
+    ImageView playmini, pause,yourlogo;
     Handler mHandler;
 
     public Day1Fragment() {
@@ -54,21 +54,13 @@ public class Day1Fragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_day1, container, false);
-        Toolbar tb = view.findViewById(R.id.toolbar);
         findViewByid(view);
-        createMenus(tb, R.menu.toolbar_contextual);
-        mp = new MediaPlayer();
+       mp = new MediaPlayer();
         mHandler = new Handler();
-
-
+        setupToolbar();
         return view;
     }
 
-    private void createMenus(Toolbar actionBarToolBar, @MenuRes int menu) {
-        ((MainActivity) Objects.requireNonNull(getActivity())).setSupportActionBar(actionBarToolBar);
-//        actionBarToolBar.setTitle("");
-//        actionBarToolBar.inflateMenu(menu);
-    }
 
 
 
@@ -308,6 +300,8 @@ public class Day1Fragment extends Fragment implements View.OnClickListener {
         mediaLayout = view.findViewById(R.id.media_ayout);
         seekBar = view.findViewById(R.id.SeekBar);
         mediacard = view.findViewById(R.id.mediaCard);
+        fragToolbar = view.findViewById(R.id.fragToolbar);
+        yourlogo = view.findViewById(R.id.yourlogo);
 
 
     }
@@ -377,5 +371,9 @@ public class Day1Fragment extends Fragment implements View.OnClickListener {
             }
         });
 
+    }
+    private void setupToolbar(){
+        fragToolbar.setVisibility(View.VISIBLE);
+        yourlogo.setVisibility(View.GONE);
     }
 }

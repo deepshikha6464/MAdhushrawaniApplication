@@ -3,15 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/bottomNavColor"
+    android:background="#ffffff"
     android:layout_height="match_parent"
     tools:context=".view.Activities.LoginActivity">
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/logo"
-        android:src="@drawable/logo_img"
-        />
 
 
     <TextView
@@ -21,24 +15,36 @@
         android:layout_marginLeft="3dp"
         android:layout_marginTop="35dp"
         android:layout_toRightOf="@+id/logo"
-        android:fontFamily="@font/poppins"
+        android:fontFamily="@font/gravitas"
         android:text="Register"
+        android:elevation="50dp"
         android:textColor="#000000"
-        android:textSize="25sp" />
+        android:textSize="30sp" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/audioCardVachoBini"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="register.json"
+        app:lottie_loop="true"
+        app:lottie_speed="1.25" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"
-        android:layout_width="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_margin="20dp"
-        android:padding="10dp"
+        android:layout_width="325dp"
+        android:tooltipText="Sign In with Google"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_height="wrap_content" />
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="logout"-->
-<!--        android:id="@+id/logout"-->
-<!--        android:textSize="20sp"/>-->
+        android:layout_centerInParent="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="19dp"
+        android:elevation="50dp"
+        android:padding="10dp" />
+
 
 </RelativeLayout>

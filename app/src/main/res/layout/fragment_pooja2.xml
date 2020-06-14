@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
+    <include layout="@layout/toolbar" />
     <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/GridLayout1"
@@ -12,6 +13,7 @@
         android:layout_height="wrap_content"
         android:columnCount="2"
         android:rowCount="2"
+        android:layout_below="@+id/toolbar"
         android:orientation="horizontal"
         tools:context=".GridXMLActivity" >
 
