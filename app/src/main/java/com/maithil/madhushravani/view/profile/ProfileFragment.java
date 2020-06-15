@@ -22,7 +22,7 @@ import static com.maithil.madhushravani.model.SharedPref.KEY_NAME;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ProfileFragment extends Fragment {
+public class ProfileFragment extends Fragment  {
     private static final String TAG = "ProfileFragment";
 
     ImageView profilePic;

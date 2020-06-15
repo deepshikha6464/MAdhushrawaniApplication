@@ -17,7 +17,6 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -45,7 +44,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //        logout = findViewById(R.id.logout);
 //        logout.setOnClickListener(this);
 // Set the dimensions of the sign-in button.
-        userData = new UserData();
+//        userData = new UserData(userData.getUid(), userData.getName(), userData.getPost(), userData.getTime(), userData.getDownloadURL());
         sp = new SharedPref(getApplicationContext());
          signInButton = findViewById(R.id.sign_in_button);
         signInButton.setSize(SignInButton.SIZE_WIDE);
@@ -133,8 +132,8 @@ saveData(account);
     }
 
     private void saveData(GoogleSignInAccount account) {
-        userData.setName(account.getDisplayName());
-        userData.setImgUrl(account.getPhotoUrl().toString());
+//        userData.setName(account.getDisplayName());
+//        userData.setImgUrl(account.getPhotoUrl().toString());
 
         sp.createLoginSession(account.getDisplayName(),account.getEmail(),account.getPhotoUrl().toString(),true);
     }
