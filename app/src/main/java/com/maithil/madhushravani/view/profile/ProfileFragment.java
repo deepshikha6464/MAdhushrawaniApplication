@@ -46,29 +46,29 @@ import static com.maithil.madhushravani.model.SharedPref.KEY_NAME;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ProfileFragment extends Fragment implements View.OnClickListener
-{
+public class ProfileFragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "ProfileFragment";
 
-//    ui
+    //    ui
     ImageView profilePic;
     TextView DisplayName;
     RecyclerView rv;
-    TextView dob,dom,place;
+    TextView dob, dom, place;
     EditText editTextPlace;
-//    data
+    //    data
     SharedPref sp;
     List<PostsList> pl;
     ProfileAdapter adapter;
-    private int mYear, mMonth, mDay, mHour, mMinute , flag ;
+    private int mYear, mMonth, mDay, mHour, mMinute, flag;
 
     //    firebase
 //Firebase
-FirebaseStorage storage;
+    FirebaseStorage storage;
     StorageReference storageReference;
     private static FirebaseUser currentUser;
     private FirebaseDatabase database;
-    private DatabaseReference dbRefUserPosts,dbRef;
+    private DatabaseReference dbRefUserPosts, dbRef;
+
     public ProfileFragment() {
         // Required empty public constructor
     }
@@ -78,10 +78,10 @@ FirebaseStorage storage;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       View v = inflater.inflate(R.layout.fragment_profile2, container, false);
-       sp = new SharedPref(getContext());
-       findViewById(v);
-       setUserDetail();
+        View v = inflater.inflate(R.layout.fragment_profile2, container, false);
+        sp = new SharedPref(getContext());
+        findViewById(v);
+        setUserDetail();
 
         recyclerView(v);
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -90,7 +90,7 @@ FirebaseStorage storage;
         return v;
     }
 
-    public void recyclerView(View v){
+    public void recyclerView(View v) {
         rv = v.findViewById(R.id.recyclerViewprofile);
         rv.setHasFixedSize(true);
 //         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
@@ -99,12 +99,12 @@ FirebaseStorage storage;
         linearLayoutManager.setStackFromEnd(true);
         rv.setLayoutManager(linearLayoutManager);
 //         rv.setLayoutManager(mLayoutManager);
-        pl=new ArrayList<>();
+        pl = new ArrayList<>();
 
 
     }
 
-    public void firebaseStorageReference(){
+    public void firebaseStorageReference() {
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
 
@@ -115,6 +115,7 @@ FirebaseStorage storage;
 
         dbRef.addValueEventListener(changeListener);
     }
+
     ValueEventListener changeListener = new ValueEventListener() {
 
         @Override
@@ -123,48 +124,52 @@ FirebaseStorage storage;
             for (DataSnapshot datasnapshot : dataSnapshot.getChildren()) {
                 for (DataSnapshot ds : datasnapshot.getChildren()) {
 //                    for (DataSnapshot ds : ds1.getChildren()) {
-                        PostsList post = new PostsList();
-                        post.setName(ds.child("name").getValue().toString());
-                        post.setText(ds.child("Text").getValue().toString());
-                        post.setImg(ds.child("profileImage").getValue().toString());
-                        post.setPostImg(ds.child("postImage").getValue().toString());
-                        post.setTime(ds.child("time").getValue().toString());
-                        pl.add(post);
+                    PostsList post = new PostsList();
+                    post.setName(ds.child("name").getValue().toString());
+                    post.setText(ds.child("Text").getValue().toString());
+                    post.setImg(ds.child("profileImage").getValue().toString());
+                    post.setPostImg(ds.child("postImage").getValue().toString());
+                    post.setTime(ds.child("time").getValue().toString());
+                    pl.add(post);
 //                    }
                 }
             }
-            adapter = new ProfileAdapter(pl,getActivity());
-                rv.setAdapter(adapter);
-                adapter.notifyDataSetChanged();
+            adapter = new ProfileAdapter(pl, getActivity());
+            rv.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
 
         }
 
         @Override
         public void onCancelled(DatabaseError databaseError) {
 //            notifyUser("Database error: " + databaseError.toException());
-            Log.d(TAG, "onCancelled: "+ databaseError);
+            Log.d(TAG, "onCancelled: " + databaseError);
         }
 
 
     };
 
-    private void setUserDetail(){
-        DisplayName.setText(sp.pref.getString(KEY_NAME,"Hello User"));
-       Glide.with(this)
-               .load(sp.pref.getString(IMAGE_URL, ""))
+    private void setUserDetail() {
+        DisplayName.setText(sp.pref.getString(KEY_NAME, "Hello User"));
+        Glide.with(this)
+                .load(sp.pref.getString(IMAGE_URL, ""))
 //               .apply(RequestOptions.circleCropTransform())
-               .into(profilePic);
-   }
+                .into(profilePic);
+    }
 
-   private void findViewById(View view){
+    private void findViewById(View view) {
         profilePic = view.findViewById(R.id.userImg);
         DisplayName = view.findViewById(R.id.und);
-        dob = view.findViewById(R.id.TextViewDB); dob.setOnClickListener(this);
-        dom = view.findViewById(R.id.textViewMD);   dom.setOnClickListener(this);
-        place = view.findViewById(R.id.textViewPlace); place.setOnClickListener(this);
-        editTextPlace = view.findViewById(R.id.editTextPlace); editTextPlace.setOnClickListener(this);
+        dob = view.findViewById(R.id.TextViewDB);
+        dob.setOnClickListener(this);
+        dom = view.findViewById(R.id.textViewMD);
+        dom.setOnClickListener(this);
+        place = view.findViewById(R.id.textViewPlace);
+        place.setOnClickListener(this);
+        editTextPlace = view.findViewById(R.id.editTextPlace);
+        editTextPlace.setOnClickListener(this);
 
-   }
+    }
 
     @Override
     public void onResume() {
@@ -176,14 +181,18 @@ FirebaseStorage storage;
     @Override
     public void onClick(View view) {
         int id = view.getId();
-        switch(id){
+        switch (id) {
             case R.id.TextViewDB:
                 flag = 0;
                 openDatePicker(0);
-                 break;
+                break;
             case R.id.textViewMD:
                 openDatePicker(1);
-                 break;
+                break;
+            case R.id.textViewPlace:
+                  setPlace();
+
+                break;
 
         }
     }
@@ -203,11 +212,11 @@ FirebaseStorage storage;
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
                         // Display Selected date in textbox
-                        if(flag == 0) {
+                        if (flag == 0) {
                             dob.setText(dayOfMonth + "-"
                                     + (monthOfYear + 1) + "-" + year);
                         }
-                        if(flag==1){
+                        if (flag == 1) {
                             dom.setText(dayOfMonth + "-"
                                     + (monthOfYear + 1) + "-" + year);
                         }
@@ -219,9 +228,19 @@ FirebaseStorage storage;
         dpd.getButton(DatePickerDialog.BUTTON_POSITIVE).setTextColor(Color.WHITE);
 
 
- }
-       }
+    }
 
+    public void setPlace() {
+        editTextPlace.setVisibility(View.VISIBLE);
+        place.setVisibility(View.GONE);
+        String text="Add place";
 
+        text = editTextPlace.getText().toString();
+        place.setText(text);
+//        place.setVisibility(View.VISIBLE);
+//        editTextPlace.setVisibility(View.GONE);
 
+   }
+
+}
 

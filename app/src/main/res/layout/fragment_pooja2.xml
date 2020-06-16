@@ -6,19 +6,65 @@
     android:layout_height="match_parent"
     >
     <include layout="@layout/toolbar" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:id="@+id/ll"
+android:elevation="40dp"
+            android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Collect your Pooja Samagri"
+            android:textSize="22dp"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="@font/poppins"
+            android:padding="5dp"
+            android:layout_margin="5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tap to tick the collected item"
+            android:textSize="18dp"
+            android:fontFamily="@font/poppins"
+            android:padding="5dp"
+            android:layout_margin="5dp"/>
+        </LinearLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/audioCardVachoBini"
+        android:layout_width="171dp"
+        android:layout_height="89dp"
+            android:layout_marginTop="96dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="-79dp"
+        android:layout_toRightOf="@+id/ll"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="list.json"
+        app:lottie_loop="true"
+        app:lottie_speed="1.25" />
+
+    <androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_below="@+id/ll"
+    android:layout_height="wrap_content">
+
     <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/GridLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:columnCount="2"
-        android:rowCount="2"
-        android:layout_below="@+id/toolbar"
+         android:elevation="20dp"
+
         android:orientation="horizontal"
         tools:context=".GridXMLActivity" >
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/materialCardView"
+            android:id="@+id/ps1"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -26,18 +72,13 @@
             app:cardElevation="4dp"
             android:padding="8dp"
             >
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/edit"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
                 android:padding="20dp"
                 android:fontFamily="@font/poppins"
-                android:id="@+id/history"
-                android:text="sinduur"
+                android:text="पुरहार पतिल"
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 android:textSize="20sp" />
 
@@ -45,6 +86,7 @@
 
         </com.google.android.material.card.MaterialCardView>
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps2"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -58,7 +100,7 @@
                 android:layout_marginLeft="4dp"
                 android:padding="20dp"
                 android:fontFamily="@font/poppins"
-                android:text="sinduur"
+                  android:text="बालू"
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 android:textSize="20sp" />
 
@@ -66,6 +108,7 @@
 
         </com.google.android.material.card.MaterialCardView>
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps3"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -79,7 +122,7 @@
                 android:layout_marginLeft="4dp"
                 android:padding="20dp"
                 android:fontFamily="@font/poppins"
-                android:text="sinduur"
+                  android:text="तेल"
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 android:textSize="20sp" />
 
@@ -87,6 +130,7 @@
 
         </com.google.android.material.card.MaterialCardView>
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps4"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -100,13 +144,896 @@
                 android:layout_marginLeft="4dp"
                 android:padding="20dp"
                 android:fontFamily="@font/poppins"
-                android:text="sinduur"
+                  android:text=" बाती"
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 android:textSize="20sp" />
 
 
 
         </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps5"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text=" दीप"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps6"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text=" कलश"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps7"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="   मिट्टी  धूभ"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps8"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="चावल (पीठार )"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="18sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps9"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="चूडा"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps10"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text=" हालदी"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps11"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="  कुसुम  फूल"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps12"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="सिनदूर"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps13"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="पान"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps14"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="मेथी  दाना"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps15"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="जाही झौही"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps16"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="मैंना  का पत्ता"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps17"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="काजल"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps18"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="कले के पत्ते"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps19"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="अरवा चावल"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps20"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="चिनी"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps21"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="लावा"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps22"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="आम"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps23"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="कटहर"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps24"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="केला"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps25"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="अंकुरित"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps26"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="दहि"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps27"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="धानी धांन"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps28"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text=" धूभी"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps29"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text=" ह्ल्दी"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps30"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="सूपरी"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps31"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="बड़ी  इलियिची"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps32"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="जाफर"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps33"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text=" लबंग"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps34"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text=" बड़ी  हारीर"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps35"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="छोटी  हारीर"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps36"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="  बहेढ़ा  आ  पायी (15 -15)"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps37"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="धान"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps38"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="दूध"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps39"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="साँख  सहेली"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps40"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text=" लाल , पीली  फूलो  की माला"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps41"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="नीम के पत्ते"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps42"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="नींबू"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps43"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="आम का पत्ता का डाल"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ps44"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:padding="20dp"
+                android:fontFamily="@font/poppins"
+                  android:text="पाखुआ"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp" />
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
     </GridLayout>
+</androidx.core.widget.NestedScrollView>
 
 </RelativeLayout>
