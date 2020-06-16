@@ -1,8 +1,11 @@
 package com.maithil.madhushravani.view.profile;
 
 
+import android.app.DatePickerDialog;
+import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,8 +14,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -31,6 +37,7 @@ import com.maithil.madhushravani.model.SharedPref;
 import com.maithil.madhushravani.view.dashboard.PostsAdapter;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import static com.maithil.madhushravani.model.SharedPref.IMAGE_URL;
@@ -39,18 +46,23 @@ import static com.maithil.madhushravani.model.SharedPref.KEY_NAME;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ProfileFragment extends Fragment  {
+public class ProfileFragment extends Fragment implements View.OnClickListener
+{
     private static final String TAG = "ProfileFragment";
 
 //    ui
     ImageView profilePic;
     TextView DisplayName;
     RecyclerView rv;
+    TextView dob,dom,place;
+    EditText editTextPlace;
 //    data
     SharedPref sp;
     List<PostsList> pl;
     ProfileAdapter adapter;
-//    firebase
+    private int mYear, mMonth, mDay, mHour, mMinute , flag ;
+
+    //    firebase
 //Firebase
 FirebaseStorage storage;
     StorageReference storageReference;
@@ -147,6 +159,11 @@ FirebaseStorage storage;
    private void findViewById(View view){
         profilePic = view.findViewById(R.id.userImg);
         DisplayName = view.findViewById(R.id.und);
+        dob = view.findViewById(R.id.TextViewDB); dob.setOnClickListener(this);
+        dom = view.findViewById(R.id.textViewMD);   dom.setOnClickListener(this);
+        place = view.findViewById(R.id.textViewPlace); place.setOnClickListener(this);
+        editTextPlace = view.findViewById(R.id.editTextPlace); editTextPlace.setOnClickListener(this);
+
    }
 
     @Override
@@ -155,4 +172,56 @@ FirebaseStorage storage;
         dbRef.addValueEventListener(changeListener);
 
     }
-}
+
+    @Override
+    public void onClick(View view) {
+        int id = view.getId();
+        switch(id){
+            case R.id.TextViewDB:
+                flag = 0;
+                openDatePicker(0);
+                 break;
+            case R.id.textViewMD:
+                openDatePicker(1);
+                 break;
+
+        }
+    }
+
+    public void openDatePicker(final int flag) {
+        // Process to get Current Date
+        final Calendar c = Calendar.getInstance();
+        mYear = c.get(Calendar.YEAR);
+        mMonth = c.get(Calendar.MONTH);
+        mDay = c.get(Calendar.DAY_OF_MONTH);
+
+        // Launch Date Picker Dialog
+        DatePickerDialog dpd = new DatePickerDialog(getContext(),
+                new DatePickerDialog.OnDateSetListener() {
+
+                    @Override
+                    public void onDateSet(DatePicker view, int year,
+                                          int monthOfYear, int dayOfMonth) {
+                        // Display Selected date in textbox
+                        if(flag == 0) {
+                            dob.setText(dayOfMonth + "-"
+                                    + (monthOfYear + 1) + "-" + year);
+                        }
+                        if(flag==1){
+                            dom.setText(dayOfMonth + "-"
+                                    + (monthOfYear + 1) + "-" + year);
+                        }
+
+                    }
+                }, mYear, mMonth, mDay);
+        dpd.show();
+        dpd.getButton(DatePickerDialog.BUTTON_NEGATIVE).setTextColor(Color.WHITE);
+        dpd.getButton(DatePickerDialog.BUTTON_POSITIVE).setTextColor(Color.WHITE);
+
+
+ }
+       }
+
+
+
+

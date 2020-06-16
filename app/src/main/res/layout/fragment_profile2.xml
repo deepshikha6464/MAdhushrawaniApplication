@@ -87,7 +87,6 @@ android:layout_below="@+id/aa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-
                     android:text="Date Of Birth"
                     android:textSize="18dp" />
 
@@ -95,20 +94,14 @@ android:layout_below="@+id/aa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="4dp"
-                    android:text="Your Date Of Birth will be displayed here"
+                    android:id="@+id/TextViewDB"
+                    android:visibility="visible"
+                    android:textColor="@color/colorPrimary"
+                    android:text="Add now"
                     android:textSize="14dp" />
 
             </LinearLayout>
-<!--            add-->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/poppins"
-                android:padding="15dp"
-                android:text="ADD"
-                android:layout_marginTop="4dp"
-                android:textColor="@color/colorPrimary"
-                android:textSize="20dp" />
+
 
         </LinearLayout>
 
@@ -134,20 +127,12 @@ android:layout_below="@+id/aa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="4dp"
-                    android:text="Madhushrawani Pooja"
+                    android:id="@+id/textViewMD"
+                    android:text="Add now"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="14dp" />
 
             </LinearLayout>
-            <!--            add-->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/poppins"
-                android:padding="15dp"
-                android:text="ADD"
-                android:layout_marginTop="4dp"
-                android:textColor="@color/colorPrimary"
-                android:textSize="20dp" />
 
         </LinearLayout>
 
@@ -173,20 +158,21 @@ android:layout_below="@+id/aa"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="4dp"
-                        android:text=" pooja place"
+                        android:id="@+id/textViewPlace"
+                        android:visibility="visible"
+                        android:text="Add now"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="14dp" />
+                      <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                          android:id="@+id/editTextPlace"
+                        android:visibility="gone"
                         android:textSize="14dp" />
 
                 </LinearLayout>
-                <!--            add-->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/poppins"
-                    android:padding="15dp"
-                    android:text="ADD"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="20dp" />
+
 
             </LinearLayout>
 
@@ -205,5 +191,6 @@ android:layout_below="@+id/aa"
             android:id="@+id/recyclerViewprofile"/>
 
         </RelativeLayout>
+
     </androidx.core.widget.NestedScrollView>
 </RelativeLayout>
