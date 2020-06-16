@@ -34,11 +34,14 @@ import com.google.firebase.storage.StorageReference;
 import com.maithil.madhushravani.R;
 import com.maithil.madhushravani.model.PostsList;
 import com.maithil.madhushravani.model.SharedPref;
+import com.maithil.madhushravani.model.UserData;
 import com.maithil.madhushravani.view.dashboard.PostsAdapter;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static com.maithil.madhushravani.model.SharedPref.IMAGE_URL;
 import static com.maithil.madhushravani.model.SharedPref.KEY_NAME;
@@ -51,7 +54,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
     //    ui
     ImageView profilePic;
-    TextView DisplayName;
+    TextView DisplayName,add,save;
     RecyclerView rv;
     TextView dob, dom, place;
     EditText editTextPlace;
@@ -60,6 +63,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     List<PostsList> pl;
     ProfileAdapter adapter;
     private int mYear, mMonth, mDay, mHour, mMinute, flag;
+    UserData userData;
+    int add_save =0;
 
     //    firebase
 //Firebase
@@ -67,7 +72,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     StorageReference storageReference;
     private static FirebaseUser currentUser;
     private FirebaseDatabase database;
-    private DatabaseReference dbRefUserPosts, dbRef;
+    private DatabaseReference dbRefUserdetail, dbRef;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -107,10 +112,10 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     public void firebaseStorageReference() {
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
-
+        userData = new UserData();
         database = FirebaseDatabase.getInstance();
-//        rfrence for saving posts
-        dbRefUserPosts = database.getReference("/UserPosts");
+//        reference for saving posts
+        dbRefUserdetail = database.getReference("/UserPosts");
         dbRef = database.getReference("/UserPosts/user-posts");
 
         dbRef.addValueEventListener(changeListener);
@@ -155,6 +160,19 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                 .load(sp.pref.getString(IMAGE_URL, ""))
 //               .apply(RequestOptions.circleCropTransform())
                 .into(profilePic);
+
+        if(!sp.pref.getString("DOB","DD-MM-YYYY").isEmpty()){
+            dob.setText(sp.pref.getString("DOB","DD-MM-YYYY"));
+        }
+
+        if(!sp.pref.getString("DOM","DD-MM-YYYY").isEmpty()){
+            dom.setText(sp.pref.getString("DOM","DD-MM-YYYY"));
+        }
+
+        if(!sp.pref.getString("place","place").isEmpty()){
+            place.setText(sp.pref.getString("place","place"));
+        }
+//           place.setText(sp.pref.getString("place","Place"));
     }
 
     private void findViewById(View view) {
@@ -168,13 +186,15 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         place.setOnClickListener(this);
         editTextPlace = view.findViewById(R.id.editTextPlace);
         editTextPlace.setOnClickListener(this);
+        add = view.findViewById(R.id.add);
+          save = view.findViewById(R.id.save); save.setOnClickListener(this);
+        add.setOnClickListener(this);
 
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        dbRef.addValueEventListener(changeListener);
 
     }
 
@@ -190,9 +210,30 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                 openDatePicker(1);
                 break;
             case R.id.textViewPlace:
-                  setPlace();
-
+                sp.pref.edit().putString("place",editTextPlace.getText().toString()).apply();
                 break;
+
+            case R.id.add:
+                    dob.setEnabled(true);
+                    dom.setEnabled(true);
+                    place.setVisibility(View.GONE);
+                    editTextPlace.setVisibility(View.VISIBLE);
+                    editTextPlace.setFocusable(true);
+                   add.setVisibility(View.GONE);
+                save.setVisibility(View.VISIBLE);
+                break;
+
+            case R.id.save:
+//                    sp.pref.edit().putString("place",editTextPlace.getText().toString()).apply();
+                     place.setText(editTextPlace.getText().toString());
+                     place.setVisibility(View.VISIBLE);
+                     add.setVisibility(View.GONE);
+                     editTextPlace.setVisibility(View.GONE);
+                    SaveUserDetail();
+                      break;
+
+
+
 
         }
     }
@@ -213,10 +254,15 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                                           int monthOfYear, int dayOfMonth) {
                         // Display Selected date in textbox
                         if (flag == 0) {
+                            sp.pref.edit().putString("DOB",dayOfMonth + "-"
+                                    + (monthOfYear + 1) + "-" + year).apply();
                             dob.setText(dayOfMonth + "-"
                                     + (monthOfYear + 1) + "-" + year);
                         }
                         if (flag == 1) {
+
+                            sp.pref.edit().putString("DOM",dayOfMonth + "-"
+                                    + (monthOfYear + 1) + "-" + year).apply();
                             dom.setText(dayOfMonth + "-"
                                     + (monthOfYear + 1) + "-" + year);
                         }
@@ -230,17 +276,31 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    public void setPlace() {
-        editTextPlace.setVisibility(View.VISIBLE);
-        place.setVisibility(View.GONE);
-        String text="Add place";
+   public void SaveUserDetail() {
 
-        text = editTextPlace.getText().toString();
-        place.setText(text);
-//        place.setVisibility(View.VISIBLE);
-//        editTextPlace.setVisibility(View.GONE);
+        userData.setName(sp.pref.getString(KEY_NAME,"Anonymous User"));
+        userData.setImgUrl(sp.pref.getString(IMAGE_URL,"UserImg"));
+        userData.setUid(currentUser.getUid());
+        userData.setDob(sp.pref.getString("DOB","DD-MM-YYYY"));
+        userData.setDom(sp.pref.getString("DOM","DD-MM-YYYY"));
+        userData.setPlace(sp.pref.getString("place","Delhi"));
 
-   }
+
+       String key = dbRefUserdetail.child(userData.getName())
+                .child(currentUser.getUid()).push().getKey();
+        UserData post = new UserData( );
+        post.UserDataDetail(userData.getName() , userData.getImgUrl(), userData.getDob(),userData.getDom(),userData.getPlace(),userData.getUid());
+        Map<String, Object> postValues = post.toMappProfile();
+
+        Map<String, Object> childUpdates = new HashMap<>();
+//        childUpdates.put("/UserDetails/"+userData.getName()+"/")
+//        childUpdates.put("/posts/" + key, postValues);
+        childUpdates.put("/UserDetails/" + userData.getName() + "/" + key, postValues);
+        dbRefUserdetail.updateChildren(childUpdates);
+        flag =1;
+
+    }
+
 
 }
 

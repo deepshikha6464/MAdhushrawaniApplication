@@ -79,7 +79,7 @@ android:layout_below="@+id/aa"
             android:orientation="horizontal">
 <!--            text-->
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="301dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
@@ -91,17 +91,34 @@ android:layout_below="@+id/aa"
                     android:textSize="18dp" />
 
                 <TextView
+                    android:id="@+id/TextViewDB"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="4dp"
-                    android:id="@+id/TextViewDB"
-                    android:visibility="visible"
-                    android:textColor="@color/colorPrimary"
                     android:text="Add now"
-                    android:textSize="14dp" />
+                    android:enabled="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14dp"
+                    android:visibility="visible" />
 
             </LinearLayout>
-
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="ADD"
+               android:id="@+id/add"
+               android:textColor="@color/colorPrimary"
+               android:textSize="20dp"
+               android:clickable="true"/>
+ <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="SAVE"
+               android:id="@+id/save"
+               android:visibility="gone"
+               android:textColor="@color/colorPrimary"
+               android:textSize="20dp"
+               android:clickable="true"/>
 
         </LinearLayout>
 
@@ -129,6 +146,7 @@ android:layout_below="@+id/aa"
                     android:padding="4dp"
                     android:id="@+id/textViewMD"
                     android:text="Add now"
+                    android:enabled="false"
                     android:textColor="@color/colorPrimary"
                     android:textSize="14dp" />
 

@@ -12,6 +12,42 @@ public class UserData {
     String time;
     String uid;
     String downloadURL;
+
+    String dob,dom,place;
+
+    public void UserDataDetail(String name,String img,String dob,String dom, String place,String uid){
+        this.Name = name;
+        this.imgUrl = img;
+        this.dob = dob;
+        this.dom = dom;
+        this.place = place;
+        this.uid= uid;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public String getDom() {
+        return dom;
+    }
+
+    public void setDom(String dom) {
+        this.dom = dom;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
+    }
+
     public UserData() {
     }
 
@@ -98,6 +134,17 @@ public class UserData {
         result.put("profileImage", getImgUrl());
         result.put("Text", getPost()
         );
+         return result;
+    }
+
+    public Map<String, Object> toMappProfile() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("name", getName());
+        result.put("profileImage", getImgUrl());
+        result.put("dob", getDob());
+        result.put("dom", getDom());
+        result.put("place", getPlace());
+        result.put("uid", getUid());
          return result;
     }
 }
