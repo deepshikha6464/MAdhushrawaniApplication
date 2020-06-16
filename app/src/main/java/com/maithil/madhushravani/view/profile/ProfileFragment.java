@@ -49,7 +49,7 @@ public class ProfileFragment extends Fragment  {
 //    data
     SharedPref sp;
     List<PostsList> pl;
-//    ProfileAdapter adapter;
+    ProfileAdapter adapter;
 //    firebase
 //Firebase
 FirebaseStorage storage;
@@ -71,16 +71,16 @@ FirebaseStorage storage;
        findViewById(v);
        setUserDetail();
 
-//        recyclerView(v);
-//        currentUser = FirebaseAuth.getInstance().getCurrentUser();
-//        firebaseStorageReference();
+        recyclerView(v);
+        currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        firebaseStorageReference();
 
         return v;
     }
 
     public void recyclerView(View v){
-        rv = v.findViewById(R.id.recyclerView);
-//        rv.setHasFixedSize(true);
+        rv = v.findViewById(R.id.recyclerViewprofile);
+        rv.setHasFixedSize(true);
 //         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setReverseLayout(true);
@@ -99,7 +99,7 @@ FirebaseStorage storage;
         database = FirebaseDatabase.getInstance();
 //        rfrence for saving posts
         dbRefUserPosts = database.getReference("/UserPosts");
-        dbRef = database.getReference("/UserPosts/posts");
+        dbRef = database.getReference("/UserPosts/user-posts");
 
         dbRef.addValueEventListener(changeListener);
     }
@@ -109,19 +109,21 @@ FirebaseStorage storage;
         public void onDataChange(DataSnapshot dataSnapshot) {
 
             for (DataSnapshot datasnapshot : dataSnapshot.getChildren()) {
-                PostsList post = new PostsList();
-
-                post.setName(datasnapshot.child("name").getValue().toString());
-                post.setText(datasnapshot.child("Text").getValue().toString());
-                post.setImg(datasnapshot.child("profileImage").getValue().toString());
-                post.setPostImg(datasnapshot.child("postImage").getValue().toString());
-                post.setTime(datasnapshot.child("time").getValue().toString());
-                pl.add(post);
+                for (DataSnapshot ds : datasnapshot.getChildren()) {
+//                    for (DataSnapshot ds : ds1.getChildren()) {
+                        PostsList post = new PostsList();
+                        post.setName(ds.child("name").getValue().toString());
+                        post.setText(ds.child("Text").getValue().toString());
+                        post.setImg(ds.child("profileImage").getValue().toString());
+                        post.setPostImg(ds.child("postImage").getValue().toString());
+                        post.setTime(ds.child("time").getValue().toString());
+                        pl.add(post);
+//                    }
+                }
             }
-//
-//            adapter = new ProfileAdapter(pl,getActivity());
-//                rv.setAdapter(adapter);
-//                adapter.notifyDataSetChanged();
+            adapter = new ProfileAdapter(pl,getActivity());
+                rv.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
 
         }
 
@@ -150,7 +152,7 @@ FirebaseStorage storage;
     @Override
     public void onResume() {
         super.onResume();
-//        dbRef.addValueEventListener(changeListener);
+        dbRef.addValueEventListener(changeListener);
 
     }
 }

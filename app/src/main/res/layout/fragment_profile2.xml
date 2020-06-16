@@ -6,7 +6,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".view.profile.ProfileFragment">
-    <include layout="@layout/toolbar" />
+    <include layout="@layout/toolbar"
+        android:id="@+id/aa"/>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+android:layout_below="@+id/aa"
+        android:paddingBottom="50dp"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 <!--user name-->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_container"
@@ -187,17 +196,14 @@
     </com.google.android.material.card.MaterialCardView>
 
 <!--posts-->
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_below="@+id/profileCard"
-        android:paddingBottom="50dp"
-        android:layout_height="match_parent">
+
         <!--    cards to be displayed-->
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/profileCard"
             android:id="@+id/recyclerViewprofile"/>
 
-
+        </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
 </RelativeLayout>
