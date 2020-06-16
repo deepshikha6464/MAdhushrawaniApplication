@@ -64,7 +64,7 @@ import static com.maithil.madhushravani.model.SharedPref.KEY_NAME;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class dashboard extends Fragment implements View.OnClickListener {
+public class dashboard extends Fragment implements View.OnClickListener ,DatabaseReference.CompletionListener{
     private static final String TAG = "dashboard";
           MaterialCardView shareCard;
     //Firebase
@@ -89,7 +89,7 @@ List<PostsList> pl;
     private static FirebaseUser currentUser;
     private FirebaseDatabase database;
     private DatabaseReference dbRefUserPosts,dbRef;
-
+ int flag = 0;
     SharedPref sp;
     UserData userData;
 
@@ -110,7 +110,6 @@ List<PostsList> pl;
         recyclerView(view);
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
         firebaseStorageReference();
-//        displaycards();
         return view;
     }
 
@@ -138,14 +137,31 @@ List<PostsList> pl;
         }
     }
 
+    @Override
+    public void onComplete(@Nullable DatabaseError databaseError, @NonNull DatabaseReference databaseReference) {
+
+        if (databaseError == null) {
+            Log.i("Poll", "onComplete: SUCCESS");
+            adapter.notifyDataSetChanged();
+
+        } else {
+            Log.w("Poll", "onComplete: ", databaseError.toException());
+        }
+    }
+
     public interface OnFragmentInteractionListener {
     }
      public void recyclerView(View v){
         rv = v.findViewById(R.id.recyclerView);
          rv.setHasFixedSize(true);
-         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
-         rv.setLayoutManager(mLayoutManager);
+//         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
+         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+         linearLayoutManager.setReverseLayout(true);
+         linearLayoutManager.setStackFromEnd(true);
+         rv.setLayoutManager(linearLayoutManager);
+//         rv.setLayoutManager(mLayoutManager);
          pl=new ArrayList<>();
+
 
      }
     public void findViewById(View view){
@@ -251,8 +267,13 @@ List<PostsList> pl;
             }
 
             adapter = new PostsAdapter(pl,getActivity());
-            adapter.notifyDataSetChanged();
+            if(flag ==0){
             rv.setAdapter(adapter);
+            }else {
+                adapter.notifyDataSetChanged();
+//                flag = 0;
+            }
+
         }
 
         @Override
@@ -346,6 +367,7 @@ List<PostsList> pl;
                                     //Do what you want with the url
                                     SavePosts(downloadUrl);
                                     Toast.makeText(getActivity(), "Upload Done", Toast.LENGTH_LONG).show();
+                                    flag = 1;
                                     adapter.notifyDataSetChanged();
 
                                 }});

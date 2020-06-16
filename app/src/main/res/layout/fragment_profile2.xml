@@ -49,16 +49,21 @@
 
         </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>
-
+<!--profile info-->
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
+        android:id="@+id/profileCard"
         android:layout_marginTop="20dp"
         android:layout_margin="5dp"
         android:padding="5dp"
         android:layout_below="@+id/card_container">
-<!--        DOB-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <!--        DOB-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -98,12 +103,101 @@
 
         </LinearLayout>
 
-<!--        <CalendarView-->
-<!--            android:id="@+id/calendarView"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content" />-->
+        <!--Madhuhrawani date-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!--            text-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Date of Your Madhushrawani"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:text="Madhushrawani Pooja"
+                    android:textSize="14dp" />
+
+            </LinearLayout>
+            <!--            add-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/poppins"
+                android:padding="15dp"
+                android:text="ADD"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+
+            <!--   Place of Pooja-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <!--            text-->
+                <LinearLayout
+                    android:layout_width="253dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Place of Pooja"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text=" pooja place"
+                        android:textSize="14dp" />
+
+                </LinearLayout>
+                <!--            add-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/poppins"
+                    android:padding="15dp"
+                    android:text="ADD"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
     </com.google.android.material.card.MaterialCardView>
 
+<!--posts-->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/profileCard"
+        android:paddingBottom="50dp"
+        android:layout_height="match_parent">
+        <!--    cards to be displayed-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recyclerViewprofile"/>
 
 
+    </androidx.core.widget.NestedScrollView>
 </RelativeLayout>
