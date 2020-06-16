@@ -2,17 +2,22 @@ package com.maithil.madhushravani.view.explore;
 
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -24,6 +29,7 @@ import com.maithil.madhushravani.view.Activities.LoginActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import static com.maithil.madhushravani.model.SharedPref.IMAGE_URL;
 
@@ -33,7 +39,7 @@ import static com.maithil.madhushravani.model.SharedPref.IMAGE_URL;
 public class Explore extends Fragment implements  View.OnClickListener {
     private static final String TAG = "Explore";
 
-    public CarouselView carousel;
+    ImageView langIV;
     TextView history, step1des;
     LinearLayout step2dec, step3dec;
     ImageView d1, u1, d2, u2, d3, u3, d4, u4, aripan, pooja;
@@ -63,6 +69,8 @@ public class Explore extends Fragment implements  View.OnClickListener {
     private void findViewbyid(View view) {
         history = view.findViewById(R.id.history);
         pooja = view.findViewById(R.id.pooja);
+        langIV = view.findViewById(R.id.lang); langIV.setOnClickListener(this);
+
         history.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,10 +90,8 @@ public class Explore extends Fragment implements  View.OnClickListener {
             }
         });
 
-        d1 = view.findViewById(R.id.down);
-        d1.setOnClickListener(this);
-        d2 = view.findViewById(R.id.down2);
-        d2.setOnClickListener(this);
+        d1 = view.findViewById(R.id.down);        d1.setOnClickListener(this);
+        d2 = view.findViewById(R.id.down2);        d2.setOnClickListener(this);
         d3 = view.findViewById(R.id.down3);
         d3.setOnClickListener(this);
         d4 = view.findViewById(R.id.down4);
@@ -138,6 +144,12 @@ public class Explore extends Fragment implements  View.OnClickListener {
     public void onClick(View view) {
         int id = view.getId();
         switch (id) {
+
+            case  R.id.lang:
+                Log.d(TAG, "onClick: language");
+                languageChange();
+                break;
+
             case R.id.down:
                 u1.setVisibility(View.VISIBLE);
                 step1des.setVisibility(View.VISIBLE);
@@ -259,18 +271,18 @@ public class Explore extends Fragment implements  View.OnClickListener {
                 f.setArguments(b);
                 loadFragment(f);
                 break;
-            case R.id.day13:
-                b = new Bundle();
-                b.putString("UNIQUE_KEY", "13");
-                f.setArguments(b);
-                loadFragment(f);
-                break;
-            case R.id.day14:
-                b = new Bundle();
-                b.putString("UNIQUE_KEY", "14");
-                f.setArguments(b);
-                loadFragment(f);
-                break;
+//            case R.id.day13:
+//                b = new Bundle();
+//                b.putString("UNIQUE_KEY", "13");
+//                f.setArguments(b);
+//                loadFragment(f);
+//                break;
+//            case R.id.day14:
+//                b = new Bundle();
+//                b.putString("UNIQUE_KEY", "14");
+//                f.setArguments(b);
+//                loadFragment(f);
+//                break;
         }
 
     }
@@ -292,5 +304,16 @@ public class Explore extends Fragment implements  View.OnClickListener {
         bottomSheetDialog.setContentView(view1);
 
         bottomSheetDialog.show();
+    }
+
+    private  void languageChange(){
+        Resources res = getResources();
+        // Change locale settings in the app.
+        DisplayMetrics dm = res.getDisplayMetrics();
+        android.content.res.Configuration conf = res.getConfiguration();
+        conf.locale = new Locale("hi");
+        res.updateConfiguration(conf, dm);
+
+        Toast.makeText(getContext(), "Language Changed ", Toast.LENGTH_SHORT).show();
     }
 }

@@ -3,8 +3,6 @@ package com.maithil.madhushravani.view.dashboard;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -20,7 +18,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -82,9 +79,9 @@ public class dashboard extends Fragment implements View.OnClickListener ,Databas
     TextView userText,upload;
     String formattedDate;
     BottomSheetDialog bottomSheetDialog;
-RecyclerView rv;
-PostsAdapter adapter;
-List<PostsList> pl;
+    RecyclerView rv;
+     PostsAdapter adapter;
+    List<PostsList> pl;
     FirebaseAuth auth;
     private static FirebaseUser currentUser;
     private FirebaseDatabase database;
@@ -127,7 +124,10 @@ List<PostsList> pl;
                 break;
 
             case R.id.upload:
-//                SavePosts();
+//                SavePostsWithPhoto();
+               if(seletedImg.getDrawable() == null){
+                   SavePostsWithoutPhoto();
+               }else
                 uploadImage();
                 break;
             case R.id.cross:
@@ -261,7 +261,8 @@ List<PostsList> pl;
                   post.setName(datasnapshot.child("name").getValue().toString());
                   post.setText(datasnapshot.child("Text").getValue().toString());
                   post.setImg(datasnapshot.child("profileImage").getValue().toString());
-                  post.setPostImg(datasnapshot.child("postImage").getValue().toString());
+                  if(datasnapshot.child("postImage").exists()){
+                  post.setPostImg(datasnapshot.child("postImage").getValue().toString());}
                   post.setTime(datasnapshot.child("time").getValue().toString());
                 pl.add(post);
             }
@@ -286,7 +287,7 @@ List<PostsList> pl;
     };
 //    read list from db
 
-    public void SavePosts(Uri downloadUrl) {
+    public void SavePostsWithPhoto(Uri downloadUrl) {
 
         userData.setPost(editText.getText().toString());
         userData.setName(sp.pref.getString(KEY_NAME,"Anonymous User"));
@@ -310,6 +311,32 @@ List<PostsList> pl;
         childUpdates.put("/user-posts/" + userData.getName() + "/" + key, postValues);
 
         dbRefUserPosts.updateChildren(childUpdates);
+    }
+
+    public void SavePostsWithoutPhoto() {
+
+        userData.setPost(editText.getText().toString());
+        userData.setName(sp.pref.getString(KEY_NAME,"Anonymous User"));
+        userData.setImgUrl(sp.pref.getString(IMAGE_URL,"UserImg"));
+        userData.setTime(formattedDate);
+        userData.setUid(currentUser.getUid());
+
+        if (bottomSheetDialog.isShowing()) {
+            bottomSheetDialog.dismiss();
+        }
+
+
+        String key = dbRefUserPosts.child(userData.getName())
+                .child(currentUser.getUid()).child(userData.getTime()).push().getKey();
+        UserData post = new UserData( userData.getName() , userData.getPost(),userData.getImgUrl(), userData.getTime(),userData.getUid());
+        Map<String, Object> postValues = post.toMapp();
+
+        Map<String, Object> childUpdates = new HashMap<>();
+        childUpdates.put("/posts/" + key, postValues);
+        childUpdates.put("/user-posts/" + userData.getName() + "/" + key, postValues);
+        dbRefUserPosts.updateChildren(childUpdates);
+        flag =1;
+
     }
 
 
@@ -365,7 +392,7 @@ List<PostsList> pl;
                                 public void onSuccess(Uri uri) {
                                     downloadUrl = uri;
                                     //Do what you want with the url
-                                    SavePosts(downloadUrl);
+                                    SavePostsWithPhoto(downloadUrl);
                                     Toast.makeText(getActivity(), "Upload Done", Toast.LENGTH_LONG).show();
                                     flag = 1;
                                     adapter.notifyDataSetChanged();

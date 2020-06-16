@@ -24,8 +24,15 @@ public class UserData {
     }
 
 
+    public UserData(String name, String post, String imgUrl, String time, String uid) {
+        Name = name;
+        this.post = post;
+        this.imgUrl = imgUrl;
+        this.time = time;
+        this.uid = uid;
+    }
 
-    public UserData(String uid, String name, String imgUrl,String post, String time, String downloadURL) {
+    public UserData(String uid, String name, String imgUrl, String post, String time, String downloadURL) {
         Name = name;
         this.post = post;
         this.imgUrl = imgUrl;
@@ -78,6 +85,17 @@ public class UserData {
         result.put("time", getTime());
         result.put("profileImage", getImgUrl());
         result.put("postImage", downloadURL);
+        result.put("Text", getPost()
+        );
+         return result;
+    }
+
+    public Map<String, Object> toMapp() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("uid", getUid());
+        result.put("name", getName());
+        result.put("time", getTime());
+        result.put("profileImage", getImgUrl());
         result.put("Text", getPost()
         );
          return result;

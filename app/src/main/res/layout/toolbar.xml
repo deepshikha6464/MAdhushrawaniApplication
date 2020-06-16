@@ -34,14 +34,29 @@
             android:fontFamily="@font/poppins"/>
     </LinearLayout>
 
-<!-- id yourlogo-->
+<!-- id Main activity-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="100"
+        android:orientation="horizontal">
     <ImageView
         android:id="@+id/yourlogo"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:padding="8dp"
+        android:layout_weight="80"
         android:src="@drawable/logo_text" />
 
+        <ImageView
+            android:id="@+id/lang"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="20"
+            android:backgroundTint="@color/greyColor"
+            android:src="@drawable/language" />
+    </LinearLayout>
 
 </LinearLayout>

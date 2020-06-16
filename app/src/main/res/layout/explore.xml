@@ -800,41 +800,41 @@
                                     android:textColor="#ffffff"
                                     android:layout_gravity="center"/>
                             </com.google.android.material.card.MaterialCardView>
-                            <com.google.android.material.card.MaterialCardView
-                                android:layout_width="90dp"
-                                android:layout_height="90dp"
-                                android:padding="5dp"
-                                android:id="@+id/day14"
+<!--                            <com.google.android.material.card.MaterialCardView-->
+<!--                                android:layout_width="90dp"-->
+<!--                                android:layout_height="90dp"-->
+<!--                                android:padding="5dp"-->
+<!--                                android:id="@+id/day14"-->
 
-                                android:layout_margin="10dp"
-                                app:cardBackgroundColor="@color/cardBackground"
-                                >
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:textSize="35sp"
-                                    android:text="14"
-                                    android:fontFamily="@font/gravitas"
-                                    android:textColor="#ffffff"
-                                    android:layout_gravity="center"/>
-                            </com.google.android.material.card.MaterialCardView>
-                            <com.google.android.material.card.MaterialCardView
-                                android:layout_width="90dp"
-                                android:layout_height="90dp"
-                                android:padding="5dp"
-                                android:layout_margin="10dp"
-                                android:id="@+id/day15"
-                                app:cardBackgroundColor="@color/cardBackground"
-                                >
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:textSize="35sp"
-                                    android:text="15"
-                                    android:fontFamily="@font/gravitas"
-                                    android:textColor="#ffffff"
-                                    android:layout_gravity="center"/>
-                            </com.google.android.material.card.MaterialCardView>
+<!--                                android:layout_margin="10dp"-->
+<!--                                app:cardBackgroundColor="@color/cardBackground"-->
+<!--                                >-->
+<!--                                <TextView-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:textSize="35sp"-->
+<!--                                    android:text="14"-->
+<!--                                    android:fontFamily="@font/gravitas"-->
+<!--                                    android:textColor="#ffffff"-->
+<!--                                    android:layout_gravity="center"/>-->
+<!--                            </com.google.android.material.card.MaterialCardView>-->
+<!--                            <com.google.android.material.card.MaterialCardView-->
+<!--                                android:layout_width="90dp"-->
+<!--                                android:layout_height="90dp"-->
+<!--                                android:padding="5dp"-->
+<!--                                android:layout_margin="10dp"-->
+<!--                                android:id="@+id/day15"-->
+<!--                                app:cardBackgroundColor="@color/cardBackground"-->
+<!--                                >-->
+<!--                                <TextView-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:textSize="35sp"-->
+<!--                                    android:text="15"-->
+<!--                                    android:fontFamily="@font/gravitas"-->
+<!--                                    android:textColor="#ffffff"-->
+<!--                                    android:layout_gravity="center"/>-->
+<!--                            </com.google.android.material.card.MaterialCardView>-->
 
                         </LinearLayout>
 

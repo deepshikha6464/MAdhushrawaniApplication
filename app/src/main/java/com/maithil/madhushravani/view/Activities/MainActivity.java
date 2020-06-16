@@ -8,11 +8,14 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.text.Layout;
 import android.transition.Explode;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -42,8 +45,7 @@ GoogleSignInClient mGoogleSignInClient;
         getWindow().setExitTransition(new Explode());
 
         findViewbyid();
-        setToolBar();
-        loadFragment(new dashboard());
+        loadFragment(new Explore());
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setScrollbarFadingEnabled(true);
 //
@@ -82,19 +84,19 @@ GoogleSignInClient mGoogleSignInClient;
         Fragment fragment = null;
         switch (menuItem.getItemId()) {
             case R.id.navigation_home:
-                fragment = new dashboard();
+                fragment = new Explore();
                 break;
 
             case R.id.navigation_explore:
-                fragment = new Explore();
+                fragment = new dashboard();
                 break;
 
             case R.id.navigation_profile:
                 fragment = new ProfileFragment();
                 break;
-//            case R.id.navigation_write:
-//                fragment = new PostFragment();
-//                break;
+            case R.id.lang:
+                Log.d(TAG, "lan button: ");
+                break;
         }
         return loadFragment(fragment);
     }

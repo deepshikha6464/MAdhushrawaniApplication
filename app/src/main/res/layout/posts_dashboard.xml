@@ -11,9 +11,8 @@
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+
+        android:layout_marginBottom="6dp"
         app:cardElevation="4dp">
 
         <LinearLayout
@@ -90,7 +89,7 @@
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp" />
+                android:padding="2dp" />
 
 
 

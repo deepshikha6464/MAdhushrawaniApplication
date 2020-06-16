@@ -67,11 +67,13 @@
         android:padding="10dp"
         android:layout_margin="10dp"
         android:textSize="20dp"/>
-
+<com.google.android.material.card.MaterialCardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/editText">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText"
         android:orientation="vertical">
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/cross"
@@ -95,18 +97,5 @@
         />
 
     </LinearLayout>
-<!--    <com.airbnb.lottie.LottieAnimationView-->
-<!--        android:id="@+id/selectImg"-->
-<!--        android:layout_width="48dp"-->
-<!--        android:layout_height="60dp"-->
-<!--        android:layout_marginLeft="5dp"-->
-<!--        android:layout_marginTop="0dp"-->
-<!--        app:lottie_autoPlay="true"-->
-<!--        app:lottie_fileName="gallery.json"-->
-<!--        app:lottie_loop="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        app:lottie_speed="1.25" />-->
-
-
-
+</com.google.android.material.card.MaterialCardView>
 </RelativeLayout>

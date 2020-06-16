@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Madhushravani</string>
+    <string name="History">माधशर्वानि की पूजा  क्यू  की जाती है ...</string>
+    <string name="PoojaSamagri">पूजा समाग्री</string>
+    <string name="Step1">गौरी  जी  बनाना</string>
+    <string name="Step2">विशहर  बनाना</string>
+    <string name="Step3">सारे देवता  की प्रतिमा बनाना</string>
+    <string name="Step4_1">अरीपन  बनाना</string>
+    <string name="Steps">पूजा की  त्यियारी  करना</string>
+    <string name="Steps1">पूजा शुरू करना</string>
+    <string name="bini">अब  इन   पांच  बिनी  को  तीन  बार  सूने</string>
+    <string name="biniListen">बिनी  सूने</string>
+    <string name="bininote">बिनी  से आगे  बढे</string>
+    <string name="biniread">किताब  से पढ़े</string>
+    <string name="daybefore">यह  विधी पूजा से एक  दिन पहले  करी जाती है</string>
+    <string name="daysStart">दिन अनुसार  पूजा  शुरू करे</string>
+    <string name="endtext">अब फूल और पत्ते  सब  विशहर  पर छीटे  और अरीपन  पूर ढ़क  दे</string>
+    <string name="foollodhi">फूल्लोड़ी</string>
+    <string name="katha">आज के दिन की कथा</string>
+    <string name="know_the_history_of_this_pooja">इस  पूजा के बारे मे जाने</string>
+    <string name="nhayikhayi">नहयी  खायी  की विधी करे</string>
+    <string name="note11">सूचना</string>
+    <string name="saree_step">तीन नयी  अखरा  साडी  तेयार  करलें  एक साडी  गौरी जी बनाने तथा फूल्लोड़ी  के  लिए पेहने    दुसरी साडी  तेरह  दिन  तक कथा सुन्ने  एवं  पूजा के लिए पेहने  तीसरी  साडी  तेरहवे  दिन टेमी  के  लिए पहने</string>
+    <string name="ss">अपने व्रत के अनुभव को हमारे  मैथिल  समाज के साथ बांटे</string>
+    <string name="startPooja">आज की पूजा  इन  देवता  की पूजा से आरम्भ  करे</string>
+    <string name="vacho">कथा के अंत मे वाचो  बिनी  सूने</string>
+    <string name="temi11">टेमी की विधी</string>
+</resources>

@@ -51,7 +51,6 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_below="@+id/shareExp"
-        android:paddingBottom="80dp"
         android:layout_height="match_parent">
         <!--    cards to be displayed-->
 <androidx.recyclerview.widget.RecyclerView
