@@ -38,6 +38,7 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
     Handler mHandler;
     NestedScrollView naviday1;
     LottieAnimationView play, read, audioCardKatha1,vacho;
+    String kathaName;
 
 
     public Day2_14() {
@@ -62,6 +63,11 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+String data ="2";
+        Bundle b = getArguments();
+        if(b!= null) {
+             data = b.getString("UNIQUE_KEY");
+        }
         int id = view.getId();
                     switch (id){
 
@@ -84,7 +90,7 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                             break;
 
                         case R.id.audioCardVachoBinidays:
-                            audioCardKatha1.playAnimation();
+                            vacho.playAnimation();
                             if (mp.isPlaying()) {
                                 mp.stop();
                                 mp.reset();
@@ -103,6 +109,76 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                             mp.start();
                             playmini.setVisibility(View.GONE);
                             pause.setVisibility(View.VISIBLE);
+                            break;
+
+                        case R.id.audioCardKathaDays:
+
+                            audioCardKatha1.playAnimation();
+                            if (mp.isPlaying()) {
+                                mp.stop();
+                                mp.reset();
+                            }
+
+                            switch(data){
+                                case "2":
+                                    mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha2);
+                                    playMedia("Katha of Day 2");
+
+                                    break;
+                                case "3":
+                                      mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha_three);
+                                    playMedia("Katha of Day 3");
+
+                                    break;
+                                case "4":
+                                       mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha_four);
+                                    playMedia("Katha of Day 4");
+                                    break;
+                                case "5":
+                                       mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha_five);
+                                    playMedia("Katha of Day 5");
+
+                                    break;
+                                case "6":
+                                       mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha_six);
+                                    playMedia("Katha of Day 6");
+
+                                    break;
+                                case "7":
+                                       mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha7);
+                                    playMedia("Katha of Day 7");
+
+                                    break;
+                                case "8":
+                                       mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha8);
+                                    playMedia("Katha of Day 8");
+
+                                    break;
+                                case "9":
+                                       mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha9);
+                                    playMedia("Katha of Day 9");
+
+                                    break;
+                                case "10":
+                                        mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha10);
+                                    playMedia("Katha of Day 10");
+
+                                    break;
+                                case "11":
+                                        mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha11);
+                                    playMedia("Katha of Day 11");
+
+                                    break;
+                                case "12":
+                                       mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha12);
+                                    playMedia("Katha of Day 12");
+                                    break;
+                                case "13":
+                                        mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha13);
+                                    playMedia("Katha of Day 13");
+                                    break;
+
+                            }
                             break;
                     }
     }
