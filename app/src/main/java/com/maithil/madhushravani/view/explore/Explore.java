@@ -271,18 +271,13 @@ public class Explore extends Fragment implements  View.OnClickListener {
                 f.setArguments(b);
                 loadFragment(f);
                 break;
-//            case R.id.day13:
-//                b = new Bundle();
-//                b.putString("UNIQUE_KEY", "13");
-//                f.setArguments(b);
-//                loadFragment(f);
-//                break;
-//            case R.id.day14:
-//                b = new Bundle();
-//                b.putString("UNIQUE_KEY", "14");
-//                f.setArguments(b);
-//                loadFragment(f);
-//                break;
+            case R.id.day13:
+                b = new Bundle();
+                b.putString("UNIQUE_KEY", "13");
+                f.setArguments(b);
+                loadFragment(f);
+                break;
+
         }
 
     }

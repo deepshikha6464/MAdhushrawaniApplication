@@ -36,7 +36,7 @@ public class Day1Fragment extends Fragment implements View.OnClickListener {
     String poojaVidhi = "";
     TextView poojavidhi, mediacard;
     NestedScrollView naviday1;
-    LottieAnimationView play, read, audioCardKatha1;
+    LottieAnimationView play, read, audioCardKatha1,vacho;
     LinearLayout mediaLayout;
     SeekBar seekBar;
     static MediaPlayer mp;
@@ -227,6 +227,15 @@ public class Day1Fragment extends Fragment implements View.OnClickListener {
                 mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha_one);
                 playMedia("Katha of Day 1");
                 break;
+            case R.id.audioCardVachoBini:
+                            audioCardKatha1.playAnimation();
+                            if (mp.isPlaying()) {
+                                mp.stop();
+                                mp.reset();
+                            }
+                            mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.vacho_bini);
+                            playMedia("Vacho Bini");
+                            break;
 
             case R.id.pictureCard:
                 nonframe.setVisibility(View.GONE);
@@ -295,6 +304,8 @@ public class Day1Fragment extends Fragment implements View.OnClickListener {
         read.setOnClickListener(this);
         audioCardKatha1 = view.findViewById(R.id.audioCardKatha1);
         audioCardKatha1.setOnClickListener(this);
+        vacho = view.findViewById(R.id.audioCardVachoBini);
+        vacho.setOnClickListener(this);
         nonframe = view.findViewById(R.id.nonframe);
         naviday1 = view.findViewById(R.id.naviday1);
         mediaLayout = view.findViewById(R.id.media_ayout);
