@@ -25,6 +25,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.card.MaterialCardView;
 import com.gtomato.android.ui.widget.CarouselView;
 import com.maithil.madhushravani.R;
+import com.maithil.madhushravani.view.Activities.FragmentLoader;
 import com.maithil.madhushravani.view.Activities.LoginActivity;
 
 import java.util.ArrayList;
@@ -39,7 +40,7 @@ import static com.maithil.madhushravani.model.SharedPref.IMAGE_URL;
 public class Explore extends Fragment implements  View.OnClickListener {
     private static final String TAG = "Explore";
 
-    ImageView langIV;
+    ImageView langIV,back;
     TextView history, step1des;
     LinearLayout step2dec, step3dec;
     ImageView d1, u1, d2, u2, d3, u3, d4, u4, aripan, pooja;
@@ -81,12 +82,10 @@ public class Explore extends Fragment implements  View.OnClickListener {
         pooja.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent i = new Intent(getContext(), poojaFragment.class);
-//                startActivity(i);
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container, new poojaFragment())
-                        .commit();
+                Intent i = new Intent(getContext(), FragmentLoader.class);
+                i.putExtra("FragName","pooja");
+                startActivity(i);
+
             }
         });
 
@@ -142,6 +141,8 @@ public class Explore extends Fragment implements  View.OnClickListener {
 
     @Override  //card expand clicks
     public void onClick(View view) {
+        Intent intent = new Intent(getActivity(), FragmentLoader.class);
+
         int id = view.getId();
         switch (id) {
 
@@ -199,86 +200,59 @@ public class Explore extends Fragment implements  View.OnClickListener {
                 break;
 
             case R.id.day1:
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-//                        .setCustomAnimations(R.animator.slide_in_bottom,R.animator.slide_out_bottom,R.animator.slide_in_top,R.animator.slide_out_top)
-                        .replace(R.id.fragment_container, new Day1Fragment())
-                        .commit();
+                intent.putExtra("FragName","day1");
+
                 break;
             case R.id.day2:
-                b = new Bundle();
-                b.putString("UNIQUE_KEY", "2");
-                f.setArguments(b);
-                loadFragment(f);
+                intent.putExtra("FragName","day2");
                 break;
             case R.id.day3:
-                b = new Bundle();
-                b.putString("UNIQUE_KEY", "3");
-                f.setArguments(b);
-                loadFragment(f);
+                intent.putExtra("FragName","day3");
+
                 break;
             case R.id.day4:
-                b = new Bundle();
-                b.putString("UNIQUE_KEY", "4");
-                f.setArguments(b);
-                loadFragment(f);
+                intent.putExtra("FragName","day4");
+
                 break;
             case R.id.day5:
-                b = new Bundle();
-                b.putString("UNIQUE_KEY", "5");
-                f.setArguments(b);
-                loadFragment(f);
+                intent.putExtra("FragName","day5");
+
                 break;
             case R.id.day6:
-                b = new Bundle();
-                b.putString("UNIQUE_KEY", "6");
-                f.setArguments(b);
-                loadFragment(f);
+                intent.putExtra("FragName","day6");
+
                 break;
             case R.id.day7:
-                b = new Bundle();
-                b.putString("UNIQUE_KEY", "7");
-                f.setArguments(b);
-                loadFragment(f);
+                intent.putExtra("FragName","day7");
+
                 break;
             case R.id.day8:
-                b = new Bundle();
-                b.putString("UNIQUE_KEY", "8");
-                f.setArguments(b);
-                loadFragment(f);
+                intent.putExtra("FragName","day8");
+
                 break;
             case R.id.day9:
-                b = new Bundle();
-                b.putString("UNIQUE_KEY", "9");
-                f.setArguments(b);
-                loadFragment(f);
+                intent.putExtra("FragName","day9");
+
                 break;
             case R.id.day10:
-                b = new Bundle();
-                b.putString("UNIQUE_KEY", "10");
-                f.setArguments(b);
-                loadFragment(f);
+                intent.putExtra("FragName","day10");
+
                 break;
             case R.id.day11:
-                b = new Bundle();
-                b.putString("UNIQUE_KEY", "11");
-                f.setArguments(b);
-                loadFragment(f);
+                intent.putExtra("FragName","day11");
+
                 break;
             case R.id.day12:
-                b = new Bundle();
-                b.putString("UNIQUE_KEY", "12");
-                f.setArguments(b);
-                loadFragment(f);
+                intent.putExtra("FragName","day12");
+
                 break;
             case R.id.day13:
-                b = new Bundle();
-                b.putString("UNIQUE_KEY", "13");
-                f.setArguments(b);
-                loadFragment(f);
+                intent.putExtra("FragName","day13");
+
                 break;
 
         }
+        startActivity(intent);
 
     }
 
@@ -286,7 +260,7 @@ public class Explore extends Fragment implements  View.OnClickListener {
         getActivity().getSupportFragmentManager()
                 .beginTransaction()
 //                .setCustomAnimations(R.animator.slide_in_bottom,R.animator.slide_out_bottom,R.animator.slide_in_top,R.animator.slide_out_top)
-                .replace(R.id.fragment_container, frag)
+                .replace(R.id.fragment_container_explore, frag)
                 .commit();
 
     }

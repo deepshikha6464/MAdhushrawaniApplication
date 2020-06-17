@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
 import android.text.Layout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,7 +42,7 @@ public class Day1Fragment extends Fragment implements View.OnClickListener {
     SeekBar seekBar;
     static MediaPlayer mp;
     LinearLayout nonframe,fragToolbar,toolbar;
-    ImageView playmini, pause,yourlogo;
+    ImageView playmini, pause,yourlogo, back;
     Handler mHandler;
 
     public Day1Fragment() {
@@ -258,6 +259,12 @@ public class Day1Fragment extends Fragment implements View.OnClickListener {
                 pause.setVisibility(View.VISIBLE);
                 break;
 
+
+            case R.id.back:
+                Log.d(TAG, "onClick: ");
+                getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
+                break;
+
         }
 
     }
@@ -313,6 +320,8 @@ public class Day1Fragment extends Fragment implements View.OnClickListener {
         mediacard = view.findViewById(R.id.mediaCard);
         fragToolbar = view.findViewById(R.id.fragToolbar);
         yourlogo = view.findViewById(R.id.yourlogo);
+        back = view.findViewById(R.id.back); back.setOnClickListener(this);
+
 
 
     }

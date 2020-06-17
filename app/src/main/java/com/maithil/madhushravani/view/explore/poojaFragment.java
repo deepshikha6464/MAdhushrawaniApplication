@@ -53,6 +53,10 @@ SharedPref sp;
        findViewByID(v);
        sp = new SharedPref(getContext());
        setCardStatus();
+
+
+
+
        return v;
     }
 
@@ -1098,6 +1102,13 @@ case R.id.ps44:
             c38.setBackgroundColor(getResources().getColor(color.greenColor));
 
         }
+
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        getActivity().onBackPressed();
 
     }
 }

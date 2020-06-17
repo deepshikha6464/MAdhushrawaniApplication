@@ -169,8 +169,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             dom.setText(sp.pref.getString("DOM","DD-MM-YYYY"));
         }
 
-        if(!sp.pref.getString("place","place").isEmpty()){
-            place.setText(sp.pref.getString("place","place"));
+        if(!sp.pref.getString("PLACE","place").isEmpty()){
+            place.setText(sp.pref.getString("PLACE","place"));
         }
 //           place.setText(sp.pref.getString("place","Place"));
     }
@@ -210,7 +210,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                 openDatePicker(1);
                 break;
             case R.id.textViewPlace:
-                sp.pref.edit().putString("place",editTextPlace.getText().toString()).apply();
+                String str = editTextPlace.getText().toString();
+                sp.pref.edit().putString("PLACE",str).apply();
                 break;
 
             case R.id.add:
@@ -224,7 +225,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.save:
-//                    sp.pref.edit().putString("place",editTextPlace.getText().toString()).apply();
+                    sp.pref.edit().putString("place",editTextPlace.getText().toString()).apply();
                      place.setText(editTextPlace.getText().toString());
                      place.setVisibility(View.VISIBLE);
                      add.setVisibility(View.GONE);
@@ -283,7 +284,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         userData.setUid(currentUser.getUid());
         userData.setDob(sp.pref.getString("DOB","DD-MM-YYYY"));
         userData.setDom(sp.pref.getString("DOM","DD-MM-YYYY"));
-        userData.setPlace(sp.pref.getString("place","Delhi"));
+        userData.setPlace(sp.pref.getString("PLACE","Delhi"));
 
 
        String key = dbRefUserdetail.child(userData.getName())

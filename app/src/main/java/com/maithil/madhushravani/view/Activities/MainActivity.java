@@ -21,6 +21,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.maithil.madhushravani.R;
 import com.maithil.madhushravani.view.dashboard.dashboard;
+import com.maithil.madhushravani.view.explore.Day1Fragment;
 import com.maithil.madhushravani.view.explore.Explore;
 import com.maithil.madhushravani.view.post.PostFragment;
 import com.maithil.madhushravani.view.profile.ProfileFragment;
@@ -136,6 +137,20 @@ GoogleSignInClient mGoogleSignInClient;
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+//        super.onBackPressed();
+        if(bottomNavigationView.getSelectedItemId() == R.id.navigation_home){
+
+            Fragment f = this.getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+            if(f instanceof Day1Fragment) {
+                // do something with f
+                Log.d(TAG, "onBackPressed: ");
+                getSupportFragmentManager().beginTransaction().remove(f).commit();
+
+            }
+            finishAffinity();
+
+        }else{
+            bottomNavigationView.setSelectedItemId(R.id.navigation_home);
+        }
     }
 }
