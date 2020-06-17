@@ -66,7 +66,7 @@ GoogleSignInClient mGoogleSignInClient;
         if (fragment != null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .setCustomAnimations(R.animator.slide_in_bottom,R.animator.slide_out_bottom,R.animator.slide_in_top,R.animator.slide_out_top)
+//                    .setCustomAnimations(R.animator.slide_in_top,R.animator.slide_out_top)
                     .replace(R.id.fragment_container, fragment)
                     .commit();
             return true;
@@ -102,38 +102,14 @@ GoogleSignInClient mGoogleSignInClient;
         return loadFragment(fragment);
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.toolbar_contextual, menu);
-//        return true;
-//    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemId = item.getItemId();
-        String btnName = null;
-//        switch(itemId) {
-//            case R.id.menu_settings:
-//                btnName = "Settings";
-//                break;
-//            case R.id.menu_compass:
-//                btnName = "Compass";
-//                break;
-//            case R.id.menu_help:
-//                btnName = "Help";
-//                break;
-//        }
-//        Snackbar.make(layout, "Button " + btnName, Snackbar.LENGTH_SHORT).show();
+
         return true;
     }
-    private void setToolBar() {
-//        Toolbar tb = findViewById(R.id.toolbar);
-//        setSupportActionBar(tb);
-//        tb.setLogo(R.drawable.logo_text);
-//                ActionBar ab = getSupportActionBar();
-//        ab.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
-//        ab.setDisplayHomeAsUpEnabled(true);
-    }
+
 
     @Override
     public void onBackPressed() {

@@ -262,7 +262,7 @@ public class Day1Fragment extends Fragment implements View.OnClickListener {
 
             case R.id.back:
                 Log.d(TAG, "onClick: ");
-                getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
+                getActivity().onBackPressed();
                 break;
 
         }

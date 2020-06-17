@@ -69,7 +69,7 @@ public class Explore extends Fragment implements  View.OnClickListener {
 
     private void findViewbyid(View view) {
         history = view.findViewById(R.id.history);
-        pooja = view.findViewById(R.id.pooja);
+        pooja = view.findViewById(R.id.poojaarrow);
         langIV = view.findViewById(R.id.lang); langIV.setOnClickListener(this);
 
         history.setOnClickListener(new View.OnClickListener() {
@@ -201,17 +201,22 @@ public class Explore extends Fragment implements  View.OnClickListener {
 
             case R.id.day1:
                 intent.putExtra("FragName","day1");
+                startActivity(intent);
 
                 break;
             case R.id.day2:
                 intent.putExtra("FragName","day2");
+                startActivity(intent);
+
                 break;
             case R.id.day3:
                 intent.putExtra("FragName","day3");
+                startActivity(intent);
 
                 break;
             case R.id.day4:
                 intent.putExtra("FragName","day4");
+                startActivity(intent);
 
                 break;
             case R.id.day5:
@@ -224,6 +229,7 @@ public class Explore extends Fragment implements  View.OnClickListener {
                 break;
             case R.id.day7:
                 intent.putExtra("FragName","day7");
+                startActivity(intent);
 
                 break;
             case R.id.day8:
@@ -232,6 +238,7 @@ public class Explore extends Fragment implements  View.OnClickListener {
                 break;
             case R.id.day9:
                 intent.putExtra("FragName","day9");
+                startActivity(intent);
 
                 break;
             case R.id.day10:
@@ -240,19 +247,21 @@ public class Explore extends Fragment implements  View.OnClickListener {
                 break;
             case R.id.day11:
                 intent.putExtra("FragName","day11");
+                startActivity(intent);
 
                 break;
             case R.id.day12:
                 intent.putExtra("FragName","day12");
+                startActivity(intent);
 
                 break;
             case R.id.day13:
                 intent.putExtra("FragName","day13");
+                startActivity(intent);
 
                 break;
 
         }
-        startActivity(intent);
 
     }
 

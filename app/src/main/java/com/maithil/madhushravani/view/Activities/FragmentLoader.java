@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.transition.Explode;
 import android.util.Log;
 
 import com.maithil.madhushravani.R;
@@ -20,7 +21,7 @@ public class FragmentLoader extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment_loader);
-
+        getWindow().setExitTransition(new Explode());
         String value = getIntent().getExtras().getString("FragName");
         Log.d(TAG, "onCreate: "+ value);
 
@@ -29,13 +30,14 @@ public class FragmentLoader extends AppCompatActivity {
             case "pooja":
                 getSupportFragmentManager()
                         .beginTransaction()
+                        .setCustomAnimations(R.animator.slide_in_top,R.animator.slide_out_top)
                         .replace(R.id.fragment_container, new poojaFragment())
                         .commit();
                 break;
             case "day1":
                 getSupportFragmentManager()
                         .beginTransaction()
-//                        .setCustomAnimations(R.animator.slide_in_bottom,R.animator.slide_out_bottom,R.animator.slide_in_top,R.animator.slide_out_top)
+                        .setCustomAnimations(R.animator.slide_in_top,R.animator.slide_out_top)
                         .replace(R.id.fragment_container, new Day1Fragment())
                         .commit();
                 break;
@@ -120,7 +122,7 @@ public class FragmentLoader extends AppCompatActivity {
     public void loadFragment(Fragment frag) {
         getSupportFragmentManager()
                 .beginTransaction()
-//                .setCustomAnimations(R.animator.slide_in_bottom,R.animator.slide_out_bottom,R.animator.slide_in_top,R.animator.slide_out_top)
+                .setCustomAnimations(R.animator.slide_in_top,R.animator.slide_out_top)
                 .replace(R.id.fragment_container, frag)
                 .commit();
 

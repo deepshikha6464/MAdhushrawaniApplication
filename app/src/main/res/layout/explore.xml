@@ -111,7 +111,7 @@
                         <ImageView
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:id="@+id/pooja"
+                            android:id="@+id/poojaarrow"
                             android:src="@drawable/arrow_right"
                             android:layout_margin="5dp"/>
                     </LinearLayout>

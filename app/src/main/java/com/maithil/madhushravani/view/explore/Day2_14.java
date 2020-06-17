@@ -180,6 +180,11 @@ String data ="2";
 
                             }
                             break;
+
+                        case R.id.back:
+                            Log.d(TAG, "onClick: ");
+                            getActivity().onBackPressed();
+                            break;
                     }
     }
 
@@ -205,6 +210,8 @@ String data ="2";
         temiHeading = view.findViewById(R.id.temiheading);
         startPoojaDay = view.findViewById(R.id.starPooojaDay);
         nonframe = view.findViewById(R.id.nonframedays);
+
+        back = view.findViewById(R.id.back); back.setOnClickListener(this);
 
 //        media
         mediaLayout = view.findViewById(R.id.media_layout);
