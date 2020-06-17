@@ -1,5 +1,6 @@
 package com.maithil.madhushravani.view.explore;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -73,7 +74,8 @@ public class Explore extends Fragment implements  View.OnClickListener {
             public void onClick(View view) {
                 Intent i = new Intent(getContext(), FragmentLoader.class);
                 i.putExtra("FragName","pooja");
-                startActivity(i);
+                startActivity(i, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
+
 
             }
         });
@@ -190,19 +192,19 @@ public class Explore extends Fragment implements  View.OnClickListener {
 
             case R.id.day1:
                 intent.putExtra("FragName","day1");
-                startActivity(intent);
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
                 break;
             case R.id.day2:
                 intent.putExtra("FragName","day2");
-                startActivity(intent);
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
                 break;
             case R.id.day3:
                 intent.putExtra("FragName","day3");
-                startActivity(intent);
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
                 break;
             case R.id.day4:
                 intent.putExtra("FragName","day4");
-                startActivity(intent);
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
                 break;
             case R.id.day5:
                 intent.putExtra("FragName","day5");
@@ -210,35 +212,35 @@ public class Explore extends Fragment implements  View.OnClickListener {
                 break;
             case R.id.day6:
                 intent.putExtra("FragName","day6");
-                startActivity(intent);
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
                 break;
             case R.id.day7:
                 intent.putExtra("FragName","day7");
-                startActivity(intent);
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
                 break;
             case R.id.day8:
                 intent.putExtra("FragName","day8");
-                startActivity(intent);
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
                 break;
             case R.id.day9:
                 intent.putExtra("FragName","day9");
-                startActivity(intent);
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
                 break;
             case R.id.day10:
                 intent.putExtra("FragName","day10");
-                startActivity(intent);
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
                 break;
             case R.id.day11:
                 intent.putExtra("FragName","day11");
-                startActivity(intent);
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
                 break;
             case R.id.day12:
                 intent.putExtra("FragName","day12");
-                startActivity(intent);
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
                 break;
             case R.id.day13:
                 intent.putExtra("FragName","day13");
-                startActivity(intent);
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
                 break;
 
         }

@@ -23,6 +23,7 @@ public class FragmentLoader extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         getWindow().setExitTransition(new Explode());
+        getWindow().setEnterTransition(new Explode());
         setContentView(R.layout.activity_fragment_loader);
 
 

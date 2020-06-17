@@ -3,6 +3,7 @@ package com.maithil.madhushravani.view.Activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -66,6 +67,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //                Log.d(TAG, "onStart: "+account.getDisplayName());
                 Intent i = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(i);
+
             }
 
     }
