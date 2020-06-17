@@ -1,30 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:id="@+id/frame"
+    android:background="@color/bottomNavColor"
     android:layout_height="match_parent"
     tools:context=".view.explore.PictureRead">
-<!--<HorizontalScrollView-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent">-->
-    <LinearLayout
-        android:id="@+id/casts_container"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal" >
+    <include layout="@layout/toolbar" />
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:padding="80dp"
+        android:elevation="50dp"
+        android:layout_margin="50dp">
+       <RelativeLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content">
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:padding="2dp"
             android:src="@drawable/bini_1"
-            android:layout_weight="70"
             android:id="@+id/imageView"/>
 
 
-    </LinearLayout>
-<!--</HorizontalScrollView>-->
-</FrameLayout>
+       </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <ImageView
+        android:id="@+id/nextLeft"
+        android:elevation="50dp"
+        android:layout_centerVertical="true"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="2dp"
+        android:src="@drawable/left" />
+    <ImageView
+        android:id="@+id/nextRight"
+        android:elevation="50dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="2dp"
+        android:src="@drawable/arrow_right" />
+</RelativeLayout>

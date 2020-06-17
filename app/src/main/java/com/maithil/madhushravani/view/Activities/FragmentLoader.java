@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.transition.Explode;
 import android.util.Log;
+import android.view.Window;
 
 import com.maithil.madhushravani.R;
 import com.maithil.madhushravani.view.explore.Day1Fragment;
@@ -20,8 +21,13 @@ public class FragmentLoader extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fragment_loader);
+        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         getWindow().setExitTransition(new Explode());
+        setContentView(R.layout.activity_fragment_loader);
+
+
+
+
         String value = getIntent().getExtras().getString("FragName");
         Log.d(TAG, "onCreate: "+ value);
 

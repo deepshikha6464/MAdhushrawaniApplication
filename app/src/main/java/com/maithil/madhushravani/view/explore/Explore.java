@@ -1,14 +1,9 @@
 package com.maithil.madhushravani.view.explore;
 
-
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
-
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
-
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,21 +13,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.card.MaterialCardView;
-import com.gtomato.android.ui.widget.CarouselView;
 import com.maithil.madhushravani.R;
 import com.maithil.madhushravani.view.Activities.FragmentLoader;
-import com.maithil.madhushravani.view.Activities.LoginActivity;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import static com.maithil.madhushravani.model.SharedPref.IMAGE_URL;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -202,77 +191,60 @@ public class Explore extends Fragment implements  View.OnClickListener {
             case R.id.day1:
                 intent.putExtra("FragName","day1");
                 startActivity(intent);
-
                 break;
             case R.id.day2:
                 intent.putExtra("FragName","day2");
                 startActivity(intent);
-
                 break;
             case R.id.day3:
                 intent.putExtra("FragName","day3");
                 startActivity(intent);
-
                 break;
             case R.id.day4:
                 intent.putExtra("FragName","day4");
                 startActivity(intent);
-
                 break;
             case R.id.day5:
                 intent.putExtra("FragName","day5");
-
+                startActivity(intent);
                 break;
             case R.id.day6:
                 intent.putExtra("FragName","day6");
-
+                startActivity(intent);
                 break;
             case R.id.day7:
                 intent.putExtra("FragName","day7");
                 startActivity(intent);
-
                 break;
             case R.id.day8:
                 intent.putExtra("FragName","day8");
-
+                startActivity(intent);
                 break;
             case R.id.day9:
                 intent.putExtra("FragName","day9");
                 startActivity(intent);
-
                 break;
             case R.id.day10:
                 intent.putExtra("FragName","day10");
-
+                startActivity(intent);
                 break;
             case R.id.day11:
                 intent.putExtra("FragName","day11");
                 startActivity(intent);
-
                 break;
             case R.id.day12:
                 intent.putExtra("FragName","day12");
                 startActivity(intent);
-
                 break;
             case R.id.day13:
                 intent.putExtra("FragName","day13");
                 startActivity(intent);
-
                 break;
 
         }
 
     }
 
-    public void loadFragment(Fragment frag) {
-        getActivity().getSupportFragmentManager()
-                .beginTransaction()
-//                .setCustomAnimations(R.animator.slide_in_bottom,R.animator.slide_out_bottom,R.animator.slide_in_top,R.animator.slide_out_top)
-                .replace(R.id.fragment_container_explore, frag)
-                .commit();
-
-    }
 
     private void historyClicked() {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getContext());
