@@ -201,12 +201,19 @@ android:layout_below="@+id/aa"
 
 <!--posts-->
 
+
         <!--    cards to be displayed-->
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/profileCard"
             android:id="@+id/recyclerViewprofile"/>
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:id="@+id/pb1"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content"
+               android:layout_below="@id/profileCard"/>
 
         </RelativeLayout>
 

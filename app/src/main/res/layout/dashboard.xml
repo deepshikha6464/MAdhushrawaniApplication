@@ -51,17 +51,38 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_below="@+id/shareExp"
+
         android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
         <!--    cards to be displayed-->
 <androidx.recyclerview.widget.RecyclerView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:elevation="40dp"
     android:id="@+id/recyclerView"/>
-
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:id="@+id/pb"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
 
     </androidx.core.widget.NestedScrollView>
 
-
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/uploadDone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lottie_autoPlay="true"
+        android:layout_margin="5dp"
+        android:layout_centerInParent="true"
+        app:lottie_fileName="upload_done.json"
+        app:lottie_loop="true"
+        android:visibility="gone"
+        android:elevation="80dp"
+        app:lottie_speed="1.25" />
 
 
 

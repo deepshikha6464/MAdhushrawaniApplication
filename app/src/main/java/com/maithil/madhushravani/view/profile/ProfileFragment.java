@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -65,7 +66,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     private int mYear, mMonth, mDay, mHour, mMinute, flag;
     UserData userData;
     int add_save =0;
-
+    ProgressBar pb;
     //    firebase
 //Firebase
     FirebaseStorage storage;
@@ -116,7 +117,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         database = FirebaseDatabase.getInstance();
 //        reference for saving posts
         dbRefUserdetail = database.getReference("/UserPosts");
-        dbRef = database.getReference("/UserPosts/user-posts");
+        dbRef = database.getReference("/UserPosts/user-posts/"+sp.pref.getString(KEY_NAME, "Hello User"));
 
         dbRef.addValueEventListener(changeListener);
     }
@@ -124,23 +125,24 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     ValueEventListener changeListener = new ValueEventListener() {
 
         @Override
-        public void onDataChange(DataSnapshot dataSnapshot) {
+        public void onDataChange(DataSnapshot ds1) {
 
-            for (DataSnapshot datasnapshot : dataSnapshot.getChildren()) {
-                for (DataSnapshot ds : datasnapshot.getChildren()) {
-//                    for (DataSnapshot ds : ds1.getChildren()) {
+//            for (DataSnapshot datasnapshot : dataSnapshot.getChildren()) {
+//                for (DataSnapshot ds1 : datasnapshot.getChildren()) {
+                    for (DataSnapshot ds : ds1.getChildren()) {
                     PostsList post = new PostsList();
                     post.setName(ds.child("name").getValue().toString());
                     post.setText(ds.child("Text").getValue().toString());
                     post.setImg(ds.child("profileImage").getValue().toString());
-                    post.setPostImg(ds.child("postImage").getValue().toString());
-                    post.setTime(ds.child("time").getValue().toString());
+                    if(ds.child("postImage").exists()){
+                        post.setPostImg(ds.child("postImage").getValue().toString());}                    post.setTime(ds.child("time").getValue().toString());
                     pl.add(post);
-//                    }
-                }
-            }
+                    }
+//                }
+//            }
             adapter = new ProfileAdapter(pl, getActivity());
             rv.setAdapter(adapter);
+            pb.setVisibility(View.GONE);
             adapter.notifyDataSetChanged();
 
         }
@@ -190,12 +192,14 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
           save = view.findViewById(R.id.save); save.setOnClickListener(this);
         add.setOnClickListener(this);
 
+        pb = view.findViewById(R.id.pb1);
+
     }
 
     @Override
     public void onResume() {
         super.onResume();
-
+ pb.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -301,6 +305,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         flag =1;
 
     }
+
 
 
 }

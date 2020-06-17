@@ -4,6 +4,7 @@ package com.maithil.madhushravani.view.dashboard;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,12 +13,14 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,6 +47,8 @@ import com.maithil.madhushravani.R;
 import com.maithil.madhushravani.model.PostsList;
 import com.maithil.madhushravani.model.SharedPref;
 import com.maithil.madhushravani.model.UserData;
+import com.maithil.madhushravani.view.Activities.LoginActivity;
+import com.maithil.madhushravani.view.Activities.Splash;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -64,6 +69,7 @@ import static com.maithil.madhushravani.model.SharedPref.KEY_NAME;
 public class dashboard extends Fragment implements View.OnClickListener ,DatabaseReference.CompletionListener{
     private static final String TAG = "dashboard";
           MaterialCardView shareCard;
+    AsyncTask<?, ?, ?> runningTask;
     //Firebase
     FirebaseStorage storage;
     StorageReference storageReference;
@@ -72,7 +78,7 @@ public class dashboard extends Fragment implements View.OnClickListener ,Databas
     private final int PICK_IMAGE_REQUEST = 22;
     private static final int REQUEST_CODE = 101;
     EditText editText;
-    LottieAnimationView  select ,cross;
+    LottieAnimationView  select ,cross,uploadDone;
     private Uri downloadUrl ;
 
       ImageView seletedImg,userImage=null, imageView;
@@ -89,6 +95,7 @@ public class dashboard extends Fragment implements View.OnClickListener ,Databas
  int flag = 0;
     SharedPref sp;
     UserData userData;
+    ProgressBar pb;
 
     public dashboard() {
         // Required empty public constructor
@@ -124,8 +131,7 @@ public class dashboard extends Fragment implements View.OnClickListener ,Databas
                 break;
 
             case R.id.upload:
-//                SavePostsWithPhoto();
-               if(seletedImg.getDrawable() == null){
+             if(seletedImg.getDrawable() == null){
                    SavePostsWithoutPhoto();
                }else
                 uploadImage();
@@ -166,6 +172,9 @@ public class dashboard extends Fragment implements View.OnClickListener ,Databas
      }
     public void findViewById(View view){
         shareCard = view.findViewById(R.id.shareExp); shareCard.setOnClickListener(this);
+        uploadDone = view.findViewById(R.id.uploadDone);
+        pb = view.findViewById(R.id.pb);
+
 //        imageView = view.findViewById(R.id.imageView);
 
 
@@ -184,6 +193,7 @@ public class dashboard extends Fragment implements View.OnClickListener ,Databas
         userImage = view1.findViewById(R.id.userImg);
         userText = view1.findViewById(R.id.postUND);
         rv = view1.findViewById(R.id.recyclerView);
+
         updateUserDetail();
 
 
@@ -270,6 +280,7 @@ public class dashboard extends Fragment implements View.OnClickListener ,Databas
             adapter = new PostsAdapter(pl,getActivity());
             if(flag ==0){
             rv.setAdapter(adapter);
+            pb.setVisibility(View.GONE);
             }else {
                 adapter.notifyDataSetChanged();
 //                flag = 0;
@@ -393,8 +404,9 @@ public class dashboard extends Fragment implements View.OnClickListener ,Databas
                                     downloadUrl = uri;
                                     //Do what you want with the url
                                     SavePostsWithPhoto(downloadUrl);
-                                    Toast.makeText(getActivity(), "Upload Done", Toast.LENGTH_LONG).show();
+//                                    Toast.makeText(getActivity(), "Upload Done", Toast.LENGTH_LONG).show();
                                     flag = 1;
+                                    setUploadDone();
                                     adapter.notifyDataSetChanged();
 
                                 }});
@@ -453,5 +465,24 @@ public class dashboard extends Fragment implements View.OnClickListener ,Databas
         }
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        pb.setVisibility(View.VISIBLE);
+    }
 
+    public void setUploadDone(){
+        uploadDone.setVisibility(View.VISIBLE);
+
+        new Handler().postDelayed(new Runnable() {
+
+
+            @Override
+            public void run() {
+                // This method will be executed once the timer is over
+                uploadDone.setVisibility(View.GONE);            }
+        }, 2000);
+
+
+    }
 }
