@@ -51,31 +51,6 @@ GoogleSignInClient mGoogleSignInClient;
         bottomNavigationView.setScrollbarFadingEnabled(true);
 
 
-//        DisplayMetrics displayMetrics = new DisplayMetrics();
-//        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-//        int width = displayMetrics.widthPixels;
-//        int height = displayMetrics.heightPixels;
-
-        int width = getWindowManager().getDefaultDisplay().getWidth();
-        int height = getWindowManager().getDefaultDisplay().getHeight();
-        Log.d(TAG, "onCreate: "+width+"   "+ height);
-
-        //Determine screen size
-        if ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_LARGE) {
-            Toast.makeText(this, "Large screen", Toast.LENGTH_LONG).show();
-        }
-        else if ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_NORMAL) {
-            Toast.makeText(this, "Normal sized screen", Toast.LENGTH_LONG).show();
-        }
-        else if ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_SMALL) {
-            Toast.makeText(this, "Small sized screen", Toast.LENGTH_LONG).show();
-        }
-        else {
-            Toast.makeText(this, "Screen size is neither large, normal or small", Toast.LENGTH_LONG).show();
-        }
-//
-
-
     }
 
 
@@ -94,7 +69,6 @@ GoogleSignInClient mGoogleSignInClient;
                     .replace(R.id.fragment_container, fragment)
                     .commit();
             return true;
-//                        (myFragment).onCreateAnimation(R.animator.anim_in,true,R.animator.anim_out);
         }
 //
         return false;

@@ -2,6 +2,7 @@ package com.maithil.madhushravani.view.profile;
 
 
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -10,14 +11,21 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -59,13 +67,17 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     RecyclerView rv;
     TextView dob, dom, place;
     EditText editTextPlace;
+    RadioGroup radioGroup;
+    RadioButton hm,wp;
+    InputMethodManager imm;
+
     //    data
     SharedPref sp;
     List<PostsList> pl;
     ProfileAdapter adapter;
     private int mYear, mMonth, mDay, mHour, mMinute, flag;
     UserData userData;
-    int add_save =0;
+    int dataAdded =0;
     ProgressBar pb;
     //    firebase
 //Firebase
@@ -88,11 +100,11 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         sp = new SharedPref(getContext());
         findViewById(v);
         setUserDetail();
-
+        getOccupation();
         recyclerView(v);
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
         firebaseStorageReference();
-
+         getPlace();
         return v;
     }
 
@@ -116,7 +128,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         userData = new UserData();
         database = FirebaseDatabase.getInstance();
 //        reference for saving posts
-        dbRefUserdetail = database.getReference("/UserPosts");
+        dbRefUserdetail = database.getReference("/UserPosts/UserProfileInfo");
         dbRef = database.getReference("/UserPosts/user-posts/"+sp.pref.getString(KEY_NAME, "Hello User"));
 
         dbRef.addValueEventListener(changeListener);
@@ -156,26 +168,6 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
     };
 
-    private void setUserDetail() {
-        DisplayName.setText(sp.pref.getString(KEY_NAME, "Hello User"));
-        Glide.with(this)
-                .load(sp.pref.getString(IMAGE_URL, ""))
-//               .apply(RequestOptions.circleCropTransform())
-                .into(profilePic);
-
-        if(!sp.pref.getString("DOB","DD-MM-YYYY").isEmpty()){
-            dob.setText(sp.pref.getString("DOB","DD-MM-YYYY"));
-        }
-
-        if(!sp.pref.getString("DOM","DD-MM-YYYY").isEmpty()){
-            dom.setText(sp.pref.getString("DOM","DD-MM-YYYY"));
-        }
-
-        if(!sp.pref.getString("PLACE","place").isEmpty()){
-            place.setText(sp.pref.getString("PLACE","place"));
-        }
-//           place.setText(sp.pref.getString("place","Place"));
-    }
 
     private void findViewById(View view) {
         profilePic = view.findViewById(R.id.userImg);
@@ -188,9 +180,12 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         place.setOnClickListener(this);
         editTextPlace = view.findViewById(R.id.editTextPlace);
         editTextPlace.setOnClickListener(this);
-        add = view.findViewById(R.id.add);
+        radioGroup =view.findViewById(R.id.group);
+        hm =view.findViewById(R.id.hm);
+        wp =view.findViewById(R.id.wp);
+//        add = view.findViewById(R.id.add);
           save = view.findViewById(R.id.save); save.setOnClickListener(this);
-        add.setOnClickListener(this);
+//        add.setOnClickListener(this);
 
         pb = view.findViewById(R.id.pb1);
 
@@ -213,31 +208,15 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             case R.id.textViewMD:
                 openDatePicker(1);
                 break;
-            case R.id.textViewPlace:
-                String str = editTextPlace.getText().toString();
-                sp.pref.edit().putString("PLACE",str).apply();
-                break;
-
-            case R.id.add:
-                    dob.setEnabled(true);
-                    dom.setEnabled(true);
-                    place.setVisibility(View.GONE);
-                    editTextPlace.setVisibility(View.VISIBLE);
-                    editTextPlace.setFocusable(true);
-                   add.setVisibility(View.GONE);
-                save.setVisibility(View.VISIBLE);
-                break;
-
             case R.id.save:
-                    sp.pref.edit().putString("place",editTextPlace.getText().toString()).apply();
-                     place.setText(editTextPlace.getText().toString());
-                     place.setVisibility(View.VISIBLE);
-                     add.setVisibility(View.GONE);
-                     editTextPlace.setVisibility(View.GONE);
                     SaveUserDetail();
-                      break;
-
-
+                    save.setVisibility(View.GONE);
+                    break;
+            case  R.id.textViewPlace:
+                editTextPlace.setVisibility(View.VISIBLE);
+                place.setVisibility(View.GONE);
+                getPlace();
+                break;
 
 
         }
@@ -249,6 +228,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         mYear = c.get(Calendar.YEAR);
         mMonth = c.get(Calendar.MONTH);
         mDay = c.get(Calendar.DAY_OF_MONTH);
+        save.setVisibility(View.VISIBLE);
 
         // Launch Date Picker Dialog
         DatePickerDialog dpd = new DatePickerDialog(getContext(),
@@ -263,6 +243,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                                     + (monthOfYear + 1) + "-" + year).apply();
                             dob.setText(dayOfMonth + "-"
                                     + (monthOfYear + 1) + "-" + year);
+                            dataAdded = 1;
                         }
                         if (flag == 1) {
 
@@ -270,6 +251,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                                     + (monthOfYear + 1) + "-" + year).apply();
                             dom.setText(dayOfMonth + "-"
                                     + (monthOfYear + 1) + "-" + year);
+                            dataAdded = dataAdded+1;
                         }
 
                     }
@@ -280,28 +262,149 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
 
     }
+    private void setUserDetail() {
+        DisplayName.setText(sp.pref.getString(KEY_NAME, "Hello User"));
+        Glide.with(this)
+                .load(sp.pref.getString(IMAGE_URL, ""))
+//               .apply(RequestOptions.circleCropTransform())
+                .into(profilePic);
 
-   public void SaveUserDetail() {
+        if(!sp.pref.getString("DOB","dd-mm-yyyy").isEmpty()){
+            dob.setText(sp.pref.getString("DOB","dd-mm-yyyy"));
+        }else{
+            dob.setText("Add Now");
+            save.setVisibility(View.VISIBLE);
+
+        }
+
+        if(!sp.pref.getString("DOM","dd-mm-yyyy").isEmpty()){
+            dom.setText(sp.pref.getString("DOM","dd-mm-yyyy"));
+        }else{
+            dom.setText("Add Now");
+            save.setVisibility(View.VISIBLE);
+
+        }
+
+        if(sp.pref.getString("OCCUPATION","occ").isEmpty()){
+            hm.setChecked(false);
+            wp.setChecked(false);
+            save.setVisibility(View.VISIBLE);
+
+        }else{
+            String occ = sp.pref.getString("OCCUPATION","occ");
+            if(occ.equals("House Maker")){
+                hm.setChecked(true);
+            }else if(occ.equals("Working Professional"))
+            {
+                wp.setChecked(true);
+
+            }
+        }
+
+
+        if(sp.pref.getString("PLACE","place").isEmpty()){
+            place.setText("Add Now");
+            save.setVisibility(View.VISIBLE);
+
+        }else{
+            place.setText(sp.pref.getString("PLACE","place"));
+            editTextPlace.setVisibility(View.GONE);
+            place.setVisibility(View.VISIBLE);
+        }
+
+    }
+public void getOccupation(){
+    radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+    {
+        public void onCheckedChanged(RadioGroup group, int checkedId)
+        {                            save.setVisibility(View.VISIBLE);
+
+            // This will get the radiobutton that has changed in its check state
+            RadioButton checkedRadioButton = (RadioButton)group.findViewById(checkedId);
+            // This puts the value (true/false) into the variable
+            boolean isChecked = checkedRadioButton.isChecked();
+            // If the radiobutton that has changed in check state is now checked...
+            if (isChecked)
+            {
+                // Changes the textview's text to "Checked: example radiobutton text"
+                if(checkedId == (R.id.hm)){
+                    sp.pref.edit().putString("OCCUPATION","House Maker").apply();
+                    hm.setChecked(true);
+                }
+                else if (checkedId==(R.id.wp)){
+                    sp.pref.edit().putString("OCCUPATION","Working Professional").apply();
+                     wp.setChecked(true);
+                }
+                dataAdded = dataAdded +1;
+            }
+        }
+    });
+}
+public void getPlace(){
+    editTextPlace.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        @Override
+        public boolean onEditorAction(TextView view, int actionId, KeyEvent event) {
+            if(actionId == EditorInfo.IME_ACTION_DONE)
+            {
+                //Do Something
+                Log.d(TAG, "onEditorAction: ");
+                editTextPlace.setVisibility(View.GONE);
+                place.setVisibility(View.VISIBLE);
+                place.setText(sp.pref.getString("PLACE","place"));
+                dataAdded = dataAdded+1;
+                imm = (InputMethodManager)getActivity().getSystemService(
+                        Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(editTextPlace.getApplicationWindowToken(), 0);
+            }
+
+            return false;
+        }
+    });
+        
+    editTextPlace.addTextChangedListener(new TextWatcher() {
+
+        @Override
+        public void afterTextChanged(Editable s) {
+//            Log.d(TAG, "afterTextChanged: "+s);
+            sp.pref.edit().putString("PLACE",s.toString()).apply();
+            Log.d(TAG, "afterTextChanged: "+ sp.pref.getString("PLACE","place"));
+            save.setVisibility(View.VISIBLE);
+
+        }
+
+        @Override
+        public void beforeTextChanged(CharSequence s, int start,
+                                      int count, int after) {
+//            Log.d(TAG, "beforeTextChanged: ");
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start,
+                                  int before, int count) {
+            if(s.length() != 0)
+            {
+                Log.d(TAG, "onTextChanged: "+s);
+            }
+        }
+    });
+}
+    public void SaveUserDetail() {
 
         userData.setName(sp.pref.getString(KEY_NAME,"Anonymous User"));
         userData.setImgUrl(sp.pref.getString(IMAGE_URL,"UserImg"));
         userData.setUid(currentUser.getUid());
         userData.setDob(sp.pref.getString("DOB","DD-MM-YYYY"));
         userData.setDom(sp.pref.getString("DOM","DD-MM-YYYY"));
-        userData.setPlace(sp.pref.getString("PLACE","Delhi"));
-
-
-       String key = dbRefUserdetail.child(userData.getName())
-                .child(currentUser.getUid()).push().getKey();
+        userData.setPlace(sp.pref.getString("PLACE","place"));
+        userData.setOccupation(sp.pref.getString("OCCUPATION","notSpecified"));
+//        rewrite code
         UserData post = new UserData( );
-        post.UserDataDetail(userData.getName() , userData.getImgUrl(), userData.getDob(),userData.getDom(),userData.getPlace(),userData.getUid());
+        post.UserDataDetail(userData.getName() , userData.getImgUrl(), userData.getDob(),userData.getDom(),userData.getPlace(),userData.getUid(),userData.getOccupation());
         Map<String, Object> postValues = post.toMappProfile();
 
-        Map<String, Object> childUpdates = new HashMap<>();
-//        childUpdates.put("/UserDetails/"+userData.getName()+"/")
-//        childUpdates.put("/posts/" + key, postValues);
-        childUpdates.put("/UserDetails/" + userData.getName() + "/" + key, postValues);
-        dbRefUserdetail.updateChildren(childUpdates);
+        dbRefUserdetail
+                .child(userData.getName()).setValue(postValues);
+
         flag =1;
 
     }

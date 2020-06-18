@@ -87,7 +87,7 @@ android:layout_below="@+id/aa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:text="Date Of Birth"
+                    android:text="Date of Birth"
                     android:textSize="18dp" />
 
                 <TextView
@@ -96,20 +96,19 @@ android:layout_below="@+id/aa"
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:text="Add now"
-                    android:enabled="false"
-                    android:textColor="@color/colorPrimary"
+                     android:textColor="@color/colorPrimary"
                     android:textSize="14dp"
                     android:visibility="visible" />
 
             </LinearLayout>
-           <TextView
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="ADD"
-               android:id="@+id/add"
-               android:textColor="@color/colorPrimary"
-               android:textSize="20dp"
-               android:clickable="true"/>
+<!--           <TextView-->
+<!--               android:layout_width="wrap_content"-->
+<!--               android:layout_height="wrap_content"-->
+<!--               android:text="ADD"-->
+<!--               android:id="@+id/add"-->
+<!--               android:textColor="@color/colorPrimary"-->
+<!--               android:textSize="20dp"-->
+<!--               android:clickable="true"/>-->
  <TextView
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
@@ -146,7 +145,6 @@ android:layout_below="@+id/aa"
                     android:padding="4dp"
                     android:id="@+id/textViewMD"
                     android:text="Add now"
-                    android:enabled="false"
                     android:textColor="@color/colorPrimary"
                     android:textSize="14dp" />
 
@@ -177,17 +175,62 @@ android:layout_below="@+id/aa"
                         android:layout_height="wrap_content"
                         android:padding="4dp"
                         android:id="@+id/textViewPlace"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         android:text="Add now"
                         android:textColor="@color/colorPrimary"
                         android:textSize="14dp" />
                       <EditText
                         android:layout_width="120dp"
+                          android:imeOptions="actionDone"
                         android:layout_height="wrap_content"
                         android:padding="4dp"
-                          android:visibility="gone"
+                          android:maxLines="1"
+                          android:inputType="text"
+                          android:visibility="visible"
+                          android:hint="Add Now"
                          android:id="@+id/editTextPlace"
                          android:textSize="14dp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <!--   occupation-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <!--            text-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Occupation"
+                        android:textSize="18dp" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:id="@+id/group"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        >
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="House Maker"
+                            android:id="@+id/hm"/>
+                        <RadioButton
+                            android:layout_width="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_height="wrap_content"
+                            android:text="Working Professional"
+                            android:id="@+id/wp"/>
+                    </RadioGroup>
 
                 </LinearLayout>
 

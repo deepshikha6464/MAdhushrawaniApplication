@@ -396,4 +396,13 @@ public class Day1Fragment extends Fragment implements View.OnClickListener {
         fragToolbar.setVisibility(View.VISIBLE);
         yourlogo.setVisibility(View.GONE);
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mp.isPlaying()) {
+            mp.stop();
+            mp.reset();
+        }
+    }
 }

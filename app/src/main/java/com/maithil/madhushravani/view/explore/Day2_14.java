@@ -856,6 +856,14 @@ String data ="2";
          }
      }
  }
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mp.isPlaying()) {
+            mp.stop();
+            mp.reset();
+        }
+    }
 
     private void playMedia(String songName) {
         int time = mp.getDuration();

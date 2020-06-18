@@ -13,15 +13,26 @@ public class UserData {
     String uid;
     String downloadURL;
 
+    public String getOccupation() {
+        return occupation;
+    }
+
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
+    }
+
+    String occupation;
+
     String dob,dom,place;
 
-    public void UserDataDetail(String name,String img,String dob,String dom, String place,String uid){
+    public void UserDataDetail(String name,String img,String dob,String dom, String place,String uid, String occ){
         this.Name = name;
         this.imgUrl = img;
         this.dob = dob;
         this.dom = dom;
         this.place = place;
         this.uid= uid;
+        this.occupation= occ;
     }
 
     public String getDob() {
@@ -145,6 +156,7 @@ public class UserData {
         result.put("dom", getDom());
         result.put("place", getPlace());
         result.put("uid", getUid());
+        result.put("occupation", getOccupation());
          return result;
     }
 }
