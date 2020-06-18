@@ -66,7 +66,7 @@ import static com.maithil.madhushravani.model.SharedPref.KEY_NAME;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class dashboard extends Fragment implements View.OnClickListener ,DatabaseReference.CompletionListener{
+public class dashboard extends Fragment implements View.OnClickListener ,DatabaseReference.CompletionListener, PostsAdapter.ItemClickListener {
     private static final String TAG = "dashboard";
           MaterialCardView shareCard;
     AsyncTask<?, ?, ?> runningTask;
@@ -80,6 +80,7 @@ public class dashboard extends Fragment implements View.OnClickListener ,Databas
     EditText editText;
     LottieAnimationView  select ,cross,uploadDone;
     private Uri downloadUrl ;
+    private static PostsAdapter.ItemClickListener mClickListener;
 
       ImageView seletedImg,userImage=null, imageView;
     TextView userText,upload;
@@ -153,6 +154,12 @@ public class dashboard extends Fragment implements View.OnClickListener ,Databas
         } else {
             Log.w("Poll", "onComplete: ", databaseError.toException());
         }
+    }
+
+    @Override
+    public void onItemClick(View view, int position) {
+        //profile adapter interface for clicking on image to display profile of user
+
     }
 
     public interface OnFragmentInteractionListener {
@@ -277,7 +284,7 @@ public class dashboard extends Fragment implements View.OnClickListener ,Databas
                 pl.add(post);
             }
 
-            adapter = new PostsAdapter(pl,getActivity());
+            adapter = new PostsAdapter(pl,getActivity(),getFragmentManager());
             if(flag ==0){
             rv.setAdapter(adapter);
             pb.setVisibility(View.GONE);

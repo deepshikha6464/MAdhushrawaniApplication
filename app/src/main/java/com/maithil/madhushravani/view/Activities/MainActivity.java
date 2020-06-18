@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.Layout;
 import android.transition.Explode;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +18,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -46,6 +49,30 @@ GoogleSignInClient mGoogleSignInClient;
         loadFragment(new Explore());
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setScrollbarFadingEnabled(true);
+
+
+//        DisplayMetrics displayMetrics = new DisplayMetrics();
+//        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+//        int width = displayMetrics.widthPixels;
+//        int height = displayMetrics.heightPixels;
+
+        int width = getWindowManager().getDefaultDisplay().getWidth();
+        int height = getWindowManager().getDefaultDisplay().getHeight();
+        Log.d(TAG, "onCreate: "+width+"   "+ height);
+
+        //Determine screen size
+        if ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_LARGE) {
+            Toast.makeText(this, "Large screen", Toast.LENGTH_LONG).show();
+        }
+        else if ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_NORMAL) {
+            Toast.makeText(this, "Normal sized screen", Toast.LENGTH_LONG).show();
+        }
+        else if ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_SMALL) {
+            Toast.makeText(this, "Small sized screen", Toast.LENGTH_LONG).show();
+        }
+        else {
+            Toast.makeText(this, "Screen size is neither large, normal or small", Toast.LENGTH_LONG).show();
+        }
 //
 
 
@@ -67,8 +94,9 @@ GoogleSignInClient mGoogleSignInClient;
                     .replace(R.id.fragment_container, fragment)
                     .commit();
             return true;
+//                        (myFragment).onCreateAnimation(R.animator.anim_in,true,R.animator.anim_out);
         }
-
+//
         return false;
     }
   @Override

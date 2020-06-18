@@ -9,7 +9,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="60dp"
+
         android:layout_below="@+id/toolbar"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior">
 
@@ -857,9 +857,6 @@
     <FrameLayout
         android:id="@+id/fragment_container_explore"
         android:layout_width="match_parent"
-        android:layout_height="673dp">
-
-
-
+        android:layout_height="match_parent">
     </FrameLayout>
 </RelativeLayout>
