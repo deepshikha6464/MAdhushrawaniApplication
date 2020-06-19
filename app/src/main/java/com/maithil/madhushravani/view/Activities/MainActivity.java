@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -54,6 +55,8 @@ GoogleSignInClient mGoogleSignInClient;
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setScrollbarFadingEnabled(true);
 getCurrentToken();
+// Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713
+        MobileAds.initialize(this, "ca-app-pub-9640227971551003~6929517738");
 
     }
 

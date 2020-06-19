@@ -31,6 +31,10 @@ import android.widget.Toast;
 import com.airbnb.lottie.LottieAnimationView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.NativeExpressAdView;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
@@ -105,7 +109,8 @@ public class dashboard extends Fragment implements View.OnClickListener ,Databas
     SharedPref sp;
     UserData userData;
     ProgressBar pb;
-
+    private List<Object> mDataSet;
+    public final static int spaceBetweenAds = 10;
     public dashboard() {
         // Required empty public constructor
     }
@@ -180,6 +185,7 @@ public class dashboard extends Fragment implements View.OnClickListener ,Databas
          linearLayoutManager.setReverseLayout(true);
          linearLayoutManager.setStackFromEnd(true);
          rv.setLayoutManager(linearLayoutManager);
+         mDataSet = new ArrayList<>();
 //         rv.setLayoutManager(mLayoutManager);
          pl=new ArrayList<>();
 
@@ -315,6 +321,11 @@ public class dashboard extends Fragment implements View.OnClickListener ,Databas
 
 
     };
+
+
+
+
+
 //    read list from db
 
     public void SavePostsWithPhoto(Uri downloadUrl) {

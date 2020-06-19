@@ -515,7 +515,18 @@ android:id="@+id/fragContainer"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
  />
-<!--progress bar-->
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView1"
+        android:layout_below="@+id/q"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/admob_app_id"/>
+
+    <!--progress bar-->
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

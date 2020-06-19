@@ -60,5 +60,7 @@ Girls on each of the 12 days move in the gardens in bridal clothes and collect s
     <string name="know_the_history_of_this_pooja">Know the History of this Pooja</string>
     <string name="poojaSamagri">Pooja Samagri</string>
 
+    <string name="admob_app_id" translatable="false">ca-app-pub-9640227971551003~6929517738</string>
+
 
 </resources>

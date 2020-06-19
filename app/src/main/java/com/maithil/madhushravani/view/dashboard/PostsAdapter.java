@@ -30,6 +30,13 @@ Context context;
     private static ItemClickListener mClickListener;
     FragmentManager fm;
 
+//    ads
+// A menu item view type.
+private static final int MENU_ITEM_VIEW_TYPE = 0;
+
+    // The unified native ad view type.
+    private static final int UNIFIED_NATIVE_AD_VIEW_TYPE = 1;
+
     public PostsAdapter(List<PostsList> list, Context ctx, FragmentManager fm) {
         this.list = list;
         this.context = ctx;
@@ -78,6 +85,8 @@ Context context;
     public int getItemCount() {
         return list.size();
     }
+
+
 
     public class PostsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 

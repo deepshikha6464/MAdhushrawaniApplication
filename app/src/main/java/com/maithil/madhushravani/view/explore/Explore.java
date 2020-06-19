@@ -15,6 +15,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.bumptech.glide.Glide;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.card.MaterialCardView;
 import com.maithil.madhushravani.R;
@@ -29,7 +34,7 @@ import java.util.Locale;
  */
 public class Explore extends Fragment implements  View.OnClickListener {
     private static final String TAG = "Explore";
-
+AdView mAdView;
     ImageView langIV,back;
     TextView history, step1des;
     LinearLayout step2dec, step3dec;
@@ -54,6 +59,16 @@ public class Explore extends Fragment implements  View.OnClickListener {
         Glide.with(this)
                 .load(R.drawable.aripan)
                 .into(aripan);
+
+        MobileAds.initialize(getContext(), new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        mAdView = view.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
         return view;
     }
 

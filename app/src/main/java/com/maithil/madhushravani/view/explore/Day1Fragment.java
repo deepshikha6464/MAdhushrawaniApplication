@@ -24,6 +24,11 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.maithil.madhushravani.R;
 import com.maithil.madhushravani.view.Activities.MainActivity;
@@ -48,6 +53,7 @@ public class Day1Fragment extends Fragment implements View.OnClickListener {
     ImageView playmini, pause,yourlogo, back;
     Handler mHandler;
     RelativeLayout pageLoading;
+   AdView mAdView;
 
     public Day1Fragment() {
         // Required empty public constructor
@@ -63,6 +69,15 @@ public class Day1Fragment extends Fragment implements View.OnClickListener {
        mp = new MediaPlayer();
         mHandler = new Handler();
         setupToolbar();
+
+        MobileAds.initialize(getContext(), new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        mAdView = view.findViewById(R.id.adView1);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
         return view;
     }
 
