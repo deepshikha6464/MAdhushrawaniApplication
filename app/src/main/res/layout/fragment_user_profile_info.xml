@@ -29,7 +29,7 @@
                 android:elevation="50dp"
                 app:srcCompat="@drawable/account_circle" />
             <TextView
-                android:id="@+id/und"
+                android:id="@+id/und1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="140dp"

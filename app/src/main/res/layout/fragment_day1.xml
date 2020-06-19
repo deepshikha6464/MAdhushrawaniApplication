@@ -515,4 +515,21 @@ android:id="@+id/fragContainer"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
  />
+<!--progress bar-->
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/pageLoading"
+        android:visibility="gone"
+        android:background="@color/transparent">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar4"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerInParent="true"
+            android:background="#00757575"/>
+    </RelativeLayout>
 </RelativeLayout>

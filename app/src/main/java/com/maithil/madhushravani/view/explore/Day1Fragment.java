@@ -1,7 +1,9 @@
 package com.maithil.madhushravani.view.explore;
 
 
+import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.MenuRes;
@@ -17,6 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -44,6 +47,7 @@ public class Day1Fragment extends Fragment implements View.OnClickListener {
     LinearLayout nonframe,fragToolbar,toolbar;
     ImageView playmini, pause,yourlogo, back;
     Handler mHandler;
+    RelativeLayout pageLoading;
 
     public Day1Fragment() {
         // Required empty public constructor
@@ -220,13 +224,23 @@ public class Day1Fragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.audioCardKatha1:
+                pageLoading.setVisibility(View.VISIBLE);
                 audioCardKatha1.playAnimation();
                 if (mp.isPlaying()) {
                     mp.stop();
                     mp.reset();
                 }
-                mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha_one);
-                playMedia("Katha of Day 1");
+                mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                try {
+                    mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha_one.mp3?alt=media&token=a10980ee-92a8-4b2f-ab30-d062f7c71eca");
+                    mp.prepare();
+                    playMedia("Katha of Day 1");
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+//                mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha_one);
                 break;
             case R.id.audioCardVachoBini:
                             audioCardKatha1.playAnimation();
@@ -320,6 +334,7 @@ public class Day1Fragment extends Fragment implements View.OnClickListener {
         mediacard = view.findViewById(R.id.mediaCard);
         fragToolbar = view.findViewById(R.id.fragToolbar);
         yourlogo = view.findViewById(R.id.yourlogo);
+        pageLoading = view.findViewById(R.id.pageLoading);
         back = view.findViewById(R.id.back); back.setOnClickListener(this);
 
 
@@ -345,6 +360,7 @@ public class Day1Fragment extends Fragment implements View.OnClickListener {
         naviday1.setPadding(0, 0, 0, 150);
         mediaLayout.setVisibility(View.VISIBLE);
         mediacard.setText(songName);
+        pageLoading.setVisibility(View.GONE);
         mp.start();
         pause.setVisibility(View.VISIBLE);
 

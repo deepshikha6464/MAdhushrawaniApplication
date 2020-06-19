@@ -1,6 +1,7 @@
 package com.maithil.madhushravani.view.explore;
 
 
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
@@ -19,6 +20,8 @@ import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.maithil.madhushravani.R;
+
+import java.io.IOException;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -121,61 +124,141 @@ String data ="2";
 
                             switch(data){
                                 case "2":
-                                    mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha2);
-                                    playMedia("Katha of Day 2");
+                                    mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                                    try {
+                                        mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha2.mp3?alt=media&token=466f1539-e35f-4bf3-b935-c589b57c2441");
+                                        mp.prepare();
+                                        playMedia("Katha of Day 2");
 
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
                                     break;
                                 case "3":
-                                      mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha_three);
-                                    playMedia("Katha of Day 3");
+                                    mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                                    try {
+                                        mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha_three.mp3?alt=media&token=af607c05-135c-4f70-8546-ff489a8699f9");
+                                        mp.prepare();
+                                        playMedia("Katha of Day 3");
 
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
                                     break;
                                 case "4":
-                                       mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha_four);
-                                    playMedia("Katha of Day 4");
+                                    mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                                    try {
+                                        mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha_four.mp3?alt=media&token=19d09886-9e2b-41d5-9bcf-62610b177604");
+                                        mp.prepare();
+                                        playMedia("Katha of Day 4");
+
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
                                     break;
                                 case "5":
-                                       mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha_five);
-                                    playMedia("Katha of Day 5");
+                                    mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                                    try {
+                                        mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha_five.mp3?alt=media&token=6632006a-d36f-41c2-8d62-3447c4aac97a");
+                                        mp.prepare();
+                                        playMedia("Katha of Day 5");
+
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
 
                                     break;
                                 case "6":
-                                       mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha_six);
-                                    playMedia("Katha of Day 6");
+                                    mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                                    try {
+                                        mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha_six.mp3?alt=media&token=a5ed56b1-32cb-4e62-8376-8aca3f1fd3cf");
+                                        mp.prepare();
+                                        playMedia("Katha of Day 6");
+
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
 
                                     break;
                                 case "7":
-                                       mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha7);
-                                    playMedia("Katha of Day 7");
+                                    mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                                    try {
+                                        mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha7.mp3?alt=media&token=656bc8b1-2d5d-477f-bd82-035222af044f");
+                                        mp.prepare();
+                                        playMedia("Katha of Day 7");
+
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
 
                                     break;
                                 case "8":
-                                       mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha8);
-                                    playMedia("Katha of Day 8");
+                                    mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                                    try {
+                                        mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha8.mp3?alt=media&token=2ba230a7-0ee3-4ae1-a81e-f8ba50f22b99");
+                                        mp.prepare();
+                                        playMedia("Katha of Day 8");
 
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
                                     break;
                                 case "9":
-                                       mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha9);
-                                    playMedia("Katha of Day 9");
+                                    mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                                    try {
+                                        mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha9.mp3?alt=media&token=474a74ad-198a-49a5-98ec-eb05d1954bfe");
+                                        mp.prepare();
+                                        playMedia("Katha of Day 9");
 
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
                                     break;
                                 case "10":
-                                        mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha10);
-                                    playMedia("Katha of Day 10");
+                                    mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                                    try {
+                                        mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha10.mp3?alt=media&token=2eb43629-6347-452e-8033-2771d9d4c1b4");
+                                        mp.prepare();
+                                        playMedia("Katha of Day 10");
+
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
 
                                     break;
                                 case "11":
-                                        mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha11);
-                                    playMedia("Katha of Day 11");
+                                    mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                                    try {
+                                        mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha11.mp3?alt=media&token=48aac7e7-17f3-4a45-b16b-39b0212e9507");
+                                        mp.prepare();
+                                        playMedia("Katha of Day 11");
+
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
 
                                     break;
                                 case "12":
-                                       mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha12);
-                                    playMedia("Katha of Day 12");
+                                    mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                                    try {
+                                        mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha12.mp3?alt=media&token=c67ebf22-c49e-4c4d-9514-65d6df0727c5");
+                                        mp.prepare();
+                                        playMedia("Katha of Day 12");
+
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
                                     break;
                                 case "13":
-                                        mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.katha13);
-                                    playMedia("Katha of Day 13");
+                                    mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                                    try {
+                                        mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha13.mp3?alt=media&token=b7a09cc4-511e-44b6-ac8c-e86222158591");
+                                        mp.prepare();
+                                        playMedia("Katha of Day 13");
+
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
                                     break;
 
                             }
