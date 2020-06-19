@@ -2,7 +2,11 @@ package com.maithil.madhushravani.view.dashboard;
 
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -31,6 +35,8 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
@@ -60,6 +66,8 @@ import java.util.Map;
 import java.util.UUID;
 
 import static android.app.Activity.RESULT_OK;
+import static android.graphics.Color.WHITE;
+import static com.google.android.material.snackbar.Snackbar.*;
 import static com.maithil.madhushravani.model.SharedPref.IMAGE_URL;
 import static com.maithil.madhushravani.model.SharedPref.KEY_NAME;
 
@@ -271,30 +279,34 @@ public class dashboard extends Fragment implements View.OnClickListener ,Databas
 
         @Override
         public void onDataChange(DataSnapshot dataSnapshot) {
+            if (isOnline(getContext())) {
+                for (DataSnapshot datasnapshot : dataSnapshot.getChildren()) {
+                    PostsList post = new PostsList();
 
-            for (DataSnapshot datasnapshot : dataSnapshot.getChildren()) {
-                PostsList post = new PostsList();
+                    post.setName(datasnapshot.child("name").getValue().toString());
+                    post.setText(datasnapshot.child("Text").getValue().toString());
+                    post.setImg(datasnapshot.child("profileImage").getValue().toString());
+                    if (datasnapshot.child("postImage").exists()) {
+                        post.setPostImg(datasnapshot.child("postImage").getValue().toString());
+                    }
+                    post.setTime(datasnapshot.child("time").getValue().toString());
+                    pl.add(post);
+                }
 
-                  post.setName(datasnapshot.child("name").getValue().toString());
-                  post.setText(datasnapshot.child("Text").getValue().toString());
-                  post.setImg(datasnapshot.child("profileImage").getValue().toString());
-                  if(datasnapshot.child("postImage").exists()){
-                  post.setPostImg(datasnapshot.child("postImage").getValue().toString());}
-                  post.setTime(datasnapshot.child("time").getValue().toString());
-                pl.add(post);
-            }
-
-            adapter = new PostsAdapter(pl,getActivity(),getFragmentManager());
-            if(flag ==0){
-            rv.setAdapter(adapter);
-            pb.setVisibility(View.GONE);
-            }else {
-                adapter.notifyDataSetChanged();
+                adapter = new PostsAdapter(pl, getActivity(), getFragmentManager());
+                if (flag == 0) {
+                    rv.setAdapter(adapter);
+                    pb.setVisibility(View.GONE);
+                } else {
+                    adapter.notifyDataSetChanged();
 //                flag = 0;
+                }
+
             }
-
+            else{
+                showSnackbar("No Internet ","#ff0000");
+            }
         }
-
         @Override
         public void onCancelled(DatabaseError databaseError) {
 //            notifyUser("Database error: " + databaseError.toException());
@@ -491,5 +503,26 @@ public class dashboard extends Fragment implements View.OnClickListener ,Databas
         }, 2000);
 
 
+    }
+
+    private boolean isOnline(Context context) {
+        try {
+            ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo netInfo = cm.getActiveNetworkInfo();
+            //should check null because in airplane mode it will be null
+            return (netInfo != null && netInfo.isConnected());
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    private void showSnackbar(String msg,String c)
+    {
+        Snackbar snackbar = make(getActivity().getCurrentFocus(), msg, BaseTransientBottomBar.LENGTH_LONG );
+        View snackBarView = snackbar.getView();
+        snackBarView.setBackgroundColor(Color.parseColor(c));
+        TextView tv = snackBarView.findViewById(R.id.snackbar_text);
+        tv.setTextColor(WHITE);
+        snackbar.show();
     }
 }
