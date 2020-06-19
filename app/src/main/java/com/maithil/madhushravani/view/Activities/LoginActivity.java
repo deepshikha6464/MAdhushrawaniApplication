@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -38,11 +39,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     TextView logout;
     SharedPref sp;
     UserData userData;
+//    ui
+    RelativeLayout pageloding1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-//        logout = findViewById(R.id.logout);
+        pageloding1 = findViewById(R.id.pageLoading1);
 //        logout.setOnClickListener(this);
 // Set the dimensions of the sign-in button.
 //        userData = new UserData(userData.getUid(), userData.getName(), userData.getPost(), userData.getTime(), userData.getDownloadURL());
@@ -79,6 +82,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
+        pageloding1.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -131,6 +135,7 @@ saveData(account);
 
         Intent i = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(i);
+        pageloding1.setVisibility(View.GONE);
     }
 
     private void saveData(GoogleSignInAccount account) {
