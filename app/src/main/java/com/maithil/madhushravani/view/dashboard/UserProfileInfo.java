@@ -18,6 +18,7 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,9 +29,12 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.maithil.madhushravani.R;
 import com.maithil.madhushravani.model.PostsList;
+import com.maithil.madhushravani.model.SharedPref;
 import com.maithil.madhushravani.model.UserData;
+import com.maithil.madhushravani.model.UserDetail;
 import com.maithil.madhushravani.view.profile.ProfileAdapter;
 
+import static com.maithil.madhushravani.model.SharedPref.IMAGE_URL;
 import static com.maithil.madhushravani.model.SharedPref.KEY_NAME;
 
 /**
@@ -48,6 +52,9 @@ public class UserProfileInfo extends DialogFragment {
     private DatabaseReference dbRefUserdetail, dbRef;
 
 UserData userData;
+SharedPref sp;
+String data;
+UserDetail ud;
     public UserProfileInfo() {
         // Required empty public constructor
 
@@ -66,7 +73,7 @@ UserData userData;
        place = v.findViewById(R.id.textViewPlace1);
        occ = v.findViewById(R.id.textViewOccupation);
        img = v.findViewById(R.id.userImg);
-
+sp = new SharedPref(getContext());
        firebaseStorageReference();
 
        return v;
@@ -78,47 +85,67 @@ UserData userData;
         userData = new UserData();
         database = FirebaseDatabase.getInstance();
 //        reference for saving posts
-        dbRefUserdetail = database.getReference("/UserPosts/UserProfileInfo");
+        Bundle b = getArguments();
+        if(b!= null) {
+            data = b.getString("USER_PROFILE");
+        }
+        dbRef = database.getReference("/UserPosts/UserProfileInfo/"+data);
 
-//        dbRef.addValueEventListener(changeListener);
+        dbRef.addValueEventListener(changeListener);
     }
 
-//    ValueEventListener changeListener = new ValueEventListener() {
-//
-//        @Override
-//        public void onDataChange(DataSnapshot ds1) {
-//
+    ValueEventListener changeListener = new ValueEventListener() {
+
+        @Override
+        public void onDataChange(DataSnapshot ds) {
+
 //            for (DataSnapshot ds : ds1.getChildren()) {
-//                PostsList post = new PostsList();
-//                post.setName(ds.child("name").getValue().toString());
-//                post.setText(ds.child("dob").getValue().toString());
-//                post.setImg(ds.child("dom").getValue().toString());
-//                if(ds.child("postImage").exists()){
-//                    post.setPostImg(ds.child("postImage").getValue().toString());}                    post.setTime(ds.child("time").getValue().toString());
-//                pl.add(post);
+                UserDetail post = new UserDetail();
+            if(ds.child("name").exists()) {
+                post.setName(ds.child("name").getValue().toString());
+            }
+            if(ds.child("dob").exists()){
+                post.setDob(ds.child("dob").getValue().toString());}
+            if(ds.child("dom").exists()){
+                post.setDom(ds.child("dom").getValue().toString());}
+            if(ds.child("occupation").exists()){
+                post.setOcc(ds.child("occupation").getValue().toString());}
+            if(ds.child("place").exists()){
+                post.setPlace(ds.child("place").getValue().toString());}
+            if(ds.child("profileImage").exists()){
+                post.setImg(ds.child("profileImage").getValue().toString());}
+//                      ud = post;
 //            }
-////                }
-////            }
-//            adapter = new ProfileAdapter(pl, getActivity());
-//            rv.setAdapter(adapter);
-//            pb.setVisibility(View.GONE);
-//            adapter.notifyDataSetChanged();
-//
-//        }
-//
-//        @Override
-//        public void onCancelled(DatabaseError databaseError) {
-////            notifyUser("Database error: " + databaseError.toException());
-//            Log.d(TAG, "onCancelled: " + databaseError);
-//        }
-//
-//
-//    };
+                      setUSerInfo(post);
+
+        }
+
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
+//            notifyUser("Database error: " + databaseError.toException());
+            Log.d(TAG, "onCancelled: " + databaseError);
+        }
+
+
+    };
 
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
 return   super.onCreateDialog(savedInstanceState);
 
+    }
+
+    public void setUSerInfo(UserDetail userDetail){
+        dob.setText(userDetail.getDob());
+        dom.setText(userDetail.getDom());
+        name.setText(userDetail.getName());
+        place.setText(userDetail.getPlace());
+        occ.setText(userDetail.getOcc());
+
+        Glide.with(this)
+                .load(userDetail.getImg())
+//               .apply(RequestOptions.circleCropTransform())
+                .into(img);
     }
 }

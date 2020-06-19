@@ -10,7 +10,7 @@
         android:id="@+id/aa"/>
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-android:layout_below="@+id/aa"
+        android:layout_below="@+id/aa"
         android:paddingBottom="50dp"
         android:layout_height="match_parent">
         <RelativeLayout

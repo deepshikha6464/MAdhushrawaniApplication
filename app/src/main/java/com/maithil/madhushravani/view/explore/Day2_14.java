@@ -66,7 +66,7 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-String data ="2";
+        String data ="2";
         Bundle b = getArguments();
         if(b!= null) {
              data = b.getString("UNIQUE_KEY");

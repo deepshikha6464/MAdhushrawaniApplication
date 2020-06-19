@@ -1,10 +1,12 @@
 package com.maithil.madhushravani.view.dashboard;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -23,6 +25,7 @@ import static com.maithil.madhushravani.model.SharedPref.IMAGE_URL;
 
 public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostsViewHolder> {
 List<PostsList> list;
+//    PostsList pl;
 Context context;
     private static ItemClickListener mClickListener;
     FragmentManager fm;
@@ -41,8 +44,8 @@ Context context;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PostsViewHolder holder, int position) {
-                  PostsList pl = list.get(position);
+    public void onBindViewHolder(@NonNull final PostsViewHolder holder, int position) {
+                 final PostsList  pl = list.get(position);
                   holder.name.setText(pl.getName());
                   holder.time.setText(pl.getTime());
                   holder.post.setText(pl.getText());
@@ -56,11 +59,15 @@ Context context;
                 .load(pl.getPostImg())
                 .into(holder.postedImg);
 
-        holder.userImg.setOnClickListener(new View.OnClickListener() {
+        holder.userImg1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String name = pl.getName();
+              Bundle  b = new Bundle();
+                b.putString("USER_PROFILE", name);
                 Fragment myFragment = new UserProfileInfo();
-          (myFragment).onCreateAnimation(R.animator.anim_in,true,R.animator.anim_out);
+                myFragment.setArguments(b);
+                (myFragment).onCreateAnimation(R.animator.anim_in,true,R.animator.anim_out);
              ((UserProfileInfo) myFragment).show(fm, "tag");
 
             }
@@ -77,6 +84,7 @@ Context context;
         ImageView userImg,postedImg;
         TextView name,post,time;
         ItemClickListener itemClickListener;
+        LinearLayout userImg1;
 
         public PostsViewHolder(@NonNull View itemView,ItemClickListener mClickListener) {
             super(itemView);
@@ -85,6 +93,7 @@ Context context;
             name = itemView.findViewById(R.id.cloudUND);
             post = itemView.findViewById(R.id.headline);
             time = itemView.findViewById(R.id.usertime);
+            userImg1 = itemView.findViewById(R.id.userImg1);
            this.itemClickListener = mClickListener;
            userImg.setOnClickListener(this);
 
