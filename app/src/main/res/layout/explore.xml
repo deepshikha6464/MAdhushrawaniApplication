@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
+<!--    toolbar-->
     <include layout="@layout/toolbar" />
+<!--    all layout -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:layout_below="@+id/toolbar"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior">
 
@@ -21,33 +22,46 @@
                 android:padding="10dp"
                 android:visibility="visible">
                 <!--history & samagri-->
-                <LinearLayout
-                    android:id="@+id/materialCardView"
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                   >
-                    <!--bird-->
-                    <com.airbnb.lottie.LottieAnimationView
-                        android:id="@+id/happyGirlCard"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        app:lottie_autoPlay="true"
-                        app:lottie_fileName="history.json"
-                        app:lottie_loop="false"
-                        app:lottie_speed="1.25" />
-                   <TextView
-                        android:id="@+id/history"
-                        android:layout_width="wrap_content"
+                    android:id="@+id/materialCardView"
+                    android:layout_marginBottom="10dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:padding="8dp"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:fontFamily="@font/poppins"
-                        android:padding="5dp"
-                       android:layout_marginTop="20dp"
-                        android:text="@string/History"
-                        android:textAppearance="?attr/textAppearanceHeadline6"
-                        android:textSize="16sp" />
-                </LinearLayout>
+                        android:orientation="horizontal"
+                        >
+                        <!--bird-->
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/happyGirlCard"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            app:lottie_autoPlay="true"
+                            app:lottie_fileName="history.json"
+                            app:lottie_loop="false"
+                            app:lottie_speed="1.25" />
+                        <TextView
+                            android:id="@+id/history"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:fontFamily="@font/poppins"
+                            android:padding="5dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:backgroundTintMode="add"
+                            android:backgroundTint="@color/greyColor"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/History"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
                 <View
                     style="@style/Divider"
                     android:layout_below="@+id/materialCardView"
@@ -97,28 +111,73 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="100"
                         android:orientation="horizontal">
                         <TextView
                             android:layout_width="280dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:padding="5dp"
+                            android:padding="2dp"
+                            android:layout_margin="20dp"
+                            android:layout_weight="80"
                             android:layout_marginTop="5dp"
                             android:fontFamily="@font/poppins"
                             android:text="@string/PoojaSamagri"
                             android:textAppearance="?attr/textAppearanceHeadline6"
-                            android:textSize="14sp" />
+                            android:textSize="15sp" />
                         <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="20"
+                            android:padding="2dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
                             android:id="@+id/poojaarrow"
                             android:src="@drawable/arrow_right"
-                            android:layout_margin="5dp"/>
+                            android:layout_margin="15dp"/>
                     </LinearLayout>
                         <View
                             style="@style/Divider"
                             android:layout_below="@+id/materialCardView"
                             android:layout_margin="2dp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TableLayout
+                                android:visibility="visible"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="10dp"
+                                android:elevation="5dp"
+                                >
+                            <TableRow  >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_margin="4dp"
+                                android:id="@+id/v"
+                                android:fontFamily="@font/poppins"
+                                android:textAlignment="center"
+                                android:text="Vishahar" />
+                                <View
+                                    style="@style/VerticalDivider"
+                                    android:layout_width="2dp"
+                                    android:layout_height="match_parent"
+                                    />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:id="@+id/s"
+                                android:layout_margin="4dp"
+                                android:fontFamily="@font/poppins"
+                                android:textAlignment="center"
+                                android:text="Saree" />
+                            </TableRow>
+                            </TableLayout>
+
+                        </LinearLayout>
 <!--bishar creation text-->
                         <TextView
                             android:layout_width="wrap_content"
@@ -126,13 +185,15 @@
                             android:layout_margin="15dp"
                             android:fontFamily="@font/poppins"
                             android:padding="2dp"
+                            android:id="@+id/b"
+                            android:visibility="gone"
                             android:text="@string/step2_2des"
                             android:textAppearance="?attr/textAppearanceHeadline6"
                             android:textSize="14sp" />
-                        <View
-                            style="@style/Divider"
-                            android:layout_below="@+id/materialCardView"
-                            android:layout_margin="2dp" />
+<!--                        <View-->
+<!--                            style="@style/Divider"-->
+<!--                            android:layout_below="@+id/materialCardView"-->
+<!--                            android:layout_margin="2dp" />-->
 <!--                        sarree-->
                         <TextView
                             android:layout_width="wrap_content"
@@ -140,6 +201,8 @@
                             android:layout_margin="15dp"
                             android:fontFamily="@font/poppins"
                             android:padding="2dp"
+                            android:id="@+id/ss"
+                            android:visibility="gone"
                             android:text="@string/saree_step"
                             android:textAppearance="?attr/textAppearanceHeadline6"
                             android:textSize="14sp" />
@@ -178,7 +241,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <!--           getting started with prep             -->
+                        <!--           getting started with pooja ready             -->
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -205,29 +268,116 @@
                             android:layout_below="@+id/materialCardView"
                             android:layout_margin="2dp" />
 <!--                        nhayi khaayi-->
-                        <TextView
-                            android:layout_width="wrap_content"
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="15dp"
-                            android:fontFamily="@font/poppins"
-                            android:padding="2dp"
-                            android:text="@string/nhayikhayi"
-                            android:textAppearance="?attr/textAppearanceHeadline6"
-                            android:textSize="14sp" />
+                            android:orientation="vertical">
+                            <!--                            headline -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="276dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="4dp"
+                                    android:fontFamily="@font/poppins"
+                                    android:padding="8dp"
+                                    android:text="@string/StepNK"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp" />
+
+                                <ImageView
+                                    android:id="@+id/downNK"
+                                    android:layout_width="33dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:background="@drawable/down_arrow"
+                                    android:paddingTop="8dp" />
+
+                                <ImageView
+                                    android:id="@+id/up_arrowNK"
+                                    android:layout_width="33dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:background="@drawable/ic_keyboard_arrow_up_black_24dp"
+                                    android:paddingTop="8dp"
+                                    android:visibility="gone" />
+
+
+                            </LinearLayout>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="15dp"
+                                android:fontFamily="@font/poppins"
+                                android:padding="2dp"
+                                android:visibility="gone"
+                                android:id="@+id/nkStep"
+                                android:text="@string/nhayikhayi"
+                                android:textAppearance="?attr/textAppearanceHeadline6"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
                         <View
                             style="@style/Divider"
                             android:layout_below="@+id/materialCardView"
                             android:layout_margin="2dp" />
 <!--                        fool lodhi-->
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="15dp"
-                            android:fontFamily="@font/poppins"
-                            android:padding="2dp"
-                            android:text="@string/foollodhi"
-                            android:textAppearance="?attr/textAppearanceHeadline6"
-                            android:textSize="14sp" />
+                            android:orientation="vertical">
+                            <!--                            headline -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="276dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="4dp"
+                                    android:fontFamily="@font/poppins"
+                                    android:padding="8dp"
+                                    android:text="Fool Lodhi"
+                                    android:textColor="#000000"
+                                    android:textSize="16sp" />
+
+                                <ImageView
+                                    android:id="@+id/dfl"
+                                    android:layout_width="33dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:background="@drawable/down_arrow"
+                                    android:paddingTop="8dp" />
+
+                                <ImageView
+                                    android:id="@+id/ufl"
+                                    android:layout_width="33dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:background="@drawable/ic_keyboard_arrow_up_black_24dp"
+                                    android:paddingTop="8dp"
+                                    android:visibility="gone" />
+
+
+                            </LinearLayout>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="15dp"
+                                android:fontFamily="@font/poppins"
+                                android:padding="2dp"
+                                android:id="@+id/fl"
+                                android:visibility="gone"
+                                android:text="@string/foollodhi"
+                                android:textAppearance="?attr/textAppearanceHeadline6"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
                         <View
                             style="@style/Divider"
                             android:layout_below="@+id/materialCardView"
@@ -303,7 +453,7 @@
                                 android:padding="8dp"
                                 android:text="@string/Step2"
                                 android:textAppearance="?attr/textAppearanceHeadline6"
-                                android:textSize="15sp" />
+                                android:textSize="16sp" />
 
                             <ImageView
                                 android:id="@+id/down2"
@@ -389,7 +539,7 @@
                                     android:padding="8dp"
                                     android:text="@string/Step3"
                                     android:textAppearance="?attr/textAppearanceHeadline6"
-                                    android:textSize="15sp" />
+                                    android:textSize="16sp" />
 
                                 <ImageView
                                     android:id="@+id/down3"
@@ -480,13 +630,14 @@
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:layout_width="274dp"
+                                    android:layout_width="275dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginLeft="4dp"
                                     android:fontFamily="@font/poppins"
+                                    android:padding="8dp"
                                     android:text="@string/Step4_1"
                                     android:textAppearance="?attr/textAppearanceHeadline6"
-                                    android:textSize="15sp" />
+                                    android:textSize="16sp" />
 
                                 <ImageView
                                     android:id="@+id/down4"
@@ -509,12 +660,18 @@
 
                             </LinearLayout>
 
-                            <ImageView
-                                android:id="@+id/aripan"
+                            <TextView
+                                android:id="@+id/aripanText"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:padding="2dp"
+                                android:layout_marginLeft="4dp"
+                                android:fontFamily="@font/poppins"
+                                android:padding="8dp"
+                                android:text="@string/aripanText"
+                                android:textAppearance="?attr/textAppearanceHeadline6"
+                                android:textSize="14sp"
                                 android:visibility="gone" />
+
 
 
                         </LinearLayout>
@@ -572,6 +729,8 @@
                                 android:padding="5dp"
                                 android:id="@+id/day1"
                                 android:elevation="6dp"
+                                android:background="?attr/selectableItemBackground"
+                                android:clickable="true"
                                 android:layout_margin="10dp"
                                 app:cardBackgroundColor="@color/cardBackground"
                                 >
@@ -580,6 +739,7 @@
                                     android:layout_height="wrap_content"
                                     android:textSize="35sp"
                                     android:text="1"
+                                    android:background="?attr/selectableItemBackground"
                                     android:fontFamily="@font/gravitas"
                                     android:textColor="#ffffff"
                                     android:layout_gravity="center"/>
@@ -589,7 +749,8 @@
                                 android:layout_height="90dp"
                                 android:padding="5dp"
                                 android:id="@+id/day2"
-
+                                android:background="?attr/selectableItemBackground"
+                                android:clickable="true"
                                 android:layout_margin="10dp"
                                 app:cardBackgroundColor="@color/cardBackground"
                                 >
@@ -607,7 +768,8 @@
                                 android:layout_height="90dp"
                                 android:padding="5dp"
                                 android:id="@+id/day3"
-
+                                android:background="?attr/selectableItemBackground"
+                                android:clickable="true"
                                 android:layout_margin="10dp"
                                 app:cardBackgroundColor="@color/cardBackground"
                                 >
@@ -625,7 +787,8 @@
                                 android:layout_height="90dp"
                                 android:padding="5dp"
                                 android:id="@+id/day4"
-
+                                android:background="?attr/selectableItemBackground"
+                                android:clickable="true"
                                 android:layout_margin="10dp"
                                 app:cardBackgroundColor="@color/cardBackground"
                                 >
@@ -643,7 +806,8 @@
                                 android:layout_height="90dp"
                                 android:padding="5dp"
                                 android:id="@+id/day5"
-
+                                android:background="?attr/selectableItemBackground"
+                                android:clickable="true"
                                 android:layout_margin="10dp"
                                 app:cardBackgroundColor="@color/cardBackground"
                                 >
@@ -661,7 +825,8 @@
                                 android:layout_height="90dp"
                                 android:padding="5dp"
                                 android:id="@+id/day6"
-
+                                android:background="?attr/selectableItemBackground"
+                                android:clickable="true"
                                 android:layout_margin="10dp"
                                 app:cardBackgroundColor="@color/cardBackground"
                                 >
@@ -679,7 +844,8 @@
                                 android:layout_height="90dp"
                                 android:padding="5dp"
                                 android:id="@+id/day7"
-
+                                android:background="?attr/selectableItemBackground"
+                                android:clickable="true"
                                 android:layout_margin="10dp"
                                 app:cardBackgroundColor="@color/cardBackground"
                                 >
@@ -697,7 +863,8 @@
                                 android:layout_height="90dp"
                                 android:padding="5dp"
                                 android:id="@+id/day8"
-
+                                android:background="?attr/selectableItemBackground"
+                                android:clickable="true"
                                 android:layout_margin="10dp"
                                 app:cardBackgroundColor="@color/cardBackground"
                                 >
@@ -715,7 +882,8 @@
                                 android:layout_height="90dp"
                                 android:padding="5dp"
                                 android:id="@+id/day9"
-
+                                android:background="?attr/selectableItemBackground"
+                                android:clickable="true"
                                 android:layout_margin="10dp"
                                 app:cardBackgroundColor="@color/cardBackground"
                                 >
@@ -733,7 +901,8 @@
                                 android:layout_height="90dp"
                                 android:padding="5dp"
                                 android:id="@+id/day10"
-
+                                android:background="?attr/selectableItemBackground"
+                                android:clickable="true"
                                 android:layout_margin="10dp"
                                 app:cardBackgroundColor="@color/cardBackground"
                                 >
@@ -751,7 +920,8 @@
                                 android:layout_height="90dp"
                                 android:padding="5dp"
                                 android:id="@+id/day11"
-
+                                android:background="?attr/selectableItemBackground"
+                                android:clickable="true"
                                 android:layout_margin="10dp"
                                 app:cardBackgroundColor="@color/cardBackground"
                                 >
@@ -769,7 +939,8 @@
                                 android:layout_height="90dp"
                                 android:padding="5dp"
                                 android:id="@+id/day12"
-
+                                android:background="?attr/selectableItemBackground"
+                                android:clickable="true"
                                 android:layout_margin="10dp"
                                 app:cardBackgroundColor="@color/cardBackground"
                                 >
@@ -788,7 +959,8 @@
                                 android:padding="5dp"
                                 android:layout_margin="10dp"
                                 android:id="@+id/day13"
-
+                                android:background="?attr/selectableItemBackground"
+                                android:clickable="true"
                                 app:cardBackgroundColor="@color/cardBackground"
                                 >
                                 <TextView
@@ -800,41 +972,6 @@
                                     android:textColor="#ffffff"
                                     android:layout_gravity="center"/>
                             </com.google.android.material.card.MaterialCardView>
-<!--                            <com.google.android.material.card.MaterialCardView-->
-<!--                                android:layout_width="90dp"-->
-<!--                                android:layout_height="90dp"-->
-<!--                                android:padding="5dp"-->
-<!--                                android:id="@+id/day14"-->
-
-<!--                                android:layout_margin="10dp"-->
-<!--                                app:cardBackgroundColor="@color/cardBackground"-->
-<!--                                >-->
-<!--                                <TextView-->
-<!--                                    android:layout_width="wrap_content"-->
-<!--                                    android:layout_height="wrap_content"-->
-<!--                                    android:textSize="35sp"-->
-<!--                                    android:text="14"-->
-<!--                                    android:fontFamily="@font/gravitas"-->
-<!--                                    android:textColor="#ffffff"-->
-<!--                                    android:layout_gravity="center"/>-->
-<!--                            </com.google.android.material.card.MaterialCardView>-->
-<!--                            <com.google.android.material.card.MaterialCardView-->
-<!--                                android:layout_width="90dp"-->
-<!--                                android:layout_height="90dp"-->
-<!--                                android:padding="5dp"-->
-<!--                                android:layout_margin="10dp"-->
-<!--                                android:id="@+id/day15"-->
-<!--                                app:cardBackgroundColor="@color/cardBackground"-->
-<!--                                >-->
-<!--                                <TextView-->
-<!--                                    android:layout_width="wrap_content"-->
-<!--                                    android:layout_height="wrap_content"-->
-<!--                                    android:textSize="35sp"-->
-<!--                                    android:text="15"-->
-<!--                                    android:fontFamily="@font/gravitas"-->
-<!--                                    android:textColor="#ffffff"-->
-<!--                                    android:layout_gravity="center"/>-->
-<!--                            </com.google.android.material.card.MaterialCardView>-->
 
                         </LinearLayout>
 
@@ -869,9 +1006,4 @@
     </androidx.core.widget.NestedScrollView>
 
 
-    <FrameLayout
-        android:id="@+id/fragment_container_explore"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </FrameLayout>
 </RelativeLayout>

@@ -29,7 +29,7 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-9640227971551003~6929517738"/>
         <service
-            android:name=".NotificationService"
+            android:name=".service.NotificationService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

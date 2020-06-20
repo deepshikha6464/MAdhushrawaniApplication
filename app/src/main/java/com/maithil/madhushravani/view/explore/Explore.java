@@ -3,6 +3,7 @@ package com.maithil.madhushravani.view.explore;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.util.DisplayMetrics;
@@ -36,9 +37,9 @@ public class Explore extends Fragment implements  View.OnClickListener {
     private static final String TAG = "Explore";
 AdView mAdView;
     ImageView langIV,back;
-    TextView history, step1des;
+    TextView history, step1des,v,s,bb,ss,nkStep,fl,aripanText;
     LinearLayout step2dec, step3dec;
-    ImageView d1, u1, d2, u2, d3, u3, d4, u4, aripan, pooja;
+    ImageView d1, u1, d2, u2, d3, u3, d4, u4, aripan, pooja,downNK,upArrowNK,ufl,dfl;
     MaterialCardView day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11, day12, day13;
     //vars
     List<Integer> daysNumber = new ArrayList<>();
@@ -56,9 +57,7 @@ AdView mAdView;
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.explore, container, false);
         findViewbyid(view);
-        Glide.with(this)
-                .load(R.drawable.aripan)
-                .into(aripan);
+//
 
         MobileAds.initialize(getContext(), new OnInitializationCompleteListener() {
             @Override
@@ -75,8 +74,16 @@ AdView mAdView;
     private void findViewbyid(View view) {
         history = view.findViewById(R.id.history);
         pooja = view.findViewById(R.id.poojaarrow);
+        nkStep = view.findViewById(R.id.nkStep);
+        aripanText = view.findViewById(R.id.aripanText); aripanText.setOnClickListener(this);
+        fl = view.findViewById(R.id.fl);
         langIV = view.findViewById(R.id.lang); langIV.setOnClickListener(this);
-
+         s = view.findViewById(R.id.s); s.setOnClickListener(this);
+         v = view.findViewById(R.id.v); v.setOnClickListener(this);
+         ufl = view.findViewById(R.id.ufl); ufl.setOnClickListener(this);
+         dfl = view.findViewById(R.id.dfl); dfl.setOnClickListener(this);
+         bb = view.findViewById(R.id.b);
+         ss = view.findViewById(R.id.ss);
         history.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,6 +104,8 @@ AdView mAdView;
 
         d1 = view.findViewById(R.id.down);        d1.setOnClickListener(this);
         d2 = view.findViewById(R.id.down2);        d2.setOnClickListener(this);
+        downNK = view.findViewById(R.id.downNK);        downNK.setOnClickListener(this);
+        upArrowNK = view.findViewById(R.id.up_arrowNK);        upArrowNK.setOnClickListener(this);
         d3 = view.findViewById(R.id.down3);
         d3.setOnClickListener(this);
         d4 = view.findViewById(R.id.down4);
@@ -152,6 +161,21 @@ AdView mAdView;
         int id = view.getId();
         switch (id) {
 
+
+
+            case R.id.v:
+                bb.setVisibility(View.VISIBLE);
+                ss.setVisibility(View.GONE);
+                v.setTextColor(Color.parseColor("#D81B60"));
+                s.setTextColor(Color.parseColor("#000000"));
+
+                break;
+            case R.id.s:
+                ss.setVisibility(View.VISIBLE);
+                bb.setVisibility(View.GONE);
+                s.setTextColor(Color.parseColor("#D81B60"));
+                v.setTextColor(Color.parseColor("#000000"));
+                break;
             case  R.id.lang:
                 Log.d(TAG, "onClick: language");
                 languageChange();
@@ -167,6 +191,29 @@ AdView mAdView;
                 u1.setVisibility(View.GONE);
                 step1des.setVisibility(View.GONE);
                 d1.setVisibility(View.VISIBLE);
+                break;
+            case R.id.dfl:
+                ufl.setVisibility(View.VISIBLE);
+                fl.setVisibility(View.VISIBLE);
+                dfl.setVisibility(View.GONE);
+                break;
+
+            case R.id.ufl:
+                ufl.setVisibility(View.GONE);
+                fl.setVisibility(View.GONE);
+                dfl.setVisibility(View.VISIBLE);
+                break;
+
+                case R.id.downNK:
+                upArrowNK.setVisibility(View.VISIBLE);
+                nkStep.setVisibility(View.VISIBLE);
+                downNK.setVisibility(View.GONE);
+                break;
+
+            case R.id.up_arrowNK:
+                upArrowNK.setVisibility(View.GONE);
+                nkStep.setVisibility(View.GONE);
+                downNK.setVisibility(View.VISIBLE);
                 break;
 
             case R.id.down2:
@@ -196,15 +243,18 @@ AdView mAdView;
             case R.id.down4:
                 d4.setVisibility(View.GONE);
                 u4.setVisibility(View.VISIBLE);
-                aripan.setVisibility(View.VISIBLE);
+                 aripanText.setVisibility(View.VISIBLE);
                 break;
 
             case R.id.up_arrow4:
                 d4.setVisibility(View.VISIBLE);
                 u4.setVisibility(View.GONE);
-                aripan.setVisibility(View.GONE);
+                aripanText.setVisibility(View.GONE);
                 break;
-
+            case R.id.aripanText:
+                intent.putExtra("FragName","aripan");
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
+                break;
             case R.id.day1:
                 intent.putExtra("FragName","day1");
                 startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());

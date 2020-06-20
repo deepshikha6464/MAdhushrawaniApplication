@@ -125,6 +125,10 @@ SharedPref sp;
 //        back button
 
         switch(id){
+
+            case R.id.back:
+                getActivity().onBackPressed();
+                break;
             case R.id.ps1:
                 if(cc1 == 0){
                     c1.setBackgroundColor(getResources().getColor(color.greenColor));

@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.Window;
 
 import com.maithil.madhushravani.R;
+import com.maithil.madhushravani.view.explore.AripanFragment;
 import com.maithil.madhushravani.view.explore.Day1Fragment;
 import com.maithil.madhushravani.view.explore.Day2_14;
 import com.maithil.madhushravani.view.explore.poojaFragment;
@@ -34,6 +35,14 @@ public class FragmentLoader extends AppCompatActivity {
 
         switch (value){
 
+
+            case "aripan":
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .setCustomAnimations(R.animator.slide_in_top,R.animator.slide_out_top)
+                        .replace(R.id.fragment_container, new AripanFragment())
+                        .commit();
+                break;
             case "pooja":
                 getSupportFragmentManager()
                         .beginTransaction()
