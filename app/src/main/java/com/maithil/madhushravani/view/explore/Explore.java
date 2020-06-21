@@ -37,7 +37,7 @@ public class Explore extends Fragment implements  View.OnClickListener {
     private static final String TAG = "Explore";
 AdView mAdView;
     ImageView langIV,back;
-    TextView history, step1des,v,s,bb,ss,nkStep,fl,aripanText, bishar,others;
+    TextView history, step1des,v,s,bb,ss,nkStep,fl,aripanText, bishar,others,bs1;
     LinearLayout step2dec, step3dec;
     ImageView d1, u1, d2, u2, d3, u3, d4, u4, aripan, pooja,downNK,upArrowNK,ufl,dfl;
     MaterialCardView day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11, day12, day13;
@@ -84,6 +84,7 @@ AdView mAdView;
          v = view.findViewById(R.id.v); v.setOnClickListener(this);
          ufl = view.findViewById(R.id.ufl); ufl.setOnClickListener(this);
          dfl = view.findViewById(R.id.dfl); dfl.setOnClickListener(this);
+         bs1 = view.findViewById(R.id.b); bs1.setOnClickListener(this);
          bb = view.findViewById(R.id.b);
          ss = view.findViewById(R.id.ss);
         history.setOnClickListener(new View.OnClickListener() {
@@ -166,17 +167,28 @@ AdView mAdView;
 
 
             case R.id.v:
-                bb.setVisibility(View.VISIBLE);
-                ss.setVisibility(View.GONE);
-                v.setTextColor(Color.parseColor("#D81B60"));
-                s.setTextColor(Color.parseColor("#000000"));
+                if(bb.getVisibility()==View.VISIBLE){
+                    bb.setVisibility(View.GONE);
+                    v.setTextColor(Color.parseColor("#000000"));
 
+                }else {
+                    bb.setVisibility(View.VISIBLE);
+                    ss.setVisibility(View.GONE);
+                    v.setTextColor(Color.parseColor("#D81B60"));
+                    s.setTextColor(Color.parseColor("#000000"));
+                }
                 break;
             case R.id.s:
-                ss.setVisibility(View.VISIBLE);
-                bb.setVisibility(View.GONE);
-                s.setTextColor(Color.parseColor("#D81B60"));
-                v.setTextColor(Color.parseColor("#000000"));
+                if(ss.getVisibility()==View.VISIBLE){
+                    ss.setVisibility(View.GONE);
+                    s.setTextColor(Color.parseColor("#000000"));
+
+                }else {
+                    ss.setVisibility(View.VISIBLE);
+                    bb.setVisibility(View.GONE);
+                    s.setTextColor(Color.parseColor("#D81B60"));
+                    v.setTextColor(Color.parseColor("#000000"));
+                }
                 break;
             case  R.id.lang:
                 Log.d(TAG, "onClick: language");
@@ -266,6 +278,10 @@ AdView mAdView;
                 startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
                 break;
             case R.id.bishhartext:
+                intent.putExtra("FragName","bishar");
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
+                break;
+                case R.id.b:
                 intent.putExtra("FragName","bishar");
                 startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
                 break;

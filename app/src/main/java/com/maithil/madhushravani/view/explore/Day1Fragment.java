@@ -45,12 +45,12 @@ import java.util.Objects;
  */
 public class Day1Fragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "Day1Fragment";
-    TextView day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11, day12, readKatha,listen, miniText,read,play,vacho,readVacho,vachobini;
+    TextView day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11, day12, readKatha,listen, miniText,read,play,vacho,readVacho,vachobini,endText;
     String poojaVidhi = "";
     TextView poojavidhi, mediacard;
     NestedScrollView naviday1;
     LottieAnimationView   audioCardKatha1;
-    LinearLayout mediaLayout;
+    LinearLayout mediaLayout,endlayout;
     SeekBar seekBar;
     static MediaPlayer mp;
     LinearLayout nonframe,fragToolbar,kathaText;
@@ -347,6 +347,13 @@ public class Day1Fragment extends Fragment implements View.OnClickListener {
                 Log.d(TAG, "onClick: ");
                 getActivity().onBackPressed();
                 break;
+             case R.id.endlayout:
+                 if(endText.getVisibility()==View.VISIBLE){
+                     endText.setVisibility(View.GONE);
+                 }else {
+                     endText.setVisibility(View.VISIBLE);
+                 }
+                            break;
 
         }
 
@@ -386,6 +393,9 @@ public class Day1Fragment extends Fragment implements View.OnClickListener {
         playmini.setOnClickListener(this);
         pause = view.findViewById(R.id.pause);
         pause.setOnClickListener(this);
+        endlayout = view.findViewById(R.id.endlayout);
+        endText = view.findViewById(R.id.endText);
+        endlayout.setOnClickListener(this);
 
         readKatha = view.findViewById(R.id.read);
         readKatha.setOnClickListener(this);

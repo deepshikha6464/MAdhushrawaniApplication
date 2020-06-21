@@ -1,6 +1,7 @@
 package com.maithil.madhushravani.view.explore;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -21,6 +22,7 @@ import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.maithil.madhushravani.R;
+import com.maithil.madhushravani.view.Activities.FragmentLoader;
 
 import java.io.IOException;
 
@@ -30,8 +32,8 @@ import java.io.IOException;
 public class Day2_14 extends Fragment  implements View.OnClickListener {
 
     private static final String TAG = "Day2_14";
-    TextView mainKatha,nextTitle,nextKatha,note,noteHeading,temi,temiHeading,startPoojaDay,read214,listen214;
-    LinearLayout toolbar, fragToolbar,mainToolBar,katha214;
+    TextView mainKatha,nextTitle,nextKatha,note,noteHeading,temi,temiHeading,startPoojaDay,read214,listen214,vachotext,readVacho214,vacho,play,read,endText;
+    LinearLayout toolbar, fragToolbar,mainToolBar,katha214,endPoojaLayout;
     TextView tooltext , mediacard;
 
     ImageView back;
@@ -41,7 +43,7 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
     LinearLayout mediaLayout,nonframe;
     Handler mHandler;
     NestedScrollView naviday1;
-    LottieAnimationView play, read, audioCardKatha1,vacho;
+
     String kathaName;
 
 
@@ -81,10 +83,23 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                                     .beginTransaction()
                                     .replace(R.id.biniFragCont2, new PictureRead())
                                     .commit();
-                            break;
 
+                            read.setTextColor(Color.parseColor("#D81B60"));
+                            play.setTextColor(Color.parseColor("#000000"));
+//                            Intent intent = new Intent(getActivity(), FragmentLoader.class);
+//                            intent.putExtra("FragName","biniPicture");
+//                            startActivity(intent/*, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle()*/);
+
+                            break;
+                        case R.id.endpoojalaout:
+//                            if(endText.getVisibility()==View.VISIBLE){
+//                                endText.setVisibility(View.GONE);
+//                            }else{
+                            endText.setVisibility(View.VISIBLE);
+//                    }
+                            break;
                         case R.id.biniDays:
-                            play.playAnimation();
+
                             if (mp.isPlaying()) {
                                 mp.stop();
                                 mp.reset();
@@ -94,7 +109,9 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                             break;
 
                         case R.id.audioCardVachoBinidays:
-                            vacho.playAnimation();
+                          vachotext.setVisibility(View.GONE);
+                            vacho.setTextColor(Color.parseColor("#D81B60"));
+                            readVacho214.setTextColor(Color.parseColor("#000000"));
                             if (mp.isPlaying()) {
                                 mp.stop();
                                 mp.reset();
@@ -103,6 +120,11 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                             playMedia("Vacho Bini");
                             break;
 
+                        case R.id.readvachobini214:
+                            vachotext.setVisibility(View.VISIBLE);
+                            readVacho214.setTextColor(Color.parseColor("#D81B60"));
+                            vacho.setTextColor(Color.parseColor("#000000"));
+                               break;
                         case R.id.pause:
                             mp.pause();
                             playmini.setVisibility(View.VISIBLE);
@@ -116,11 +138,10 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                             break;
 
                         case R.id.listen214:
-                            read214.setTextColor(Color.parseColor("#D81B60"));
-                            listen214.setTextColor(Color.parseColor("#000000"));
+                            listen214.setTextColor(Color.parseColor("#D81B60"));
+                            read214.setTextColor(Color.parseColor("#000000"));
 
-                            audioCardKatha1.playAnimation();
-                            if (mp.isPlaying()) {
+                           if (mp.isPlaying()) {
                                 mp.stop();
                                 mp.reset();
                             }
@@ -273,9 +294,15 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                             break;
 
                         case R.id.read214:
-                            katha214.setVisibility(View.VISIBLE);
-                            read214.setTextColor(Color.parseColor("#D81B60"));
-                            listen214.setTextColor(Color.parseColor("#000000"));
+                            if(katha214.getVisibility()==View.VISIBLE){
+                                katha214.setVisibility(View.GONE);
+                                read214.setTextColor(Color.parseColor("#000000"));
+
+                            }else {
+                                katha214.setVisibility(View.VISIBLE);
+                                read214.setTextColor(Color.parseColor("#D81B60"));
+                                listen214.setTextColor(Color.parseColor("#000000"));
+                            }
                             break;
 
 
@@ -297,6 +324,7 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
 
         mainKatha = view.findViewById(R.id.mainKatha);
         nextTitle = view.findViewById(R.id.nextTitle);
+        endText = view.findViewById(R.id.endText214);
         nextKatha = view.findViewById(R.id.nextKatha);
         note = view.findViewById(R.id.note);
         noteHeading = view.findViewById(R.id.noteheading);
@@ -306,9 +334,12 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
         nonframe = view.findViewById(R.id.nonframedays);
 
         back = view.findViewById(R.id.back); back.setOnClickListener(this);
+        endPoojaLayout = view.findViewById(R.id.endpoojalaout); endPoojaLayout.setOnClickListener(this);
         read214 = view.findViewById(R.id.read214); read214.setOnClickListener(this);
         listen214 = view.findViewById(R.id.listen214); listen214.setOnClickListener(this);
         katha214 = view.findViewById(R.id.kathaLayout214); katha214.setOnClickListener(this);
+        readVacho214 = view.findViewById(R.id.readvachobini214); readVacho214.setOnClickListener(this);
+        vachotext = view.findViewById(R.id.vachobini214);
 
 //        media
         mediaLayout = view.findViewById(R.id.media_layout);
@@ -325,8 +356,8 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
         play.setOnClickListener(this);
         read = view.findViewById(R.id.readBiniDays);
         read.setOnClickListener(this);
-        audioCardKatha1 = view.findViewById(R.id.audioCardKathaDays);
-        audioCardKatha1.setOnClickListener(this);
+//        audioCardKatha1 = view.findViewById(R.id.audioCardKathaDays);
+//        audioCardKatha1.setOnClickListener(this);
 
         vacho = view.findViewById(R.id.audioCardVachoBinidays);
         vacho.setOnClickListener(this);

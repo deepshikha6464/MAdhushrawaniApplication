@@ -11,6 +11,7 @@ Girls on each of the 12 days move in the gardens in bridal clothes and collect s
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Steps">Get Started with Prepration</string>
     <string name="bininote"><b>Continue with <i>Bini</i></b></string>
+    <string name="bininote214"><b>Start with <i>Bini</i></b></string>
     <string name="Step1">Making of<i>Gauri Ji</i></string>
     <string name="step1des">This step is done a day before festival starts,So in evening various <i>Geet</i> of <i>"Bhagwati" , "Mahadev" , "Bhramin", "Hanuman" ,"Gauri"</i> are sung. Meanwhile the  <i>Gauri ji</i> idol is prepared by mixing and grinding <i>"Dhoobh"</i>
         ,raw turmeric(<i>kachcha haldi</i>) and coriender seeds(<i>dhaniya</i>).After that take a mud plate or cap of earthern pot and place red cloth and put <i>gauri ji</i> over a coin and cover her with <i>Paan</i> leaf,put <i>sindur</i> over that leaf and cover whole it with red cloth. Keep this into your <i>mandir</i>(near "Bhagwati")\n <font fgcolor='#D81B60' size='12'>See Image</font> </string>
@@ -56,10 +57,10 @@ Girls on each of the 12 days move in the gardens in bridal clothes and collect s
     <string name="biniListen">Listen To <i>Bini</i></string>
     <string name="biniread">Read from Book</string>
     <string name="wrapUpNote"><b>Ending the <i>Pooja</i></b></string>
-    <string name="endtext">Now spread all the flowers and leaves on the \nserpents and all over the <i>Aripan</i> covering all the <i>devtas</i>
-                           \nPut the <i>Bini Motri</i> over the <i>Kalash</i>
-                            \nTake Blessings of elders
-                            \Change the saree to wear it next day</string>
+    <string name="endtext">►Now spread all the flowers and leaves on the \nserpents and all over the <i>Aripan</i> covering all the <i>devtas</i>
+                           \n►Put the <i>Bini Motri</i> over the <i>Kalash</i>
+                            \n►Take Blessings of elders
+                            \n►Change the saree to wear it next day</string>
     <string name="know_the_history_of_this_pooja">Know the History of this <i>Pooja</i></string>
     <string name="poojaSamagri">Pooja Samagri</string>
 

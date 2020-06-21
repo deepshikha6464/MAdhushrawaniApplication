@@ -7,7 +7,7 @@
     tools:context=".view.explore.Day2_14">
     <include layout="@layout/toolbar" />
     <androidx.core.widget.NestedScrollView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:id="@+id/navidays"
         android:layout_below="@+id/toolbar"
         android:layout_height="wrap_content">
@@ -18,8 +18,9 @@
             android:id="@+id/nonframedays"
             android:layout_margin="5dp"
             android:layout_marginBottom="8dp">
+<!--            start todays pooja-->
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:layout_margin="8dp"
@@ -34,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <ImageView
@@ -47,7 +48,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
                         android:fontFamily="@font/poppins"
-                        android:text="@string/bininote"
+                        android:text="@string/bininote214"
                         android:textColor="#000000"
                         android:layout_marginTop="15dp"
                         android:textAppearance="?attr/textAppearanceHeadline6"
@@ -55,68 +56,57 @@
 
 
                 </LinearLayout>
-                <View
-                    style="@style/Divider"
-                    android:layout_margin="2dp" />
-                <!--        grid of bini listen-->
+
+
+                <!--        read/listem-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="267dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="10dp"
+                    <TableLayout
+                        android:visibility="visible"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:padding="10dp"
-                        android:fontFamily="@font/poppins"
-                        android:text="@string/biniListen"
-                        android:textColor="#000000"
-                        android:textSize="16sp" />
-                    <!--play pause-->
-                    <com.airbnb.lottie.LottieAnimationView
-                        android:id="@+id/biniDays"
-                        android:layout_width="45dp"
-                        android:layout_height="74dp"
-                        app:lottie_autoPlay="false"
-                        app:lottie_fileName="pause_play.json"
-                        app:lottie_loop="false"
-                        app:lottie_speed="1.25" />
+                        android:elevation="5dp"
+                        >
+                        <TableRow  >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_margin="4dp"
+                                android:id="@+id/readBiniDays"
+                                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:textColor="#000000"
+                                android:fontFamily="@font/poppins"
+                                android:textAlignment="center"
+                                android:text="Read" />
+                            <View
+                                style="@style/VerticalDivider"
+                                android:layout_width="2dp"
+                                android:layout_height="match_parent"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:id="@+id/biniDays"
+                                android:textColor="#000000"
+                                android:layout_margin="4dp"
+                                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:fontFamily="@font/poppins"
+                                android:textAlignment="center"
+                                android:text="Listen" />
+                        </TableRow>
+                    </TableLayout>
 
                 </LinearLayout>
-                <View
-                    style="@style/Divider"
-                    android:layout_margin="2dp" />
-                <!--            bini read-->
-                <LinearLayout
-                    android:id="@+id/grid3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="225dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="10dp"
-                        android:padding="10dp"
-                        android:fontFamily="@font/poppins"
-                        android:text="@string/biniread"
-                        android:textColor="#000000"
-                        android:textSize="16sp" />
-                    <com.airbnb.lottie.LottieAnimationView
-                        android:id="@+id/readBiniDays"
-                        android:layout_width="95dp"
-                        android:layout_height="74dp"
-                        android:layout_margin="10dp"
-                        android:padding="5dp"
-                        app:lottie_autoPlay="true"
-                        app:lottie_fileName="book.json"
-                        app:lottie_loop="true"
-                        app:lottie_speed="1.25" />
 
-
-                </LinearLayout>
 
             </LinearLayout>
             <View style="@style/Divider"
@@ -144,15 +134,15 @@
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:textColor="#000000"
                     android:textSize="16sp" />
-                <com.airbnb.lottie.LottieAnimationView
-                    android:id="@+id/audioCardKathaDays"
-                    android:layout_width="45dp"
-                    android:layout_height="74dp"
-                    app:lottie_autoPlay="false"
-                    android:visibility="gone"
-                    app:lottie_fileName="pause_play.json"
-                    app:lottie_loop="false"
-                    app:lottie_speed="1.25" />
+<!--                <com.airbnb.lottie.LottieAnimationView-->
+<!--                    android:id="@+id/audioCardKathaDays"-->
+<!--                    android:layout_width="45dp"-->
+<!--                    android:layout_height="74dp"-->
+<!--                    app:lottie_autoPlay="false"-->
+<!--                    android:visibility="gone"-->
+<!--                    app:lottie_fileName="pause_play.json"-->
+<!--                    app:lottie_loop="false"-->
+<!--                    app:lottie_speed="1.25" />-->
 
             </LinearLayout>
             <!--        read/listem-->
@@ -197,6 +187,8 @@
                 </TableLayout>
 
             </LinearLayout>
+            <View style="@style/Divider"
+                android:layout_margin="4dp"/>
 
 
             <!--            kathaa-->
@@ -304,26 +296,70 @@
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:textColor="#000000"
                     android:textSize="16sp" />
-                <!--play pause-->
-                <com.airbnb.lottie.LottieAnimationView
-                    android:id="@+id/audioCardVachoBinidays"
-                    android:layout_width="45dp"
-                    android:layout_height="64dp"
-                    app:lottie_autoPlay="false"
-                    app:lottie_fileName="pause_play.json"
-                    app:lottie_loop="false"
-                    app:lottie_speed="1.25" />
-
-
 
             </LinearLayout>
+            <!--        read/listem-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TableLayout
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:elevation="5dp"
+                    >
+                    <TableRow  >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_margin="4dp"
+                            android:id="@+id/readvachobini214"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/poppins"
+                            android:textAlignment="center"
+                            android:text="Read" />
+                        <View
+                            style="@style/VerticalDivider"
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:id="@+id/audioCardVachoBinidays"
+                            android:textColor="#000000"
+                            android:layout_margin="4dp"
+                            android:fontFamily="@font/poppins"
+                            android:textAlignment="center"
+                            android:text="Listen" />
+                    </TableRow>
+                </TableLayout>
 
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:id="@+id/vachobini214"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:text="पुरेनिक  पत्ता , झिलमिल  लत्ता  ताही  चढ़ि  बेसली  विसहारि  माता
+हाथ  सुपरी  खोईछा  पान , विसहारि  करती  शुभ  कल्याण"
+                android:fontFamily="@font/poppins"
+                android:textColor="#000000"
+                />
            <View style="@style/Divider"
                 android:layout_margin="4dp"/>
 
     <!--    temi-->
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:id="@+id/temiheading"
@@ -334,7 +370,7 @@
                 android:textColor="#000000"
                 />
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:id="@+id/temi"
@@ -348,8 +384,9 @@
 
     <!--end pooja heading-->
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/endpoojalaout"
                 android:orientation="horizontal">
                 <ImageView
                     android:layout_width="45dp"
@@ -376,11 +413,19 @@
                 android:textSize="14sp"
                 android:layout_margin="10dp"
                 android:padding="5dp"
+                 android:id="@+id/endText214"
+                android:visibility="gone"
                 android:layout_gravity="center"
                 android:text="@string/endtext"
                 android:fontFamily="@font/poppins"
                 android:textColor="#000000"
                 />
+            <View style="@style/Divider"
+                android:layout_margin="4dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="120dp"/>
 
 
 

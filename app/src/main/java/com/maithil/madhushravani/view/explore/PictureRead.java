@@ -57,46 +57,7 @@ int i = 0;
           left = view.findViewById(R.id.nextLeft); left.setOnClickListener(this);
           right = view.findViewById(R.id.nextRight); right.setOnClickListener(this);
           left.setVisibility(View.GONE);
-        //swipe code
-//        frame.setOnTouchListener(new View.OnTouchListener() {
-//
-//            int downX, upX;
-//
-//            @Override
-//            public boolean onTouch(View v, MotionEvent event) {
-//
-////                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-////                    downX = (int) event.getX();
-////                    Log.i("event.getX()", " downX " + downX);
-////                    return true;
-////                }
-////
-////                else if (event.getAction() == MotionEvent.ACTION_UP) {
-////                    upX = (int) event.getX();
-////                    Log.i("event.getX()", " upX " + upX);
-////                    if (upX - downX > 100) {
-////
-////                        // swipe right
-////
-////                    }
-////
-////                    else if (downX - upX > -100) {
-//
-//                        // swipe left
-//                if(i>4){
-//                    i=0;
-//                    biniImg.setImageResource(myImageList[i]);
-//
-//                }else{
-//                        biniImg.setImageResource(myImageList[i]);
-//                        i++;
-//                    }
-//                    return true;
-////
-////                }
-////                return false;
-//            }
-//        });
+
         return view;
     }
 
@@ -151,4 +112,5 @@ int i = 0;
         }
 
     }
+
 }

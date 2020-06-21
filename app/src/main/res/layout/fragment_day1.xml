@@ -56,6 +56,9 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="5dp"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
                     android:text="आरम्भ"
                     android:id="@+id/card1"
                     android:textAppearance="?attr/textAppearanceHeadline6"
@@ -70,6 +73,9 @@
                     android:fontFamily="@font/poppins"
                     android:layout_marginTop="20dp"
                     android:text="कलश"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
                     android:id="@+id/card2"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
@@ -87,6 +93,9 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="20dp"
                     android:text="सूर्य"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
                     android:id="@+id/card3"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:textSize="20sp" />
@@ -101,6 +110,9 @@
                     android:layout_marginTop="20dp"
                     android:text="चन्द्रमा"
                     android:id="@+id/card4"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:textAppearance="?attr/textAppearanceHeadline6"
@@ -113,6 +125,9 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:weightSum="100"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
                 android:id="@+id/gridPoojaLayoutRow2"
                 android:layout_margin="5dp"
                 android:layout_marginLeft="5dp"
@@ -126,6 +141,9 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="5dp"
                     android:text="नवग्रह"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
                     android:id="@+id/card5"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:textSize="20sp" />
@@ -140,6 +158,9 @@
                     android:layout_marginTop="20dp"
                     android:text="विषहरा"
                     android:id="@+id/card6"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:textAppearance="?attr/textAppearanceHeadline6"
@@ -156,6 +177,9 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:text="बैरसी"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
                     android:id="@+id/card11"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:textSize="20sp" />
@@ -170,6 +194,9 @@
                     android:layout_marginTop="20dp"
                     android:text="कुसुमावती"
                     android:id="@+id/card7"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:textAppearance="?attr/textAppearanceHeadline6"
@@ -195,6 +222,9 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="5dp"
                     android:text="चनाइ"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
                     android:id="@+id/card8"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:textSize="20sp" />
@@ -208,6 +238,9 @@
                     android:fontFamily="@font/poppins"
                     android:layout_marginTop="20dp"
                     android:text="पिंगलाक"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
                     android:id="@+id/card10"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="3dp"
@@ -225,6 +258,9 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:text="लीली"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
                     android:id="@+id/card9"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:textSize="20sp" />
@@ -238,6 +274,9 @@
                     android:fontFamily="@font/poppins"
                     android:layout_marginTop="20dp"
                     android:text="साठिक"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
                     android:textAlignment="center"
                     android:id="@+id/card12"
                     android:layout_marginLeft="5dp"
@@ -258,7 +297,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <ImageView
@@ -301,6 +340,9 @@
                             android:layout_weight="1"
                             android:layout_margin="4dp"
                             android:id="@+id/pictureCard"
+                            android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
                             android:textColor="#000000"
                             android:fontFamily="@font/poppins"
                             android:textAlignment="center"
@@ -317,6 +359,9 @@
                             android:id="@+id/audioCard"
                             android:textColor="#000000"
                             android:layout_margin="4dp"
+                            android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
                             android:fontFamily="@font/poppins"
                             android:textAlignment="center"
                             android:text="Listen" />
@@ -384,6 +429,9 @@
                         android:layout_weight="1"
                         android:layout_margin="4dp"
                         android:id="@+id/read"
+                        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
                         android:textColor="#000000"
                         android:fontFamily="@font/poppins"
                         android:textAlignment="center"
@@ -398,6 +446,9 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:id="@+id/Listen"
+                        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
                         android:textColor="#000000"
                         android:layout_margin="4dp"
                         android:fontFamily="@font/poppins"
@@ -419,6 +470,9 @@
             android:textSize="14sp"
             android:layout_margin="10dp"
             android:padding="5dp"
+            android:foreground="?android:attr/selectableItemBackgroundBorderless"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
             android:layout_gravity="center"
             android:text="@string/kathaday1"
             android:fontFamily="@font/poppins"
@@ -444,6 +498,9 @@
             android:layout_margin="10dp"
             android:padding="5dp"
             android:layout_gravity="center"
+            android:foreground="?android:attr/selectableItemBackgroundBorderless"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
             android:text="@string/kathaday1_1"
             android:fontFamily="@font/poppins"
             android:textColor="#000000"
@@ -488,6 +545,7 @@
 
 
         </LinearLayout>
+<!--        vacho-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -507,6 +565,9 @@
                         android:layout_margin="4dp"
                         android:id="@+id/readVacho"
                         android:textColor="#000000"
+                        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
                         android:fontFamily="@font/poppins"
                         android:textAlignment="center"
                         android:text="Read" />
@@ -522,6 +583,9 @@
                         android:id="@+id/audioCardVachoBini"
                         android:textColor="#000000"
                         android:layout_margin="4dp"
+                        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
                         android:fontFamily="@font/poppins"
                         android:textAlignment="center"
                         android:text="Listen" />
@@ -550,6 +614,10 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:foreground="?android:attr/selectableItemBackgroundBorderless"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:id="@+id/endlayout"
             android:orientation="horizontal">
             <ImageView
                 android:layout_width="45dp"
@@ -569,24 +637,29 @@
 
 
         </LinearLayout>
-        <View
-            style="@style/Divider"
-            android:layout_margin="2dp" />
 
  <!--        end text-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14sp"
+            android:id="@+id/endText"
             android:layout_margin="10dp"
             android:padding="5dp"
+            android:visibility="gone"
             android:layout_gravity="center"
             android:text="@string/endtext"
             android:fontFamily="@font/poppins"
             android:textColor="#000000"
             />
 
+        <View
+            style="@style/Divider"
+            android:layout_margin="2dp" />
 
+<View
+    android:layout_width="match_parent"
+    android:layout_height="120dp"/>
 
 
     </LinearLayout>
