@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.bumptech.glide.Glide;
+
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -37,7 +37,7 @@ public class Explore extends Fragment implements  View.OnClickListener {
     private static final String TAG = "Explore";
 AdView mAdView;
     ImageView langIV,back;
-    TextView history, step1des,v,s,bb,ss,nkStep,fl,aripanText;
+    TextView history, step1des,v,s,bb,ss,nkStep,fl,aripanText, bishar,others;
     LinearLayout step2dec, step3dec;
     ImageView d1, u1, d2, u2, d3, u3, d4, u4, aripan, pooja,downNK,upArrowNK,ufl,dfl;
     MaterialCardView day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11, day12, day13;
@@ -76,7 +76,9 @@ AdView mAdView;
         pooja = view.findViewById(R.id.poojaarrow);
         nkStep = view.findViewById(R.id.nkStep);
         aripanText = view.findViewById(R.id.aripanText); aripanText.setOnClickListener(this);
-        fl = view.findViewById(R.id.fl);
+        bishar = view.findViewById(R.id.bishhartext); bishar.setOnClickListener(this);
+        fl = view.findViewById(R.id.fl); fl.setOnClickListener(this);
+        others = view.findViewById(R.id.others); others.setOnClickListener(this);
         langIV = view.findViewById(R.id.lang); langIV.setOnClickListener(this);
          s = view.findViewById(R.id.s); s.setOnClickListener(this);
          v = view.findViewById(R.id.v); v.setOnClickListener(this);
@@ -120,7 +122,7 @@ AdView mAdView;
         u4 = view.findViewById(R.id.up_arrow4);
         u4.setOnClickListener(this);
 
-        step1des = view.findViewById(R.id.step1dec);
+        step1des = view.findViewById(R.id.step1dec); step1des.setOnClickListener(this);
         step2dec = view.findViewById(R.id.step2dec);
         step3dec = view.findViewById(R.id.step3dec);
         aripan = view.findViewById(R.id.aripan);
@@ -253,6 +255,22 @@ AdView mAdView;
                 break;
             case R.id.aripanText:
                 intent.putExtra("FragName","aripan");
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
+                break;
+            case R.id.fl:
+                intent.putExtra("FragName","fulLodhi");
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
+                break;
+            case R.id.step1dec:
+                intent.putExtra("FragName","gauri");
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
+                break;
+            case R.id.bishhartext:
+                intent.putExtra("FragName","bishar");
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
+                break;
+            case R.id.others:
+                intent.putExtra("FragName","others");
                 startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
                 break;
             case R.id.day1:

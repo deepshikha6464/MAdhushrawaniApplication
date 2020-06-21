@@ -1,6 +1,7 @@
 package com.maithil.madhushravani.view.explore;
 
 
+import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -29,8 +30,8 @@ import java.io.IOException;
 public class Day2_14 extends Fragment  implements View.OnClickListener {
 
     private static final String TAG = "Day2_14";
-    TextView mainKatha,nextTitle,nextKatha,note,noteHeading,temi,temiHeading,startPoojaDay;
-    LinearLayout toolbar, fragToolbar,mainToolBar;
+    TextView mainKatha,nextTitle,nextKatha,note,noteHeading,temi,temiHeading,startPoojaDay,read214,listen214;
+    LinearLayout toolbar, fragToolbar,mainToolBar,katha214;
     TextView tooltext , mediacard;
 
     ImageView back;
@@ -114,7 +115,9 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                             pause.setVisibility(View.VISIBLE);
                             break;
 
-                        case R.id.audioCardKathaDays:
+                        case R.id.listen214:
+                            read214.setTextColor(Color.parseColor("#D81B60"));
+                            listen214.setTextColor(Color.parseColor("#000000"));
 
                             audioCardKatha1.playAnimation();
                             if (mp.isPlaying()) {
@@ -268,6 +271,14 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                             Log.d(TAG, "onClick: ");
                             getActivity().onBackPressed();
                             break;
+
+                        case R.id.read214:
+                            katha214.setVisibility(View.VISIBLE);
+                            read214.setTextColor(Color.parseColor("#D81B60"));
+                            listen214.setTextColor(Color.parseColor("#000000"));
+                            break;
+
+
                     }
     }
 
@@ -295,6 +306,9 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
         nonframe = view.findViewById(R.id.nonframedays);
 
         back = view.findViewById(R.id.back); back.setOnClickListener(this);
+        read214 = view.findViewById(R.id.read214); read214.setOnClickListener(this);
+        listen214 = view.findViewById(R.id.listen214); listen214.setOnClickListener(this);
+        katha214 = view.findViewById(R.id.kathaLayout214); katha214.setOnClickListener(this);
 
 //        media
         mediaLayout = view.findViewById(R.id.media_layout);

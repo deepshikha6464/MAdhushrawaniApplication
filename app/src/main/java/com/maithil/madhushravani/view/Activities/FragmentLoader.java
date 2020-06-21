@@ -13,12 +13,14 @@ import com.maithil.madhushravani.R;
 import com.maithil.madhushravani.view.explore.AripanFragment;
 import com.maithil.madhushravani.view.explore.Day1Fragment;
 import com.maithil.madhushravani.view.explore.Day2_14;
+import com.maithil.madhushravani.view.explore.PictureRead;
 import com.maithil.madhushravani.view.explore.poojaFragment;
 
 public class FragmentLoader extends AppCompatActivity {
     private static final String TAG = "FragmentLoader";
     Bundle b;
     Day2_14 f = new Day2_14();
+    AripanFragment f1 = new AripanFragment();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,12 +38,42 @@ public class FragmentLoader extends AppCompatActivity {
         switch (value){
 
 
-            case "aripan":
+            case "biniPicture":
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .setCustomAnimations(R.animator.slide_in_top,R.animator.slide_out_top)
-                        .replace(R.id.fragment_container, new AripanFragment())
+//                        .setCustomAnimations(R.animator.slide_in_top,R.animator.slide_out_top)
+                        .replace(R.id.fragment_container, new PictureRead())
                         .commit();
+                break;
+            case "aripan":
+                b = new Bundle();
+                b.putString("UNIQUE_KEY", "aripan");
+                f1.setArguments(b);
+                loadFragmentImage(f1);
+                break;
+            case "fulLodhi":
+                b = new Bundle();
+                b.putString("UNIQUE_KEY", "fulLodhi");
+                f1.setArguments(b);
+                loadFragmentImage(f1);
+                break;
+            case "gauri":
+                            b = new Bundle();
+                            b.putString("UNIQUE_KEY", "gauri");
+                            f1.setArguments(b);
+                            loadFragmentImage(f1);
+                            break;
+            case "bishar":
+                            b = new Bundle();
+                            b.putString("UNIQUE_KEY", "bishar");
+                            f1.setArguments(b);
+                            loadFragmentImage(f1);
+                break;
+           case "others":
+                            b = new Bundle();
+                            b.putString("UNIQUE_KEY", "others");
+                            f1.setArguments(b);
+                            loadFragmentImage(f1);
                 break;
             case "pooja":
                 getSupportFragmentManager()
@@ -138,7 +170,15 @@ public class FragmentLoader extends AppCompatActivity {
     public void loadFragment(Fragment frag) {
         getSupportFragmentManager()
                 .beginTransaction()
-                .setCustomAnimations(R.animator.slide_in_top,R.animator.slide_out_top)
+//                .setCustomAnimations(R.animator.slide_in_top,R.animator.slide_out_top)
+                .replace(R.id.fragment_container, frag)
+                .commit();
+
+    }
+    public void loadFragmentImage(Fragment frag) {
+        getSupportFragmentManager()
+                .beginTransaction()
+//                        .setCustomAnimations(R.animator.slide_in_top,R.animator.slide_out_top)
                 .replace(R.id.fragment_container, frag)
                 .commit();
 

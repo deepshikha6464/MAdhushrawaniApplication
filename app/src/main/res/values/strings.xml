@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Madhushravani</string>
-    <string name="PoojaSamagri">Collecting Pooja Samagri </string>
+    <string name="PoojaSamagri">Collecting <i>Pooja Samagri</i> </string>
     <string name="History">History of Madhushravani\n<font fgcolor='#D81B60' size='12'>Know More</font></string>
     <!--    <string name="msh">मधुश्रावणी पूजा  मधुश्रावणी  पूजा सैं पहिने लड़का बाला ओहिठाम लड़की बला क ओतय सं नोत जाइत अछि. नोत में पांच टा रांगल सुपारी आ पीरा कागज़ पर लाल कलम सं लिखल लड़का क पिता क नाम सं पता जाइत अछि . मधुश्रावणी पूजा क ओरिआओन जाहि कन्या के नव विवाह भेल छनि ओ सावन क चौठ क संध्या काल  भिन्न प्रकारक फूल आ पात तोरि रखैत छैथ जाहि घर में पूजा होयत टकरा बढियां सैं साफ़ कय निचा देल चित्र क अनुसार अरिपन पडत </string>-->
     <string name="msh">This is a festival of serpent worship performed by newly married couples.
@@ -10,69 +10,73 @@ Girls on each of the 12 days move in the gardens in bridal clothes and collect s
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Steps">Get Started with Prepration</string>
-    <string name="bininote"><b>Continue with Bini</b></string>
-    <string name="Step1">Making of Gauri Ji Statue</string>
-    <string name="step1des">This step is done a day before festival starts,So in evening various songs(Geet) of "Bhagwati" , "Mahadev" , "Bhramin", "Hanuman" ,"Gauri" are sung. Meanwhile the  Gauri ji Statue is prepared by mixing and grinding "Dhoobh",raw turmeric(kachcha haldi) and coriender seeds(dhaniya).After that take a mud plate or cap of earthern pot and place red cloth and put gauri ji over a coin,cover her with Pan leaf,put sindur over that leaf and cover whole setup with red cloth. Keep this near into your mandir(near "Bhagwati") </string>
-    <string name="Step2">Making of Bishar  </string>
-    <string name="step2des">For this step ,we will create all instantiate all the god goddess we will be worshiping in these 13 days in natural form</string>
-    <string name="step2_1des">Take 5 leaves of Maina and banana each two times assuming each set from Parents Home and from In-Laws.Now draw 5-5 times Bishar(snake) from sinduur, kajal, Pithar. Now write SHREE from chandan </string>
-    <string name="step2_2des">Create 10 Bishar(serpents) five each from Parents and In-Laws respectively by using clay and add grass for their mouth</string>
-    <string name="Step3">Making Different Creatures</string>
-    <string name="step3_1des">This is for the worship of Kusumwati,Pingala,Chenaai and Lili ..create  4 pooda</string>
-    <string name="step2_3des"><b>Chenaai</b> - Take some Rice(arwa) in basket , money and curd</string>
-    <string name="step2_4des"><b>Binni Motri</b> - Take long square red Piece of cloth and put धनी,धान,दुब ,हरिद ,सुपारी ,बड़ी इलाइची,लौंग  ,छोटकी इलाइची with 11 rupees and make a knot</string>
-    <string name="step2_5des"><b>Colleting Naivedh</b> Rice(Arwa),beaten rice,sugar,mango,banana,sprouts,Jackfruit</string>
-    <string name="Step4_1">Drawing Aripan</string>
-    <string name="bini">Now Listen to these five BINI three times</string>
-    <string name="startPooja">Start Todays Pooja by clicking on these Gods</string>
-    <string name="katha"><b>Katha of the Day</b></string>
+    <string name="bininote"><b>Continue with <i>Bini</i></b></string>
+    <string name="Step1">Making of<i>Gauri Ji</i></string>
+    <string name="step1des">This step is done a day before festival starts,So in evening various <i>Geet</i> of <i>"Bhagwati" , "Mahadev" , "Bhramin", "Hanuman" ,"Gauri"</i> are sung. Meanwhile the  <i>Gauri ji</i> idol is prepared by mixing and grinding <i>"Dhoobh"</i>
+        ,raw turmeric(<i>kachcha haldi</i>) and coriender seeds(<i>dhaniya</i>).After that take a mud plate or cap of earthern pot and place red cloth and put <i>gauri ji</i> over a coin and cover her with <i>Paan</i> leaf,put <i>sindur</i> over that leaf and cover whole it with red cloth. Keep this into your <i>mandir</i>(near "Bhagwati")\n <font fgcolor='#D81B60' size='12'>See Image</font> </string>
+    <string name="Step2">Making of <i>Visahara</i></string>
+    <string name="step2des">For this step ,we will create all the <i>devtas</i> that we will be worshiping in these thirteen days in natural form</string>
+    <string name="step2_1des">Take five leaves of <i>Maina</i> and banana each two set assuming each set from Parents and from In-Laws.Now draw 5-5 times <i>visahar</i> from <i>sinduur, kajal, Pithar and shree khand chandan</i>
+        \n<font fgcolor='#D81B60' size='12'>See Image</font> </string>
+    <string name="step2_2des">Create ten <i>Visahara</i> five each from Parents and In-Laws respectively by using clay and add grass(<i>doobh</i>) in their mouth\n<font fgcolor='#D81B60' size='12'>See Image</font></string>
+    <string name="Step3">Preparing other items</string>
+    <string name="step3_1des">This is for the worship of <i>Kusumwati,Pingala,Chenaai and Lili</i>create four <i>pooda</i> of banana leaf\n<i>Dhaan</i> will be kept below <i>Purhar,Patil</i></string>
+    <string name="step2_3des"><b><i>Chenaai</i></b> - Take some Rice<i>(arwa)</i> in <i>daali</i> with money and curd</string>
+    <string name="step2_4des"><b><i>Binni Motri</i></b> - Take long square red Piece of cloth and put धनी,धान,दुब ,हरिद ,सुपारी ,बड़ी इलाइची,लौंग  ,छोटकी इलाइची with eleven rupees and make a knot</string>
+    <string name="step2_5des"><b>Colleting <i>Naivedh</i></b> Rice<i>(arwa)</i>,beaten rice(चूड़ा),sugar,mango,banana,sprouts,Jackfruit\n\n <font fgcolor='#D81B60' size='12'>See Image</font></string>
+    <string name="Step4_1">Drawing <i>Aripan</i></string>
+    <string name="bini">Now Listen to these five <i>BINI</i> three times</string>
+    <string name="startPooja">Start Todays <i>Pooja</i> by clicking on these <i>devtas</i></string>
+    <string name="readKatha"><font fgcolor='#D81B60' size='15'><b>Read the <i>Katha</i></b></font></string>
+    <string name="katha"><b><i>Katha</i> of the Day</b></string>
     <string name="kathaday1">एक दिन एकटा बूढी स्नानक हेतु पोखैर गेलि त देखलखिन जे धार में एकटा चिकनी पात पर पाँच टा किछु लहलाहैत अछि I ओ जीव सब बूढी के कहलखिन जे –हे बूढी ! गाम जा क लोक सब के सूचित क दिअऊ जे आई मौनी पंचमी थिकैक से लोक सब अपना घर आँगन के निक जेकाँ पवित्र कय,स्नान कय पाँच टा मईटक आकृति बना ओहि में सिंदूर-पिठार लगा दूभि साईट देथिन आ हुनका पर नेबो, नीमक पात ,कुश चढेथिन I नव बर्तन में खीर आ घुरजौर बनेती .ओकर बाद बिसहारा क पूजा कय हुनका दूध,लावा ,खीर आ घुरजौर चढ़ा अपनों सब नेबो नीम खीर-घुरजौर के सेवन करैथ I जे कियो एही प्रकारे पूजा करता तिनका कल्याण हेतनि I
 
 बूढी गाम आबि सबके कहलखिन I सब गोटा बूढी के कहलानुसारे पूजा केलनि,मुदा किछु लोग एकरा मात्र खिस्सा बुझि अनठा देलैथ I जे सब पूजा केलैथ से सब त  ठीक रहला मुदा जे नय केलैथ से सब  राति में मरि गेल I गावँ में हाहाकार मचि गेल I सब लोग धार लग ओहि बूढी संगे फेर गेलैथ त देखलखिन जे पाँचो बिसहारा साँप ओहिना लहलहैत छेलेथ I सब हुनका आगु कल जोरि मुइला क जियेवाक उपाय पुछलखिन I तखन बिसहारा कहलखिन जे – पहिने त ओ सब हमरा अनुसारे पावनि नहीं केलैथ ते सब मरि गेला ,आब एके उपाय जँ गाम  में ककरो कराही में खीर-धोरजौर लागल हैत तँ ओकरा  मूईल  सब के  मुँह में चटा देवैक त ओ सब पुनः जीवित भय जेता मुदा आगु सं नियमित मौनी पंचमी के पूजा करता I
 
 गाम क लोक बिसहारा क कहलानुसार केलेथ आ सब मुइल लोक सब पुनः जीवित भय गेला ,और सब गोटा बिसहरी माता क प्रणाम कई हुनका स क्षमा मंगलैथ I</string>
     <string name="kathaday1_1">एक दिन गौरी महादेव सरोवर में जल क्रीङा करैत छलाह I संयोगवश शिव के वीर्य स्खलन भय गेल I महादेव ओकरा पुरैनिक पात पर राखि देलखिन I ओहि सं बिसहारा पाँचो बहिन क जन्म भेल I महादेव के अपना संतान पाँचो बिसहारा सं मोह भय गेल ,ओ प्रतिदिन सरोवर में स्नान लेल जाथिन आ बङी -बङी काल धरि ओकरा सब संगे खेलैथ I गौरी क संदेह होमए लगलैन I ओ एक दिन महादेव के पाछु पाछु सरोवर तक गेलथ आ ओतय शिव के अनका संगे खेलाइत देख क्रोधित भय गेलैथ आ सब बिसहरी के फेकए लागलि I तखन महादेव हुनका बुझेलखिन जे ई सब हुनकर बेटी छिएनि आ कल्याणकारी छैथ I मृत्युभुवन में सावन मास जे एय  पाँचो बहिन छी-जाया ,बिसहरी ,शामिलबारी  आ दोतलि  के पूजा करतैथ  ओ धन-ध्यान  सं पूर्ण होयतथि  आ ओकरा सब तरहे कल्याण होयत I</string>
-    <string name="vacho"><b>End with Vacho Bini</b></string>
+    <string name="vacho"><b>End with <i>Vacho Bini</i></b></string>
     <string name="endKatha">देवता सब के प्रणाम करि बिनी क पोटरी कलश पर राखि सब जेष्ठ सब के प्रणाम करि ,पूजा बला साडी खोलि राईख देथिन,जकरा फेर सब दिन पूजा काल पहिरल जायत I</string>
-    <string name="binii">Now Listen to these three BINI five times</string>
+    <string name="binii">Now Listen to these three <i>BINI five</i> times</string>
     <string name="kathaday2" />
     <string name="nexttitle">NextTitle</string>
     <string name="nextKatha" />
     <string name="note" />
     <string name="note11">Important Note</string>
-    <string name="temi11">Now perform following steps for Temi</string>
+    <string name="temi11">Now perform following steps for <i>Temi</i></string>
     <string name="km"></string>
-    <string name="ss">Write your Vrat Experience or Views with our Maithil Community 😊</string>
+    <string name="ss">Write your <i>Vrat</i> Experience or Views with our Maithil Community 😊</string>
     <string name="post"><b>POST</b></string>
-    <string name="saree_step">Preapre Three new saree for:\n► One will be used for making Gauri ji and plucking flowers and leaves\n► Second will be used during the Thirteen Days of Pooja and Katha \n► Third one will be used at last day\n► And New bangels of Lah as well and Sindur</string>
+    <string name="saree_step">Preapre Three new saree for:\n► One will be used for making <i>Gauri ji</i> and collect flowers and fresh leaves\n► Second will be used during the Thirteen Days of <i>Pooja</i> and <i>Katha</i> \n► Third one will be used at last day\n► And New bangels of <i>Laah</i> as well and <i>Sindur</i></string>
     <string name="daybefore">The following step is performed a day before Madhushrawani Fast starts</string>
     <string name="daysStart">Start Pooja by selecting the respective Day</string>
     <string name="Steps1">Getting ready for Pooja</string>
-    <string name="nhayikhayi">Girl needs to wash her hairs,cut her nails\n► Get the Mehendi and Mahavar done</string>
-    <string name="foollodhi">Girl will wear new saree and take khoichcha along with her \n► Then she will go to pluck flowers and green leaves specially  "Lemon","Bamboo" in a bamboo bowl\n► Then decorate those leaves and flowers beauitfully in that Bamboo basket("Dali")\n► FoolLodhi Geet will be sung during this time </string>
-    <string name="biniListen">Listen To Bini</string>
+    <string name="nhayikhayi">► Girl needs to wash her hair,cut her nails\n► Get the <i>Mehendi</i> and <i>Mahavar</i> done</string>
+    <string name="foollodhi">► Girl will wear new saree and take <i>khoichcha</i> along with her \n► Then she will go to pluck flowers and fresh leaves like "Lemon","Bamboo" in a <i>daala</i>\n► Then decorate <i>daala</i> with those leaves and flowers beauitfully \n► <i>FulLodhi Geet</i> will be sung during this time \n <font fgcolor='#D81B60' size='12'>See Image</font> </string>
+    <string name="biniListen">Listen To <i>Bini</i></string>
     <string name="biniread">Read from Book</string>
-    <string name="wrapUpNote"><b>Ending the Pooja</b></string>
-    <string name="endtext">Now spread all the flowers and leaves on the \nserpents and all over the aripan covering all the gods
-                           \nPut the Bini Pouch over the Kalsh
+    <string name="wrapUpNote"><b>Ending the <i>Pooja</i></b></string>
+    <string name="endtext">Now spread all the flowers and leaves on the \nserpents and all over the <i>Aripan</i> covering all the <i>devtas</i>
+                           \nPut the <i>Bini Motri</i> over the <i>Kalash</i>
                             \nTake Blessings of elders
                             \Change the saree to wear it next day</string>
-    <string name="know_the_history_of_this_pooja">Know the History of this Pooja</string>
+    <string name="know_the_history_of_this_pooja">Know the History of this <i>Pooja</i></string>
     <string name="poojaSamagri">Pooja Samagri</string>
 
     <string name="admob_app_id" translatable="false">ca-app-pub-9640227971551003~6929517738</string>
-    <string name="StepNK">Nahayi Khaayi</string>
-    <string name="aripanText"><font fgcolor='#D81B60' size='15'>See Aripan Image</font>\nDraw a square Aripan and place  all the gods in between on their respective Aripans according to direction which is described as follow\n<b>Purhara Patil</b>\n►Two circle like aripan will be drawn on north - south corner of square\n► Place the purhar on above baalu on the northern circle aripan\n► Place PAtil on above baalu on the southern circle of aripan
-        \n►Patil will have Diya of Tel and Baati\n
-        <b>Kalash</b>\nThis is placed on west side of Purhar Patil\n
-        <b>Soorya and Chandrama</b>\nDrawn on the south of Kalash Aripan\n
-        <b>Naag-Bhaag</b>\nDrawn in form of pair on north of Soorya and Chandrama Aripan\n
-        <b>NavGrah</b>\nDrawn like  nine flower on west of Naag-Bhaag Aripan \n
-        <b>Kusumawati and Pinglaak</b>\nDrawn two aripans like three flower \n►norhtern one is for Kusmawati\n►southern one is for Pinglaak\n
-        <b>Lili and  Chenaai</b>\nThis is drawn below Kusumawati and Pinglaak aripan \n► Two aripan of three flower design will be drawn\n►northern one is for Chenaai \n► southern one is for Lili\n
-        <b>Gauri</b>\nDrawn five flower like aripan on west and in front of kalash\n► Gauri is placed in between three flower of aripan\n
-        <b>Saathik</b>\nDrawn on south of Gauri aripan in from of three aripan
+    <string name="StepNK"><i>Nahayi Khaayi</i></string>
+    <string name="aripanText"><font fgcolor='#D81B60' size='15'>See <i>Aripan</i> Image</font>\nDraw a square <i>Aripan</i> and place  all the devtas in between on their respective Aripans according to direction which is described as follow\n<b><i>Purhara Patil</i></b>\n►Two circle like <i>Aripan</i> will be drawn on north and south corner of square\n► Place the <i>purhar</i> on above <i>baalu</i> on the northern circle <i>aripan</i>\n► Place <i>Patil</i> on above <i>baalu</i> on the southern circle of <i>aripan</i>
+        \n►<i>Patil</i> will have <i>Diya</i> of <i>Tel and Baati</i>\n
+        <b><i>Kalash</i></b>\nThis is placed on west side of <i>Purhar Patil</i>\n
+        <b><i>Soorya and Chandrama</i></b>\nDrawn on the south of <i>Kalash</i> <i>Aripan</i>\n
+        <b>Naag-Bhaag</b>\nDrawn in form of pair on north of Soorya and Chandrama <i>Aripan</i>\n
+        <b><i>NavGrah</i></b>\nDrawn like  nine flower on west of <i>Naag-Bhaag</i> <i>Aripan</i> \n
+        <b><i>Kusumawati and Pinglaak</i></b>\nDrawn two <i>Aripan</i> like three flower \n►norhtern one is for <i>Kusmawati</i>\n►southern one is for <i>Pinglaak</i>\n
+        <b><i>Lili and  Chenaai</i></b>\nThis is drawn below <i>Kusumawati and Pinglaak Aripan</i> \n► Two <i>Aripan</i> of three flower design will be drawn\n►northern one is for <i>Chenaai</i> \n► southern one is for <i>Lili</i>\n
+        <b><i>Gauri</i></b>\nDrawn five flower like <i>Aripan</i> on west and in front of <i>Kalash</i>\n► <i>Gauri</i> is placed in between three flower of <i>Aripan</i>\n
+        <b><i>Saathik</i></b>\nDrawn on south of <i>Gauri Aripan</i> in from of three Aripan
     </string>
+    <string name="fl"><i>Ful Lodhi</i></string>
 
 
 </resources>

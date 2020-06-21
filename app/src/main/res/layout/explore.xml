@@ -91,18 +91,19 @@
                             android:layout_height="45dp"
                             android:src="@drawable/icon"
                             android:layout_margin="5dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="4dp"
-                            android:fontFamily="@font/poppins"
-                            android:text="@string/Steps"
-                            android:textColor="#000000"
-                            android:layout_marginTop="15dp"
-                            android:textAppearance="?attr/textAppearanceHeadline6"
-                            android:textSize="16sp" />
 
-</LinearLayout>
+                          <TextView
+                              android:layout_width="240dp"
+                              android:layout_height="wrap_content"
+                              android:layout_marginLeft="22dp"
+                              android:layout_marginTop="15dp"
+                              android:fontFamily="@font/poppins"
+                              android:text="@string/Steps"
+                              android:textAppearance="?attr/textAppearanceHeadline6"
+                              android:textColor="#000000"
+                              android:textSize="16sp" />
+
+                      </LinearLayout>
                         <View
                             style="@style/Divider"
                             android:layout_below="@+id/materialCardView"
@@ -342,9 +343,11 @@
                                     android:layout_marginLeft="4dp"
                                     android:fontFamily="@font/poppins"
                                     android:padding="8dp"
-                                    android:text="Fool Lodhi"
+
+                                    android:text="@string/fl"
                                     android:textColor="#000000"
-                                    android:textSize="16sp" />
+                                    android:textSize="16sp"
+                                    tools:ignore="HardcodedText" />
 
                                 <ImageView
                                     android:id="@+id/dfl"
@@ -399,6 +402,7 @@
                                 android:layout_marginLeft="4dp"
                                 android:fontFamily="@font/poppins"
                                 android:padding="8dp"
+
                                 android:text="@string/Step1"
                                 android:textColor="#000000"
                                 android:textSize="16sp" />
@@ -438,7 +442,7 @@
                             style="@style/Divider"
                             android:layout_below="@+id/materialCardView"
                             android:layout_margin="2dp" />
-<!--bishar-->
+                         <!--bishar-->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -493,15 +497,15 @@
                                 android:textAppearance="?attr/textAppearanceHeadline6"
                                 android:textSize="14sp" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="4dp"
-                                android:fontFamily="@font/poppins"
-                                android:padding="8dp"
-                                android:text="@string/step2_2des"
-                                android:textAppearance="?attr/textAppearanceHeadline6"
-                                android:textSize="14sp" />
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginLeft="4dp"-->
+<!--                                android:fontFamily="@font/poppins"-->
+<!--                                android:padding="8dp"-->
+<!--                                android:text="@string/step2_2des"-->
+<!--                                android:textAppearance="?attr/textAppearanceHeadline6"-->
+<!--                                android:textSize="14sp" />-->
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -509,6 +513,7 @@
                                 android:layout_marginLeft="4dp"
                                 android:fontFamily="@font/poppins"
                                 android:padding="8dp"
+                                android:id="@+id/bishhartext"
                                 android:text="@string/step2_1des"
                                 android:textAppearance="?attr/textAppearanceHeadline6"
                                 android:textSize="14sp" />
@@ -604,6 +609,7 @@
                                     android:layout_marginLeft="4dp"
                                     android:fontFamily="@font/poppins"
                                     android:padding="8dp"
+                                    android:id="@+id/others"
                                     android:text="@string/step2_5des"
                                     android:textAppearance="?attr/textAppearanceHeadline6"
                                     android:textSize="14sp" />

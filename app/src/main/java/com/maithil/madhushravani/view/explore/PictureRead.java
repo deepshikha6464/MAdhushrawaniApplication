@@ -116,6 +116,10 @@ int i = 0;
     public void onClick(View view) {
         int id = view.getId();
         switch (id){
+
+            case R.id.back:
+                getActivity().onBackPressed();
+                break;
             case R.id.nextRight:
                 if(i<=3){
 //                    Glide.with(this)

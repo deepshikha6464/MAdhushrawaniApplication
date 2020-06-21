@@ -4,14 +4,76 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.explore.AripanFragment">
-
+<!--aripan-->
     <ImageView
         android:id="@+id/aripan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="2dp"
+        android:visibility="gone"
         android:layout_gravity="center"
         android:src="@drawable/aripan"
          />
+<!-- ful lodhi   -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/fuLodhi">
+<ImageView
 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:visibility="visible"
+        android:layout_gravity="center"
+        android:src="@drawable/fl_1"
+         />
+    <ImageView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:visibility="visible"
+        android:layout_gravity="center"
+        android:src="@drawable/fl_2"
+         />
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+<!--    gauri-->
+    <ImageView
+        android:id="@+id/gauri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:src="@drawable/gauri"
+        />
+
+<!--    bishar-->
+    <ImageView
+        android:id="@+id/bishar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:src="@drawable/bishar"
+        />
+    <!--    others-->
+    <ImageView
+        android:id="@+id/others"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:src="@drawable/bishar"
+        />
 </FrameLayout>
