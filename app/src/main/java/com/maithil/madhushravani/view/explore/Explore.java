@@ -6,11 +6,14 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
+
+import android.transition.Explode;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -45,6 +48,7 @@ AdView mAdView;
     List<Integer> daysNumber = new ArrayList<>();
     Bundle b;
     Day2_14 f = new Day2_14();
+    String sDefSystemLanguage;
 
     public Explore() {
         // Required empty public constructor
@@ -57,7 +61,7 @@ AdView mAdView;
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.explore, container, false);
         findViewbyid(view);
-//
+        sDefSystemLanguage = getResources().getConfiguration().locale.getLanguage();
 
         MobileAds.initialize(getContext(), new OnInitializationCompleteListener() {
             @Override
@@ -193,6 +197,7 @@ AdView mAdView;
             case  R.id.lang:
                 Log.d(TAG, "onClick: language");
                 languageChange();
+                restartActivity();
                 break;
 
             case R.id.down:
@@ -362,9 +367,21 @@ AdView mAdView;
         // Change locale settings in the app.
         DisplayMetrics dm = res.getDisplayMetrics();
         android.content.res.Configuration conf = res.getConfiguration();
-        conf.locale = new Locale("hi");
+        if(sDefSystemLanguage == "hi") {
+            conf.locale = new Locale("en");
+
+        }else{
+            conf.locale = new Locale("hi");
+
+        }
         res.updateConfiguration(conf, dm);
 
         Toast.makeText(getContext(), "Language Changed ", Toast.LENGTH_SHORT).show();
+    }
+    private void restartActivity()
+    {
+        Intent intent = getActivity().getIntent();
+        getActivity().finish();
+        startActivity(intent,ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
     }
 }

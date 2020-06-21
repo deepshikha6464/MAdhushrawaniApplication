@@ -66,7 +66,7 @@ Girls on each of the 12 days move in the gardens in bridal clothes and collect s
 
     <string name="admob_app_id" translatable="false">ca-app-pub-9640227971551003~6929517738</string>
     <string name="StepNK"><i>Nahayi Khaayi</i></string>
-    <string name="aripanText"><font fgcolor='#D81B60' size='15'>See <i>Aripan</i> Image</font>\nDraw a square <i>Aripan</i> and place  all the devtas in between on their respective Aripans according to direction which is described as follow\n<b><i>Purhara Patil</i></b>\n►Two circle like <i>Aripan</i> will be drawn on north and south corner of square\n► Place the <i>purhar</i> on above <i>baalu</i> on the northern circle <i>aripan</i>\n► Place <i>Patil</i> on above <i>baalu</i> on the southern circle of <i>aripan</i>
+    <string name="aripanText">Draw a square <i>Aripan</i> and place  all the devtas in between on their respective Aripans according to direction which is described as follow\n<b><i>Purhara Patil</i></b>\n►Two circle like <i>Aripan</i> will be drawn on north and south corner of square\n► Place the <i>purhar</i> on above <i>baalu</i> on the northern circle <i>aripan</i>\n► Place <i>Patil</i> on above <i>baalu</i> on the southern circle of <i>aripan</i>
         \n►<i>Patil</i> will have <i>Diya</i> of <i>Tel and Baati</i>\n
         <b><i>Kalash</i></b>\nThis is placed on west side of <i>Purhar Patil</i>\n
         <b><i>Soorya and Chandrama</i></b>\nDrawn on the south of <i>Kalash</i> <i>Aripan</i>\n
@@ -75,9 +75,15 @@ Girls on each of the 12 days move in the gardens in bridal clothes and collect s
         <b><i>Kusumawati and Pinglaak</i></b>\nDrawn two <i>Aripan</i> like three flower \n►norhtern one is for <i>Kusmawati</i>\n►southern one is for <i>Pinglaak</i>\n
         <b><i>Lili and  Chenaai</i></b>\nThis is drawn below <i>Kusumawati and Pinglaak Aripan</i> \n► Two <i>Aripan</i> of three flower design will be drawn\n►northern one is for <i>Chenaai</i> \n► southern one is for <i>Lili</i>\n
         <b><i>Gauri</i></b>\nDrawn five flower like <i>Aripan</i> on west and in front of <i>Kalash</i>\n► <i>Gauri</i> is placed in between three flower of <i>Aripan</i>\n
-        <b><i>Saathik</i></b>\nDrawn on south of <i>Gauri Aripan</i> in from of three Aripan
+        <b><i>Saathik</i></b>\nDrawn on south of <i>Gauri Aripan</i> in from of three Aripan\n<font fgcolor='#D81B60' size='12'>See <i>Aripan</i> Image</font>\n
     </string>
     <string name="fl"><i>Ful Lodhi</i></string>
+    <string name="collect_your_pooja_samagri">Collect your Pooja Samagri</string>
+    <string name="tap_to_tick_the_collected_item">Tap to tick the collected item</string>
+    <string name="vishahar">Vishahar</string>
+    <string name="saree">Saree</string>
+    <string name="read">Read</string>
+    <string name="listen">Listen</string>
 
 
 </resources>

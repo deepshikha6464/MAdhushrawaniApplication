@@ -83,7 +83,7 @@
                                 android:textColor="#000000"
                                 android:fontFamily="@font/poppins"
                                 android:textAlignment="center"
-                                android:text="Read" />
+                                android:text="@string/read" />
                             <View
                                 style="@style/VerticalDivider"
                                 android:layout_width="2dp"
@@ -101,7 +101,7 @@
                                 android:clickable="true"
                                 android:fontFamily="@font/poppins"
                                 android:textAlignment="center"
-                                android:text="Listen" />
+                                android:text="@string/listen" />
                         </TableRow>
                     </TableLayout>
 
@@ -134,15 +134,7 @@
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:textColor="#000000"
                     android:textSize="16sp" />
-<!--                <com.airbnb.lottie.LottieAnimationView-->
-<!--                    android:id="@+id/audioCardKathaDays"-->
-<!--                    android:layout_width="45dp"-->
-<!--                    android:layout_height="74dp"-->
-<!--                    app:lottie_autoPlay="false"-->
-<!--                    android:visibility="gone"-->
-<!--                    app:lottie_fileName="pause_play.json"-->
-<!--                    app:lottie_loop="false"-->
-<!--                    app:lottie_speed="1.25" />-->
+
 
             </LinearLayout>
             <!--        read/listem-->
@@ -167,7 +159,7 @@
                             android:textColor="#000000"
                             android:fontFamily="@font/poppins"
                             android:textAlignment="center"
-                            android:text="Read" />
+                            android:text="@string/read" />
                         <View
                             style="@style/VerticalDivider"
                             android:layout_width="2dp"
@@ -182,7 +174,7 @@
                             android:layout_margin="4dp"
                             android:fontFamily="@font/poppins"
                             android:textAlignment="center"
-                            android:text="Listen" />
+                            android:text="@string/listen" />
                     </TableRow>
                 </TableLayout>
 
@@ -308,7 +300,7 @@
                             android:textColor="#000000"
                             android:fontFamily="@font/poppins"
                             android:textAlignment="center"
-                            android:text="Read" />
+                            android:text="@string/read" />
                         <View
                             style="@style/VerticalDivider"
                             android:layout_width="2dp"
@@ -323,7 +315,7 @@
                             android:layout_margin="4dp"
                             android:fontFamily="@font/poppins"
                             android:textAlignment="center"
-                            android:text="Listen" />
+                            android:text="@string/listen" />
                     </TableRow>
                 </TableLayout>
 
@@ -369,15 +361,7 @@
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:textColor="#000000"
                     android:textSize="16sp" />
-                <!--                <com.airbnb.lottie.LottieAnimationView-->
-                <!--                    android:id="@+id/audioCardKathaDays"-->
-                <!--                    android:layout_width="45dp"-->
-                <!--                    android:layout_height="74dp"-->
-                <!--                    app:lottie_autoPlay="false"-->
-                <!--                    android:visibility="gone"-->
-                <!--                    app:lottie_fileName="pause_play.json"-->
-                <!--                    app:lottie_loop="false"-->
-                <!--                    app:lottie_speed="1.25" />-->
+
 
             </LinearLayout>
 
@@ -393,6 +377,7 @@
                 android:textColor="#000000"
                 />
             <View style="@style/Divider"
+                android:id="@+id/vd"
                 android:layout_margin="4dp"/>
 
 

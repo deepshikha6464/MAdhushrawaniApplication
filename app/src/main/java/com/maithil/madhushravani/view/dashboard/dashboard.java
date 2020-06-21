@@ -310,7 +310,7 @@ public class dashboard extends Fragment implements View.OnClickListener ,Databas
 
             }
             else{
-                showSnackbar("No Internet ","#ff0000");
+//                showSnackbar("No Internet ","#ff0000");
             }
         }
         @Override
@@ -527,13 +527,13 @@ public class dashboard extends Fragment implements View.OnClickListener ,Databas
             return false;
         }
     }
-    private void showSnackbar(String msg,String c)
-    {
-        Snackbar snackbar = make(getActivity().getCurrentFocus(), msg, BaseTransientBottomBar.LENGTH_LONG );
-        View snackBarView = snackbar.getView();
-        snackBarView.setBackgroundColor(Color.parseColor(c));
-        TextView tv = snackBarView.findViewById(R.id.snackbar_text);
-        tv.setTextColor(WHITE);
-        snackbar.show();
-    }
+//    private void showSnackbar(String msg,String c)
+//    {
+//        Snackbar snackbar = make(getActivity().getCurrentFocus(), msg, BaseTransientBottomBar.LENGTH_LONG );
+//        View snackBarView = snackbar.getView();
+//        snackBarView.setBackgroundColor(Color.parseColor(c));
+//        TextView tv = snackBarView.findViewById(R.id.snackbar_text);
+//        tv.setTextColor(WHITE);
+//        snackbar.show();
+//    }
 }

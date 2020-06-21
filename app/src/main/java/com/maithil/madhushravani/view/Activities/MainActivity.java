@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.Layout;
 import android.transition.Explode;
@@ -33,6 +35,8 @@ import com.maithil.madhushravani.view.explore.Day1Fragment;
 import com.maithil.madhushravani.view.explore.Explore;
 import com.maithil.madhushravani.view.post.PostFragment;
 import com.maithil.madhushravani.view.profile.ProfileFragment;
+
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements  View.OnClickListener ,BottomNavigationView.OnNavigationItemSelectedListener {
     private static final String TAG = "MainActivity";
@@ -103,6 +107,8 @@ getCurrentToken();
                 break;
             case R.id.lang:
                 Log.d(TAG, "lan button: ");
+                languageChange();
+                restartActivity();
                 break;
         }
         return loadFragment(fragment);
@@ -157,6 +163,19 @@ getCurrentToken();
                     }
                 });
     }
+    private void restartActivity() {
+        Intent intent = getIntent();
+        finish();
+        startActivity(intent);
+    }
+    private  void languageChange(){
+        Resources res = getResources();
+        // Change locale settings in the app.
+        DisplayMetrics dm = res.getDisplayMetrics();
+        android.content.res.Configuration conf = res.getConfiguration();
+        conf.locale = new Locale("hi");
+        res.updateConfiguration(conf, dm);
 
-
+        Toast.makeText(this, "Language Changed ", Toast.LENGTH_SHORT).show();
+    }
 }

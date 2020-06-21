@@ -25,6 +25,7 @@ import com.maithil.madhushravani.R;
 import com.maithil.madhushravani.view.Activities.FragmentLoader;
 
 import java.io.IOException;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -35,7 +36,7 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
     TextView mainKatha,nextTitle,nextKatha,note,noteHeading,temi,startPoojaDay,read214,listen214,vachotext,readVacho214,vacho,play,read,endText;
     LinearLayout toolbar, fragToolbar,mainToolBar,katha214,endPoojaLayout,temiHeading;
     TextView tooltext , mediacard;
-
+View vd;
     ImageView back;
     SeekBar seekBar;
     static MediaPlayer mp;
@@ -45,6 +46,8 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
     NestedScrollView naviday1;
 
     String kathaName;
+
+    String sDefSystemLanguage;
 
 
     public Day2_14() {
@@ -60,6 +63,8 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
 
         setToolbarDAYS(view);
         findViewByid(view);
+        sDefSystemLanguage = getResources().getConfiguration().locale.getLanguage();
+
         setDayfromSelectedCard();
 //        media initialization
         mp = new MediaPlayer();
@@ -156,7 +161,11 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                                     try {
                                         mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha2.mp3?alt=media&token=466f1539-e35f-4bf3-b935-c589b57c2441");
                                         mp.prepare();
-                                        playMedia("Katha of Day 2");
+                                        if(sDefSystemLanguage == "hi") {
+                                            playMedia("दोसर दिन क कथा");}else
+                                        {
+                                            playMedia("Katha of Day 2");
+                                        }
 
                                     } catch (IOException e) {
                                         e.printStackTrace();
@@ -167,8 +176,11 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                                     try {
                                         mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha_three.mp3?alt=media&token=af607c05-135c-4f70-8546-ff489a8699f9");
                                         mp.prepare();
-                                        playMedia("Katha of Day 3");
-
+                                        if(sDefSystemLanguage == "hi") {
+                                            playMedia("तीसरे  दिन की कथा");}else
+                                        {
+                                            playMedia("Katha of Day 3");
+                                        }
                                     } catch (IOException e) {
                                         e.printStackTrace();
                                     }
@@ -178,8 +190,11 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                                     try {
                                         mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha_four.mp3?alt=media&token=19d09886-9e2b-41d5-9bcf-62610b177604");
                                         mp.prepare();
-                                        playMedia("Katha of Day 4");
-
+                                        if(sDefSystemLanguage == "hi") {
+                                            playMedia("चौथे  दिन की कथा");}else
+                                        {
+                                            playMedia("Katha of Day 4");
+                                        }
                                     } catch (IOException e) {
                                         e.printStackTrace();
                                     }
@@ -189,8 +204,11 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                                     try {
                                         mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha_five.mp3?alt=media&token=6632006a-d36f-41c2-8d62-3447c4aac97a");
                                         mp.prepare();
-                                        playMedia("Katha of Day 5");
-
+                                        if(sDefSystemLanguage == "hi") {
+                                            playMedia("पाँचवे   दिन की कथा");}else
+                                        {
+                                            playMedia("Katha of Day 5");
+                                        }
                                     } catch (IOException e) {
                                         e.printStackTrace();
                                     }
@@ -201,8 +219,11 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                                     try {
                                         mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha_six.mp3?alt=media&token=a5ed56b1-32cb-4e62-8376-8aca3f1fd3cf");
                                         mp.prepare();
-                                        playMedia("Katha of Day 6");
-
+                                        if(sDefSystemLanguage == "hi") {
+                                            playMedia("छठे दिन की कथा");}else
+                                        {
+                                            playMedia("Katha of Day 6");
+                                        }
                                     } catch (IOException e) {
                                         e.printStackTrace();
                                     }
@@ -213,8 +234,11 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                                     try {
                                         mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha7.mp3?alt=media&token=656bc8b1-2d5d-477f-bd82-035222af044f");
                                         mp.prepare();
-                                        playMedia("Katha of Day 7");
-
+                                        if(sDefSystemLanguage == "hi") {
+                                            playMedia("सातवे   दिन की कथा");}else
+                                        {
+                                            playMedia("Katha of Day 7");
+                                        }
                                     } catch (IOException e) {
                                         e.printStackTrace();
                                     }
@@ -225,8 +249,11 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                                     try {
                                         mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha8.mp3?alt=media&token=2ba230a7-0ee3-4ae1-a81e-f8ba50f22b99");
                                         mp.prepare();
-                                        playMedia("Katha of Day 8");
-
+                                        if(sDefSystemLanguage == "hi") {
+                                            playMedia("आठवे    दिन की कथा");}else
+                                        {
+                                            playMedia("Katha of Day 8");
+                                        }
                                     } catch (IOException e) {
                                         e.printStackTrace();
                                     }
@@ -236,8 +263,11 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                                     try {
                                         mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha9.mp3?alt=media&token=474a74ad-198a-49a5-98ec-eb05d1954bfe");
                                         mp.prepare();
-                                        playMedia("Katha of Day 9");
-
+                                        if(sDefSystemLanguage == "hi") {
+                                            playMedia("नवे  दिन की कथा");}else
+                                        {
+                                            playMedia("Katha of Day 9");
+                                        }
                                     } catch (IOException e) {
                                         e.printStackTrace();
                                     }
@@ -247,8 +277,11 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                                     try {
                                         mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha10.mp3?alt=media&token=2eb43629-6347-452e-8033-2771d9d4c1b4");
                                         mp.prepare();
-                                        playMedia("Katha of Day 10");
-
+                                        if(sDefSystemLanguage == "hi") {
+                                            playMedia("दस्वे  दिन की कथा");}else
+                                        {
+                                            playMedia("Katha of Day 10");
+                                        }
                                     } catch (IOException e) {
                                         e.printStackTrace();
                                     }
@@ -259,8 +292,11 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                                     try {
                                         mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha11.mp3?alt=media&token=48aac7e7-17f3-4a45-b16b-39b0212e9507");
                                         mp.prepare();
-                                        playMedia("Katha of Day 11");
-
+                                        if(sDefSystemLanguage == "hi") {
+                                            playMedia("ग्यारह  दिन की कथा");}else
+                                        {
+                                            playMedia("Katha of Day 11");
+                                        }
                                     } catch (IOException e) {
                                         e.printStackTrace();
                                     }
@@ -271,8 +307,11 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                                     try {
                                         mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha12.mp3?alt=media&token=c67ebf22-c49e-4c4d-9514-65d6df0727c5");
                                         mp.prepare();
-                                        playMedia("Katha of Day 12");
-
+                                        if(sDefSystemLanguage == "hi") {
+                                            playMedia("बारह   दिन की कथा");}else
+                                        {
+                                            playMedia("Katha of Day 12");
+                                        }
                                     } catch (IOException e) {
                                         e.printStackTrace();
                                     }
@@ -282,8 +321,11 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                                     try {
                                         mp.setDataSource("https://firebasestorage.googleapis.com/v0/b/madhushrawani.appspot.com/o/songs%2Fkatha13.mp3?alt=media&token=b7a09cc4-511e-44b6-ac8c-e86222158591");
                                         mp.prepare();
-                                        playMedia("Katha of Day 13");
-
+                                        if(sDefSystemLanguage == "hi") {
+                                            playMedia("तेरह   दिन की कथा");}else
+                                        {
+                                            playMedia("Katha of Day 13");
+                                        }
                                     } catch (IOException e) {
                                         e.printStackTrace();
                                     }
@@ -330,6 +372,7 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
         nextTitle = view.findViewById(R.id.nextTitle);
         endText = view.findViewById(R.id.endText214);
         nextKatha = view.findViewById(R.id.nextKatha);
+        vd = view.findViewById(R.id.vd);
         note = view.findViewById(R.id.note);
         noteHeading = view.findViewById(R.id.noteheading);
         temi = view.findViewById(R.id.temi);
@@ -380,9 +423,17 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
          Log.d(TAG, "onCreateView: "+data);
          switch (data){
              case ("2"):
-                 tooltext.setText("Day 2");
-                 mediacard.setText("Katha of Day 2");
-                 startPoojaDay.setText("Start Pooja for Day Two");
+                 Log.d(TAG, "setDayfromSelectedCard: "+sDefSystemLanguage);
+                 if(sDefSystemLanguage == "hi"){
+                     tooltext.setText("दोसर दिन");
+                     mediacard.setText("दोसर दिन क कथा");
+                     startPoojaDay.setText("दुसरे दिन की पूजा शुरू करे");
+                 }else {
+                     tooltext.setText("Day 2");
+                     mediacard.setText("Katha of Day 2");
+                     startPoojaDay.setText("Start Pooja for Day Two");
+                 }
+                 vd.setVisibility(View.GONE);
                  mainKatha.setText("बिहुला आ मनसा क कथा \n" +
                          "\n" +
                          "मनसा शिव के मानस पुत्री रहथिन .जन्म होईते  वो युवती भई गेली I लाज क  रक्षा हेतु हुनका शरीर पर नाग लेपटा गेलनि I गौरी हुनका पसंद नय केलखिन त महादेव क कृपा सं ओ धरती पर निवास लेल चलि एलिह I ओहि समय  चंद्रधर (चंदू) नामक पैघ सौदागर  धरती पर रहैत छल I जे पैघ लोक करैत अछि तकरे अनुसरण सब लोक करैत अछि  I तें मनसा चंदू क कहलखिन जे अहाँ हमार पूजा करू I चंदू महादेव क परम भक्त I ओ कहलैथ -दहिना हाथ त हम महादेव क द देने छिएन आ अहाँ बामा हाथे पूजा ग्रहण करब त हम कए सकैत छी I ताहि पर मनसा क्रोधित भय गेली आ हुनकर छबो जवान बेटा के डँसि के मारि देलखिन I चंदू के बुढारि में फेर एकटा बेटा भेल I जखन बालक क टिप्पनि देखल गेल त हुनको आयु अल्पछल आ ई छल जे हुनको विवाह क दिन कोहबर में साँप डँसि लेत I ओहि बेटा क नाम लक्ष्मीधर (लखंदर )परल I लक्ष्मीधर जखन छबे मास क भेला त चंदू  अपना कनिया क आग्रह पर पुत्र क विवाह एहन कनिया सं करेवा लेल प्रस्स्तुत भय  गेला जकरा टिप्पनि में चिर-सोहागिन क योग छलैक I ओ पहाङ  पर एकटा एहन कोठा बनबौलेथ जाहि में कतओ सं साँप नहीं प्रवेश कय सकें I ओहि कोठा में लखंदर क विवाह बारह वर्ष क कन्या बिहुला सं भेल I जखन ओ अपना कनिया संगे कोहवर में छलैथ तखन कोना ने कोना कतउ सं साँप आवि हुनका डँसि लेलकनि आ ओ तुरंत मरि गेला I हुनकर दाह संस्कार हेतु हुनका गंगा कात आनल गेल संगहि परम सती बिहुला सेहो एलि I मुदा ओ अपना पति के गाङय नय देलखिन त लोक सब हुनका दुनू के श्मशान में छोङि घुरि अयलाह I बिहुला केरा क थम्हक एक टा नाव बना ओहि पर मुर्दा संगे अपनहूँ बैस गंगा धार में बह लागलि I बिना अन्न-जल अहिना कय दिन तक बहैत रहलि ,शव गलि-गलि खस लागल,केरा क थम्ह टुट लागल आ भसिआइत-भसिआईत  ओ बेढ-प्रयाग पहुँचली त ओतय त्रिवेणी घाट पर एकटा धोबिन क कपङा खिचैत देखलखिन I ओकरा संगे एकटा छोट बच्चा छलैक जे बर तंग करैत छल I धोबिन ओकरा जान सं मारि क कपङा तर में झाँपि के राखि  देलकैक आ जखन कपङा सब धोआ गेलइ तँ बच्चा क जिया क कोङा में ल विदा भ गेल I बिहुला ओहि धोबिन के शरण में गेलखिन आ अपना पति के जियेवाक लेल आग्रह करय लगलि I धोबिन बिहुला के सुंदरता ,धैर्य आ साहस देखि द्रवित भई गेलि I धोबिन बिहुला क लय इन्द्र क दरवार में गेलैथ जतय सब भगवान सेहो छलैथ I बिहुला अपन सब टा  वृतांत सुनेलखिन त सब देवता द्रवित भय मनसा क बजा चंदू के क्षमा करवाक  लेल आग्रह केलखिन I बिहुला सेहो बिसहारा क पैर पकङि विनती केलनि आ कबूला केलैथ जे यदि पति सहित हुनकर छबो भैंसुर जीवि उठताह तँ ओ अपना ससुर क मना क पूर्ण समारोह संग बिसहारा क पूजा करतीह तथा मृत्यु-भुवन में हुनक प्रचार करतीह I बिसहारा  प्रसन्न भय लक्ष्मीधर आ हुनकर छबो भाई के जीवित कय देलखिन I बिहुला क संगे सातो भाई नव शरीर लय यमलोक सं धरती पर आबि गेला I\n" +
@@ -402,10 +453,19 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                  break;
 
              case("3"):
-                 tooltext.setText("Day 3");
-                 mediacard.setText("Katha of Day 3");
+                 if(sDefSystemLanguage == "hi") {
+                     tooltext.setText("तेसर दिन");
+                     mediacard.setText("तीसरे  दिन की कथा");
 
-                 startPoojaDay.setText("Start Pooja for Day Three");
+                     startPoojaDay.setText("तेसर दिन क पूजा");
+                 }else{
+                     tooltext.setText("Day 3");
+                     mediacard.setText("Katha of Day 3");
+
+                     startPoojaDay.setText("Start Pooja for Day Three");
+                 }
+                 vd.setVisibility(View.GONE);
+
                  mainKatha.setText("पृथ्वी क जन्म\n" +
                          "\n" +
                          "\n" +
@@ -419,10 +479,17 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                                  "देवगण केँ अमृत पिऔला क बाद विष्णु अश्त्र-शश्त्र लए दानव सब के युद्ध में परास्त करि पताल भगा देलखिन आ बचल अमृत  इन्द्र क जिम्मा राखि विश्वकर्मा के ओकर रखवार बना देलखिन I वासुकी नाग जिनका समुद्र मंथन में अपार कष्ट भेलैन हुनका वरदान देलखिन जे हुनका माय के श्राप नहि  लगतनि ,ओ सपरिवार जनमेजय महाराज क सर्प यज्ञ में नहीं जरताह ,हुनकर भगिन आस्तिक मुनि हुनकर रक्षा करथिन   II");
                  break;
              case("4"):
-                 tooltext.setText("Day 4");
-                 mediacard.setText("Katha of Day 4");
+                 if(sDefSystemLanguage == "hi") {
+                     tooltext.setText("चारिम दिन");
+                     mediacard.setText("चौथे  दिन की कथा");
+                     startPoojaDay.setText("चारिम दिन क पूजा");
+                 }else{
+                     tooltext.setText("Day 4");
+                     mediacard.setText("Katha of Day 4");
+                     startPoojaDay.setText("Start Pooja for Day Four");
+                 }
+                 vd.setVisibility(View.GONE);
 
-                 startPoojaDay.setText("Start Pooja for Day Four");
                  mainKatha.setText("सती क कथा\n" +
                          "\n" +
                          "\n" +
@@ -437,10 +504,17 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                  nextKatha.setText("");
                  break;
              case("5"):
-                 tooltext.setText("Day 5");
-                 mediacard.setText("Katha of Day 5");
+                 if(sDefSystemLanguage == "hi") {
+                     tooltext.setText("पाँचम दिन");
+                     mediacard.setText("पाँचवे   दिन की कथा");
+                     startPoojaDay.setText("पाँचम दिन क पूजा");
+                 }else{
+                     tooltext.setText("Day 5");
+                     mediacard.setText("Katha of Day 5");
+                     startPoojaDay.setText("Start Pooja for Day Five");
+                 }
+                 vd.setVisibility(View.GONE);
 
-                 startPoojaDay.setText("Start Pooja for Day Five");
                  mainKatha.setText("महादेव क परिवार\n" +
                          "\n" +
                          "\n" +
@@ -461,10 +535,17 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                  nextKatha.setText("");
                  break;
              case("6"):
-                 tooltext.setText("Day 6");
-                 mediacard.setText("Katha of Day 6");
+                 if(sDefSystemLanguage == "hi") {
+                     tooltext.setText("छठम दिन");
+                 mediacard.setText("छठे दिन की कथा");
+                 startPoojaDay.setText("छठम दिन क पूजा");}
+                 else{
+                     tooltext.setText("Day 6");
+                     mediacard.setText("Katha of Day 6");
+                     startPoojaDay.setText("Start Pooja for Day Six");
+                 }
+                 vd.setVisibility(View.GONE);
 
-                 startPoojaDay.setText("Start Pooja for Day Six");
                  mainKatha.setText("गंगा क कथा\n" +
                          "\n" +
                          "\n" +
@@ -484,10 +565,18 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                          "\n");
                  break;
              case("7"):
-                 tooltext.setText("Day 7");
-                 mediacard.setText("Katha of Day 7");
+                 if(sDefSystemLanguage == "hi") {
+                     tooltext.setText("सातम दिन");
+                     mediacard.setText("सातवे   दिन की कथा");
+                     startPoojaDay.setText("सातम दिन क पूजा");
+                 }else{
+                     tooltext.setText("Day 7");
+                     mediacard.setText("Katha of Day 7");
+                     startPoojaDay.setText("Start Pooja for Day Seven");
 
-                 startPoojaDay.setText("Start Pooja for Day Seven");
+                 }
+                 vd.setVisibility(View.GONE);
+
                  mainKatha.setText("गौरी क तपस्या\n" +
                          "\n" +
                          "\n" +
@@ -504,12 +593,21 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                          "गौरी ताहि प्रत्युत्तर में कहलखिन – महादेव निर्गुण ब्रह्म थीका I ओहए ब्रह्मा बनि संसार क सृष्टि करैत छैथ ,सबहक आदिपुरुष सेहो ओहए छैथ I हुनकर लीला अपरम्पार I सुंदरता आ कुरूपता हुनके रूप छनि I अहाँ अपने पापी थिकौं ,अहाँ इ रहस्य नहि बुझवई I इ कहि गौरी तमसा विदा भय गेलि I बुढा तुरत महादेव क रूप धरि हुनका आगु रस्ता रोकि ठाढ़ भय गेला,आ कहलखिन जे गौरी हम अहाँ क तपस्या सं प्रस्सन छी चलु कैलाश ओतय हम अहाँ सं विवाह करब I गौरी लजा गेली आ अपना सखि सं कहलवेलखिन – हे आदिनाथ यदि अहाँ हमरा पर प्रस्सन छी त विवाह के प्रचलित नियमानुसार अहाँ कुनु गोटा दिया हमरा पिता ओहिठाम अपनान विवाह क प्रस्ताव पठाऊ जाहि सं हमरा पिता क गृहस्थाश्रम सफल होईन आ यश पसरनि I महादेव मानि गेला आ गौरी अपना पिता घर वापस आबि गेली  II");
                  nextTitle.setText("");
                  nextKatha.setText("");
-                 break; case("8"):
-                 tooltext.setText("Day 8");
-                 mediacard.setText("Katha of Day 8");
+                 break;
+                 case("8"):
+                     if(sDefSystemLanguage == "hi") {
+                         tooltext.setText("आठम दिन");
+                         mediacard.setText("आठवे दिन की कथा");
+                         startPoojaDay.setText("आठम दिन क पूजा");
+                     }
+                     else {
+                         tooltext.setText("Day 8");
+                         mediacard.setText("Katha of Day 8");
+                         startPoojaDay.setText("Start Pooja for Day Eight");
+                     }
+                     vd.setVisibility(View.GONE);
 
-                 startPoojaDay.setText("Start Pooja for Day Eight");
-                 mainKatha.setText("गौरी क विवाह आ बरियाती\n" +
+                     mainKatha.setText("गौरी क विवाह आ बरियाती\n" +
                          "\n" +
                          "\n" +
                          "महादेव सप्तॠषी ,वशिष्ठ मुनि आ हुनकर पत्नी अरुंधती क हिमालय ओहिठाम पठा ,हिमालय आ हुनक पत्नी मैना सं गौरी क महादेव संग विवाह क प्रस्ताव रखलखिन I हिमालय आ मैना आह्लादित भय गेला I विवाह क दिन फागुन वदि चतुर्दशी ताकल गेल I ऋषि सब घुरि महादेव क समाचार देलखिनI महादेव देवता आ ऋषि लोकनि  के हकार देवाक जिम्मेदारी नारद क देलखिन I महादेव क गण सब बरियाती क तैयारी  कर लागल I बर स सजाएल गेल ,माथ पर चंद्रमा ,शरीर में साँप ,माथ बांधल जटा,बघम्बर ओढलल,आदि पुरुष महादेव I बरियाती बर क लय चलल आ चारिम दिन हिमालय ओतय पहुँचल I सब बरियाती क स्वागत में लागि  गेल I मैना क बढ मन कि वोहि बर के देखि जकरा लेल हुनकर बेटी महल छोङि जंगल में जा अतेक कठीन तपस्या केलि I ओ नारद मुनि संगे दुआरि पर गेली बर देखवा लेल I पहिने ओ सुन्दर गन्धर्वराज क देख क बर बुझि प्रस्सन भेलि मुदा नारद कहलखिन कि इ देवता क गवैया थीका I फेर ओ धर्मराज क देखलखिन आ आनंदित भेलि मुदा ओहो बर नहीं,एहिना क्रमशः देवता लोक अवैत गेला आ मैना ओकरा बर बुझैत रहलि आ नारद हुनकर बात क  खंडित करैत रहला I महादेव सब देखैत छलैथ ओ मैना क परेशान करवाक प्रयोजन सोच लगला I नारद मैना क कहलखिन कि देखियो ओ रहल बर I मैना हुलसि क देखए लागलि I पहिने महादेव क गण,सेवक,भूत,पिचाश  ,मैना का हृदय धक् धक् I तावत महादेव हुनका देखाए देलैथ ,बासहा चढल,पाँच मुँह ,तीन आँख,दस हाथ ,शरीर पर भस्म ,कौरी माला गर्दन में,माथ पर चंद्रमा,एक हाथ खप्पर,दोसर हाथ भिक्षा पात्र ,तेसर पिनाक,चारिम तीर,पाँचम त्रिशूल,छठम अभय ,हाथी क चाम पहिरने,बघम्म्बर ओढने ,सौसे शरीर पर साँप ,मैना बर के देखैत इ चिचिएत मूर्क्षित भय गेलि –कि एहन बर संगे हमर सुकुमारी गौरी कोना रहती .जिद्दी छौङी ,इ कि कयले II");
@@ -518,10 +616,18 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                  break;
 
              case("9"):
-                 tooltext.setText("Day 9");
-                 mediacard.setText("Katha of Day 9");
+                 if(sDefSystemLanguage == "hi") {
+                     tooltext.setText("नवम दिन");
+                     mediacard.setText("नवे  दिन की कथा");
+                     startPoojaDay.setText("नवम दिन क पूजा");
+                 }
+                 else{
+                     tooltext.setText("Day 9");
+                     mediacard.setText("Katha of Day 9");
+                     startPoojaDay.setText("Start Pooja for Day Nine");
+                 }
+                 vd.setVisibility(View.GONE);
 
-                 startPoojaDay.setText("Start Pooja for Day Nine");
                  mainKatha.setText("मैना क मोह भंग\n" +
                          "\n" +
                          "\n" +
@@ -540,10 +646,17 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                  break;
 
              case("10"):
-                 tooltext.setText("Day 10");
-                 mediacard.setText("Katha of Day 10");
+                 if(sDefSystemLanguage == "hi") {
+                     tooltext.setText("दशम दिन");
+                 mediacard.setText("दस्वे  दिन की कथा");
+                 startPoojaDay.setText("दशम दिन क पूजा");}
+                 else{
+                     tooltext.setText("Day 10");
+                     mediacard.setText("Katha of Day 10");
+                     startPoojaDay.setText("Start Pooja for Day Ten");
+                     }
+                 vd.setVisibility(View.GONE);
 
-                 startPoojaDay.setText("Start Pooja for Day Ten");
                  mainKatha.setText("कार्तिक क जन्म\n" +
                          "\n" +
                          "\n" +
@@ -574,10 +687,17 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                  break;
 
              case("11"):
-                 tooltext.setText("Day 11");
-                 mediacard.setText("Katha of Day 11");
+                 if(sDefSystemLanguage == "hi") {
+                     tooltext.setText("एग्यारहम दिन");
+                     mediacard.setText("ग्यारह  दिन की कथा");
+                     startPoojaDay.setText("एग्यारहम दिन क पूजा");
+                 }else{
+                     tooltext.setText("Day 11");
+                     mediacard.setText("Katha of Day 11");
+                     startPoojaDay.setText("Start Pooja for Day Eleven");
+                 }
+                 vd.setVisibility(View.GONE);
 
-                 startPoojaDay.setText("Start Pooja for Day Eleven");
                  mainKatha.setText("संध्या क विवाह आ लीली क जन्म\n" +
                          "\n" +
                          "\n" +
@@ -588,10 +708,17 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                  break;
 
              case("12"):
-                 tooltext.setText("Day 12");
-                 mediacard.setText("Katha of Day 12");
+                 if(sDefSystemLanguage == "hi") {
+                     tooltext.setText("बारहम दिन");
+                     mediacard.setText("बारह   दिन की कथा");
+                     startPoojaDay.setText("बारहम दिन क पूजा");
+                 }else{
+                     tooltext.setText("Day 12");
+                     mediacard.setText("Katha of Day 12");
+                     startPoojaDay.setText("Start Pooja for Day Tweleve");
+                 }
+                 vd.setVisibility(View.GONE);
 
-                 startPoojaDay.setText("Start Pooja for Day Tweleve");
                  mainKatha.setText("बाल-बसंत\n" +
                          "\n" +
                          "\n" +
@@ -949,10 +1076,15 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                  break;
 
              case("13"):
-                 tooltext.setText("Day 13");
-                 mediacard.setText("Katha of Day 13");
-
-                 startPoojaDay.setText("Start Pooja for Day Thirteen");
+                 if(sDefSystemLanguage == "hi") {
+                     tooltext.setText("तेरहम दिन");
+                     mediacard.setText("तेरह   दिन की कथा");
+                     startPoojaDay.setText("तेरहम दिन क पूजा");
+                 }else{
+                     tooltext.setText("Day 13");
+                     mediacard.setText("Katha of Day 13");
+                     startPoojaDay.setText("Start Pooja for Day Thirteen");
+                 }
 
                  nextTitle.setText("श्री गणेश जी क सोहाग मथब आ बाँटब");
                  nextKatha.setText("मधुश्रावनी दिन गणेशजी माता गौरी क कहलखिन –आई हम सोहाग मथब आ जे मांगत टकरा देबइ I गणेश जी एही प्रयोजन लेल माय सं धान,धनि ,काठ क तामा ,नीम,बेल आ आम क काठी मगलखिन I गणेश जी सोहाग मथ लगला I सोगाग मंगवा लेल पहिने धोबिन आयल गणेश जी हुनका सोहाग देलखिन आ कहलखिन –अहाँ क धोबी भरी दिन नुआ वस्त्र धोयेताह ,भठ्ठी लगोताह आ भरी दिन परिश्रम केला क बाद अहाँ लग घर ऐय्ताह एही सं अहाँ क सोहाग बढ़त I फेर कैथिन एलखिन –गणेशजी हुनका कहलखिन-अहाँ क दीवानजी भरी दिन लिखा पढ़ी करताह आ साँझ खान घर ऐयताह I अहाँ सीकी क  मौनी ,चंगेरी बुनब आ खोपा विन्यास करब ताहि सं अहाँ क सोहाग बढ़त I तखन मलाहिन एलखिन ,हुनका  गणेशजी कहलखिन-अहाँ क मलाह माछ मारता ,जाल बुनता आ अहाँ क देह  मछाइन महकत ताहि सं अहाँ क सोहाग बढत I तखन मलिन एलखिन I गणेशजी हुनका सोहाग द कहलखिन-अहाँ क माली भरी दिन फूल तोरता  साँझ खन माला गुथि  ग्राहक लग पहुचेता ताहि सं अहाँ क सोहाग बढ़त तखन  गोआरि अऐलि गणेशजी हुनका सोहाग दैत कहलखिन-अहाँ क गुआर  गाय महीस चरायात ,भोर साँझ दूध दुहत अहाँ दूध औटब दही पउरब ,घी मथब अहाँ क सोहाग बढ़त I तखन बनिआइन क गणेशजी सोहाग दैत कहलखिन-अहाँ क बनिया भरि दिन सैदा बेचता अहाँ सौदा क फटकी धोई रखबनि अहाँ क सोहाग बढत I सब सं अंत में ब्रह्माणी ऐयेलखिन I ओकरा गणेशजी सोहाग दैत कहलखिन-ब्राह्मण पूजा पाठ करताह ,वेद –पुराण पढ़ताह आ पढ़ेताह I अहाँ जनउ  काटब ,पूजा क ओरिआन करब ,पवित्र सं भानस करब अहाँ क सोहाग बढ़त I एही प्रकार गणेशजी सब में सोहाग देलखिन आ सबके अपना कर्म क अनुसारे उपदेश देलखिन II");

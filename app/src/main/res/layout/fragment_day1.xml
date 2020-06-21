@@ -346,7 +346,7 @@
                             android:textColor="#000000"
                             android:fontFamily="@font/poppins"
                             android:textAlignment="center"
-                            android:text="Read" />
+                            android:text="@string/read" />
                         <View
                             style="@style/VerticalDivider"
                             android:layout_width="2dp"
@@ -364,7 +364,7 @@
                             android:clickable="true"
                             android:fontFamily="@font/poppins"
                             android:textAlignment="center"
-                            android:text="Listen" />
+                            android:text="@string/listen" />
                     </TableRow>
                 </TableLayout>
 
@@ -435,7 +435,7 @@
                         android:textColor="#000000"
                         android:fontFamily="@font/poppins"
                         android:textAlignment="center"
-                        android:text="Read" />
+                        android:text="@string/read" />
                     <View
                         style="@style/VerticalDivider"
                         android:layout_width="2dp"
@@ -453,7 +453,7 @@
                         android:layout_margin="4dp"
                         android:fontFamily="@font/poppins"
                         android:textAlignment="center"
-                        android:text="Listen" />
+                        android:text="@string/listen" />
                 </TableRow>
             </TableLayout>
 
@@ -570,7 +570,7 @@
                         android:clickable="true"
                         android:fontFamily="@font/poppins"
                         android:textAlignment="center"
-                        android:text="Read" />
+                        android:text="@string/read" />
                     <View
                         style="@style/VerticalDivider"
                         android:layout_width="2dp"
@@ -588,7 +588,7 @@
                         android:clickable="true"
                         android:fontFamily="@font/poppins"
                         android:textAlignment="center"
-                        android:text="Listen" />
+                        android:text="@string/listen" />
                 </TableRow>
             </TableLayout>
 

@@ -174,7 +174,7 @@
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:fontFamily="@font/poppins"
                                 android:textAlignment="center"
-                                android:text="Vishahar" />
+                                android:text="@string/vishahar" />
                                 <View
                                     style="@style/VerticalDivider"
                                     android:layout_width="2dp"
@@ -191,7 +191,7 @@
                                 android:layout_margin="4dp"
                                 android:fontFamily="@font/poppins"
                                 android:textAlignment="center"
-                                android:text="Saree" />
+                                android:text="@string/saree" />
                             </TableRow>
                             </TableLayout>
 
