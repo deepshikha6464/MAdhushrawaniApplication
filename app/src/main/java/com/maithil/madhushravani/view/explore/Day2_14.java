@@ -32,8 +32,8 @@ import java.io.IOException;
 public class Day2_14 extends Fragment  implements View.OnClickListener {
 
     private static final String TAG = "Day2_14";
-    TextView mainKatha,nextTitle,nextKatha,note,noteHeading,temi,temiHeading,startPoojaDay,read214,listen214,vachotext,readVacho214,vacho,play,read,endText;
-    LinearLayout toolbar, fragToolbar,mainToolBar,katha214,endPoojaLayout;
+    TextView mainKatha,nextTitle,nextKatha,note,noteHeading,temi,startPoojaDay,read214,listen214,vachotext,readVacho214,vacho,play,read,endText;
+    LinearLayout toolbar, fragToolbar,mainToolBar,katha214,endPoojaLayout,temiHeading;
     TextView tooltext , mediacard;
 
     ImageView back;
@@ -77,6 +77,10 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
         int id = view.getId();
                     switch (id){
 
+
+                        case R.id.temiheading:
+                            temi.setVisibility(View.VISIBLE);
+                            break;
                         case R.id.readBiniDays:
                             nonframe.setVisibility(View.GONE);
                             getActivity().getSupportFragmentManager()
@@ -939,7 +943,8 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                          "गे तांती रानी ! तोहर चनुआ कनुआ बेटा बङ दुःख दैत अछिI\n" +
                          "\n" +
                          "गोसावानी भरल –पुरल छेलि इ देख लीली के अपार कष्ट होइत छल I ओ बैरसी क कान  भर लागलि कि गोसावानी के जे बेटा सब छनि से चनाइ सं छैन आ बैरसी सेहो गोसावानी के पसंद नहि करैत छलैथ त लीली क बात मानि गोसावानी के पुछलखिन त ओ पति संग राति बितेला क सबूत पलग नीचा गारल पाँच टा पासा देखेलखिन I ओ लीली के मन रखवा लेल दुनू गोटा क धर्म परीक्षा करबा सोचलेथ I ओ लीली के अरवा चावल आ खेरही  क दालि देलखिन आ गोसावानी के लोहा क चाउर आ पाथर क दालि देलखिन आ दुनू क रंन्हबाक लेल कहलखिन I .लीली गौराबाहि बिना नियम निष्ठां के भोजन बनेलैथ ,भानस असिछ्छे रही गेलनि .आ गोसावानी धर्मात्मा रहथिन ,नियम निष्ठां सं भोजन बनैलैथ   हुनकर लोहा क चाउर आ पाथर क दालि सीछ गेलनि I सब लोग हुनकर प्रशंसा करय  लगलानि क ओ गौरबे  फाट लगलि  II  ");
-                 note.setText("मधुश्ववानी सं एक दिन पहिने कथा समाप्त भेला क बाद कलश छोङि सब देवता क विसर्जन भय जेतइ .पहुलका फूल पात ,अरिपन सब हटा क घर क नीक जेकाँ  स्सफ क पवित्र कैल जायत .साँझ खान वर क परिछन होईतनि .साँझ खान सब टा ओरिआन पंचमी दिन जेक होयत .");
+                 note.setText("Important Note:\n" +
+                         "मधुश्ववानी सं एक दिन पहिने कथा समाप्त भेला क बाद कलश छोङि सब देवता क विसर्जन भय जेतइ .पहुलका फूल पात ,अरिपन सब हटा क घर क नीक जेकाँ  स्सफ क पवित्र कैल जायत .साँझ खान वर क परिछन होईतनि .साँझ खान सब टा ओरिआन पंचमी दिन जेक होयत .");
                  note.setVisibility(View.VISIBLE);
                  break;
 
@@ -948,13 +953,9 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                  mediacard.setText("Katha of Day 13");
 
                  startPoojaDay.setText("Start Pooja for Day Thirteen");
-                 note.setText("सबटा पूजा पंचमी दिन जेनका यथास्थान होयत .आई वर संगे पाछु बैसल रहथिन .\n" +
-                         "आई लीली क तेरह टा मौनी जाहि में श्रींगार क समान रहत .जे कनियाँ अहियब सब क देत\n" +
-                         "सात टा डाली पर फूलायल चना ,फल मिठाई रहत सेहो अहियब सब के कनियाँ देत\n" +
-                         "टेमी लेल –सरवा -1 टेमी -5 ,आरतक पात -7 पान -7");
+
                  nextTitle.setText("श्री गणेश जी क सोहाग मथब आ बाँटब");
                  nextKatha.setText("मधुश्रावनी दिन गणेशजी माता गौरी क कहलखिन –आई हम सोहाग मथब आ जे मांगत टकरा देबइ I गणेश जी एही प्रयोजन लेल माय सं धान,धनि ,काठ क तामा ,नीम,बेल आ आम क काठी मगलखिन I गणेश जी सोहाग मथ लगला I सोगाग मंगवा लेल पहिने धोबिन आयल गणेश जी हुनका सोहाग देलखिन आ कहलखिन –अहाँ क धोबी भरी दिन नुआ वस्त्र धोयेताह ,भठ्ठी लगोताह आ भरी दिन परिश्रम केला क बाद अहाँ लग घर ऐय्ताह एही सं अहाँ क सोहाग बढ़त I फेर कैथिन एलखिन –गणेशजी हुनका कहलखिन-अहाँ क दीवानजी भरी दिन लिखा पढ़ी करताह आ साँझ खान घर ऐयताह I अहाँ सीकी क  मौनी ,चंगेरी बुनब आ खोपा विन्यास करब ताहि सं अहाँ क सोहाग बढ़त I तखन मलाहिन एलखिन ,हुनका  गणेशजी कहलखिन-अहाँ क मलाह माछ मारता ,जाल बुनता आ अहाँ क देह  मछाइन महकत ताहि सं अहाँ क सोहाग बढत I तखन मलिन एलखिन I गणेशजी हुनका सोहाग द कहलखिन-अहाँ क माली भरी दिन फूल तोरता  साँझ खन माला गुथि  ग्राहक लग पहुचेता ताहि सं अहाँ क सोहाग बढ़त तखन  गोआरि अऐलि गणेशजी हुनका सोहाग दैत कहलखिन-अहाँ क गुआर  गाय महीस चरायात ,भोर साँझ दूध दुहत अहाँ दूध औटब दही पउरब ,घी मथब अहाँ क सोहाग बढ़त I तखन बनिआइन क गणेशजी सोहाग दैत कहलखिन-अहाँ क बनिया भरि दिन सैदा बेचता अहाँ सौदा क फटकी धोई रखबनि अहाँ क सोहाग बढत I सब सं अंत में ब्रह्माणी ऐयेलखिन I ओकरा गणेशजी सोहाग दैत कहलखिन-ब्राह्मण पूजा पाठ करताह ,वेद –पुराण पढ़ताह आ पढ़ेताह I अहाँ जनउ  काटब ,पूजा क ओरिआन करब ,पवित्र सं भानस करब अहाँ क सोहाग बढ़त I एही प्रकार गणेशजी सब में सोहाग देलखिन आ सबके अपना कर्म क अनुसारे उपदेश देलखिन II");
-                 note.setVisibility(View.VISIBLE);
                  mainKatha.setText("राजा श्रीकर क कथा\n" +
                          "\n" +
                          "\n" +
@@ -978,7 +979,7 @@ public class Day2_14 extends Fragment  implements View.OnClickListener {
                          "बिधकारि बीच में छेद कैल पान क पात ओहि पर छेद कैल आरतक पात कनिया क दुनू ठेहुन आ दुनू पैर आ बामा हाथ क लुलुहा पर राखि देथिन  जाहि ऊपर सं टेमी पङत\n" +
                          "कनिया पूजा पर सं उठी गोसावानी क गोर लगतीं फेर सब श्रेष्ठ सब क बर कनिया गोर लगतैथ\n" +
                          "साँझ खन साँझ,कोहवर क गीत हैट आ निर्मल सब क विसर्जन");
-                 temi.setVisibility(View.VISIBLE);
+
                  break;
 
          }

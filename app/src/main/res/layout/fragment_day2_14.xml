@@ -211,19 +211,7 @@
                 android:fontFamily="@font/poppins"
                 android:textColor="#000000"
                 />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:id="@+id/note"
-                android:layout_margin="10dp"
-                android:padding="5dp"
-                android:visibility="gone"
-                android:layout_gravity="center"
-                android:text="@string/note"
-                android:fontFamily="@font/poppins"
-                android:textColor="#000000"
-                />
+
 
             <View style="@style/Divider"
                 android:layout_margin="4dp"/>
@@ -357,18 +345,42 @@
            <View style="@style/Divider"
                 android:layout_margin="4dp"/>
 
-    <!--    temi-->
-            <TextView
+            <!--    temi-->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
                 android:id="@+id/temiheading"
-                android:layout_gravity="center"
                 android:visibility="gone"
-                android:text="@string/temi11"
-                android:fontFamily="@font/poppins"
-                android:textColor="#000000"
-                />
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/icon" />
+
+                <TextView
+                    android:layout_width="219dp"
+                    android:layout_height="41dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/temi11"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+                <!--                <com.airbnb.lottie.LottieAnimationView-->
+                <!--                    android:id="@+id/audioCardKathaDays"-->
+                <!--                    android:layout_width="45dp"-->
+                <!--                    android:layout_height="74dp"-->
+                <!--                    app:lottie_autoPlay="false"-->
+                <!--                    android:visibility="gone"-->
+                <!--                    app:lottie_fileName="pause_play.json"-->
+                <!--                    app:lottie_loop="false"-->
+                <!--                    app:lottie_speed="1.25" />-->
+
+            </LinearLayout>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -380,9 +392,11 @@
                 android:fontFamily="@font/poppins"
                 android:textColor="#000000"
                 />
+            <View style="@style/Divider"
+                android:layout_margin="4dp"/>
 
 
-    <!--end pooja heading-->
+<!--end text-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -422,6 +436,23 @@
                 />
             <View style="@style/Divider"
                 android:layout_margin="4dp"/>
+<!--            note for day 12-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:id="@+id/note"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:text="@string/note"
+                android:fontFamily="@font/poppins"
+                android:textColor="#F4511E"
+                />
+
+
+
 
             <View
                 android:layout_width="match_parent"
