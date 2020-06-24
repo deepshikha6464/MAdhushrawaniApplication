@@ -40,8 +40,8 @@ public class Explore extends Fragment implements  View.OnClickListener {
     private static final String TAG = "Explore";
 AdView mAdView;
     ImageView langIV,back;
-    TextView history, step1des,v,s,bb,ss,nkStep,fl,aripanText, bishar,others,bs1;
-    LinearLayout step2dec, step3dec;
+    TextView history, step1des,v,s,bb,ss,nkStep,fl,aripanText, bishar,others,bs1,vt;
+    LinearLayout step2dec, step3dec,vv;
     ImageView d1, u1, d2, u2, d3, u3, d4, u4, aripan, pooja,downNK,upArrowNK,ufl,dfl;
     MaterialCardView day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11, day12, day13;
     //vars
@@ -86,11 +86,13 @@ AdView mAdView;
         langIV = view.findViewById(R.id.lang); langIV.setOnClickListener(this);
          s = view.findViewById(R.id.s); s.setOnClickListener(this);
          v = view.findViewById(R.id.v); v.setOnClickListener(this);
+         vv = view.findViewById(R.id.vv); vv.setOnClickListener(this);
          ufl = view.findViewById(R.id.ufl); ufl.setOnClickListener(this);
          dfl = view.findViewById(R.id.dfl); dfl.setOnClickListener(this);
          bs1 = view.findViewById(R.id.b); bs1.setOnClickListener(this);
          bb = view.findViewById(R.id.b);
          ss = view.findViewById(R.id.ss);
+         vt = view.findViewById(R.id.vt);
         history.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -168,7 +170,12 @@ AdView mAdView;
         int id = view.getId();
         switch (id) {
 
-
+            case R.id.vv:
+                if(vt.getVisibility()==View.VISIBLE){
+                    vt.setVisibility(View.GONE);
+                }else{
+                vt.setVisibility(View.VISIBLE);}
+                break;
 
             case R.id.v:
                 if(bb.getVisibility()==View.VISIBLE){

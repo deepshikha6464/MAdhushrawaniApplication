@@ -61,6 +61,9 @@
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="20"
+            android:foreground="?android:attr/selectableItemBackgroundBorderless"
+            android:background="?attr/selectableItemBackgroundBorderless"
+
             android:backgroundTint="@color/greyColor"
             android:src="@drawable/language" />
     </LinearLayout>

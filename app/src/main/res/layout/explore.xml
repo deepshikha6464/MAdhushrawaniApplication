@@ -1039,11 +1039,65 @@
 
                     </HorizontalScrollView>
                 </RelativeLayout>
-                <View
-                    style="@style/Divider"
-                    android:id="@+id/q"
+                <View style="@style/Divider"
+                    android:id="@+id/vd"
                     android:layout_below="@+id/qq"
-                    android:layout_margin="2dp" />
+                    android:layout_margin="4dp"/>
+                <!--    vrat vidhi-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/vv"
+                    android:visibility="visible"
+                    android:layout_below="@+id/vd"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="15dp"
+                        android:src="@drawable/icon" />
+
+                    <TextView
+                        android:layout_width="219dp"
+                        android:layout_height="41dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="24dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="@string/VratVidhi"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+
+                </LinearLayout>
+                <View style="@style/Divider"
+                    android:layout_below="@+id/vv"
+                    android:id="@+id/aaa"
+                     android:layout_margin="4dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:id="@+id/vt"
+                    android:layout_below="@+id/aaa"
+                    android:visibility="gone"
+                    android:layout_gravity="center"
+                    android:text="@string/vratNote"
+                    android:fontFamily="@font/poppins"
+                    android:textColor="#000000"
+                    />
+<!--                <View style="@style/Divider"-->
+<!--                   android:id="@+id/qaz"-->
+<!--                    android:layout_below="@+id/vt"-->
+<!--                    android:layout_margin="4dp"/>-->
+                <View
+
+                    android:id="@+id/q"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/vt"
+                    android:layout_margin="2dp"
+                    android:layout_width="match_parent" />
                 <com.google.android.gms.ads.AdView
                     xmlns:ads="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/adView"

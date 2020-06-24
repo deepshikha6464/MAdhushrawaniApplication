@@ -376,7 +376,7 @@ View vd;
         note = view.findViewById(R.id.note);
         noteHeading = view.findViewById(R.id.noteheading);
         temi = view.findViewById(R.id.temi);
-        temiHeading = view.findViewById(R.id.temiheading);
+        temiHeading = view.findViewById(R.id.temiheading); temiHeading.setOnClickListener(this);
         startPoojaDay = view.findViewById(R.id.starPooojaDay);
         nonframe = view.findViewById(R.id.nonframedays);
 
@@ -1085,7 +1085,7 @@ View vd;
                      mediacard.setText("Katha of Day 13");
                      startPoojaDay.setText("Start Pooja for Day Thirteen");
                  }
-
+                   endText.setText("►Now spread all the flowers and leaves on the serpents and all over the Aripan covering all the devtas\n"+"►Place the Bini Motri over the Kalash\n" +"►Take Blessings of elders");
                  nextTitle.setText("श्री गणेश जी क सोहाग मथब आ बाँटब");
                  nextKatha.setText("मधुश्रावनी दिन गणेशजी माता गौरी क कहलखिन –आई हम सोहाग मथब आ जे मांगत टकरा देबइ I गणेश जी एही प्रयोजन लेल माय सं धान,धनि ,काठ क तामा ,नीम,बेल आ आम क काठी मगलखिन I गणेश जी सोहाग मथ लगला I सोगाग मंगवा लेल पहिने धोबिन आयल गणेश जी हुनका सोहाग देलखिन आ कहलखिन –अहाँ क धोबी भरी दिन नुआ वस्त्र धोयेताह ,भठ्ठी लगोताह आ भरी दिन परिश्रम केला क बाद अहाँ लग घर ऐय्ताह एही सं अहाँ क सोहाग बढ़त I फेर कैथिन एलखिन –गणेशजी हुनका कहलखिन-अहाँ क दीवानजी भरी दिन लिखा पढ़ी करताह आ साँझ खान घर ऐयताह I अहाँ सीकी क  मौनी ,चंगेरी बुनब आ खोपा विन्यास करब ताहि सं अहाँ क सोहाग बढ़त I तखन मलाहिन एलखिन ,हुनका  गणेशजी कहलखिन-अहाँ क मलाह माछ मारता ,जाल बुनता आ अहाँ क देह  मछाइन महकत ताहि सं अहाँ क सोहाग बढत I तखन मलिन एलखिन I गणेशजी हुनका सोहाग द कहलखिन-अहाँ क माली भरी दिन फूल तोरता  साँझ खन माला गुथि  ग्राहक लग पहुचेता ताहि सं अहाँ क सोहाग बढ़त तखन  गोआरि अऐलि गणेशजी हुनका सोहाग दैत कहलखिन-अहाँ क गुआर  गाय महीस चरायात ,भोर साँझ दूध दुहत अहाँ दूध औटब दही पउरब ,घी मथब अहाँ क सोहाग बढ़त I तखन बनिआइन क गणेशजी सोहाग दैत कहलखिन-अहाँ क बनिया भरि दिन सैदा बेचता अहाँ सौदा क फटकी धोई रखबनि अहाँ क सोहाग बढत I सब सं अंत में ब्रह्माणी ऐयेलखिन I ओकरा गणेशजी सोहाग दैत कहलखिन-ब्राह्मण पूजा पाठ करताह ,वेद –पुराण पढ़ताह आ पढ़ेताह I अहाँ जनउ  काटब ,पूजा क ओरिआन करब ,पवित्र सं भानस करब अहाँ क सोहाग बढ़त I एही प्रकार गणेशजी सब में सोहाग देलखिन आ सबके अपना कर्म क अनुसारे उपदेश देलखिन II");
                  mainKatha.setText("राजा श्रीकर क कथा\n" +

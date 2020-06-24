@@ -4,8 +4,8 @@
     <string name="History">History of Madhushravani\n<font fgcolor='#D81B60' size='12'>Know More</font></string>
     <!--    <string name="msh">मधुश्रावणी पूजा  मधुश्रावणी  पूजा सैं पहिने लड़का बाला ओहिठाम लड़की बला क ओतय सं नोत जाइत अछि. नोत में पांच टा रांगल सुपारी आ पीरा कागज़ पर लाल कलम सं लिखल लड़का क पिता क नाम सं पता जाइत अछि . मधुश्रावणी पूजा क ओरिआओन जाहि कन्या के नव विवाह भेल छनि ओ सावन क चौठ क संध्या काल  भिन्न प्रकारक फूल आ पात तोरि रखैत छैथ जाहि घर में पूजा होयत टकरा बढियां सैं साफ़ कय निचा देल चित्र क अनुसार अरिपन पडत </string>-->
     <string name="msh">This is a festival of serpent worship performed by newly married couples.
-The 13-day ritual commences on the fifth lunar day of the first fortnight of Shravan and completes on the third lunar day of the second fortnight of the month. For 12 days, the ritual is performed by the newly married girls only. On the 13th and last day (Madhushravani), the couple performs the rituals. Madhushravani initiates the newly married girls into the worldly life.
-Girls on each of the 12 days move in the gardens in bridal clothes and collect seasonal flowers, leaves of trees and put them in baskets made of bamboos. They worship the serpent god, Lord Shiva with his consort Gauri daily and a senior family woman narrates stories on every day during the 12-day period. These stories are full of religious anecdotes aimed at making the girls aware of their duties.</string>
+The 13 day ritual commences on the fifth lunar day of the first fortnight of Shravan and completes on the third lunar day of the second fortnight of the month. For 12 days, the ritual is performed by the newly married ladies only. On the 13th day (Madhushravani), the couple perform the rituals. Madhushravani initiates the newly married ladies into the worldly life.
+Lady on each of the 12 days visit the garden dressed fully in bridal clothes and collect seasonal flowers and leaves of trees in baskets made of bamboos. They worship the serpent god and Lord Shiva with his consort Gauri daily and a senior  woman narrates stories on each of the  12 day period. These stories are full of religious anecdotes aimed at making the lady aware of her duties.</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -13,18 +13,18 @@ Girls on each of the 12 days move in the gardens in bridal clothes and collect s
     <string name="bininote"><b>Continue with <i>Bini</i></b></string>
     <string name="bininote214"><b>Start with <i>Bini</i></b></string>
     <string name="Step1">Making of<i>Gauri Ji</i></string>
-    <string name="step1des">This step is done a day before festival starts,So in evening various <i>Geet</i> of <i>"Bhagwati" , "Mahadev" , "Bhramin", "Hanuman" ,"Gauri"</i> are sung. Meanwhile the  <i>Gauri ji</i> idol is prepared by mixing and grinding <i>"Dhoobh"</i>
-        ,raw turmeric(<i>kachcha haldi</i>) and coriender seeds(<i>dhaniya</i>).After that take a mud plate or cap of earthern pot and place red cloth and put <i>gauri ji</i> over a coin and cover her with <i>Paan</i> leaf,put <i>sindur</i> over that leaf and cover whole it with red cloth. Keep this into your <i>mandir</i>(near "Bhagwati")\n <font fgcolor='#D81B60' size='12'>See Image</font> </string>
+    <string name="step1des">    This step is done a day before the festival starts,so in evening various <i>Geet</i> of <i>"Bhagwati" , "Mahadev" , "Bhramin", "Hanuman" and "Gauri"</i> are sung. Meanwhile the  <i>Gauri ji</i> idol is prepared by mixing and grinding <i>"Dhoobh"</i>
+        ,raw turmeric(<i>kachcha haldi</i>) and coriander seeds(<i>dhaniya</i>).After that take a mud plate or lid of earthen pot and place red cloth and keep <i>Gauri ji</i> over a coin and cover her with <i>Paan</i> leaf, put <i>sindur</i> over that leaf and cover her with red cloth. Keep this in your <i>mandir</i>(near "Bhagwati")\n <font fgcolor='#D81B60' size='12'>See Image</font> </string>
     <string name="Step2">Making of <i>Visahara</i></string>
-    <string name="step2des">For this step ,we will create all the <i>devtas</i> that we will be worshiping in these thirteen days in natural form</string>
-    <string name="step2_1des">Take five leaves of <i>Maina</i> and banana each two set assuming each set from Parents and from In-Laws.Now draw 5-5 times <i>visahar</i> from <i>sinduur, kajal, Pithar and shree khand chandan</i>
+    <string name="step2des">For this step ,we will make all the <i>devtas</i> that we will  worship in these thirteen days in natural form.</string>
+    <string name="step2_1des">  Take five leaves of <i>Maina</i> and banana each set from Parents and from In-Laws.Now draw <i>visahar</i> from <i>sinduur, kajal, Pithar and shree khand chandan</i> 5-5 times
         \n<font fgcolor='#D81B60' size='12'>See Image</font> </string>
-    <string name="step2_2des">Create ten <i>Visahara</i> five each from Parents and In-Laws respectively by using clay and add grass(<i>doobh</i>) in their mouth\n<font fgcolor='#D81B60' size='12'>See Image</font></string>
+    <string name="step2_2des"> ten <i>Visahara</i> five each from Parents and In-Laws respectively by using clay and add grass(<i>doobh</i>) in their mouth\n<font fgcolor='#D81B60' size='12'>See Image</font></string>
     <string name="Step3">Preparing other items</string>
-    <string name="step3_1des">This is for the worship of <i>Kusumwati,Pingala,Chenaai and Lili</i>create four <i>pooda</i> of banana leaf\n<i>Dhaan</i> will be kept below <i>Purhar,Patil</i></string>
+    <string name="step3_1des">This is for  worshiping of <i>Kusumwati, Pingala, Chenaai and Lili</i>. Create four <i>pooda</i> of banana leaf.\n<i>Dhaan</i> will be kept below <i>Purhar and Patil</i></string>
     <string name="step2_3des"><b><i>Chenaai</i></b> - Take some Rice<i>(arwa)</i> in <i>daali</i> with money and curd</string>
-    <string name="step2_4des"><b><i>Binni Motri</i></b> - Take long square red Piece of cloth and put धनी,धान,दुब ,हरिद ,सुपारी ,बड़ी इलाइची,लौंग  ,छोटकी इलाइची with eleven rupees and make a knot</string>
-    <string name="step2_5des"><b>Colleting <i>Naivedh</i></b> Rice<i>(arwa)</i>,beaten rice(चूड़ा),sugar,mango,banana,sprouts,Jackfruit\n\n <font fgcolor='#D81B60' size='12'>See Image</font></string>
+    <string name="step2_4des"><b><i>Binni Motri</i></b> - Take long square red piece of cloth and put धनी धान, दुब, हरिद, सुपारी, बड़ी इलाइची, लौंग, छोटकी इलाइची with eleven rupees and tie a knot</string>
+    <string name="step2_5des"><b>Colleting <i>Naivedh</i></b> Rice<i>(arwa)</i>,beaten rice(चूड़ा), sugar, mango, banana, sprouts and Jackfruit\n\n <font fgcolor='#D81B60' size='12'>See Image</font></string>
     <string name="Step4_1">Drawing <i>Aripan</i></string>
     <string name="bini">Now Listen to these five <i>BINI</i> three times</string>
     <string name="startPooja">Start Todays <i>Pooja</i> by clicking on these <i>devtas</i></string>
@@ -48,17 +48,17 @@ Girls on each of the 12 days move in the gardens in bridal clothes and collect s
     <string name="km"></string>
     <string name="ss">Write your <i>Vrat</i> Experience or Views with our Maithil Community 😊</string>
     <string name="post"><b>POST</b></string>
-    <string name="saree_step">Preapre Three new saree for:\n► One will be used for making <i>Gauri ji</i> and collect flowers and fresh leaves\n► Second will be used during the Thirteen Days of <i>Pooja</i> and <i>Katha</i> \n► Third one will be used at last day\n► And New bangels of <i>Laah</i> as well and <i>Sindur</i></string>
-    <string name="daybefore">The following step is performed a day before Madhushrawani Fast starts</string>
+    <string name="saree_step">Prepare <b>Three</b> new saree for:\n► One will be used for making <i>Gauri ji</i> and for collecting flowers and fresh leaves\n► Second will be used during the all Days except last day of <i>Pooja</i> and <i>Katha</i> \n► Third one will be used on last day\nAnd New bangels of <i>Laah</i> as well and <i>Sindur</i></string>
+    <string name="daybefore">The following steps are performed a day before Madhushravani Fast starts</string>
     <string name="daysStart">Start Pooja by selecting the respective Day</string>
     <string name="Steps1">Getting ready for Pooja</string>
-    <string name="nhayikhayi">► Girl needs to wash her hair,cut her nails\n► Get the <i>Mehendi</i> and <i>Mahavar</i> done</string>
-    <string name="foollodhi">► Girl will wear new saree and take <i>khoichcha</i> along with her \n► Then she will go to pluck flowers and fresh leaves like "Lemon","Bamboo" in a <i>daala</i>\n► Then decorate <i>daala</i> with those leaves and flowers beauitfully \n► <i>FulLodhi Geet</i> will be sung during this time \n <font fgcolor='#D81B60' size='12'>See Image</font> </string>
+    <string name="nhayikhayi">► Girl needs to wash her hair and cut her nails\n► Get the <i>Mehendi</i> and <i>Mahavar</i> done</string>
+    <string name="foollodhi">► Lady will wear new saree and take <i>khoichcha</i> along with her \n► She will  go to collect flowers and fresh leaves of "Lemon" ,"Bamboo" etc in a <i>daala</i>\n► Then decorate  the <i>daala</i> with those leaves and flowers \n► <i>FulLodhi Geet</i> will be sung during this time \n <font fgcolor='#D81B60' size='12'>See Image</font> </string>
     <string name="biniListen">Listen To <i>Bini</i></string>
     <string name="biniread">Read from Book</string>
     <string name="wrapUpNote"><b>Ending the <i>Pooja</i></b></string>
-    <string name="endtext">►Now spread all the flowers and leaves on the \nserpents and all over the <i>Aripan</i> covering all the <i>devtas</i>
-                           \n►Put the <i>Bini Motri</i> over the <i>Kalash</i>
+    <string name="endtext">►Now spread all the flowers and leaves on the serpents and all over the <i>Aripan</i> covering all the <i>devtas</i>
+                           \n►Place the <i>Bini Motri</i> over the <i>Kalash</i>
                             \n►Take Blessings of elders
                             \n►Change the saree to wear it next day</string>
     <string name="know_the_history_of_this_pooja">Know the History of this <i>Pooja</i></string>
@@ -66,16 +66,16 @@ Girls on each of the 12 days move in the gardens in bridal clothes and collect s
 
     <string name="admob_app_id" translatable="false">ca-app-pub-9640227971551003~6929517738</string>
     <string name="StepNK"><i>Nahayi Khaayi</i></string>
-    <string name="aripanText">Draw a square <i>Aripan</i> and place  all the devtas in between on their respective Aripans according to direction which is described as follow\n<b><i>Purhara Patil</i></b>\n►Two circle like <i>Aripan</i> will be drawn on north and south corner of square\n► Place the <i>purhar</i> on above <i>baalu</i> on the northern circle <i>aripan</i>\n► Place <i>Patil</i> on above <i>baalu</i> on the southern circle of <i>aripan</i>
+    <string name="aripanText">Draw a square <i>Aripan</i> and place  all the devtas in between on their respective Aripans according to the direction which is described below\n<b><i>Purhara Patil</i></b>\n►Two circular <i>Aripan</i> will be drawn on north and south corner of the square\n► Place the <i>purhar</i> on <i>baalu</i> on the northern circle <i>aripan</i>\n► Place <i>Patil</i> on <i>baalu</i> on the southern circle of <i>aripan</i>
         \n►<i>Patil</i> will have <i>Diya</i> of <i>Tel and Baati</i>\n
-        <b><i>Kalash</i></b>\nThis is placed on west side of <i>Purhar Patil</i>\n
+        <b><i>Kalash</i></b>\nThis is placed on the west of <i>Purhar Patil</i>\n
         <b><i>Soorya and Chandrama</i></b>\nDrawn on the south of <i>Kalash</i> <i>Aripan</i>\n
         <b>Naag-Bhaag</b>\nDrawn in form of pair on north of Soorya and Chandrama <i>Aripan</i>\n
-        <b><i>NavGrah</i></b>\nDrawn like  nine flower on west of <i>Naag-Bhaag</i> <i>Aripan</i> \n
-        <b><i>Kusumawati and Pinglaak</i></b>\nDrawn two <i>Aripan</i> like three flower \n►norhtern one is for <i>Kusmawati</i>\n►southern one is for <i>Pinglaak</i>\n
-        <b><i>Lili and  Chenaai</i></b>\nThis is drawn below <i>Kusumawati and Pinglaak Aripan</i> \n► Two <i>Aripan</i> of three flower design will be drawn\n►northern one is for <i>Chenaai</i> \n► southern one is for <i>Lili</i>\n
-        <b><i>Gauri</i></b>\nDrawn five flower like <i>Aripan</i> on west and in front of <i>Kalash</i>\n► <i>Gauri</i> is placed in between three flower of <i>Aripan</i>\n
-        <b><i>Saathik</i></b>\nDrawn on south of <i>Gauri Aripan</i> in from of three Aripan\n<font fgcolor='#D81B60' size='12'>See <i>Aripan</i> Image</font>\n
+        <b><i>NavGrah</i></b>\nDrawn like  nine petal flower on west of <i>Naag-Bhaag</i> <i>Aripan</i> \n
+        <b><i>Kusumawati and Pinglaak</i></b>\nDrawn two <i>Aripan</i> of three petal flower \n►norhtern one is for <i>Kusmawati</i>\n►southern one is for <i>Pinglaak</i>\n
+        <b><i>Lili and  Chenaai</i></b>\nThis is drawn below <i>Kusumawati and Pinglaak Aripan</i> \n► Two <i>Aripan</i> of three petal flower design will be drawn\n►northern one is for <i>Chenaai</i> \n► southern one is for <i>Lili</i>\n
+        <b><i>Gauri</i></b>\nDrawn five petal flower like <i>Aripan</i> on west and in front of <i>Kalash</i>\n► <i>Gauri</i> is placed in between three petal flower of <i>Aripan</i>\n
+        <b><i>Saathik</i></b>\nDrawn on south of <i>Gauri Aripan</i> in front of three Aripan\n<font fgcolor='#D81B60' size='12'>See <i>Aripan</i> Image</font>\n
     </string>
     <string name="fl"><i>Ful Lodhi</i></string>
     <string name="collect_your_pooja_samagri">Collect your Pooja Samagri</string>
@@ -84,6 +84,8 @@ Girls on each of the 12 days move in the gardens in bridal clothes and collect s
     <string name="saree">Saree</string>
     <string name="read">Read</string>
     <string name="listen">Listen</string>
+    <string name="VratVidhi">Vrat Vidhi</string>
+    <string name="vratNote">The Lady will fast for thirteen days and will eat in following manner:\n►She will eat kheer of <i>arwa chawal</i> which will come from In-Laws\n►She can have fruits, dry fruits, milk but no salt and grains\n►She should eat before sunset</string>
 
 
 </resources>
